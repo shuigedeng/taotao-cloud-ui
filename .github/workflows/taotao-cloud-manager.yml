@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'taotao-cloud-vue3-manager/**'
-    branches: [ master ]
+    branches: [ dev ]
   pull_request:
     branches: [ manager ]
 
@@ -12,12 +12,12 @@ on:
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-vue3-manager
+    working-directory: ./taotao-cloud-vue3-manager
 
 jobs:
   assemble:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-manager') }}
+    #if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-manager') }}
     steps:
       - name: checkout project
         uses: actions/checkout@v3
