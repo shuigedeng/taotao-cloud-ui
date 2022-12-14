@@ -53,3 +53,47 @@ unpackage/
 
 # [package-lock.json。 已放开，请添加到假定未更改文件 ]
 # package-lock.json
+/*/target/
+/*/out/
+/out
+/vendor
+
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.factorypath
+.gradle
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.ipr
+.mvn
+mvnw*
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+nbdist/
+.nb-gradle/
+vendor/
+buildSrc/.gradle
+
+.iml
+mvnw
+mvnw.cmd
+logs/
+help.md
+
+/node_modules/
+/dist/
+/build/
+/*/build/
+**/build
+**/.idea
+**/out
+
+**/vendor/
