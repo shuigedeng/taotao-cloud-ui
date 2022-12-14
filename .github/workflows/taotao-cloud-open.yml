@@ -3,16 +3,14 @@ name: assemble open
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-vue3-open/**'
-    branches: [ open ]
-    #branches: [ master ]
+      - 'taotao-cloud-vue3-open/**'
+    branches: [ master ]
   pull_request:
-    branches: [ open ]
-    #branches: [ master ]
+    branches: [ master ]
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-vue3-open
+    working-directory: ./taotao-cloud-vue3-open
 
 env:
   TAOTAO_CLOUD_VERSION: 2022.12

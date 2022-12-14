@@ -3,19 +3,17 @@ name: assemble merchant
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-vue3-merchant/**'
-    branches: [ merchant ]
-    #branches: [ master ]
-    tags: [ v* ]
+      - 'taotao-cloud-vue3-merchant/**'
+    branches: [ master ]
+    #tags: [ v* ]
   pull_request:
-    branches: [ merchant ]
-    #branches: [ master ]
+    branches: [ master ]
 
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-vue3-merchant
+    working-directory: ./taotao-cloud-vue3-merchant
 
 jobs:
   assemble:

@@ -3,19 +3,17 @@ name: assemble taro mall h5
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-taro-mall/**'
-    branches: [ h5 ]
-    #branches: [ master ]
-    tags: [ v* ]
+      - 'taotao-cloud-taro-mall/**'
+    branches: [ master ]
+    #tags: [ v* ]
   pull_request:
-    branches: [ h5 ]
-    #branches: [ master ]
+    branches: [ master ]
 
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-taro-mall
+    working-directory: ./taotao-cloud-taro-mall
 
 jobs:
   assemble:

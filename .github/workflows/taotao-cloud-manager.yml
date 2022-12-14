@@ -3,12 +3,10 @@ name: assemble manager
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-vue3-manager/**'
-    branches: [ manager ]
-    #branches: [ master ]
+      - 'taotao-cloud-vue3-manager/**'
+    branches: [ master ]
   pull_request:
     branches: [ manager ]
-    #branches: [ master ]
 
   workflow_dispatch:
 
