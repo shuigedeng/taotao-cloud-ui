@@ -4,9 +4,9 @@ on:
   push:
     paths:
       - 'taotao-cloud-vue3-manager/**'
-    branches: [ dev ]
+    branches: [ master ]
   pull_request:
-    branches: [ manager ]
+    branches: [ master ]
 
   workflow_dispatch:
 
