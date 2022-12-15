@@ -3,24 +3,22 @@ name: assemble taro mall h5
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-taro-mall/**'
-    branches: [ h5 ]
-    #branches: [ master ]
-    tags: [ v* ]
+      - 'taotao-cloud-taro-mall/**'
+    branches: [ master ]
+    #tags: [ v* ]
   pull_request:
-    branches: [ h5 ]
-    #branches: [ master ]
+    branches: [ master ]
 
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-taro-mall
+    working-directory: taotao-cloud-taro-mall
 
 jobs:
   assemble:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-mall') }}
+    #if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-mall') }}
     steps:
       - name: checkout project
         uses: actions/checkout@v3
@@ -61,7 +59,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO --delete"
-          SOURCE: "/taotao-cloud-ui/taotao-cloud-taro-mall/dist/"
+          SOURCE: "taotao-cloud-taro-mall/dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_MALL_TARGET }}

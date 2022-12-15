@@ -5,13 +5,11 @@ name: assemble rn ios release
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-taro-mall/**'
-    branches: [ taro ]
-    #branches: [ master ]
+      - 'taotao-cloud-taro-mall/**'
+    branches: [ master ]
     tags: [ v* ]
   pull_request:
-    branches: [ taro ]
-    #branches: [ master ]
+    branches: [ master ]
 
   workflow_dispatch:
 

@@ -5,13 +5,11 @@ name: assemble rn ios debug
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-taro-mall/**'
-    branches: [ taro ]
-    #branches: [ master ]
+      - 'taotao-cloud-taro-mall/**'
+    branches: [ master ]
     tags: [ v* ]
   pull_request:
-    branches: [ taro ]
-    #branches: [ master ]
+    branches: [ master ]
 
   workflow_dispatch:
 
@@ -31,7 +29,7 @@ env:
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-taro-mall
+    working-directory: ./taotao-cloud-taro-mall
 
 jobs:
   assemble:
