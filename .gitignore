@@ -49,7 +49,7 @@ dist/
 unpackage/
 
 # [vscode IDE]
-.vscode/
+#.vscode/
 
 # [package-lock.json。 已放开，请添加到假定未更改文件 ]
 # package-lock.json
