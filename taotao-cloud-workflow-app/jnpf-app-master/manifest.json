@@ -1,0 +1,189 @@
+{
+    "name" : "jnpf java版",
+    "appid" : "__UNI__1A48209",
+    "description" : "专注信息化平台、软件开发、app开发",
+    "versionName" : "3.3.5",
+    "versionCode" : 139,
+    "transformPx" : false,
+    "app-plus" : {
+        /* 5+App特有相关 */
+        "usingComponents" : true,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : false,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "modules" : {
+            "Push" : {},
+            "Maps" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "schemes" : "jnpf",
+                "minSdkVersion" : 22,
+                "targetSdkVersion" : 26,
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ]
+            },
+            "ios" : {
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "以便于修改头像等功能图片上传",
+                    "NSPhotoLibraryAddUsageDescription" : "以便于修改头像等功能图片上传",
+                    "NSCameraUsageDescription" : "以便于修改头像等功能图片上传",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "以便于定位当前位置等功能",
+                    "NSLocationAlwaysUsageDescription" : "以便于定位当前位置等功能",
+                    "NSLocationWhenInUseUsageDescription" : "以便于定位当前位置等功能",
+                    "NSMicrophoneUsageDescription" : "以便于使用语音、录制音频等功能",
+                    "NSCalendarsUsageDescription" : "以便于更好的办公",
+                    "NSContactsUsageDescription" : "以便于更好的沟通",
+                    "NSSpeechRecognitionUsageDescription" : "",
+                    "NSAppleMusicUsageDescription" : "以便于修改头像等功能媒体资料上传",
+                    "NSFaceIDUsageDescription" : "以便于使用快捷登录等功能"
+                },
+                "idfa" : false,
+                "urltypes" : "jnpf"
+            },
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "push" : {
+                    "unipush" : {}
+                },
+                "payment" : {},
+                "maps" : {
+                    "baidu" : {
+                        "appkey_ios" : "CA6mx9NZ9DhTYxjVKB7Bkgr6KxpzMfO4",
+                        "appkey_android" : "1vlnkDFaZz4GxAHMMk6kwGRcZr1OfBau"
+                    }
+                },
+                "ad" : {},
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wx8f5cb90d8ff960a3",
+                        "appsecret" : "",
+                        "UniversalLinks" : ""
+                    }
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/startup/startup.png",
+                    "xhdpi" : "unpackage/res/startup/startup.png",
+                    "xxhdpi" : "unpackage/res/startup/startup.png"
+                },
+                "ios" : {
+                    "iphone" : {
+                        "portrait-896h@3x" : "unpackage/res/startup/startup.png",
+                        "landscape-896h@3x" : "",
+                        "portrait-896h@2x" : "unpackage/res/startup/startup.png",
+                        "landscape-896h@2x" : "",
+                        "retina35" : "unpackage/res/startup/startup.png",
+                        "retina40l" : "",
+                        "retina40" : "unpackage/res/startup/startup.png",
+                        "retina47l" : "",
+                        "retina47" : "unpackage/res/startup/startup.png",
+                        "iphonex" : "unpackage/res/startup/startup.png",
+                        "iphonexl" : "",
+                        "retina55l" : "",
+                        "retina55" : "unpackage/res/startup/startup.png"
+                    }
+                },
+                "androidStyle" : "default"
+            }
+        },
+        "nativePlugins" : {}
+    },
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        /* 小程序特有相关 */
+        "appid" : "wx8f5cb90d8ff960a3",
+        "setting" : {
+            "urlCheck" : true,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "你的位置信息将用于小程序位置接口的效果展示"
+            }
+        },
+        // "uniStatistics" : {
+        // 	"enable" : false
+        // },
+        "optimization" : {
+            "subPackages" : true
+        }
+    },
+    "h5" : {
+        "sdkConfigs" : {
+            "maps" : {}
+        },
+        "title" : "jnpf java版",
+        "template" : "template.h5.html",
+        "domain" : "https://app.java.jnpfsoft.com",
+        "router" : {
+            "mode" : "history"
+        }
+    }
+}
