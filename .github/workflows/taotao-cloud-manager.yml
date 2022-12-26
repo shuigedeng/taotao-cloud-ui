@@ -3,23 +3,21 @@ name: assemble manager
 on:
   push:
     paths:
-      - 'taotao-cloud-ui/taotao-cloud-vue3-manager/**'
-    branches: [ manager ]
-    #branches: [ master ]
+      - 'taotao-cloud-vue3-manager/**'
+    branches: [ master ]
   pull_request:
-    branches: [ manager ]
-    #branches: [ master ]
+    branches: [ master ]
 
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: ./taotao-cloud-ui/taotao-cloud-vue3-manager
+    working-directory: taotao-cloud-vue3-manager
 
 jobs:
   assemble:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-manager') }}
+    #if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-manager') }}
     steps:
       - name: checkout project
         uses: actions/checkout@v3
@@ -60,7 +58,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO --delete"
-          SOURCE: "/taotao-cloud-ui/taotao-cloud-vue3-manager/dist/"
+          SOURCE: "taotao-cloud-vue3-manager/dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_MANAGER_TARGET }}

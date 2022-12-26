@@ -1,0 +1,134 @@
+# Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+stages:
+  - name: Build
+    steps:
+      - runScriptConfig:
+          image: 192.168.99.240:8443/taotao-cloud/taotao-cloud-maven:latest
+          shellScript: echo `mvn -version` && mvn package deploy -Dmaven.test.skip=true
+        cpuRequest: 100m
+        cpuLimit: "1"
+        memoryRequest: 100Mi
+        memoryLimit: 1Gi
+        when:
+          branch:
+            include:
+              - master
+              - dev
+          event:
+            include:
+              - push
+              - pull_request
+              - tag
+      - runScriptConfig:
+          image: busybox
+          shellScript: date -R && echo ${SUCCESS_KEY}
+          env:
+            SUCCESS_KEY: success
+          envFrom:
+            - sourceName: my-secret
+              sourceKey: secret-key
+              targetKey: ALIAS_ENV
+    when:
+      branch:
+        include:
+          - master
+          - dev
+      event:
+        include:
+          - push
+          - pull_request
+          - tag
+  - name: PushImage
+    steps:
+      - publishImageConfig:
+          dockerfilePath: ./taotao-cloud-gateway/Dockerfile
+          buildContext: ./taotao-cloud-gateway
+          tag: taotao-cloud/taotao-cloud-gateway:${CICD_EXECUTION_SEQUENCE}
+          pushRemote: true
+          registry: registry.cn-hangzhou.aliyuncs.com
+        env:
+          PLUGIN_DEBUG: "true"
+          PLUGIN_INSECURE: "true"
+      - publishImageConfig:
+          dockerfilePath: ./taotao-cloud-auth/Dockerfile
+          buildContext: ./taotao-cloud-auth
+          tag: taotao-cloud/taotao-cloud-auth:${CICD_EXECUTION_SEQUENCE}
+          pushRemote: true
+          registry: 192.168.99.240:8443
+        env:
+          PLUGIN_DEBUG: "true"
+          PLUGIN_INSECURE: "true"
+      - publishImageConfig:
+          dockerfilePath: ./taotao-cloud-sys/Dockerfile
+          buildContext: ./taotao-cloud-sys
+          tag: taotao-cloud/taotao-cloud-sys:${CICD_EXECUTION_SEQUENCE}
+          pushRemote: true
+          registry: 192.168.99.240:8443
+        env:
+          PLUGIN_DEBUG: "true"
+          PLUGIN_INSECURE: "true"
+      - publishImageConfig:
+          dockerfilePath: ./taotao-cloud-order/Dockerfile
+          buildContext: ./taotao-cloud-order
+          tag: taotao-cloud/taotao-cloud-order:${CICD_EXECUTION_SEQUENCE}
+          pushRemote: true
+          registry: 192.168.99.240:8443
+        env:
+          PLUGIN_DEBUG: "true"
+          PLUGIN_INSECURE: "true"
+    when:
+      branch:
+        include:
+          - master
+          - dev
+      event:
+        include:
+          - push
+          - pull_request
+          - tag
+  - name: Deploy
+    steps:
+      - applyYamlConfig:
+          path: ./taotao-cloud-gateway/deployment.yaml
+      - applyYamlConfig:
+          path: ./taotao-cloud-auth/deployment.yaml
+      - applyYamlConfig:
+          path: ./taotao-cloud-sys/deployment.yaml
+    when:
+      branch:
+        include:
+          - master
+          - dev
+      event:
+        include:
+          - push
+          - pull_request
+          - tag
+
+timeout: 60
+
+branch:
+  include:
+    - master
+    - dev
+  exclude:
+    - feature/*
+
+notification:
+  recipients:
+    - recipient: 981376577@qq.com
+      notifier: c-tqch6:n-4c28z
+  message: my-message
