@@ -1,6 +1,6 @@
 <template>
-  <div class="JNPF-preview-main">
-    <div class="JNPF-common-page-header">
+  <div class="WORKFLOW-preview-main">
+    <div class="WORKFLOW-common-page-header">
       <el-page-header @back="goBack" content="接口预览" />
       <div class="options">
         <el-button @click="goBack">{{$t('common.cancelButton')}}</el-button>
@@ -46,7 +46,7 @@ export default {
       this.$nextTick(() => {
         this.url = `${this.define.comUrl}/api/system/DataInterface/${id}/Actions/Response` + (tenantId ? '?tenantId=' + tenantId : '')
         previewDataInterface(this.id).then(res => {
-          let data = this.jnpf.interfaceDataHandler(res.data)
+          let data = this.workflow.interfaceDataHandler(res.data)
           this.responseData = JSON.stringify(data, null, 4)
           this.formLoading = false
         }).catch(() => {

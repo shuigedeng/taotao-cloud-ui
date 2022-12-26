@@ -35,9 +35,9 @@
       </el-select>
     </el-form-item>
     <el-form-item label="远端数据">
-      <JNPF-TreeSelect :options="dataInterfaceSelector" v-model="activeData.interfaceId"
+      <WORKFLOW-TreeSelect :options="dataInterfaceSelector" v-model="activeData.interfaceId"
         placeholder="请选择远端数据" lastLevel lastLevelKey='categoryId' lastLevelValue='1' clearable>
-      </JNPF-TreeSelect>
+      </WORKFLOW-TreeSelect>
     </el-form-item>
     <el-form-item label="存储字段">
       <el-input v-model="activeData.propsValue" placeholder="请输入存储字段" />

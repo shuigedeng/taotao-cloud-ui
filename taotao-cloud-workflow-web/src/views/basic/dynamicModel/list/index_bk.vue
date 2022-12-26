@@ -1,23 +1,23 @@
 
 <template>
-    <div class="JNPF-common-layout">
-      <div class="JNPF-common-layout-left" v-if="columnData.type === 2">
-        <div class="JNPF-common-title" v-if="columnData.treeTitle">
+    <div class="WORKFLOW-common-layout">
+      <div class="WORKFLOW-common-layout-left" v-if="columnData.type === 2">
+        <div class="WORKFLOW-common-title" v-if="columnData.treeTitle">
           <h2>{{columnData.treeTitle}}</h2>
         </div>
         <el-tree :data="treeData" :props="treeProps" default-expand-all highlight-current
           ref="treeBox" :expand-on-click-node="false" @node-click="handleNodeClick"
-          class="JNPF-common-el-tree" :node-key="treeProps.value">
+          class="WORKFLOW-common-el-tree" :node-key="treeProps.value">
           <span class="custom-tree-node" slot-scope="{ node, data }">
             <i :class="data.icon"></i>
             <span class="text">{{node.label}}</span>
           </span>
         </el-tree>
       </div>
-      <div class="JNPF-common-layout-center">
+      <div class="WORKFLOW-common-layout-center">
         <Search ref="Search" :list="columnData.searchList" @reset="reset" @search="search" />
-        <div class="JNPF-common-layout-main JNPF-flex-main">
-          <div class="JNPF-common-head">
+        <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+          <div class="WORKFLOW-common-head">
             <div v-if="isPreview || !columnData.useBtnPermission">
               <el-button :type="i==0?'primary':'text'" :icon="item.icon"
                 @click="headBtnsHandel(item.value)" v-for="(item, i) in columnData.btnsList" :key="i">
@@ -28,14 +28,14 @@
                 @click="headBtnsHandel(item.value)" v-for="(item, i) in columnData.btnsList" :key="i">
                 {{item.label}}</el-button>
             </div>
-            <div class="JNPF-common-head-right">
+            <div class="WORKFLOW-common-head-right">
               <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-                <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+                <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                   @click="initData()" />
               </el-tooltip>
             </div>
           </div>
-          <JNPF-table v-loading="listLoading" :data="list" row-key="id" default-expand-all
+          <WORKFLOW-table v-loading="listLoading" :data="list" row-key="id" default-expand-all
             :tree-props="{children: 'children', hasChildren: ''}" @sort-change='sortChange'
             :has-c="hasBatchBtn" @selection-change="handleSelectionChange" v-if="refreshTable">
             <el-table-column :prop="item.prop" :label="item.label" :align="item.align"
@@ -63,7 +63,7 @@
                         {{item.label}}</el-button>
                     </template>
                     <template v-else-if="item.value=='remove'">
-                      <el-button size="mini" type="text" :key="i" class="JNPF-table-delBtn"
+                      <el-button size="mini" type="text" :key="i" class="WORKFLOW-table-delBtn"
                         :disabled="config.webType == 3 && [1,2,3,5].indexOf(scope.row.flowState)>-1"
                         @click="columnBtnsHandel(item.value,scope.row)">
                         {{item.label}}</el-button>
@@ -104,7 +104,7 @@
                         {{item.label}}</el-button>
                     </template>
                     <template v-else-if="item.value=='remove'">
-                      <el-button size="mini" type="text" :key="i" class="JNPF-table-delBtn"
+                      <el-button size="mini" type="text" :key="i" class="WORKFLOW-table-delBtn"
                         :disabled="config.webType == 3 && [1,2,3,5].indexOf(scope.row.flowState)>-1"
                         @click="columnBtnsHandel(item.value,scope.row)" v-has="'btn_'+item.value">
                         {{item.label}}</el-button>
@@ -138,7 +138,7 @@
                 </template>
               </template>
             </el-table-column>
-          </JNPF-table>
+          </WORKFLOW-table>
           <template v-if="columnData.type !== 3 && columnData.hasPage">
             <pagination :total="total" :page.sync="listQuery.currentPage"
               :limit.sync="listQuery.pageSize" @pagination="initData" />
@@ -151,7 +151,7 @@
       <ExportBox v-if="exportBoxVisible" ref="ExportBox" @download="download" />
     </div>
   </template>
-  
+
   <script>
   import { getModelList, deleteModel, batchDelete, exportModel } from '@/api/onlineDev/visualDev'
   import { getDictionaryDataSelector } from '@/api/systemData/dictionary'
@@ -290,7 +290,7 @@
         if (this.columnData.treeDataSource === "api") {
           if (!this.columnData.treePropsUrl) return
           getDataInterfaceRes(this.columnData.treePropsUrl).then(res => {
-            let data = this.jnpf.interfaceDataHandler(res.data)
+            let data = this.workflow.interfaceDataHandler(res.data)
             if (Array.isArray(data)) {
               this.treeData = data
             } else {
@@ -435,7 +435,7 @@
         let query = { ...this.listQuery, ...data }
         exportModel(this.modelId, query).then(res => {
           if (!res.data.url) return
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
           this.$refs.ExportBox.visible = false
           this.exportBoxVisible = false
         })
@@ -514,7 +514,7 @@
           toast: this.$message,
           refresh: this.initData
         }
-        const func = this.jnpf.getScriptFunc.call(this, item.func)
+        const func = this.workflow.getScriptFunc.call(this, item.func)
         if (!func) return
         func.call(this, parameter)
       },

@@ -1,7 +1,7 @@
 // 开发环境接口配置
 // JAVA Boot版本对应后端接口地址
 // JAVA Cloud对应网关地址
-const APIURl = 'https://silian-es.cqlyy.com'
+const APIURl = 'https://shuigedeng-es.cqlyy.com'
 
 module.exports = {
   APIURl: APIURl,

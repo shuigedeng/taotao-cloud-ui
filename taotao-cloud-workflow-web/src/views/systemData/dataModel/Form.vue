@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="!dataForm.table ? '新建表名' : '编辑表名'" />
         <div class="options">
           <el-button type="primary" @click="dataFormSubmit()" :loading="btnLoading">
@@ -19,7 +19,7 @@
             <el-input v-model="dataForm.tableName" placeholder="表说明"></el-input>
           </el-form-item>
         </el-form>
-        <div class="JNPF-common-title" style="padding:0 10px;">
+        <div class="WORKFLOW-common-title" style="padding:0 10px;">
           <h2>字段设置</h2>
           <div class="options">
             <el-dropdown :disabled="!fieldList.length">
@@ -79,7 +79,7 @@
           </el-table-column>
           <el-table-column label="操作" width="50">
             <template slot-scope="scope">
-              <el-button class="JNPF-table-delBtn" size="mini" type="text"
+              <el-button class="WORKFLOW-table-delBtn" size="mini" type="text"
                 @click="handleDel(scope.$index,scope.row)">删除</el-button>
             </template>
           </el-table-column>

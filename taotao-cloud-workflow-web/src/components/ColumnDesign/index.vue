@@ -3,7 +3,7 @@
     <div class="main-board">
       <div class="search-box">
         <h4 class="cap">查询条件</h4>
-        <el-table :data="columnData.searchList" class="JNPF-common-table" ref="dragTableSearch"
+        <el-table :data="columnData.searchList" class="WORKFLOW-common-table" ref="dragTableSearch"
           :row-key="row=>row.__vModel__">
           <el-table-column align="center" label="拖动" width="50">
             <template>
@@ -23,7 +23,7 @@
       <el-divider></el-divider>
       <div class="column-box">
         <h4 class="cap">列表字段</h4>
-        <el-table :data="columnData.columnList" class="JNPF-common-table" ref="dragTable"
+        <el-table :data="columnData.columnList" class="WORKFLOW-common-table" ref="dragTable"
           :row-key="row=>row.prop">
           <el-table-column align="center" label="拖动" width="50">
             <template>
@@ -63,14 +63,14 @@
       </el-tabs>
       <div class="field-box">
         <div class="searchList" v-show="currentTab==='search'">
-          <el-table :data="searchOptions" class="JNPF-common-table" height="100%"
+          <el-table :data="searchOptions" class="WORKFLOW-common-table" height="100%"
             @selection-change="searchSelectionChange" ref="searchTable">
             <el-table-column prop="__config__.label" label="查询条件" />
             <el-table-column type="selection" width="55" align="center" />
           </el-table>
         </div>
         <div class="columnList" v-show="currentTab==='field'">
-          <el-table :data="columnOptions" class="JNPF-common-table" height="100%"
+          <el-table :data="columnOptions" class="WORKFLOW-common-table" height="100%"
             @selection-change="columnSelectionChange" ref="columnTable">
             <el-table-column prop="label" label="列表字段" />
             <el-table-column type="selection" width="55" align="center" />
@@ -119,7 +119,7 @@
                 </template>
                 <template v-if="columnData.treeDataSource==='api'">
                   <el-form-item label="数据接口">
-                    <JNPF-TreeSelect :options="dataInterfaceSelector"
+                    <WORKFLOW-TreeSelect :options="dataInterfaceSelector"
                       v-model="columnData.treePropsUrl" placeholder="请选择数据接口" lastLevel
                       lastLevelKey='categoryId' lastLevelValue='1' clearable />
                   </el-form-item>
@@ -245,12 +245,12 @@ import { noColumnShowList, noSearchList, useInputList, useDateList } from '@/com
 import { getDataInterfaceSelector } from '@/api/systemData/dataInterface'
 
 const getSearchType = item => {
-  const jnpfKey = item.__config__.jnpfKey
+  const workflowKey = item.__config__.workflowKey
   // 等于-1  模糊-2  范围-3
   const fuzzyList = [...useInputList]
   const RangeList = [...useDateList, 'time', 'date', 'numInput', 'calculate']
-  if (RangeList.includes(jnpfKey)) return 3
-  if (fuzzyList.includes(jnpfKey)) return 2
+  if (RangeList.includes(workflowKey)) return 3
+  if (fuzzyList.includes(workflowKey)) return 2
   return 1
 }
 
@@ -388,11 +388,11 @@ export default {
     let list = []
     const loop = (data, parent) => {
       if (!data) return
-      if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+      if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
         loop(data.__config__.children, data)
       }
       if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-      if (data.__config__ && data.__config__.jnpfKey) {
+      if (data.__config__ && data.__config__.workflowKey) {
         if (data.__config__.layout === "colFormItem" && data.__vModel__) {
           list.push(data)
         }
@@ -400,13 +400,13 @@ export default {
     }
     loop(getDrawingList())
     this.list = list
-    let columnOptions = list.filter(o => noColumnShowList.indexOf(o.__config__.jnpfKey) < 0)
-    let searchOptions = list.filter(o => noSearchList.indexOf(o.__config__.jnpfKey) < 0)
+    let columnOptions = list.filter(o => noColumnShowList.indexOf(o.__config__.workflowKey) < 0)
+    let searchOptions = list.filter(o => noSearchList.indexOf(o.__config__.workflowKey) < 0)
     this.columnOptions = columnOptions.map(o => ({
       label: o.__config__.label,
       prop: o.__vModel__,
       align: 'left',
-      jnpfKey: o.__config__.jnpfKey,
+      workflowKey: o.__config__.workflowKey,
       sortable: false,
       width: null
     }));
@@ -524,7 +524,7 @@ export default {
       this.columnData.treePropsLabel = 'fullName'
     },
     addCustomBtn() {
-      const id = this.jnpf.idGenerator()
+      const id = this.workflow.idGenerator()
       this.columnData.customBtnsList.push({
         value: 'btn_' + id,
         label: '按钮' + id,

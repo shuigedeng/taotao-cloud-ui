@@ -34,7 +34,7 @@ export default {
         duration: 2000,
         position: 'bottom-right',
         message: `<div style='padding: 10px 0 0 ;'>
-        <p>时间： ${this.jnpf.toDate(this.userInfo.prevLoginTime)} </p>
+        <p>时间： ${this.workflow.toDate(this.userInfo.prevLoginTime)} </p>
         <p>地点： ${this.userInfo.prevLoginIPAddressName || ''} </p>
         <p>IP： ${this.userInfo.prevLoginIPAddress || ''}  </p></div>
         `

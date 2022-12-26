@@ -64,7 +64,7 @@ export default {
   methods: {
     download(id) {
       getDownloadUrl('mail', id).then(res => {
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
       })
     }
   }

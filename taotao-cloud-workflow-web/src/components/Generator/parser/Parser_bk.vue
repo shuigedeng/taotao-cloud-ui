@@ -13,7 +13,7 @@ const layouts = {
 
     let labelWidth = config.labelWidth ? `${config.labelWidth}px` : null
     if (config.showLabel === false) labelWidth = '0'
-    const Item = config.jnpfKey === 'cascader'
+    const Item = config.workflowKey === 'cascader'
       ? <el-cascader v-model={this[this.formConf.formModel][scheme.__vModel__]} placeholder={scheme.placeholder} options={scheme.options}
         props={scheme.props} disabled={scheme.disabled} show-all-levels={scheme['show-all-levels']} separator={scheme.separator}
         style={scheme.style} clearable={scheme.clearable} filterable={scheme.filterable}
@@ -34,7 +34,7 @@ const layouts = {
   },
   rowFormItem(h, scheme) {
     const listeners = buildListeners.call(this, scheme)
-    if (scheme.__config__.jnpfKey === 'tab') {
+    if (scheme.__config__.workflowKey === 'tab') {
       return (
         <el-col span={scheme.__config__.span} class="mb-10">
           <el-tabs type={scheme.type} tab-position={scheme['tab-position']} vModel={scheme.__config__.active} {...{ on: listeners }}>
@@ -54,7 +54,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (scheme.__config__.jnpfKey === 'collapse') {
+    if (scheme.__config__.workflowKey === 'collapse') {
       return (
         <el-col span={scheme.__config__.span} class="mb-20">
           <el-collapse vModel={scheme.__config__.active} accordion={scheme.accordion} {...{ on: listeners }}>
@@ -75,12 +75,12 @@ const layouts = {
       )
     }
     let child = renderChildren.apply(this, arguments)
-    if (scheme.__config__.jnpfKey === 'table') {
+    if (scheme.__config__.workflowKey === 'table') {
       if (!scheme.__config__.noShow) this.tableRefs[scheme.__vModel__] = scheme
       const param = { ...scheme, config: scheme }
       return layouts.colFormItem.call(this, h, param)
     }
-    if (scheme.__config__.jnpfKey === 'card') {
+    if (scheme.__config__.workflowKey === 'card') {
       return (
         <el-col span={scheme.__config__.span} class="item-card">
           <el-card shadow={scheme.shadow} header={scheme.header} class="mb-20">
@@ -89,7 +89,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (scheme.__config__.jnpfKey === 'row') {
+    if (scheme.__config__.workflowKey === 'row') {
       if (scheme.type === 'flex') {
         child = <el-row type={scheme.type} justify={scheme.justify} align={scheme.align}>
           {child}
@@ -168,14 +168,14 @@ function buildListeners(scheme) {
     // 响应 组件事件
     Object.keys(scheme.on).forEach(key => {
       const str = scheme.on[key];
-      const func = this.jnpf.getScriptFunc.call(this, str);
+      const func = this.workflow.getScriptFunc.call(this, str);
       if (!func) return
       listeners[key] = params => {
         if (key === 'change') {
           let data = ''
-          if (['select', 'radio', 'checkbox'].includes(config.jnpfKey)) {
+          if (['select', 'radio', 'checkbox'].includes(config.workflowKey)) {
             const options = scheme.__slot__.options
-            if (scheme.multiple || config.jnpfKey === 'checkbox') {
+            if (scheme.multiple || config.workflowKey === 'checkbox') {
               let _data = []
               outer: for (let i = 0; i < params[0].length; i++) {
                 inner: for (let j = 0; j < options.length; j++) {
@@ -196,7 +196,7 @@ function buildListeners(scheme) {
               }
               data = _data
             }
-          } else if (config.jnpfKey === 'numInput') {
+          } else if (config.workflowKey === 'numInput') {
             data = params[0]
           } else {
             data = params.length > 1 ? params[1] : params[0]
@@ -265,15 +265,15 @@ export default {
       componentList.forEach(cur => {
         const config = cur.__config__
         if (cur.__vModel__) formData[cur.__vModel__] = config.defaultValue
-        if (cur.__config__.jnpfKey == 'table') return
+        if (cur.__config__.workflowKey == 'table') return
         if (config.children) this.initFormData(config.children, formData)
       })
     },
     buildOptions(componentList, data) {
       componentList.forEach(cur => {
         const config = cur.__config__
-        if (dyOptionsList.indexOf(config.jnpfKey) > -1) {
-          let isTreeSelect = config.jnpfKey === 'treeSelect' || config.jnpfKey === 'cascader'
+        if (dyOptionsList.indexOf(config.workflowKey) > -1) {
+          let isTreeSelect = config.workflowKey === 'treeSelect' || config.workflowKey === 'cascader'
           if (config.dataType === 'dictionary') {
             if (!config.dictionaryType) return
             getDictionaryDataSelector(config.dictionaryType).then(res => {
@@ -283,7 +283,7 @@ export default {
           } else if (config.dataType === 'dynamic') {
             if (!config.propsUrl) return
             getDataInterfaceRes(config.propsUrl).then(res => {
-              let realData = this.jnpf.interfaceDataHandler(res.data)
+              let realData = this.workflow.interfaceDataHandler(res.data)
               if (Array.isArray(realData)) {
                 isTreeSelect ? cur.options = realData : cur.__slot__.options = realData
               } else {
@@ -295,22 +295,22 @@ export default {
             isTreeSelect ? data[cur.__vModel__ + 'Options'] = cur.options : data[cur.__vModel__ + 'Options'] = cur.__slot__.options
           }
         }
-        if (config.jnpfKey === 'comSelect') {
+        if (config.workflowKey === 'comSelect') {
           this.$store.dispatch('generator/getCompanyTree').then(res => {
             data[cur.__vModel__ + 'Options'] = res
           })
         }
-        if (config.jnpfKey === 'depSelect') {
+        if (config.workflowKey === 'depSelect') {
           this.$store.dispatch('generator/getDepTree').then(res => {
             data[cur.__vModel__ + 'Options'] = res
           })
         }
-        if (config.jnpfKey === 'posSelect') {
+        if (config.workflowKey === 'posSelect') {
           this.$store.dispatch('base/getPositionTree').then(res => {
             data[cur.__vModel__ + 'Options'] = res
           })
         }
-        if (config.children && config.jnpfKey !== 'table') this.buildOptions(config.children, data)
+        if (config.children && config.workflowKey !== 'table') this.buildOptions(config.children, data)
       })
     },
     buildRules(componentList, rules) {
@@ -331,12 +331,12 @@ export default {
           item.trigger = config.trigger || 'blur'
           return item
         })
-        if (config.children && config.jnpfKey !== 'table') this.buildRules(config.children, rules)
+        if (config.children && config.workflowKey !== 'table') this.buildRules(config.children, rules)
       })
     },
     onLoad(formConfCopy) {
       if (!formConfCopy || !formConfCopy.funcs || !formConfCopy.funcs.onLoad) return
-      const onLoadFunc = this.jnpf.getScriptFunc.call(this, formConfCopy.funcs.onLoad)
+      const onLoadFunc = this.workflow.getScriptFunc.call(this, formConfCopy.funcs.onLoad)
       if (!onLoadFunc) return
       onLoadFunc(this.parameter)
     },
@@ -434,8 +434,8 @@ export default {
                 this.$set(item, field, value)
                 break;
               case 'options':
-                if (dyOptionsList.indexOf(item.__config__.jnpfKey) > -1) {
-                  let isTreeSelect = item.__config__.jnpfKey === 'treeSelect' || item.__config__.jnpfKey === 'cascader'
+                if (dyOptionsList.indexOf(item.__config__.workflowKey) > -1) {
+                  let isTreeSelect = item.__config__.workflowKey === 'treeSelect' || item.__config__.workflowKey === 'cascader'
                   isTreeSelect ? item.options = value : item.__slot__.options = value
                 }
                 break;
@@ -446,7 +446,7 @@ export default {
             item.__config__.renderKey = +new Date() + item.__vModel__
             break;
           }
-          if (item.__config__ && item.__config__.jnpfKey !== 'table' && item.__config__.children && Array.isArray(item.__config__.children)) {
+          if (item.__config__ && item.__config__.workflowKey !== 'table' && item.__config__.children && Array.isArray(item.__config__.children)) {
             loop(item.__config__.children)
           }
         }
@@ -456,14 +456,14 @@ export default {
     beforeSubmit() {
       let valid = true
       if (!this.formConfCopy || !this.formConfCopy.funcs || !this.formConfCopy.funcs.beforeSubmit) return valid
-      const func = this.jnpf.getScriptFunc.call(this, this.formConfCopy.funcs.beforeSubmit)
+      const func = this.workflow.getScriptFunc.call(this, this.formConfCopy.funcs.beforeSubmit)
       if (!func) return valid
       valid = func(this.parameter)
       return valid
     },
     afterSubmit() {
       if (!this.formConfCopy || !this.formConfCopy.funcs || !this.formConfCopy.funcs.afterSubmit) return
-      const func = this.jnpf.getScriptFunc.call(this, this.formConfCopy.funcs.afterSubmit)
+      const func = this.workflow.getScriptFunc.call(this, this.formConfCopy.funcs.afterSubmit)
       if (!func) return
       func(this.parameter)
     },
@@ -481,13 +481,13 @@ export default {
     },
     onCascaderChange(data, on) {
       if (!on || !on.change) return
-      const func = this.jnpf.getScriptFunc.call(this, on.change)
+      const func = this.workflow.getScriptFunc.call(this, on.change)
       if (!func) return
       func.call(this, { data, ...this.parameter })
     },
     onCascaderBlur(data, on) {
       if (!on || !on.blur) return
-      const func = this.jnpf.getScriptFunc.call(this, on.blur)
+      const func = this.workflow.getScriptFunc.call(this, on.blur)
       if (!func) return
       func.call(this, { data, ...this.parameter })
     }

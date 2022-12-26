@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main user-form">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main user-form">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="!dataForm.id ? $t(`user.addUser`) : $t(`user.editUser`)" />
         <div class="options">
           <el-button type="primary" :loading="btnLoading" @click="handleConfirm()">
@@ -11,7 +11,7 @@
       </div>
       <div class="main" v-loading="formLoading">
         <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="80px">
-          <div class="JNPF-common-title mb-20">
+          <div class="WORKFLOW-common-title mb-20">
             <h2 class="bold">基础信息</h2>
           </div>
           <el-row :gutter="20" class="custom-row">
@@ -95,7 +95,7 @@
               </el-form-item>
             </el-col>
           </el-row>
-          <div class="JNPF-common-title mb-20">
+          <div class="WORKFLOW-common-title mb-20">
             <h2 class="bold">扩展信息</h2>
           </div>
           <el-row :gutter="20" class="custom-row">
@@ -425,8 +425,8 @@ export default {
   }
 }
 
-.JNPF-common-layout {
-  .JNPF-common-layout-left {
+.WORKFLOW-common-layout {
+  .WORKFLOW-common-layout-left {
     width: 350px;
   }
 }

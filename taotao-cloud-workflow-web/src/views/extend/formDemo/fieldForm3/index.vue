@@ -75,7 +75,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .CommonForm-container {
-  .JNPF-common-head {
+  .WORKFLOW-common-head {
     height: 50px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;

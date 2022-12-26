@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,27 +19,27 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()">
             <upload-btn url="/api/system/BillRule/Action/Import" @on-success="initData" />
           </topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="tableList">
+        <WORKFLOW-table v-loading="listLoading" :data="tableList">
           <el-table-column prop="fullName" label="业务名称" min-width="200" />
           <el-table-column prop="enCode" label="业务编码" width="200" />
           <el-table-column prop="startNumber" label="流水起始" width="120" />
           <el-table-column prop="outputNumber" label="当前流水号" width="300" />
           <el-table-column prop="creatorUser" label="创建人" width="120" />
-          <el-table-column prop="creatorTime" label="创建时间" :formatter="jnpf.tableDateFormat"
+          <el-table-column prop="creatorTime" label="创建时间" :formatter="workflow.tableDateFormat"
             width="120" />
-          <el-table-column prop="lastModifyTime" label="最后修改时间" :formatter="jnpf.tableDateFormat"
+          <el-table-column prop="lastModifyTime" label="最后修改时间" :formatter="workflow.tableDateFormat"
             width="120" />
           <el-table-column prop="sortCode" label="排序" width="70" align="center" />
           <el-table-column prop="enabledMark" label="状态" width="70" align="center">
@@ -66,7 +66,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>
@@ -163,7 +163,7 @@ export default {
         type: 'warning'
       }).then(() => {
         exportTpl(id).then(res => {
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
         })
       }).catch(() => { });
     },

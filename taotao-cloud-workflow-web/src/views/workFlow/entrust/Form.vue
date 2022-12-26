@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建委托' : '编辑委托'" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px"
       v-loading="loading">
       <el-form-item label="被委托人" prop="toUserId">

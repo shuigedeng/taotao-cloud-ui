@@ -1,15 +1,15 @@
 <template>
   <el-dialog title="查看公告" :close-on-press-escape="false" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center JNPF-dialog-notice" lock-scroll
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center WORKFLOW-dialog-notice" lock-scroll
     width="80%">
     <div class="notice-wrapper" v-loading="loading">
       <h1 class="title">{{dataForm.title}}</h1>
       <div class="info">
-        <span>{{jnpf.dateFormat(dataForm.lastModifyTime)}}</span><span>{{dataForm.creatorUser}}</span>
+        <span>{{workflow.dateFormat(dataForm.lastModifyTime)}}</span><span>{{dataForm.creatorUser}}</span>
       </div>
       <div class="main" v-html="dataForm.bodyText"></div>
       <div class="file-list" v-if="files.length">
-        <JNPF-UploadFz v-model="files" disabled detailed />
+        <WORKFLOW-UploadFz v-model="files" disabled detailed />
       </div>
     </div>
     <span slot="footer" class="dialog-footer">

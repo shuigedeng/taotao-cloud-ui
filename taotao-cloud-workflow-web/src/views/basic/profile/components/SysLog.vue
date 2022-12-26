@@ -1,6 +1,6 @@
 <template>
-  <div class="sysLog JNPF-flex-main">
-    <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="sysLog WORKFLOW-flex-main">
+    <el-row class="WORKFLOW-common-search-box" :gutter="16">
       <el-form @submit.native.prevent>
         <el-col :span="6">
           <el-form-item label="关键词">
@@ -26,19 +26,19 @@
         </el-col>
       </el-form>
     </el-row>
-    <el-tabs v-model="activeName" @tab-click="handleTabClick" class="JNPF-el_tabs">
+    <el-tabs v-model="activeName" @tab-click="handleTabClick" class="WORKFLOW-el_tabs">
       <el-tab-pane label="登录日志" name="1">
-        <JNPF-table v-loading="listLoading" :data="loginLogData" tooltip-effect="dark">
-          <el-table-column prop="creatorTime" label="登录时间" :formatter="jnpf.tableDateFormat"
+        <WORKFLOW-table v-loading="listLoading" :data="loginLogData" tooltip-effect="dark">
+          <el-table-column prop="creatorTime" label="登录时间" :formatter="workflow.tableDateFormat"
             width="120" />
           <el-table-column prop="userName" label="登录用户" width="120" />
           <el-table-column prop="ipaddress" label="登录IP" width="120" />
           <el-table-column prop="platForm" label="登录设备" show-overflow-tooltip />
-        </JNPF-table>
+        </WORKFLOW-table>
       </el-tab-pane>
       <el-tab-pane label="请求日志" name="5">
-        <JNPF-table v-loading="listLoading" :data="requestLogData" tooltip-effect="dark">
-          <el-table-column prop="creatorTime" label="请求时间" :formatter="jnpf.tableDateFormat"
+        <WORKFLOW-table v-loading="listLoading" :data="requestLogData" tooltip-effect="dark">
+          <el-table-column prop="creatorTime" label="请求时间" :formatter="workflow.tableDateFormat"
             width="120" />
           <el-table-column prop="userName" label="请求用户" width="120" />
           <el-table-column prop="ipaddress" label="请求IP" width="120" />
@@ -46,7 +46,7 @@
           <el-table-column prop="requestURL" label="请求地址" min-width="200" show-overflow-tooltip />
           <el-table-column prop="requestMethod" label="请求类型" width="80" align="center" />
           <el-table-column prop="requestDuration" label="耗时(毫秒)" width="80" />
-        </JNPF-table>
+        </WORKFLOW-table>
       </el-tab-pane>
       <pagination :total="total" :page.sync="listQuery.currentPage" :limit.sync="listQuery.pageSize"
         @pagination="initData" />
@@ -166,7 +166,7 @@ export default {
   ::v-deep .el-tabs__nav-scroll {
     padding-top: 0 !important;
   }
-  .JNPF-el_tabs {
+  .WORKFLOW-el_tabs {
     height: calc(100% - 60px);
     overflow: hidden;
   }
@@ -180,7 +180,7 @@ export default {
       flex: 1;
     }
   }
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
   }
 }

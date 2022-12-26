@@ -2,7 +2,7 @@
 export const basicComponents = [{
     icon: 'icon-ym icon-ym-generator-todo',
     label: '我的待办',
-    jnpfKey: 'todo',
+    workflowKey: 'todo',
     title: '我的待办',
     w: 6,
     h: 4,
@@ -14,7 +14,7 @@ export const basicComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-function',
     label: '常用功能',
-    jnpfKey: 'commonFunc',
+    workflowKey: 'commonFunc',
     title: '常用功能',
     list: [
       { fullName: "功能设计", id: "85cd7bca426e49ce83a061bf461b1447", urlAddress: "onlineDev/webDesign", icon: "icon-ym icon-ym-webDesign", iconBackgroundColor: "#FF3B3B" },
@@ -33,7 +33,7 @@ export const basicComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-notice',
     label: '公告通知',
-    jnpfKey: 'notice',
+    workflowKey: 'notice',
     title: '公告通知',
     w: 4,
     h: 7,
@@ -45,7 +45,7 @@ export const basicComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-email',
     label: '未读邮件',
-    jnpfKey: 'email',
+    workflowKey: 'email',
     title: '未读邮件',
     w: 4,
     h: 7,
@@ -57,7 +57,7 @@ export const basicComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-todolist',
     label: '待办事项',
-    jnpfKey: 'todoList',
+    workflowKey: 'todoList',
     title: '待办事项',
     w: 4,
     h: 7,
@@ -69,7 +69,7 @@ export const basicComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-Panel',
     label: '数据面板',
-    jnpfKey: 'dataBoard',
+    workflowKey: 'dataBoard',
     list: [
       { fullName: "新增客户（个）", num: 262, dataType: 'static', propsApi: '', icon: "icon-ym icon-ym-wf-contractApproval" },
       { fullName: "新增商机（个）", num: 199, dataType: 'static', propsApi: '', icon: "icon-ym icon-ym-wf-outgoingApply" },
@@ -88,7 +88,7 @@ export const basicComponents = [{
 export const chartComponents = [{
     icon: 'icon-ym icon-ym-generator-bar',
     label: '柱状图',
-    jnpfKey: 'barChart',
+    workflowKey: 'barChart',
     title: '柱状图',
     dataType: 'static',
     propsApi: '',
@@ -131,7 +131,7 @@ export const chartComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-pie',
     label: '饼图',
-    jnpfKey: 'pieChart',
+    workflowKey: 'pieChart',
     title: '饼图',
     dataType: 'static',
     propsApi: '',
@@ -182,7 +182,7 @@ export const chartComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-line',
     label: '折线图',
-    jnpfKey: 'lineChart',
+    workflowKey: 'lineChart',
     title: '折线图',
     dataType: 'static',
     propsApi: '',
@@ -262,7 +262,7 @@ export const chartComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-annular',
     label: '环形图',
-    jnpfKey: 'annularChart',
+    workflowKey: 'annularChart',
     title: '环形图',
     dataType: 'static',
     propsApi: '',
@@ -314,7 +314,7 @@ export const chartComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-area',
     label: '面积图',
-    jnpfKey: 'areaChart',
+    workflowKey: 'areaChart',
     title: '面积图',
     dataType: 'static',
     propsApi: '',
@@ -351,7 +351,7 @@ export const chartComponents = [{
   {
     icon: 'icon-ym icon-ym-generator-radar',
     label: '雷达图',
-    jnpfKey: 'radarChart',
+    workflowKey: 'radarChart',
     title: '雷达图',
     dataType: 'static',
     propsApi: '',

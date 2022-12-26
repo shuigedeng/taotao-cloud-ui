@@ -1,6 +1,6 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
       <detail-main :dataForm="dataForm" :isSend="isSend" v-loading="loading" class="email-detail" />
     </div>
   </div>

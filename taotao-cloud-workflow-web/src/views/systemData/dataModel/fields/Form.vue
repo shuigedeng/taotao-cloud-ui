@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建字段' : '编辑字段'" :close-on-click-modal="false"
-    :visible.sync="visible" :append-to-body="true" class="JNPF-dialog JNPF-dialog_center"
+    :visible.sync="visible" :append-to-body="true" class="WORKFLOW-dialog WORKFLOW-dialog_center"
     lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" v-loading="formLoading"
       label-width="80px">

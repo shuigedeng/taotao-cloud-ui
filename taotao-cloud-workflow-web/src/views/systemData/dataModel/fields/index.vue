@@ -1,17 +1,17 @@
 <template>
   <el-drawer title="常用字段管理" :visible.sync="drawer" :wrapperClosable="false" size="700px"
-    class="JNPF-common-drawer">
-    <div class="JNPF-flex-main">
-      <div class="JNPF-common-head">
+    class="WORKFLOW-common-drawer">
+    <div class="WORKFLOW-flex-main">
+      <div class="WORKFLOW-common-head">
         <topOpts @add="addOrUpdateHandle()"></topOpts>
-        <div class="JNPF-common-head-right">
+        <div class="WORKFLOW-common-head-right">
           <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
             <el-link icon="icon-ym icon-ym-Refresh
-              JNPF-common-head-icon" :underline="false" @click="initData()" />
+              WORKFLOW-common-head-icon" :underline="false" @click="initData()" />
           </el-tooltip>
         </div>
       </div>
-      <JNPF-table v-loading="listLoading" :data="list">
+      <WORKFLOW-table v-loading="listLoading" :data="list">
         <el-table-column prop="field" label="列名" />
         <el-table-column prop="fieldName" label="说明" width="110px" />
         <el-table-column prop="dataType" label="类型" width="80px">
@@ -32,7 +32,7 @@
             </tableOpts>
           </template>
         </el-table-column>
-      </JNPF-table>
+      </WORKFLOW-table>
       <Form v-if="formVisible" ref="Form" @refreshDataList="initData" />
     </div>
   </el-drawer>

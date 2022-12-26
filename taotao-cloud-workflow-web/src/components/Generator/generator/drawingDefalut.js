@@ -10,7 +10,7 @@ export default [{
     required: true,
     layout: 'colFormItem',
     span: 24,
-    jnpfKey: 'comInput',
+    workflowKey: 'comInput',
     // 正则校验规则
     regList: [{
       pattern: '/^1(3|4|5|7|8|9)\\d{9}$/',
@@ -32,5 +32,5 @@ export default [{
   'show-word-limit': true,
   readonly: false,
   disabled: false,
-  jnpfKey: 'comInput'
+  workflowKey: 'comInput'
 }]

@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" content="新建流程" />
         <div class="options">
           <el-button @click="goBack()">{{$t('common.cancelButton')}}</el-button>
@@ -13,7 +13,7 @@
           <el-tab-pane :label="item.fullName" :name="item.enCode" v-for="item in categoryList"
             :key="item.enCode"></el-tab-pane>
           <div class="box">
-            <el-row class="JNPF-common-search-box" :gutter="16">
+            <el-row class="WORKFLOW-common-search-box" :gutter="16">
               <el-form @submit.native.prevent>
                 <el-col :span="6">
                   <el-form-item label="关键词">

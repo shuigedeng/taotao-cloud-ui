@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main flow-form-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main flow-form-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="!dataForm.id ? '新建消息模板' : '编辑消息模板'" />
         <div class="options">
           <el-button type="primary" @click="dataFormSubmit()" :loading="btnLoading">
@@ -53,7 +53,7 @@
         </el-col>
       </el-row>
       <el-dialog title="添加参数" :visible.sync="dialogVisible" :close-on-click-modal="false"
-        class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width="600px">
+        class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width="600px">
         <el-form :model="fieldForm" :rules="fieldRule" ref="fieldForm" label-width="80px">
           <el-form-item label="参数名称" prop="field">
             <el-input v-model="fieldForm.field" placeholder="参数名称"></el-input>

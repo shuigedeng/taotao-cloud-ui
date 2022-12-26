@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main authorize-bd">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main authorize-bd">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="title" />
         <div class="options">
           <el-dropdown style="margin-right: 8px">
@@ -300,7 +300,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .authorize-bd {
-  .JNPF-common-page-header {
+  .WORKFLOW-common-page-header {
     border-bottom: none;
   }
   .el-steps {

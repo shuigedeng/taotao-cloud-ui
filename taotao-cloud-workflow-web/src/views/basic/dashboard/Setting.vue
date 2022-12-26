@@ -1,6 +1,6 @@
 <template>
   <el-drawer title="切换门户" :visible.sync="drawer" direction="rtl" size="260px"
-    class="JNPF-common-drawer board">
+    class="WORKFLOW-common-drawer board">
     <div class="main" v-loading="loading" :element-loading-text="loadingText">
       <div v-if="list.length">
         <div class="item" v-for="(item,i) in list" :key="i">

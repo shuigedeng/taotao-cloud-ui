@@ -1,7 +1,7 @@
 # 四联原型地址
 https://modao.cc/app/UAp3GdAErcopxbZwOjpFvL #四联疫情防控v0.2-四联疫情防控v0.2  
 
-# jnpf-web
+# workflow-web
 
 ## 环境要求
 

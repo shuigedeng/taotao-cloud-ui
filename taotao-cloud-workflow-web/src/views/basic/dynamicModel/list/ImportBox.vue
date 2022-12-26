@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="导入数据" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-row>
       <el-col :span="12" class="grid-content">
         <p>下载导入模板，填写数据</p>
@@ -45,7 +45,7 @@ export default {
     // 下载模板
     downLoad() {
       getTemplate(this.modelId).then(res => {
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
       })
     },
     beforeUpload() { this.btnLoading = true },

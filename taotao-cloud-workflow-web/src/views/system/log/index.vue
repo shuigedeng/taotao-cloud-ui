@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout systemLogs">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout systemLogs">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -26,37 +26,37 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
         <el-tabs v-model="activeName" type="border-card" class="logTabs"
           @tab-click="handleTabClick">
-          <div class="JNPF-common-head">
+          <div class="WORKFLOW-common-head">
             <div class="left-btn">
               <el-button type="danger" size="small" @click="handleDel" icon="el-icon-delete">删除
               </el-button>
               <el-link type="danger" :underline="false" @click="batchDel" style="margin-left:10px">
                 一键清空</el-link>
             </div>
-            <div class="JNPF-common-head-right">
+            <div class="WORKFLOW-common-head-right">
               <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-                <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+                <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                   @click="initData()" />
               </el-tooltip>
             </div>
           </div>
           <el-tab-pane label="登录日志" name="1">
-            <JNPF-table v-loading="listLoading" :data="loginLogData" has-c
+            <WORKFLOW-table v-loading="listLoading" :data="loginLogData" has-c
               @selection-change="handleSelectionChange">
-              <el-table-column prop="creatorTime" :formatter="jnpf.tableDateFormat" label="登录时间"
+              <el-table-column prop="creatorTime" :formatter="workflow.tableDateFormat" label="登录时间"
                 width="120" />
               <el-table-column prop="userName" label="登录用户" width="120" />
               <el-table-column prop="ipaddress" label="登录IP" width="120" />
               <el-table-column prop="platForm" label="登录设备" show-overflow-tooltip />
-            </JNPF-table>
+            </WORKFLOW-table>
           </el-tab-pane>
           <el-tab-pane label="请求日志" name="5">
-            <JNPF-table v-loading="listLoading" :data="requestLogData" has-c
+            <WORKFLOW-table v-loading="listLoading" :data="requestLogData" has-c
               @selection-change="handleSelectionChange">
-              <el-table-column prop="creatorTime" :formatter="jnpf.tableDateFormat" label="请求时间"
+              <el-table-column prop="creatorTime" :formatter="workflow.tableDateFormat" label="请求时间"
                 width="120" />
               <el-table-column prop="userName" label="请求用户" width="120" />
               <el-table-column prop="ipaddress" label="请求IP" width="120" />
@@ -65,12 +65,12 @@
                 show-overflow-tooltip />
               <el-table-column prop="requestMethod" label="请求类型" width="80" align="center" />
               <el-table-column prop="requestDuration" label="耗时(毫秒)" width="80" />
-            </JNPF-table>
+            </WORKFLOW-table>
           </el-tab-pane>
           <el-tab-pane label="操作日志" name="3">
-            <JNPF-table v-loading="listLoading" :data="operationLogData" has-c
+            <WORKFLOW-table v-loading="listLoading" :data="operationLogData" has-c
               @selection-change="handleSelectionChange">
-              <el-table-column prop="creatorTime" :formatter="jnpf.tableDateFormat" label="操作时间"
+              <el-table-column prop="creatorTime" :formatter="workflow.tableDateFormat" label="操作时间"
                 width="120" />
               <el-table-column prop="userName" label="操作用户" width="120" />
               <el-table-column prop="ipaddress" label="操作IP" width="120" />
@@ -84,12 +84,12 @@
                   </el-link>
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
           </el-tab-pane>
           <el-tab-pane label="异常日志" name="4">
-            <JNPF-table v-loading="listLoading" :data="errorLogData" has-c
+            <WORKFLOW-table v-loading="listLoading" :data="errorLogData" has-c
               @selection-change="handleSelectionChange">
-              <el-table-column prop="creatorTime" :formatter="jnpf.tableDateFormat" label="创建时间"
+              <el-table-column prop="creatorTime" :formatter="workflow.tableDateFormat" label="创建时间"
                 width="120" />
               <el-table-column prop="userName" label="创建用户" width="120" />
               <el-table-column prop="ipaddress" label="异常IP" width="120" />
@@ -101,7 +101,7 @@
                   </el-link>
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
           </el-tab-pane>
           <pagination :total="total" :page.sync="listQuery.currentPage"
             :limit.sync="listQuery.pageSize" @pagination="initData" />
@@ -265,7 +265,7 @@ export default {
 
 <style lang="scss" scoped>
 .systemLogs {
-  .JNPF-common-layout-main {
+  .WORKFLOW-common-layout-main {
     padding: 0;
   }
   .logTabs {

@@ -8,7 +8,7 @@ const mutations = {
     if (state.visitedViews.some(v => v.path === view.path)) return
     state.visitedViews.push(
       Object.assign({}, view, {
-        title: view.meta.title || 'JNPF-no-name',
+        title: view.meta.title || 'WORKFLOW-no-name',
         zhTitle: view.meta.zhTitle || view.meta.title,
       })
     )

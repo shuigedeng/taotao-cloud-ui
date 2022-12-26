@@ -320,7 +320,7 @@ const tags = {
     const branding = el.branding ? `:branding="${el.branding}"` : ''
     return `<${tag} ${vModel} ${placeholder} ${height} ${branding}></${tag}>`
   },
-  "JNPF-Text": el => {
+  "WORKFLOW-Text": el => {
     const { tag } = attrBuilder(el)
     let child = '',
       textStyle = ''
@@ -335,7 +335,7 @@ const tags = {
     const vModel = `value="${el.__config__.defaultValue}"`
     return `<${tag} ${vModel} ${textStyle} ${lineHeight} ${fontSize}></${tag}>`
   },
-  'JNPF-Amount': function(el) {
+  'WORKFLOW-Amount': function(el) {
     const tag = this['el-input-number'](el)
     const showChinese = el.showChinese ? `:showChinese='${el.showChinese}'` : ''
     return addPropToTag(tag, showChinese)
@@ -346,7 +346,7 @@ const tags = {
     const child = el.__slot__.default
     return `<${tag} ${contentPosition}>${child}</${tag}>`
   },
-  'JNPF-UploadImg': function(el) {
+  'WORKFLOW-UploadImg': function(el) {
     const { tag, vModel, disabled } = attrBuilder(el)
     const accept = `accept="${el.accept}"`
     const fileSize = `:fileSize="${el.fileSize}"`
@@ -355,12 +355,12 @@ const tags = {
     const sizeUnit = `sizeUnit="${el.sizeUnit}"`
     return `<${tag} ${vModel} ${accept} ${fileSize} ${limit} ${showTip} ${sizeUnit} ${disabled}></${tag}>`
   },
-  'JNPF-UploadFz': function(el) {
-    const tag = this['JNPF-UploadImg'](el)
+  'WORKFLOW-UploadFz': function(el) {
+    const tag = this['WORKFLOW-UploadImg'](el)
     const buttonText = `buttonText="${el.buttonText}"`
     return addPropToTag(tag, buttonText)
   },
-  'JNPF-Quill': function(el) {
+  'WORKFLOW-Quill': function(el) {
     const { tag, vModel, placeholder } = attrBuilder(el)
     return `<${tag} ${vModel} ${placeholder}></${tag}>`
   },
@@ -386,7 +386,7 @@ const tags = {
     const { tag, vModel, placeholder, disabled } = attrBuilder(el)
     return `<${tag} ${vModel} ${placeholder} ${disabled}></${tag}>`
   },
-  'JNPF-Address': function(el) {
+  'WORKFLOW-Address': function(el) {
     const { tag, vModel, placeholder, disabled } = attrBuilder(el)
     const level = `:multiple="${el.level}"`
     return `<${tag} ${vModel} ${placeholder} ${level} ${disabled}></${tag}>`

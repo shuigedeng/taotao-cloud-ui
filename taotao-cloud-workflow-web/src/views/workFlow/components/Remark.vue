@@ -5,7 +5,7 @@
     :close-on-press-escape="false"
     :visible.sync="visible"
     lock-scroll
-    class="JNPF-dialog JNPF-dialog_center"
+    class="WORKFLOW-dialog WORKFLOW-dialog_center"
     width="600px"
   >
     <p class="ti">{{ remark.title }}</p>
@@ -79,7 +79,7 @@ export default {
       if (this.remark.remarkOperateText) {
         this.dataForm.remark = this.remark.remarkOperateText;
         let { remarkOperateDatetime, remarkOperateUsername } = item;
-        let timestr = this.jnpf.dateFormat(remarkOperateDatetime);
+        let timestr = this.workflow.dateFormat(remarkOperateDatetime);
         this.remark.title = `${remarkOperateUsername} ${timestr}`;
       }
     },

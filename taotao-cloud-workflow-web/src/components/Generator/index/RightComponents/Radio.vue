@@ -51,9 +51,9 @@
     </template>
     <template v-if="activeData.__config__.dataType === 'dictionary'">
       <el-form-item label="远端数据">
-        <JNPF-TreeSelect :options="treeData" v-model="activeData.__config__.dictionaryType"
+        <WORKFLOW-TreeSelect :options="treeData" v-model="activeData.__config__.dictionaryType"
           placeholder="请选择数据字典" lastLevel clearable>
-        </JNPF-TreeSelect>
+        </WORKFLOW-TreeSelect>
       </el-form-item>
       <el-form-item label="存储字段">
         <el-select v-model="activeData.__config__.props.value" placeholder="请选择存储字段">
@@ -64,10 +64,10 @@
     </template>
     <template v-if="activeData.__config__.dataType === 'dynamic'">
       <el-form-item label="远端数据">
-        <JNPF-TreeSelect :options="dataInterfaceSelector" v-model="activeData.__config__.propsUrl"
+        <WORKFLOW-TreeSelect :options="dataInterfaceSelector" v-model="activeData.__config__.propsUrl"
           placeholder="请选择远端数据" lastLevel lastLevelKey='categoryId' lastLevelValue='1'
           @change="propsUrlChange" clearable>
-        </JNPF-TreeSelect>
+        </WORKFLOW-TreeSelect>
       </el-form-item>
       <el-form-item label="存储字段">
         <el-input v-model="activeData.__config__.props.value" placeholder="请输入存储字段" />
@@ -188,7 +188,7 @@ export default {
       }
       this.activeData.__config__.defaultValue = ''
       getDataInterfaceRes(val).then(res => {
-        let data = this.jnpf.interfaceDataHandler(res.data)
+        let data = this.workflow.interfaceDataHandler(res.data)
         if (Array.isArray(data)) {
           this.activeData.__slot__.options = data
         } else {

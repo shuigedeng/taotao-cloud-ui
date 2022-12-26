@@ -1,14 +1,14 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="title" />
         <div class="options">
           <el-button @click="goBack()">{{$t('common.cancelButton')}}</el-button>
         </div>
       </div>
       <div class="main">
-        <el-row class="JNPF-common-search-box" :gutter="16">
+        <el-row class="WORKFLOW-common-search-box" :gutter="16">
           <el-form @submit.native.prevent>
             <el-col :span="6">
               <el-form-item label="关键词">
@@ -26,15 +26,15 @@
             </el-col>
           </el-form>
         </el-row>
-        <JNPF-table v-loading="listLoading" :data="list">
-          <el-table-column prop="invokTime" label="请求时间" :formatter="jnpf.tableDateFormat"
+        <WORKFLOW-table v-loading="listLoading" :data="list">
+          <el-table-column prop="invokTime" label="请求时间" :formatter="workflow.tableDateFormat"
             width="120" />
           <el-table-column prop="userId" label="请求用户" width="120" />
           <el-table-column prop="invokIp" label="请求IP" width="120" />
           <el-table-column prop="invokDevice" label="请求设备" show-overflow-tooltip />
           <el-table-column prop="invokType" label="请求类型" width="80" align="center" />
           <el-table-column prop="invokWasteTime" label="耗时(毫秒)" width="80" />
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>

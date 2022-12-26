@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建项目' : '编辑项目'" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px">
       <el-form-item label="项目名称" prop="projectName">
         <el-input v-model="dataForm.projectName" placeholder="项目名称" />

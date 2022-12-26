@@ -44,7 +44,7 @@ export default {
           list[i].num = ''
           if (!list[i].propsApi) continue
           getDataInterfaceRes(list[i].propsApi).then(res => {
-            list[i].num = this.jnpf.interfaceDataHandler(res.data)
+            list[i].num = this.workflow.interfaceDataHandler(res.data)
           })
         }
       }

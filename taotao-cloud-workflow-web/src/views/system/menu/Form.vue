@@ -1,14 +1,14 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建菜单' : '编辑菜单'" :close-on-click-modal="false"
     :close-on-press-escape="false" :visible.sync="visible" lock-scroll
-    class="JNPF-dialog JNPF-dialog_center" width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="80px"
       v-loading="formLoading" class="menuForm">
       <el-form-item label="分类" prop="category">
         <el-input v-model="dataForm.category" disabled />
       </el-form-item>
       <el-form-item label="上级" prop="parentId">
-        <JNPF-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择上级菜单"
+        <WORKFLOW-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择上级菜单"
           @change="onChange" />
       </el-form-item>
       <el-form-item label="名称" prop="fullName">
@@ -49,7 +49,7 @@
       </el-form-item>
       <el-form-item v-if="[3,4,5,6,8].indexOf(dataForm.type)>-1" label="关联"
         prop="propertyJson.moduleId">
-        <JNPF-TreeSelect v-model="dataForm.propertyJson.moduleId" :options="tempData"
+        <WORKFLOW-TreeSelect v-model="dataForm.propertyJson.moduleId" :options="tempData"
           placeholder="请选择" lastLevel @change="handleSelectModule" filterable />
       </el-form-item>
       <el-form-item label="排序" prop="sortCode">
@@ -80,7 +80,7 @@ import { getDictionaryType } from '@/api/systemData/dictionary'
 import { getDataReportSelector } from '@/api/onlineDev/dataReport'
 import { getDataVSelector } from '@/api/onlineDev/dataV'
 import { getPortalSelector } from '@/api/onlineDev/portal'
-import iconBox from '@/components/JNPF-iconBox'
+import iconBox from '@/components/WORKFLOW-iconBox'
 const appTypeData = [{
   enCode: 1,
   fullName: "目录"

@@ -1,9 +1,9 @@
 <template>
-  <el-dialog :visible.sync="visible" fullscreen lock-scroll class="JNPF-full-dialog"
+  <el-dialog :visible.sync="visible" fullscreen lock-scroll class="WORKFLOW-full-dialog"
     :show-close="false" :modal="false">
-    <div class="JNPF-full-dialog-header">
+    <div class="WORKFLOW-full-dialog-header">
       <div class="header-title">
-        <img src="@/assets/images/jnpf.png" class="header-logo" />
+        <img src="@/assets/images/workflow.png" class="header-logo" />
         <p class="header-txt"> · 门户设计</p>
       </div>
       <el-steps :active="activeStep" finish-status="success" simple class="steps steps2">

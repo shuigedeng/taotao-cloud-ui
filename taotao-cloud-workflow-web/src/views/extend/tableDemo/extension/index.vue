@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,17 +19,17 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main  JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main  WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div></div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="refresh()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" @expand-change="expandChange"
+        <WORKFLOW-table v-loading="listLoading" :data="list" @expand-change="expandChange"
           :hasNO="false">
           <el-table-column type="expand" width="40">
             <template slot-scope="scope">
@@ -42,7 +42,7 @@
           <el-table-column type="index" width="50" label="序号" align="center" />
           <el-table-column prop="fullName" label="名称" />
           <el-table-column prop="enCode" label="编码" width="175" />
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
   </div>

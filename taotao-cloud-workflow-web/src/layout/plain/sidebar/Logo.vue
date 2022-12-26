@@ -3,7 +3,7 @@
     <router-link class="sidebar-logo-link" to="/">
       <!-- <img :src="define.comUrl+sysConfig.logoIcon" class="sidebar-logo"
         v-if="sysConfig && sysConfig.logoIcon" /> -->
-      <img src="@/assets/images/jnpf.png" class="sidebar-logo" />
+      <img src="@/assets/images/workflow.png" class="sidebar-logo" />
     </router-link>
   </div>
 </template>

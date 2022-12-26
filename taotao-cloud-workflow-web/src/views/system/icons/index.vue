@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout icons-container">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout icons-container">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="图标名称">
@@ -18,8 +18,8 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <el-tabs type="border-card" class="JNPF-el_tabs" v-model="activeName">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <el-tabs type="border-card" class="WORKFLOW-el_tabs" v-model="activeName">
           <el-tab-pane label="ymIcon 图标">
             <el-row>
               <el-col :span="6" v-for="(item,i) of ymIconsList" :key="i"
@@ -124,7 +124,7 @@ export default {
 
 <style lang="scss" scoped>
 .icons-container {
-  .JNPF-common-layout-main {
+  .WORKFLOW-common-layout-main {
     padding: 0;
   }
   .icon-item {

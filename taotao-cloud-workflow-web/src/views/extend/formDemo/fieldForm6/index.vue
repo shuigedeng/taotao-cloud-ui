@@ -42,7 +42,7 @@
           </el-input>
         </el-form-item>
       </el-form>
-      <div class="JNPF-common-title">
+      <div class="WORKFLOW-common-title">
         <h2>订单详细</h2>
       </div>
       <el-table :data="list" height="400">
@@ -123,7 +123,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .CommonForm-container {
-  .JNPF-common-head {
+  .WORKFLOW-common-head {
     height: 50px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;

@@ -47,7 +47,7 @@ function emitEvents(confClone) {
 }
 
 function buildDataObject(confClone, dataObject, formData) {
-  const jnpfKey = confClone.__config__.jnpfKey
+  const workflowKey = confClone.__config__.workflowKey
   Object.keys(confClone).forEach(key => {
     const val = confClone[key]
     if (key === '__vModel__') {
@@ -65,14 +65,14 @@ function buildDataObject(confClone, dataObject, formData) {
       dataObject.attrs[key] = val
     }
   })
-  if (jnpfKey === 'JNPFText') {
+  if (workflowKey === 'WORKFLOWText') {
     vModel.call(this, dataObject, confClone.__config__.defaultValue)
   }
-  if (['calculate', 'table', 'barcode', 'qrcode'].includes(jnpfKey)) {
+  if (['calculate', 'table', 'barcode', 'qrcode'].includes(workflowKey)) {
     dataObject.attrs['formData'] = formData
   }
-  if (['relationForm', 'popupSelect'].includes(jnpfKey)) {
-    dataObject.attrs['field'] = confClone.__config__.tableName ? confClone.__vModel__ + '_jnpfTable_' + confClone.__config__.tableName + (confClone.__config__.isSubTable ? '0' : "1") : confClone.__vModel__
+  if (['relationForm', 'popupSelect'].includes(workflowKey)) {
+    dataObject.attrs['field'] = confClone.__config__.tableName ? confClone.__vModel__ + '_workflowTable_' + confClone.__config__.tableName + (confClone.__config__.isSubTable ? '0' : "1") : confClone.__vModel__
   }
 
   // 清理属性

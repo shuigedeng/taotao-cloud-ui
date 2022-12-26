@@ -11,9 +11,9 @@
           labelPosition="left">
           <template v-if="activeData.__config__">
             <template v-if="$store.getters.hasTable">
-              <template v-if="activeData.__config__.jnpfKey==='table'">
+              <template v-if="activeData.__config__.workflowKey==='table'">
                 <el-form-item
-                  v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                  v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                   label="控件字段">
                   <el-input v-model="activeData.__vModel__" placeholder="请输入控件字段(v-model)"
                     disabled />
@@ -22,7 +22,7 @@
               <template v-else>
                 <template v-if="!activeData.__config__.isSubTable">
                   <el-form-item
-                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                     label="数据库表">
                     <el-select v-model="activeData.__config__.tableName" placeholder="请选择数据库表"
                       @change="tableChange" filterable>
@@ -32,7 +32,7 @@
                     </el-select>
                   </el-form-item>
                   <el-form-item
-                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                     label="控件字段">
                     <el-select v-model="activeData.__vModel__" placeholder="请选择控件字段(v-model)"
                       clearable @change="fieldChange" filterable>
@@ -45,7 +45,7 @@
                 </template>
                 <template v-if="activeData.__config__.isSubTable && subTable.length">
                   <el-form-item
-                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                     label="控件字段">
                     <el-select v-model="activeData.__vModel__" placeholder="请选择控件字段(v-model)"
                       clearable @change="fieldChange1" filterable>
@@ -61,67 +61,67 @@
             </template>
             <template v-else>
               <el-form-item
-                v-if="activeData.__vModel__!==undefined  && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                v-if="activeData.__vModel__!==undefined  && !noVModelList.includes(activeData.__config__.workflowKey)"
                 label="控件字段">
                 <el-input v-model="activeData.__vModel__" placeholder="请输入控件字段(v-model)" disabled />
               </el-form-item>
             </template>
-            <JNPFComInput v-if="activeData.__config__.jnpfKey==='comInput'"
+            <WORKFLOWComInput v-if="activeData.__config__.workflowKey==='comInput'"
               :active-data="activeData" />
-            <JNPF-textarea v-if="activeData.__config__.jnpfKey==='textarea'"
+            <WORKFLOW-textarea v-if="activeData.__config__.workflowKey==='textarea'"
               :active-data="activeData" />
-            <JNPFText v-if="activeData.__config__.jnpfKey==='JNPFText'" :active-data="activeData" />
-            <JNPFNumInput v-if="activeData.__config__.jnpfKey==='numInput'"
+            <WORKFLOWText v-if="activeData.__config__.workflowKey==='WORKFLOWText'" :active-data="activeData" />
+            <WORKFLOWNumInput v-if="activeData.__config__.workflowKey==='numInput'"
               :active-data="activeData" />
-            <JNPFAmount v-if="activeData.__config__.jnpfKey==='JNPFAmount'"
+            <WORKFLOWAmount v-if="activeData.__config__.workflowKey==='WORKFLOWAmount'"
               :active-data="activeData" />
-            <JNPFPsdInput v-if="activeData.__config__.jnpfKey==='PsdInput'"
+            <WORKFLOWPsdInput v-if="activeData.__config__.workflowKey==='PsdInput'"
               :active-data="activeData" />
-            <JNPFRadio v-if="activeData.__config__.jnpfKey==='radio'" :active-data="activeData" />
-            <JNPFCheckbox v-if="activeData.__config__.jnpfKey==='checkbox'"
+            <WORKFLOWRadio v-if="activeData.__config__.workflowKey==='radio'" :active-data="activeData" />
+            <WORKFLOWCheckbox v-if="activeData.__config__.workflowKey==='checkbox'"
               :active-data="activeData" />
-            <JNPFSelect v-if="activeData.__config__.jnpfKey==='select'" :active-data="activeData"
+            <WORKFLOWSelect v-if="activeData.__config__.workflowKey==='select'" :active-data="activeData"
               :key="activeData.__config__.renderKey" :dictionaryOptions="dictionaryOptions"
               :dataInterfaceOptions="dataInterfaceOptions" />
-            <JNPFCascader v-if="activeData.__config__.jnpfKey==='cascader'"
+            <WORKFLOWCascader v-if="activeData.__config__.workflowKey==='cascader'"
               :active-data="activeData" />
-            <JNPFTime v-if="activeData.__config__.jnpfKey==='time'" :active-data="activeData" />
-            <JNPFTimeRange v-if="activeData.__config__.jnpfKey==='timeRange'"
+            <WORKFLOWTime v-if="activeData.__config__.workflowKey==='time'" :active-data="activeData" />
+            <WORKFLOWTimeRange v-if="activeData.__config__.workflowKey==='timeRange'"
               :active-data="activeData" />
-            <JNPFDate v-if="activeData.__config__.jnpfKey==='date'" :active-data="activeData" />
-            <JNPFDateRange v-if="activeData.__config__.jnpfKey==='dateRange'"
+            <WORKFLOWDate v-if="activeData.__config__.workflowKey==='date'" :active-data="activeData" />
+            <WORKFLOWDateRange v-if="activeData.__config__.workflowKey==='dateRange'"
               :active-data="activeData" />
-            <JNPFColorPicker v-if="activeData.__config__.jnpfKey==='colorPicker'"
+            <WORKFLOWColorPicker v-if="activeData.__config__.workflowKey==='colorPicker'"
               :active-data="activeData" />
-            <JNPFRate v-if="activeData.__config__.jnpfKey==='rate'" :active-data="activeData" />
-            <JNPFSwitch v-if="activeData.__config__.jnpfKey==='switch'" :active-data="activeData" />
-            <JNPFSlider v-if="activeData.__config__.jnpfKey==='slider'" :active-data="activeData" />
-            <JNPFDivider v-if="activeData.__config__.jnpfKey==='divider'"
+            <WORKFLOWRate v-if="activeData.__config__.workflowKey==='rate'" :active-data="activeData" />
+            <WORKFLOWSwitch v-if="activeData.__config__.workflowKey==='switch'" :active-data="activeData" />
+            <WORKFLOWSlider v-if="activeData.__config__.workflowKey==='slider'" :active-data="activeData" />
+            <WORKFLOWDivider v-if="activeData.__config__.workflowKey==='divider'"
               :active-data="activeData" />
-            <JNPFUploadFz v-if="activeData.__config__.jnpfKey==='uploadFz'"
+            <WORKFLOWUploadFz v-if="activeData.__config__.workflowKey==='uploadFz'"
               :active-data="activeData" />
-            <JNPFUploadImg v-if="activeData.__config__.jnpfKey==='uploadImg'"
+            <WORKFLOWUploadImg v-if="activeData.__config__.workflowKey==='uploadImg'"
               :active-data="activeData" />
-            <JNPFComRight v-if="isCommon" :active-data="activeData" />
-            <JNPFAddress v-if="activeData.__config__.jnpfKey==='address'"
+            <WORKFLOWComRight v-if="isCommon" :active-data="activeData" />
+            <WORKFLOWAddress v-if="activeData.__config__.workflowKey==='address'"
               :active-data="activeData" />
-            <TreeSelect v-if="activeData.__config__.jnpfKey==='treeSelect'"
+            <TreeSelect v-if="activeData.__config__.workflowKey==='treeSelect'"
               :active-data="activeData" />
-            <GroupTitle v-if="activeData.__config__.jnpfKey==='groupTitle'"
+            <GroupTitle v-if="activeData.__config__.workflowKey==='groupTitle'"
               :active-data="activeData" />
-            <RelationForm v-if="activeData.__config__.jnpfKey==='relationForm'"
+            <RelationForm v-if="activeData.__config__.workflowKey==='relationForm'"
               :active-data="activeData" v-on="$listeners" :key="activeData.__config__.renderKey" />
-            <RelationFormAttr v-if="activeData.__config__.jnpfKey==='relationFormAttr'"
+            <RelationFormAttr v-if="activeData.__config__.workflowKey==='relationFormAttr'"
               :active-data="activeData" ref="relationFormAttr" />
-            <JNPFCalculate v-if="activeData.__config__.jnpfKey==='calculate'"
+            <WORKFLOWCalculate v-if="activeData.__config__.workflowKey==='calculate'"
               :active-data="activeData" ref="calculate" />
-            <PopupSelect v-if="activeData.__config__.jnpfKey==='popupSelect'"
+            <PopupSelect v-if="activeData.__config__.workflowKey==='popupSelect'"
               :active-data="activeData" />
-            <PopupAttr v-if="activeData.__config__.jnpfKey==='popupAttr'" :active-data="activeData"
+            <PopupAttr v-if="activeData.__config__.workflowKey==='popupAttr'" :active-data="activeData"
               ref="popupAttr" />
-            <Tab v-if="activeData.__config__.jnpfKey==='tab'" :active-data="activeData" />
-            <Collapse v-if="activeData.__config__.jnpfKey==='collapse'" :active-data="activeData" />
-            <template v-if="activeData.__config__.jnpfKey==='barcode'">
+            <Tab v-if="activeData.__config__.workflowKey==='tab'" :active-data="activeData" />
+            <Collapse v-if="activeData.__config__.workflowKey==='collapse'" :active-data="activeData" />
+            <template v-if="activeData.__config__.workflowKey==='barcode'">
               <el-form-item label="控件标题">
                 <el-input v-model="activeData.__config__.label" placeholder="请输入控件标题" />
               </el-form-item>
@@ -168,7 +168,7 @@
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='qrcode'">
+            <template v-if="activeData.__config__.workflowKey==='qrcode'">
               <el-form-item label="控件标题">
                 <el-input v-model="activeData.__config__.label" placeholder="请输入控件标题" />
               </el-form-item>
@@ -205,7 +205,7 @@
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='button'">
+            <template v-if="activeData.__config__.workflowKey==='button'">
               <el-form-item label="控件文本">
                 <el-input v-model="activeData.buttonText" placeholder="请输入控件文本" />
               </el-form-item>
@@ -243,10 +243,10 @@
                 <el-input-number v-model="activeData.__config__.labelWidth" placeholder="标题宽度"
                   :min="0" :precision="0" controls-position="right" />
               </el-form-item>
-              <el-form-item label="选择模板" v-if="activeData.__config__.jnpfKey==='billRule'">
+              <el-form-item label="选择模板" v-if="activeData.__config__.workflowKey==='billRule'">
                 <BillRule v-model="activeData.__config__.rule" placeholder="选择模板" />
               </el-form-item>
-              <el-form-item label="显示内容" v-if="activeData.__config__.jnpfKey==='currOrganize'">
+              <el-form-item label="显示内容" v-if="activeData.__config__.workflowKey==='currOrganize'">
                 <el-select v-model="activeData.showLevel" placeholder="请选择显示内容">
                   <el-option label="显示组织" value="all"></el-option>
                   <el-option label="显示部门" value="last"></el-option>
@@ -266,7 +266,7 @@
                 </el-form-item>
               </div>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='table'">
+            <template v-if="activeData.__config__.workflowKey==='table'">
               <el-form-item label="控件标题">
                 <el-input v-model="activeData.__config__.label" placeholder="请输入控件标题" />
               </el-form-item>
@@ -281,7 +281,7 @@
               </el-form-item>
               <table-config :active-data="activeData" />
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='card'">
+            <template v-if="activeData.__config__.workflowKey==='card'">
               <el-form-item label="控件栅格" label-width="76px">
                 <el-slider v-model="activeData.__config__.span" :max="24" :min="6" show-stops
                   :step="2" show-tooltip />
@@ -298,7 +298,7 @@
               </el-form-item>
             </template>
             <!-- row 布局 -->
-            <template v-if="activeData.__config__.jnpfKey==='row'">
+            <template v-if="activeData.__config__.workflowKey==='row'">
               <el-form-item v-if="activeData.__config__.componentName!==undefined" label="组件名">
                 {{ activeData.__config__.componentName }}
               </el-form-item>
@@ -388,8 +388,8 @@
                 <el-input v-model="formConf.printButtonText" />
               </div>
               <el-form-item label="" v-if="formConf.hasPrintBtn">
-                <JNPF-TreeSelect :options="printTplList" v-model="formConf.printId"
-                  placeholder="请选择打印模板" lastLevel clearable></JNPF-TreeSelect>
+                <WORKFLOW-TreeSelect :options="printTplList" v-model="formConf.printId"
+                  placeholder="请选择打印模板" lastLevel clearable></WORKFLOW-TreeSelect>
               </el-form-item>
             </template>
           </template>
@@ -425,34 +425,34 @@ import { saveFormConf, getDrawingList } from '@/components/Generator/utils/db'
 import { getDictionaryTypeSelector } from "@/api/systemData/dictionary"
 import { getDataInterfaceSelector } from "@/api/systemData/dataInterface"
 import FormScript from './FormScript'
-import JNPFComInput from './RightComponents/ComInput'
-import JNPFTextarea from './RightComponents/Textarea'
-import JNPFText from './RightComponents/JNPFText'
-import JNPFNumInput from './RightComponents/NumInput'
-import JNPFAmount from './RightComponents/JNPFAmount'
-import JNPFPsdInput from './RightComponents/PsdInput'
-import JNPFRadio from './RightComponents/Radio'
-import JNPFCheckbox from './RightComponents/Checkbox'
-import JNPFSelect from './RightComponents/Select'
-import JNPFCascader from './RightComponents/Cascader/index'
-import JNPFTime from './RightComponents/Time'
-import JNPFTimeRange from './RightComponents/TimeRange'
-import JNPFDate from './RightComponents/Date'
-import JNPFDateRange from './RightComponents/DateRange'
-import JNPFColorPicker from './RightComponents/ColorPicker'
-import JNPFRate from './RightComponents/Rate'
-import JNPFSwitch from './RightComponents/Switch'
-import JNPFSlider from './RightComponents/Slider'
-import JNPFDivider from './RightComponents/Divider'
-import JNPFUploadFz from './RightComponents/UploadFz'
-import JNPFUploadImg from './RightComponents/UploadImg'
-import JNPFComRight from './RightComponents/ComRight'
-import JNPFAddress from './RightComponents/Address'
+import WORKFLOWComInput from './RightComponents/ComInput'
+import WORKFLOWTextarea from './RightComponents/Textarea'
+import WORKFLOWText from './RightComponents/WORKFLOWText'
+import WORKFLOWNumInput from './RightComponents/NumInput'
+import WORKFLOWAmount from './RightComponents/WORKFLOWAmount'
+import WORKFLOWPsdInput from './RightComponents/PsdInput'
+import WORKFLOWRadio from './RightComponents/Radio'
+import WORKFLOWCheckbox from './RightComponents/Checkbox'
+import WORKFLOWSelect from './RightComponents/Select'
+import WORKFLOWCascader from './RightComponents/Cascader/index'
+import WORKFLOWTime from './RightComponents/Time'
+import WORKFLOWTimeRange from './RightComponents/TimeRange'
+import WORKFLOWDate from './RightComponents/Date'
+import WORKFLOWDateRange from './RightComponents/DateRange'
+import WORKFLOWColorPicker from './RightComponents/ColorPicker'
+import WORKFLOWRate from './RightComponents/Rate'
+import WORKFLOWSwitch from './RightComponents/Switch'
+import WORKFLOWSlider from './RightComponents/Slider'
+import WORKFLOWDivider from './RightComponents/Divider'
+import WORKFLOWUploadFz from './RightComponents/UploadFz'
+import WORKFLOWUploadImg from './RightComponents/UploadImg'
+import WORKFLOWComRight from './RightComponents/ComRight'
+import WORKFLOWAddress from './RightComponents/Address'
 import TreeSelect from './RightComponents/TreeSelect'
 import GroupTitle from './RightComponents/GroupTitle'
 import RelationForm from './RightComponents/RelationForm'
 import RelationFormAttr from './RightComponents/RelationFormAttr'
-import JNPFCalculate from './RightComponents/Calculate'
+import WORKFLOWCalculate from './RightComponents/Calculate'
 import PopupSelect from './RightComponents/PopupSelect'
 import PopupAttr from './RightComponents/PopupAttr'
 import Tab from './RightComponents/Tab'
@@ -465,34 +465,34 @@ const systemList = ['createUser', 'createTime', 'modifyUser', 'modifyTime', 'cur
 export default {
   components: {
     FormScript,
-    JNPFComInput,
-    JNPFTextarea,
-    JNPFText,
-    JNPFNumInput,
-    JNPFAmount,
-    JNPFPsdInput,
-    JNPFRadio,
-    JNPFCheckbox,
-    JNPFSelect,
-    JNPFCascader,
-    JNPFTime,
-    JNPFTimeRange,
-    JNPFDate,
-    JNPFDateRange,
-    JNPFColorPicker,
-    JNPFRate,
-    JNPFSwitch,
-    JNPFSlider,
-    JNPFDivider,
-    JNPFUploadFz,
-    JNPFUploadImg,
-    JNPFComRight,
-    JNPFAddress,
+    WORKFLOWComInput,
+    WORKFLOWTextarea,
+    WORKFLOWText,
+    WORKFLOWNumInput,
+    WORKFLOWAmount,
+    WORKFLOWPsdInput,
+    WORKFLOWRadio,
+    WORKFLOWCheckbox,
+    WORKFLOWSelect,
+    WORKFLOWCascader,
+    WORKFLOWTime,
+    WORKFLOWTimeRange,
+    WORKFLOWDate,
+    WORKFLOWDateRange,
+    WORKFLOWColorPicker,
+    WORKFLOWRate,
+    WORKFLOWSwitch,
+    WORKFLOWSlider,
+    WORKFLOWDivider,
+    WORKFLOWUploadFz,
+    WORKFLOWUploadImg,
+    WORKFLOWComRight,
+    WORKFLOWAddress,
     TreeSelect,
     GroupTitle,
     RelationForm,
     RelationFormAttr,
-    JNPFCalculate,
+    WORKFLOWCalculate,
     PopupSelect,
     PopupAttr,
     Tab,
@@ -619,20 +619,20 @@ export default {
       return item.table
     },
     isCommon() {
-      return commonRightList.indexOf(this.activeData.__config__.jnpfKey) > -1
+      return commonRightList.indexOf(this.activeData.__config__.workflowKey) > -1
     },
     isSystem() {
-      return systemList.indexOf(this.activeData.__config__.jnpfKey) > -1
+      return systemList.indexOf(this.activeData.__config__.workflowKey) > -1
     },
     drawingOptions() {
       let list = []
       const loop = (data, parent) => {
         if (!data) return
-        if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+        if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__vModel__ && data.__config__.jnpfKey !== 'table') {
+        if (data.__vModel__ && data.__config__.workflowKey !== 'table') {
           list.push(data)
         }
       }
@@ -651,22 +651,22 @@ export default {
       deep: true
     },
     activeData(val) {
-      if (val.__config__.jnpfKey === 'relationFormAttr') {
+      if (val.__config__.workflowKey === 'relationFormAttr') {
         this.$nextTick(() => {
           this.$refs.relationFormAttr && this.$refs.relationFormAttr.getOptions()
         })
       }
-      if (val.__config__.jnpfKey === 'popupAttr') {
+      if (val.__config__.workflowKey === 'popupAttr') {
         this.$nextTick(() => {
           this.$refs.popupAttr && this.$refs.popupAttr.getOptions()
         })
       }
-      if (val.__config__.jnpfKey !== 'calculate') {
+      if (val.__config__.workflowKey !== 'calculate') {
         this.$nextTick(() => {
           this.$refs.calculate && this.$refs.calculate.reloadExpressionTemp()
         })
       }
-      if (!val.__config__.tableName && val.__config__.jnpfKey !== 'table') {
+      if (!val.__config__.tableName && val.__config__.workflowKey !== 'table') {
         val.__config__.tableName = this.mainTable
       }
       this.setDefaultOptions()
@@ -677,7 +677,7 @@ export default {
     this.getDataInterfaceSelector()
     this.getPrintTplList()
     if (!this.activeData || !this.activeData.__config__) return
-    if (!this.activeData.__config__.tableName && this.activeData.__config__.jnpfKey !== 'table') {
+    if (!this.activeData.__config__.tableName && this.activeData.__config__.workflowKey !== 'table') {
       this.activeData.__config__.tableName = this.mainTable
     }
     this.setDefaultOptions()
@@ -739,7 +739,7 @@ export default {
         for (let i = 0; i < list.length; i++) {
           const e = list[i]
           const config = e.__config__
-          if (config.jnpfKey === 'table' && config.tableName === this.activeData.__config__.relationTable) {
+          if (config.workflowKey === 'table' && config.tableName === this.activeData.__config__.relationTable) {
             for (let j = 0; j < config.children.length; j++) {
               const child = config.children[j]
               if (child.__vModel__ === val) {
@@ -748,7 +748,7 @@ export default {
               }
             }
           }
-          if (config && config.jnpfKey != 'table' && config.children && Array.isArray(config.children)) {
+          if (config && config.workflowKey != 'table' && config.children && Array.isArray(config.children)) {
             loop(config.children)
           }
         }
@@ -776,7 +776,7 @@ export default {
             boo = true
             break
           }
-          if (config && config.jnpfKey != 'table' && config.children && Array.isArray(config.children)) {
+          if (config && config.workflowKey != 'table' && config.children && Array.isArray(config.children)) {
             loop(config.children)
           }
         }
@@ -797,7 +797,7 @@ export default {
     },
     setDefaultOptions() {
       if (!this.$store.getters.hasTable) return
-      if (this.activeData.__vModel__ === undefined || this.activeData.__config__.jnpfKey === 'table') return
+      if (this.activeData.__vModel__ === undefined || this.activeData.__config__.workflowKey === 'table') return
       if (!this.activeData.__config__.tableName || this.activeData.__config__.tableName === this.mainTable) {
         let fieldOptions = this.formItemList.map(o => ({ ...o, realField: o.field }))
         this.fieldOptions = fieldOptions.filter(o => o.primaryKey != 1)
@@ -812,7 +812,7 @@ export default {
           let item = list[0]
           let options = item.fields.map(o => ({
             ...o,
-            realField: 'jnpf_' + this.activeData.__config__.tableName + '_jnpf_' + o.field,
+            realField: 'workflow_' + this.activeData.__config__.tableName + '_workflow_' + o.field,
           }))
           this.fieldOptions = options.filter(o => o.primaryKey != 1)
         }
@@ -829,11 +829,11 @@ export default {
         for (let i = 0; i < list.length; i++) {
           const e = list[i]
           const config = e.__config__
-          if (config.jnpfKey === 'table' && config.tableName === tableName) {
+          if (config.workflowKey === 'table' && config.tableName === tableName) {
             boo = true
             break
           }
-          if (config && config.jnpfKey != 'table' && config.children && Array.isArray(config.children)) {
+          if (config && config.workflowKey != 'table' && config.children && Array.isArray(config.children)) {
             loop(config.children)
           }
         }

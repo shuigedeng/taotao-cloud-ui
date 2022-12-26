@@ -1,7 +1,7 @@
 <template>
   <el-dialog :title="pageTitle" :close-on-click-modal="false" :close-on-press-escape="false"
     :visible.sync="visible" lock-scroll append-to-body
-    class="JNPF-dialog JNPF-dialog_center transfer-dialog" width="800px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center transfer-dialog" width="800px">
     <div class="transfer__body" v-loading="allLoading">
       <div class="transfer-pane">
         <div class="transfer-pane__tools">

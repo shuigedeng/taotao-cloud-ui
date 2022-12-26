@@ -1,6 +1,6 @@
 <template>
-  <div class="app-container JNPF-flex-main authorize-container">
-    <div class="JNPF-common-head">
+  <div class="app-container WORKFLOW-flex-main authorize-container">
+    <div class="WORKFLOW-common-head">
       <div class="el-page-header__content">权限批量设置</div>
       <div class="btn-group">
         <el-dropdown style="margin-right: 8px">

@@ -31,7 +31,7 @@ const layouts = {
     if (this.formConf.unFocusedComponentBorder) className += ' unfocus-bordered'
     let labelWidth = config.labelWidth ? `${config.labelWidth}px` : null
     if (config.showLabel === false) labelWidth = '0'
-    if (config.jnpfKey === 'JNPFText') {
+    if (config.workflowKey === 'WORKFLOWText') {
       return (
         <el-col span={config.span} class={className}
           nativeOnClick={event => { activeItem(element); event.stopPropagation() }}>
@@ -43,7 +43,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (config.jnpfKey === 'groupTitle') {
+    if (config.workflowKey === 'groupTitle') {
       return (
         <el-col span={config.span} class={className}
           nativeOnClick={event => { activeItem(element); event.stopPropagation() }}>
@@ -52,36 +52,36 @@ const layouts = {
         </el-col>
       )
     }
-    if (config.jnpfKey === 'barcode') {
+    if (config.workflowKey === 'barcode') {
       return (
         <el-col span={config.span} class={className}
           nativeOnClick={event => { activeItem(element); event.stopPropagation() }}>
           <el-form-item label-width={labelWidth}
             label={config.showLabel ? config.label : ''} required={config.required}>
-            <jnpf-barcode format={element.format} lineColor={element.lineColor} background={element.background} width={element.width} height={element.height} staticText={element.staticText}></jnpf-barcode>
+            <workflow-barcode format={element.format} lineColor={element.lineColor} background={element.background} width={element.width} height={element.height} staticText={element.staticText}></workflow-barcode>
           </el-form-item>
           {components.itemBtns.apply(this, arguments)}
         </el-col>
       )
     }
-    if (config.jnpfKey === 'qrcode') {
+    if (config.workflowKey === 'qrcode') {
       return (
         <el-col span={config.span} class={className}
           nativeOnClick={event => { activeItem(element); event.stopPropagation() }}>
           <el-form-item label-width={labelWidth}
             label={config.showLabel ? config.label : ''} required={config.required}>
-            <jnpf-qrcode size={element.size} colorLight={element.colorLight} colorDark={element.colorDark} staticText={element.staticText}></jnpf-qrcode>
+            <workflow-qrcode size={element.size} colorLight={element.colorLight} colorDark={element.colorDark} staticText={element.staticText}></workflow-qrcode>
           </el-form-item>
           {components.itemBtns.apply(this, arguments)}
         </el-col>
       )
     }
-    if (config.jnpfKey === 'button') {
+    if (config.workflowKey === 'button') {
       return (
         <el-col span={config.span} class={className}
           nativeOnClick={event => { activeItem(element); event.stopPropagation() }}>
           <el-form-item label-width="0">
-            <jnpf-button align={element.align} buttonText={element.buttonText} type={element.type} disabled={element.disabled}></jnpf-button>
+            <workflow-button align={element.align} buttonText={element.buttonText} type={element.type} disabled={element.disabled}></workflow-button>
           </el-form-item>
           {components.itemBtns.apply(this, arguments)}
         </el-col>
@@ -104,7 +104,7 @@ const layouts = {
     const className = this.activeId === element.__config__.formId
       ? 'drawing-row-item active-from-item'
       : 'drawing-row-item'
-    if (element.__config__.jnpfKey === 'tab') {
+    if (element.__config__.workflowKey === 'tab') {
       return (
         <el-col span={element.__config__.span}>
           <el-row gutter={element.__config__.gutter} class={className}
@@ -139,7 +139,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (element.__config__.jnpfKey === 'collapse') {
+    if (element.__config__.workflowKey === 'collapse') {
       return (
         <el-col span={element.__config__.span}>
           <el-row gutter={element.__config__.gutter} class={className}
@@ -177,7 +177,7 @@ const layouts = {
     let child = renderChildren.apply(this, arguments)
     const group = { name: 'componentsGroup', put: (...arg) => put(...arg, element) }
     const onEnd = (...arg) => end(...arg, activeData, element)
-    if (element.__config__.jnpfKey === 'row') {
+    if (element.__config__.workflowKey === 'row') {
       if (element.type === 'flex') {
         child = <el-row type={element.type} justify={element.justify} align={element.align}>
           {child}
@@ -201,7 +201,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (element.__config__.jnpfKey === 'card') {
+    if (element.__config__.workflowKey === 'card') {
       let tip = ''
       if (!element.__config__.children.length) {
         tip = <div class="table-tip">请将组件拖到此区域(可拖多个组件)</div>
@@ -220,7 +220,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (element.__config__.jnpfKey === 'table') {
+    if (element.__config__.workflowKey === 'table') {
       let tip = ''
       if (!element.__config__.children.length) {
         tip = <div class="table-tip">请将组件拖到此区域(可拖多个组件)</div>

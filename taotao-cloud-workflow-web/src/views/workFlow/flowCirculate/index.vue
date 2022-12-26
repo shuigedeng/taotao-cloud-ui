@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -59,21 +59,21 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div></div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="refresh()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="fullName" label="流程标题" show-overflow-tooltip min-width="150" />
           <el-table-column prop="flowName" label="所属流程" width="130" />
           <el-table-column prop="startTime" label="发起时间" width="130"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="userName" label="发起人员" width="130" />
           <el-table-column prop="flowUrgent" label="紧急程度" width="130">
             <template slot-scope="scope">
@@ -100,7 +100,7 @@
                 详情</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>

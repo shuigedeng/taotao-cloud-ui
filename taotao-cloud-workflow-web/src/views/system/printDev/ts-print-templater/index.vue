@@ -3,12 +3,12 @@
     <div class="print-template-detail__body">
       <div class="system-view-nav">
         <el-scrollbar class="left-scrollbar">
-          <div class="JNPF-common-title">
+          <div class="WORKFLOW-common-title">
             <h2>表单字段</h2>
           </div>
           <el-tree :data="newData" default-expand-all :expand-on-click-node="false"
             :props="defaultProps" @node-click="handleNodeClick"></el-tree>
-          <div class="JNPF-common-title">
+          <div class="WORKFLOW-common-title">
             <h2>系统字段</h2>
           </div>
           <el-tree :data="newSysData" default-expand-all :expand-on-click-node="false"
@@ -309,7 +309,7 @@ export default {
       overflow-x: hidden;
     }
   }
-  .JNPF-common-title {
+  .WORKFLOW-common-title {
     padding: 0 10px;
     margin-bottom: 10px;
     height: 39px;

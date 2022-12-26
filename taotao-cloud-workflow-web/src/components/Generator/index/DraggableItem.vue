@@ -33,7 +33,7 @@ const layouts = {
     if (this.formConf.unFocusedComponentBorder) className += ' unfocus-bordered'
     let labelWidth = config.labelWidth ? `${config.labelWidth}px` : null
     if (config.showLabel === false) labelWidth = '0'
-    const Item = config.jnpfKey === 'cascader'
+    const Item = config.workflowKey === 'cascader'
       ? <el-cascader v-model={config.defaultValue} placeholder={element.placeholder} options={element.options}
         props={element.props} disabled={element.disabled} show-all-levels={element['show-all-levels']} separator={element.separator}
         style={element.style} clearable={element.clearable} filterable={element.filterable} key={config.renderKey}></el-cascader>
@@ -55,7 +55,7 @@ const layouts = {
     const className = this.activeId === element.__config__.formId
       ? 'drawing-row-item active-from-item'
       : 'drawing-row-item'
-    if (element.__config__.jnpfKey === 'tab') {
+    if (element.__config__.workflowKey === 'tab') {
       return (
         <el-col span={element.__config__.span}>
           <el-row gutter={element.__config__.gutter} class={className}
@@ -90,7 +90,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (element.__config__.jnpfKey === 'collapse') {
+    if (element.__config__.workflowKey === 'collapse') {
       return (
         <el-col span={element.__config__.span}>
           <el-row gutter={element.__config__.gutter} class={className}
@@ -128,7 +128,7 @@ const layouts = {
     let child = renderChildren.apply(this, arguments)
     const group = { name: 'componentsGroup', put: (...arg) => put(...arg, element) }
     const onEnd = (...arg) => end(...arg, activeData, element)
-    if (element.__config__.jnpfKey === 'row') {
+    if (element.__config__.workflowKey === 'row') {
       if (element.type === 'flex') {
         child = <el-row type={element.type} justify={element.justify} align={element.align}>
           {child}
@@ -152,7 +152,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (element.__config__.jnpfKey === 'table') {
+    if (element.__config__.workflowKey === 'table') {
       let tip = ''
       if (!element.__config__.children.length) {
         tip = <div class="table-tip">请将组件拖到此区域(可拖多个组件)</div>
@@ -173,7 +173,7 @@ const layouts = {
         </el-col>
       )
     }
-    if (element.__config__.jnpfKey === 'card') {
+    if (element.__config__.workflowKey === 'card') {
       let tip = ''
       if (!element.__config__.children.length) {
         tip = <div class="table-tip card-tip">请将组件拖到此区域(可拖多个组件)</div>
@@ -222,8 +222,8 @@ function layoutIsNotFound() {
 
 function buildOptions(element) {
   const config = element.__config__
-  if (dyOptionsList.indexOf(config.jnpfKey) > -1) {
-    let isTreeSelect = config.jnpfKey === 'treeSelect' || config.jnpfKey === 'cascader'
+  if (dyOptionsList.indexOf(config.workflowKey) > -1) {
+    let isTreeSelect = config.workflowKey === 'treeSelect' || config.workflowKey === 'cascader'
     if (config.dataType === 'dictionary') {
       if (!config.dictionaryType) return
       getDictionaryDataSelector(config.dictionaryType).then(res => {
@@ -233,7 +233,7 @@ function buildOptions(element) {
     if (config.dataType === 'dynamic') {
       if (!config.propsUrl) return
       getDataInterfaceRes(config.propsUrl).then(res => {
-        let data = this.jnpf.interfaceDataHandler(res.data)
+        let data = this.workflow.interfaceDataHandler(res.data)
         if (Array.isArray(data)) {
           isTreeSelect ? element.options = data : element.__slot__.options = data
         } else {

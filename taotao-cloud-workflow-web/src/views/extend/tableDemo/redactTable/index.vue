@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,18 +19,18 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main  JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main  WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <el-button type="primary" icon="el-icon-plus" @click="addOrUpdateHandle()">新建项目
           </el-button>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="refresh()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" @cell-click="tabClick">
+        <WORKFLOW-table v-loading="listLoading" :data="list" @cell-click="tabClick">
           <el-table-column prop="projectName" label="项目名称" width="200">
             <template slot-scope="scope">
               <el-input v-model="scope.row.projectName" v-if="tabClickId==scope.row.id"></el-input>
@@ -119,14 +119,14 @@
           <el-table-column label="操作" width="100">
             <template slot-scope="scope" v-if="tabClickId==scope.row.id">
               <el-button size="mini" type="text" @click="save(scope.row)">保存</el-button>
-              <el-button size="mini" type="text" class="JNPF-table-delBtn"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.$index,scope.row.id)">删除</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
-        <JNPF-Form v-if="formVisible" ref="JNPFForm" @refreshDataList="initData" />
+        <WORKFLOW-Form v-if="formVisible" ref="WORKFLOWForm" @refreshDataList="initData" />
       </div>
     </div>
   </div>
@@ -134,11 +134,11 @@
 
 <script>
 import { TableExampleList, TableExampleDelete, RowsEdit } from '@/api/extend/tableExample'
-import JNPFForm from '../commonForm'
+import WORKFLOWForm from '../commonForm'
 export default {
   name: 'extend-tableDemo-redactTable',
   components: {
-    JNPFForm
+    WORKFLOWForm
   },
   data() {
     return {
@@ -214,7 +214,7 @@ export default {
     addOrUpdateHandle(id) {
       this.formVisible = true
       this.$nextTick(() => {
-        this.$refs.JNPFForm.init(this.industryTypeList, id)
+        this.$refs.WORKFLOWForm.init(this.industryTypeList, id)
       })
     },
     tabClick(row, column, cell, event) {

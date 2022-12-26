@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,18 +19,18 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <el-button type="danger" icon="el-icon-delete" @click="ClearAll()">
             清空所有</el-button>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="name" label="名称" sortable>
             <template slot-scope="scope">
               <el-link @click="addOrUpdateHandle(scope.row.name)" style="font-size:12px">
@@ -39,17 +39,17 @@
             </template>
           </el-table-column>
           <el-table-column prop="overdueTime" label="过期" sortable width="160"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="cacheSize" label="大小" width="90">
             <template slot-scope="scope">{{scope.row.cacheSize | toFileSize()}}</template>
           </el-table-column>
           <el-table-column label="操作" fixed="right" width="50">
             <template slot-scope="scope">
-              <el-button size="mini" type="text" class="JNPF-table-delBtn"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.$index,scope.row.name)">删除</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
     <Form v-show="formVisible" ref="Form" @close="formVisible=false" @refreshDataList="initData" />

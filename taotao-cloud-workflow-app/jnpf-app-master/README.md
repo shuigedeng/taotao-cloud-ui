@@ -1,2 +1,0 @@
-# jnpf-app-next 
-

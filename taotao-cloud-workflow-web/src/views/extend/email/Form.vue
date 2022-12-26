@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" content="写邮件" />
         <div class="options">
           <el-button type="primary" @click="dataFormSubmit(true)" :loading="sendLoading"
@@ -14,17 +14,17 @@
       <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px" class="main">
         <el-form-item label="收件人" prop="recipient">
           <el-select v-model="dataForm.recipient" multiple filterable allow-create
-            default-first-option placeholder="收件人" title="输入完按回车" popper-class="JNPF-select-tags">
+            default-first-option placeholder="收件人" title="输入完按回车" popper-class="WORKFLOW-select-tags">
           </el-select>
         </el-form-item>
         <el-form-item label="抄送人" prop="cc" v-if="showCC">
           <el-select v-model="dataForm.cc" multiple filterable allow-create default-first-option
-            placeholder="抄送人" title="输入完按回车" popper-class="JNPF-select-tags">
+            placeholder="抄送人" title="输入完按回车" popper-class="WORKFLOW-select-tags">
           </el-select>
         </el-form-item>
         <el-form-item label="密送人" prop="bcc" v-if="showBCC">
           <el-select v-model="dataForm.bcc" multiple filterable allow-create default-first-option
-            placeholder="密送人" title="输入完按回车" popper-class="JNPF-select-tags">
+            placeholder="密送人" title="输入完按回车" popper-class="WORKFLOW-select-tags">
           </el-select>
         </el-form-item>
         <el-form-item class="add">
@@ -36,10 +36,10 @@
           <el-input v-model="dataForm.subject" placeholder="输入主题" />
         </el-form-item>
         <el-form-item label="附件" prop="attachment">
-          <JNPF-UploadFz v-model="fileList" type="mail" />
+          <WORKFLOW-UploadFz v-model="fileList" type="mail" />
         </el-form-item>
         <el-form-item label="正文" prop="bodyText">
-          <JNPF-Quill v-model="dataForm.bodyText" />
+          <WORKFLOW-Quill v-model="dataForm.bodyText" />
         </el-form-item>
       </el-form>
     </div>

@@ -1,22 +1,22 @@
 <template>
   <div>
     <el-drawer :title="dialogTitle" :visible.sync="columnAuthorizeListDrawer"
-      :wrapperClosable="false" ref="drawer" size="700px" class="JNPF-common-drawer">
-      <div class="JNPF-flex-main">
-        <div class="JNPF-common-head">
+      :wrapperClosable="false" ref="drawer" size="700px" class="WORKFLOW-common-drawer">
+      <div class="WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle('')">
             <el-button type="text" icon="el-icon-copy-document" @click="handleBatchAdd">
               批量新增
             </el-button>
           </topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
               <el-link icon="icon-ym icon-ym-Refresh
-              JNPF-common-head-icon" :underline="false" @click="getList()" />
+              WORKFLOW-common-head-icon" :underline="false" @click="getList()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="treeList" row-key="id" default-expand-all
+        <WORKFLOW-table v-loading="listLoading" :data="treeList" row-key="id" default-expand-all
           :tree-props="{children: 'children', hasChildren: ''}">
           <el-table-column prop="enCode" label="字段名称" width="160" />
           <el-table-column prop="fullName" label="字段说明" />
@@ -32,7 +32,7 @@
               <tableOpts @edit="addOrUpdateHandle(scope.row.id)" @del="handleDel(scope.row.id)" />
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="visible = false">关闭</el-button>

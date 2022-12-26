@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main diySearch">
-      <div class="JNPF-common-page-header diySearch-header">
+    <div class="WORKFLOW-preview-main diySearch">
+      <div class="WORKFLOW-common-page-header diySearch-header">
         <el-page-header @back="goBack" content="未提交查询" />
         <div class="options">
           <!-- <el-button
@@ -25,12 +25,12 @@
             :label="item"
             :name="item"
           >
-            <JNPF-table v-loading="listLoading" :data="list" max-height="100%">
+            <WORKFLOW-table v-loading="listLoading" :data="list" max-height="100%">
               <el-table-column prop="creatorUserName" label="姓名" />
               <el-table-column prop="gender" label="性别" />
               <el-table-column prop="companyName" label="所属公司" />
               <el-table-column prop="deptName" label="所属部门" />
-            </JNPF-table>
+            </WORKFLOW-table>
             <pagination
               :total="total"
               :page.sync="listQuery.currentPage"

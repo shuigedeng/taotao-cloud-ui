@@ -2,7 +2,7 @@
   <div>
     <template v-if="formData.popupType==='general'">
       <el-dialog title="详情" :close-on-click-modal="false" :visible.sync="visible"
-        class="JNPF-dialog JNPF-dialog_center" lock-scroll :width="formData.generalWidth"
+        class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll :width="formData.generalWidth"
         append-to-body>
         <div class="dynamicDetail" v-loading="loading || mainLoading">
           <Parser :formConf="formData" :relationData="relationData" @toDetail="toDetail"
@@ -20,8 +20,8 @@
     </template>
     <template v-if="formData.popupType==='fullScreen'">
       <transition name="el-zoom-in-center">
-        <div class="JNPF-preview-main">
-          <div class="JNPF-common-page-header">
+        <div class="WORKFLOW-preview-main">
+          <div class="WORKFLOW-common-page-header">
             <el-page-header @back="goBack" content="详情" />
             <div class="options">
               <template v-if="formData.hasPrintBtn && formData.printId">
@@ -43,8 +43,8 @@
     </template>
     <template v-if="formData.popupType==='drawer'">
       <el-drawer title="详情" :visible.sync="visible" :wrapperClosable="false"
-        :size='formData.drawerWidth' append-to-body class="JNPF-common-drawer">
-        <div class="JNPF-flex-main">
+        :size='formData.drawerWidth' append-to-body class="WORKFLOW-common-drawer">
+        <div class="WORKFLOW-flex-main">
           <div class="dynamicForm dynamicDetail" v-loading="loading || mainLoading">
             <Parser :formConf="formData" :relationData="relationData" @toDetail="toDetail"
               v-if="!loading" :formValue="formValue" />
@@ -137,19 +137,19 @@ export default {
       let realList = this.unique(list, 'relationField')
       for (let i = 0; i < realList.length; i++) {
         const item = realList[i];
-        let modelId = '', id = "", field = "", jnpfKey = '', activeItem = {}
-        let prop = item.relationField.split('_jnpfTable_')[0]
+        let modelId = '', id = "", field = "", workflowKey = '', activeItem = {}
+        let prop = item.relationField.split('_workflowTable_')[0]
         const loop = list => {
           for (let i = 0; i < list.length; i++) {
             if (prop === list[i].__vModel__) {
-              jnpfKey = list[i].__config__.jnpfKey
-              modelId = list[i].__config__.jnpfKey === 'relationForm' ? list[i].modelId : list[i].interfaceId
+              workflowKey = list[i].__config__.workflowKey
+              modelId = list[i].__config__.workflowKey === 'relationForm' ? list[i].modelId : list[i].interfaceId
               id = list[i].__config__.defaultValue
-              field = list[i].__config__.tableName ? list[i].__vModel__ + '_jnpfTable_' + list[i].__config__.tableName + (list[i].__config__.isSubTable ? '0' : "1") : list[i].__vModel__
+              field = list[i].__config__.tableName ? list[i].__vModel__ + '_workflowTable_' + list[i].__config__.tableName + (list[i].__config__.isSubTable ? '0' : "1") : list[i].__vModel__
               activeItem = list[i]
               break
             }
-            if (list[i].__config__ && list[i].__config__.jnpfKey !== 'table' && list[i].__config__.children && Array.isArray(list[i].__config__.children)) {
+            if (list[i].__config__ && list[i].__config__.workflowKey !== 'table' && list[i].__config__.children && Array.isArray(list[i].__config__.children)) {
               loop(list[i].__config__.children)
             }
           }
@@ -159,7 +159,7 @@ export default {
           this.$set(this.relationData, field, "")
           continue
         }
-        if (jnpfKey === 'relationForm') {
+        if (workflowKey === 'relationForm') {
           getDataChange(modelId, id).then(res => {
             if (!res.data || !res.data.data) {
               this.$set(this.relationData, field, "")
@@ -169,7 +169,7 @@ export default {
             this.$set(this.relationData, field, data)
           }).catch(() => { this.$set(this.relationData, field, "") })
         }
-        if (jnpfKey === 'popupSelect') {
+        if (workflowKey === 'popupSelect') {
           let query = {
             id: id,
             interfaceId: modelId,
@@ -211,7 +211,7 @@ export default {
         for (let i = 0; i < list.length; i++) {
           let item = list[i]
           if (item.__vModel__) {
-            if (item.__config__.jnpfKey === 'relationForm' || item.__config__.jnpfKey === 'popupSelect') {
+            if (item.__config__.workflowKey === 'relationForm' || item.__config__.workflowKey === 'popupSelect') {
               let id = data[item.__vModel__ + '_id']
               if (id) item.__config__.defaultValue = id
               this.$set(item, 'name', data[item.__vModel__] || '')
@@ -228,8 +228,8 @@ export default {
               this.$set(item.__config__, 'noShow', noShow)
             }
           }
-          if (['relationFormAttr', 'popupAttr'].includes(item.__config__.jnpfKey)) relationFormAttrList.push(item)
-          if (item.__config__ && item.__config__.jnpfKey !== 'table' && item.__config__.children && Array.isArray(item.__config__.children)) {
+          if (['relationFormAttr', 'popupAttr'].includes(item.__config__.workflowKey)) relationFormAttrList.push(item)
+          if (item.__config__ && item.__config__.workflowKey !== 'table' && item.__config__.children && Array.isArray(item.__config__.children)) {
             loop(item.__config__.children)
           }
         }

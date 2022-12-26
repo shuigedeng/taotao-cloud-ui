@@ -32,13 +32,13 @@
           </el-select>
         </el-form-item>
         <el-form-item label="树形下拉框">
-          <JNPF-TreeSelect :options="treeData" v-model="dataForm.parentId" @change="getValue"
+          <WORKFLOW-TreeSelect :options="treeData" v-model="dataForm.parentId" @change="getValue"
             placeholder="请选择">
             <template slot-scope="{data}">
               <i :class="data.data.icon"></i>
               <span class="text">{{data.node.label}}</span>
             </template>
-          </JNPF-TreeSelect>
+          </WORKFLOW-TreeSelect>
         </el-form-item>
         <!-- <el-form-item label="地区">
           <el-select v-model="dataForm.RoleType" placeholder="请选择类型">
@@ -317,7 +317,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .CommonForm-container {
-  .JNPF-common-head {
+  .WORKFLOW-common-head {
     height: 50px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;

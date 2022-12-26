@@ -20,7 +20,7 @@
               </el-image>
             </div>
             <div class="file-List" v-if="item.fileList.length">
-              <JNPF-UploadFz v-model="item.fileList" detailed disabled></JNPF-UploadFz>
+              <WORKFLOW-UploadFz v-model="item.fileList" detailed disabled></WORKFLOW-UploadFz>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
       <el-empty description="暂无数据" :image-size="120" v-else></el-empty>
     </div>
     <el-dialog title="流程评论" :visible.sync="dialogVisible" :close-on-click-modal="false"
-      class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width="600px">
+      class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width="600px">
       <el-form :model="dataForm" :rules="dataRule" ref="dataForm" label-width="0">
         <el-form-item prop="text">
           <el-input v-model="dataForm.text" placeholder="请输入评论" type="textarea" :rows="4" />
@@ -307,7 +307,7 @@ export default {
     handleFileClick(file) {
       if (!file.fileId) return
       getDownloadUrl('annex', file.fileId).then(res => {
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
       })
     },
     handleFilePreview(file) {
@@ -372,7 +372,7 @@ export default {
     }
   }
 }
-.JNPF-dialog {
+.WORKFLOW-dialog {
   .upload-btn {
     display: inline-block;
     margin-right: 20px;

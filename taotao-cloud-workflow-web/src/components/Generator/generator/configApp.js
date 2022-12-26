@@ -25,7 +25,7 @@ export const formConf = {
 // 基础控件 【左面板】
 export const inputComponents = [{
     __config__: {
-      jnpfKey: 'comInput',
+      workflowKey: 'comInput',
       label: '单行输入',
       labelWidth: undefined,
       showLabel: true,
@@ -52,7 +52,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'textarea',
+      workflowKey: 'textarea',
       label: '多行输入',
       labelWidth: undefined,
       showLabel: true,
@@ -71,7 +71,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'numInput',
+      workflowKey: 'numInput',
       label: '数字输入',
       showLabel: true,
       labelWidth: undefined,
@@ -95,7 +95,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'switch',
+      workflowKey: 'switch',
       label: '开关',
       labelWidth: undefined,
       showLabel: true,
@@ -117,7 +117,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'radio',
+      workflowKey: 'radio',
       label: '单选框组',
       labelWidth: undefined,
       showLabel: true,
@@ -155,7 +155,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'checkbox',
+      workflowKey: 'checkbox',
       label: '多选框组',
       labelWidth: undefined,
       showLabel: true,
@@ -193,7 +193,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'select',
+      workflowKey: 'select',
       label: '下拉框组',
       labelWidth: undefined,
       showLabel: true,
@@ -232,7 +232,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'cascader',
+      workflowKey: 'cascader',
       label: '级联选择',
       labelWidth: undefined,
       showLabel: true,
@@ -273,7 +273,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'date',
+      workflowKey: 'date',
       label: '日期选择',
       labelWidth: undefined,
       showLabel: true,
@@ -296,7 +296,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'time',
+      workflowKey: 'time',
       label: '时间选择',
       labelWidth: undefined,
       showLabel: true,
@@ -318,11 +318,11 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'uploadFz',
+      workflowKey: 'uploadFz',
       label: '文件上传',
       labelWidth: undefined,
       showLabel: true,
-      tag: 'JNPF-UploadFz',
+      tag: 'WORKFLOW-UploadFz',
       tagIcon: 'icon-ym icon-ym-generator-upload',
       defaultValue: [],
       required: false,
@@ -344,11 +344,11 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'uploadImg',
+      workflowKey: 'uploadImg',
       label: '图片上传',
       labelWidth: undefined,
       showLabel: true,
-      tag: 'JNPF-UploadImg',
+      tag: 'WORKFLOW-UploadImg',
       tagIcon: 'icon-ym icon-ym-generator-upload',
       defaultValue: [],
       required: false,
@@ -369,7 +369,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'rate',
+      workflowKey: 'rate',
       label: '评分',
       labelWidth: undefined,
       showLabel: true,
@@ -391,7 +391,7 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'slider',
+      workflowKey: 'slider',
       label: '滑块',
       labelWidth: undefined,
       showLabel: true,
@@ -414,11 +414,11 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'JNPFText',
+      workflowKey: 'WORKFLOWText',
       label: '文本',
       labelWidth: undefined,
       showLabel: false,
-      tag: 'JNPF-Text',
+      tag: 'WORKFLOW-Text',
       tagIcon: 'icon-ym icon-ym-generator-textarea',
       defaultValue: '这是一段文字',
       layout: 'colFormItem',
@@ -438,11 +438,11 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'editor',
+      workflowKey: 'editor',
       label: '富文本',
       showLabel: true,
       labelWidth: undefined,
-      tag: 'JNPF-Quill',
+      tag: 'WORKFLOW-Quill',
       tagIcon: 'icon-ym icon-ym-generator-rich-text',
       defaultValue: null,
       required: false,
@@ -455,11 +455,11 @@ export const inputComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'button',
+      workflowKey: 'button',
       label: '按钮',
       labelWidth: undefined,
       showLabel: false,
-      tag: 'jnpf-button',
+      tag: 'workflow-button',
       tagIcon: 'icon-ym icon-ym-generator-button',
       defaultValue: null,
       layout: 'colFormItem',
@@ -481,7 +481,7 @@ export const inputComponents = [{
 // 高级控件 【左面板】
 export const selectComponents = [{
     __config__: {
-      jnpfKey: 'comSelect',
+      workflowKey: 'comSelect',
       label: '组织选择',
       labelWidth: undefined,
       showLabel: true,
@@ -503,7 +503,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'depSelect',
+      workflowKey: 'depSelect',
       label: '部门选择',
       labelWidth: undefined,
       showLabel: true,
@@ -525,7 +525,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'posSelect',
+      workflowKey: 'posSelect',
       label: '岗位选择',
       labelWidth: undefined,
       showLabel: true,
@@ -547,7 +547,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'userSelect',
+      workflowKey: 'userSelect',
       label: '用户选择',
       labelWidth: undefined,
       showLabel: true,
@@ -569,11 +569,11 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'treeSelect',
+      workflowKey: 'treeSelect',
       label: '树形选择',
       labelWidth: undefined,
       showLabel: true,
-      tag: 'JNPFTreeSelect',
+      tag: 'WORKFLOWTreeSelect',
       tagIcon: 'icon-ym icon-ym-generator-tree',
       defaultValue: null,
       required: false,
@@ -609,7 +609,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'billRule',
+      workflowKey: 'billRule',
       label: '单据组件',
       labelWidth: undefined,
       showLabel: true,
@@ -627,11 +627,11 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'table',
+      workflowKey: 'table',
       label: '设计子表',
       showLabel: false,
       layout: 'rowFormItem',
-      tag: 'JNPF-InputTable',
+      tag: 'WORKFLOW-InputTable',
       tagIcon: 'icon-ym icon-ym-generator-table',
       defaultValue: [],
       dragDisabled: false,
@@ -649,11 +649,11 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'address',
+      workflowKey: 'address',
       label: '省市区',
       labelWidth: undefined,
       showLabel: true,
-      tag: 'JNPF-Address',
+      tag: 'WORKFLOW-Address',
       tagIcon: 'icon-ym icon-ym-generator-Provinces',
       defaultValue: [],
       required: false,
@@ -672,7 +672,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'relationForm',
+      workflowKey: 'relationForm',
       label: '关联表单',
       labelWidth: undefined,
       showLabel: true,
@@ -699,7 +699,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'popupSelect',
+      workflowKey: 'popupSelect',
       label: '弹窗选择',
       labelWidth: undefined,
       showLabel: true,
@@ -726,7 +726,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'relationFormAttr',
+      workflowKey: 'relationFormAttr',
       label: '关联表单属性',
       labelWidth: undefined,
       showLabel: true,
@@ -742,7 +742,7 @@ export const selectComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'popupAttr',
+      workflowKey: 'popupAttr',
       label: '弹窗选择属性',
       labelWidth: undefined,
       showLabel: true,
@@ -761,7 +761,7 @@ export const selectComponents = [{
 // 系统控件 【左面板】
 export const systemComponents = [{
     __config__: {
-      jnpfKey: 'createUser',
+      workflowKey: 'createUser',
       label: '创建人员',
       labelWidth: undefined,
       showLabel: true,
@@ -777,7 +777,7 @@ export const systemComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'createTime',
+      workflowKey: 'createTime',
       label: '创建时间',
       labelWidth: undefined,
       showLabel: true,
@@ -793,7 +793,7 @@ export const systemComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'modifyUser',
+      workflowKey: 'modifyUser',
       label: '修改人员',
       labelWidth: undefined,
       showLabel: true,
@@ -809,7 +809,7 @@ export const systemComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'modifyTime',
+      workflowKey: 'modifyTime',
       label: '修改时间',
       labelWidth: undefined,
       showLabel: true,
@@ -825,7 +825,7 @@ export const systemComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'currOrganize',
+      workflowKey: 'currOrganize',
       label: '所属组织',
       labelWidth: undefined,
       showLabel: true,
@@ -842,7 +842,7 @@ export const systemComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'currPosition',
+      workflowKey: 'currPosition',
       label: '所属岗位',
       labelWidth: undefined,
       showLabel: true,
@@ -861,7 +861,7 @@ export const systemComponents = [{
 // 布局控件 【左面板】
 export const layoutComponents = [{
     __config__: {
-      jnpfKey: 'groupTitle',
+      workflowKey: 'groupTitle',
       label: '分组标题',
       labelWidth: undefined,
       showLabel: false,
@@ -877,7 +877,7 @@ export const layoutComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'card',
+      workflowKey: 'card',
       label: '卡片容器',
       showLabel: false,
       tag: 'el-card',
@@ -892,7 +892,7 @@ export const layoutComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'tab',
+      workflowKey: 'tab',
       label: '标签面板',
       showLabel: false,
       tag: 'el-tab',
@@ -921,7 +921,7 @@ export const layoutComponents = [{
   },
   {
     __config__: {
-      jnpfKey: 'collapse',
+      workflowKey: 'collapse',
       label: '折叠面板',
       showLabel: false,
       tag: 'el-collapse',

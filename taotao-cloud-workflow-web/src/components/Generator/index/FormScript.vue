@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="表单脚本" :close-on-click-modal="false"
-    class="JNPF-dialog JNPF-dialog_center form-script-dialog" lock-scroll append-to-body
+    class="WORKFLOW-dialog WORKFLOW-dialog_center form-script-dialog" lock-scroll append-to-body
     v-bind="$attrs" width="1100px" :modal-append-to-body="false" v-on="$listeners" @open="onOpen">
     <div class="form-script-dialog-body">
       <div class="left-tree">
@@ -9,7 +9,7 @@
       </div>
       <div class="right-main">
         <div class="codeEditor">
-          <JNPFCodeEditor v-model="text" :options="options" ref="CodeEditor" />
+          <WORKFLOWCodeEditor v-model="text" :options="options" ref="CodeEditor" />
         </div>
         <div class="tips">
           <p>请从左侧面板选择的字段名，支持JavaScript的脚本，参考编写脚本API</p>
@@ -31,9 +31,9 @@
 </template>
 
 <script>
-import JNPFCodeEditor from '@/components/JNPFEditor/monaco'
+import WORKFLOWCodeEditor from '@/components/WORKFLOWEditor/monaco'
 export default {
-  components: { JNPFCodeEditor },
+  components: { WORKFLOWCodeEditor },
   props: ['tpl', 'fields'],
   inject: ["getFormInfo"],
   data() {
@@ -65,12 +65,12 @@ export default {
       let list = []
       const loop = (data, parent) => {
         if (!data) return
-        if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+        if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
         if (data.__vModel__) {
-          if (data.__config__.jnpfKey === 'table') {
+          if (data.__config__.workflowKey === 'table') {
             let item = {
               value: data.__vModel__,
               label: data.__config__.label,

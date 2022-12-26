@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,17 +19,17 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()"></topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="tableData" row-key="id" default-expand-all
+        <WORKFLOW-table v-loading="listLoading" :data="tableData" row-key="id" default-expand-all
           :tree-props="{children: 'children', hasChildren: ''}">
           <el-table-column prop="fullName" label="名称" />
           <el-table-column prop="enCode" label="编码" />
@@ -45,7 +45,7 @@
               <tableOpts @edit="addOrUpdateHandle(scope.row.id)" @del="handleDel(scope.row.id)" />
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
     <Form v-if="formVisible" ref="Form" @refreshDataList="getDictionaryList" />

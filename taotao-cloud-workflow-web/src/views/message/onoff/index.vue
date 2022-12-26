@@ -1,12 +1,12 @@
 <template>
-    <div class="JNPF-common-layout">
-        <div class="JNPF-common-layout-center">
-            <div class="JNPF-common-layout-main JNPF-flex-main onoff">
+    <div class="WORKFLOW-common-layout">
+        <div class="WORKFLOW-common-layout-center">
+            <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main onoff">
                 <div class="onoff-tips">
                     <p>*关闭短信开关后，系统将不再对其发送短信，<a @click="checkDetail">点击查看</a>短信发送条件</p>
                 </div>
                 <div class="onoff-main">
-                    <el-switch 
+                    <el-switch
                         v-for="(item,index) in switchData"
                         :key = "index"
                         style="display: block"
@@ -112,7 +112,7 @@ export default {
         },
         showTitle(code){
             switch (code){
-                case 'APPROVAL_SWITCH': 
+                case 'APPROVAL_SWITCH':
                     return '审批短信'
                     break;
                 case 'MESSAGE_NOT_VIEWED_SWITCH':
@@ -134,7 +134,7 @@ export default {
                     return code;
                     break;
             }
-            
+
         },
         switchChange(data){
             let params = {

@@ -1,10 +1,10 @@
 <template>
   <el-dialog :title="!dataForm.id ? $t(`department.addDepartment`) : $t(`department.editDepartment`)"
     :close-on-click-modal="false" :close-on-press-escape="false" :visible.sync="visible" lock-scroll
-    class="JNPF-dialog JNPF-dialog_center" width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-form ref="dataForm" v-loading="formLoading" :model="dataForm" :rules="dataRule" label-width="80px">
       <el-form-item label="所属上级" prop="parentId">
-        <JNPF-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择所属上级" />
+        <WORKFLOW-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择所属上级" />
       </el-form-item>
       <el-form-item label="部门名称" prop="fullName">
         <el-input v-model="dataForm.fullName" placeholder="输入名称" />

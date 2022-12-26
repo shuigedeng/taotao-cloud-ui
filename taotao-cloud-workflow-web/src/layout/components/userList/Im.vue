@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="historyBox" v-if="showHistory">
-        <el-input v-model="keyword" placeholder="搜索：请输入关键词" class="JNPF-common-head-input" clearable
+        <el-input v-model="keyword" placeholder="搜索：请输入关键词" class="WORKFLOW-common-head-input" clearable
           @change="searchHistory">
           <i slot="suffix" class="el-input__icon el-icon-search" @click="searchHistory()" />
         </el-input>
@@ -107,7 +107,7 @@
       </div>
     </div>
     <el-dialog :visible.sync="show" width="40%" :before-close="handleClose"
-      class="JNPF-dialog JNPF-dialog_center" lock-scroll style="z-index:3000">
+      class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll style="z-index:3000">
       <video :src="videoSrc" v-if="videoSrc" style="width:100%;object-fit: cover;"
         controls="controls"></video>
       <audio :src="audioSrc" v-if="audioSrc" style="width:100%;object-fit: cover;"
@@ -218,7 +218,7 @@ export default {
           userId: item.sendUserId,
           messageType: item.contentType,
           message: item.content,
-          dateTime: this.jnpf.toDate(item.sendTime)
+          dateTime: this.workflow.toDate(item.sendTime)
         })
       }
       if (!this.showHistory) {

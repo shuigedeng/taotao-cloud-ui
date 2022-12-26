@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建门户' : '编辑门户'" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" v-loading="loading"
       label-width="80px">
       <el-form-item label="门户名称" prop="fullName">

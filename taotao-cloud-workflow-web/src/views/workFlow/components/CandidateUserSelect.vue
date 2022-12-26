@@ -33,7 +33,7 @@
       </el-input>
     </div>
     <el-dialog title="候选人员" :close-on-click-modal="false" :visible.sync="visible"
-      class="JNPF-dialog JNPF-dialog_center transfer-dialog" lock-scroll append-to-body
+      class="WORKFLOW-dialog WORKFLOW-dialog_center transfer-dialog" lock-scroll append-to-body
       width="800px" :modal-append-to-body="false" @close="onClose">
       <div class="transfer__body">
         <div class="transfer-pane">

@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center info">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center info">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form :model="listQuery" :rules="rules" ref="ruleForm" class="">
           <el-col :span="6">
             <el-form-item>
@@ -19,7 +19,7 @@
           </el-col>
           <el-col :span="6">
             <el-form-item>
-              <JNPF-TreeSelect
+              <WORKFLOW-TreeSelect
                 v-model="listQuery.companyId"
                 :options="companyData"
                 :clearable="true"
@@ -148,7 +148,7 @@
           </div>
         </div>
       </div>
-      <div class="JNPF-common-layout-main JNPF-flex-main info-chart">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main info-chart">
         <div class="info-chart-item">
           <div class="info-chart-item-con">
             <div class="title">员工离开/返回常驻地趋势</div>

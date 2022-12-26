@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center  JNPF-flex-main">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center  WORKFLOW-flex-main">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item :label="$t('common.keyword')">
@@ -19,22 +19,22 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()" />
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="treeList" row-key="id" default-expand-all
+        <WORKFLOW-table v-loading="listLoading" :data="treeList" row-key="id" default-expand-all
           :tree-props="{children: 'children', hasChildren: ''}">
           <el-table-column prop="fullName" label="名称" />
           <el-table-column prop="enCode" label="编码" />
           <el-table-column prop="description" label="说明" />
-          <el-table-column prop="creatorTime" :formatter="jnpf.tableDateFormat" label="创建时间"
+          <el-table-column prop="creatorTime" :formatter="workflow.tableDateFormat" label="创建时间"
             width="120" />
           <el-table-column prop="sortCode" label="排序" width="70" align="center" />
           <el-table-column label="操作" width="150">
@@ -58,7 +58,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
     <Form v-show="formVisible" ref="Form" @close="closeForm" />
@@ -156,7 +156,7 @@ export default {
       console.log("🚀 ~ file: index.vue ~ line 151 ~ exportInfo ~ row", row)
       getUserExcel(row.id).then((res)=>{
         if (!res.data.url) return;
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         console.log("🚀 ~ file: index.vue ~ line 151 ~ exportInfo ~ res", res)
       })
     },
@@ -166,6 +166,6 @@ export default {
       })
     }
   }
-  
+
 }
 </script>

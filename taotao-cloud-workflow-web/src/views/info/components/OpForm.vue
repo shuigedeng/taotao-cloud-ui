@@ -4,7 +4,7 @@
     :close-on-click-modal="false"
     :visible.sync="visible"
     :append-to-body="true"
-    class="JNPF-dialog JNPF-dialog_center"
+    class="WORKFLOW-dialog WORKFLOW-dialog_center"
     lock-scroll
     width="600px"
   >

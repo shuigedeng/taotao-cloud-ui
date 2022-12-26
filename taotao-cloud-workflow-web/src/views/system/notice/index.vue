@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -18,20 +18,20 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()"></topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false" @click="reset()" />
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false" @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" max-height="100%">
+        <WORKFLOW-table v-loading="listLoading" :data="list" max-height="100%">
           <el-table-column prop="title" label="标题" show-overflow-tooltip />
-          <el-table-column prop="creatorTime" label="创建时间" :formatter="jnpf.tableDateFormat" width="120" />
+          <el-table-column prop="creatorTime" label="创建时间" :formatter="workflow.tableDateFormat" width="120" />
           <el-table-column prop="creatorUser" label="发布人员" width="120" />
-          <el-table-column prop="lastModifyTime" label="发布时间" :formatter="jnpf.tableDateFormat" width="120" />
+          <el-table-column prop="lastModifyTime" label="发布时间" :formatter="workflow.tableDateFormat" width="120" />
           <el-table-column prop="enabledMark" label="状态" width="100" align="center">
             <template slot-scope="scope">
               <el-tag :type="scope.row.enabledMark == 1 ? 'success' : 'danger'" disable-transitions>
@@ -57,7 +57,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage" :limit.sync="listQuery.pageSize"
           @pagination="initData" />
       </div>

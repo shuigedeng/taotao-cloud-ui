@@ -86,7 +86,7 @@
         </el-col>
         <el-col :span="24" v-if="judgeShow('fileJson')">
           <el-form-item label="相关附件" prop="fileJson">
-            <JNPF-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
+            <WORKFLOW-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
           </el-form-item>
         </el-col>
         <el-col :span="24" v-if="judgeShow('description')">
@@ -162,7 +162,7 @@
             <el-table-column label="操作" width="50"
               v-if="!setting.readonly && !judgeWrite('goodsList')">
               <template slot-scope="scope">
-                <el-button size="mini" type="text" class="JNPF-table-delBtn"
+                <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                   @click="handleDel(scope.$index,scope.row)">删除</el-button>
               </template>
             </el-table-column>
@@ -213,7 +213,7 @@
             <el-table-column label="操作" width="50"
               v-if="!setting.readonly && !judgeWrite('collectionPlanList')">
               <template slot-scope="scope">
-                <el-button size="mini" type="text" class="JNPF-table-delBtn"
+                <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                   @click="handleDelPlan(scope.$index,scope.row)">删除</el-button>
               </template>
             </el-table-column>
@@ -490,13 +490,13 @@ export default {
     },
     count(row) {
       //金额 = 数量*单价
-      row.amount = this.jnpf.toDecimal(parseFloat(row.price) * parseFloat(row.qty))
+      row.amount = this.workflow.toDecimal(parseFloat(row.price) * parseFloat(row.qty))
       //折扣价 = (单价*折扣)
       var discountPrice = row.price * (row.discount / 100);
       //实际单价 = 折扣价 * (1 + (税率 / 100))
-      row.actualPrice = this.jnpf.toDecimal(discountPrice * (1 + (row.cess / 100)));
+      row.actualPrice = this.workflow.toDecimal(discountPrice * (1 + (row.cess / 100)));
       //实际金额
-      row.actualAmount = this.jnpf.toDecimal(parseFloat(row.actualPrice) * parseFloat(row.qty))
+      row.actualAmount = this.workflow.toDecimal(parseFloat(row.actualPrice) * parseFloat(row.qty))
     }
   }
 }

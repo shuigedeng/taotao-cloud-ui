@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="输出设置" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" label-width="100px" :model="dataForm">
       <el-form-item label="模块命名" prop="module" v-if="type!=3"
         :rules="[{ required: true,message: '请选择模块命名', trigger: 'change' }]">
@@ -88,7 +88,7 @@ export default {
           }
           DownloadCode(this.id, query).then(res => {
             if (!res.data || !res.data.url) return
-            this.jnpf.downloadFile(res.data.url)
+            this.workflow.downloadFile(res.data.url)
             this.$emit('close')
           })
         }

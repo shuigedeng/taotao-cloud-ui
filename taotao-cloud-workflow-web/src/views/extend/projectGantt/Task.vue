@@ -1,14 +1,14 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main order-form">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main order-form">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" content="项目任务" />
         <div class="options">
           <el-button @click="goBack()">{{$t('common.cancelButton')}}</el-button>
         </div>
       </div>
       <div class="main">
-        <el-row class="JNPF-common-search-box" :gutter="20">
+        <el-row class="WORKFLOW-common-search-box" :gutter="20">
           <el-form @submit.native.prevent>
             <el-col :span="6">
               <el-form-item label="关键词">
@@ -25,12 +25,12 @@
               </el-form-item>
             </el-col>
           </el-form>
-          <div class="JNPF-common-search-box-right">
+          <div class="WORKFLOW-common-search-box-right">
             <el-button type="primary" icon="el-icon-plus" @click="addOrUpdateHandle()">新建任务
             </el-button>
           </div>
         </el-row>
-        <JNPF-table v-loading="listLoading" :data="list" row-key="id" :hasNO="false"
+        <WORKFLOW-table v-loading="listLoading" :data="list" row-key="id" :hasNO="false"
           :tree-props="{children: 'children', hasChildren: ''}" default-expand-all>
           <el-table-column type="index" width="50" label="序号" align="center" fixed="left" />
           <el-table-column prop="fullName" label="任务名称" show-overflow-tooltip width="200"
@@ -68,11 +68,11 @@
             <template slot-scope="scope" v-if="scope.row.parentId !='0'">
               <el-button size="mini" type="text" @click="addOrUpdateHandle(scope.row.id)">编辑
               </el-button>
-              <el-button size="mini" type="text" class="JNPF-table-delBtn"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.row.id)">删除</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <Form v-if="formVisible" ref="Form" @refreshDataList="reset" />
       </div>
     </div>
@@ -486,7 +486,7 @@ export default {
   ::v-deep .el-table {
     flex: 1;
   }
-  .JNPF-common-search-box-right {
+  .WORKFLOW-common-search-box-right {
     margin-right: 10px;
   }
   .item-on {

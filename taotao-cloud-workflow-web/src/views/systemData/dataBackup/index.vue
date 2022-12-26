@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,20 +19,20 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="handleCrateBackup()" addText="创建备份"></topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="tableList">
+        <WORKFLOW-table v-loading="listLoading" :data="tableList">
           <el-table-column prop="fileName" label="文件名" sortable show-overflow-tooltip />
           <el-table-column prop="fileSize" label="文件大小" sortable width="120" />
-          <el-table-column prop="creatorTime" :formatter="jnpf.tableDateFormat" sortable
+          <el-table-column prop="creatorTime" :formatter="workflow.tableDateFormat" sortable
             label="备份时间" width="120" />
           <el-table-column label="操作" width="130">
             <template slot-scope="scope">
@@ -41,7 +41,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>
@@ -116,7 +116,7 @@ export default {
       }).catch(() => { })
     },
     handleDownload(fileUrl) {
-      this.jnpf.downloadFile(fileUrl)
+      this.workflow.downloadFile(fileUrl)
     },
     search() {
       this.listQuery.currentPage = 1

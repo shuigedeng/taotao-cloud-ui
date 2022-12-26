@@ -38,7 +38,7 @@
             <i class="icon-ym icon-ym-header-feedBack"></i>{{ $t('navbar.feedback') }}
           </el-dropdown-item>
         </a>
-        
+
         <el-dropdown-item @click.native="visible2 = true">
           <i class="icon-ym icon-ym-generator-card"></i>{{ $t('navbar.statement') }}
         </el-dropdown-item> -->
@@ -59,11 +59,11 @@
       </div>
     </el-tooltip>
     <el-dialog title="关于平台" :close-on-click-modal="false" :visible.sync="visible" v-drag-dialog
-      class="JNPF-dialog JNPF-dialog_center about-dialog" lock-scroll width="400px">
+      class="WORKFLOW-dialog WORKFLOW-dialog_center about-dialog" lock-scroll width="400px">
       <div class="about-dialog-main">
         <div>
           <img :src="define.comUrl + sysConfig.logoIcon" class="about-logo" v-if="sysConfig && sysConfig.logoIcon" />
-          <img src="@/assets/images/jnpf.png" class="about-logo" v-else />
+          <img src="@/assets/images/workflow.png" class="about-logo" v-else />
         </div>
         <div>
           <p class="title">{{ sysConfig.sysName }}</p>
@@ -74,7 +74,7 @@
       <p class="about-dialog-main-tip"></p>
     </el-dialog>
     <el-dialog title="官方声明" :close-on-click-modal="false" :visible.sync="visible2" v-drag-dialog
-      class="JNPF-dialog JNPF-dialog_center about-dialog" lock-scroll width="400px">
+      class="WORKFLOW-dialog WORKFLOW-dialog_center about-dialog" lock-scroll width="400px">
       <div class="about-dialog-main">
         <div>
 
@@ -210,15 +210,15 @@ export default {
           //接收对方发送的消息
           if (data.method == 'receiveMessage') {
             //判断是否打开窗口
-            if (this.$refs.UserList && this.$refs.UserList.$refs.JNPFIm && this.$refs.UserList.$refs.JNPFIm.visible) {
-              if (this.$refs.UserList.$refs.JNPFIm.info.id === data.formUserId) {
+            if (this.$refs.UserList && this.$refs.UserList.$refs.WORKFLOWIm && this.$refs.UserList.$refs.WORKFLOWIm.visible) {
+              if (this.$refs.UserList.$refs.WORKFLOWIm.info.id === data.formUserId) {
                 let messIitem = {
                   userId: data.formUserId,
                   messageType: data.messageType,
                   message: data.formMessage,
-                  dateTime: this.jnpf.toDate(data.dateTime)
+                  dateTime: this.workflow.toDate(data.dateTime)
                 }
-                this.$refs.UserList.$refs.JNPFIm.addItem(messIitem)
+                this.$refs.UserList.$refs.WORKFLOWIm.addItem(messIitem)
                 //更新已读
                 let updateReadMessage = {
                   method: "UpdateReadMessage",
@@ -238,20 +238,20 @@ export default {
           }
           //显示自己发送的消息
           if (data.method == 'sendMessage') {
-            if (this.$refs.UserList.$refs.JNPFIm.info.id !== data.toUserId) return
+            if (this.$refs.UserList.$refs.WORKFLOWIm.info.id !== data.toUserId) return
             //添加到客户端
             let messIitem = {
               userId: data.UserId,
               messageType: data.messageType,
               message: data.toMessage,
-              dateTime: this.jnpf.toDate(data.dateTime)
+              dateTime: this.workflow.toDate(data.dateTime)
             }
             this.$refs.UserList.updateLatestMessage(data)
-            this.$refs.UserList.$refs.JNPFIm.addItem(messIitem)
+            this.$refs.UserList.$refs.WORKFLOWIm.addItem(messIitem)
           }
           //消息列表
           if (data.method == 'messageList') {
-            this.$refs.UserList.$refs.JNPFIm.getList(data)
+            this.$refs.UserList.$refs.WORKFLOWIm.getList(data)
           }
         }
       }
@@ -378,7 +378,7 @@ export default {
 }
 
 .about-dialog {
-  &.JNPF-dialog.JNPF-dialog_center::v-deep.el-dialog .el-dialog__body {
+  &.WORKFLOW-dialog.WORKFLOW-dialog_center::v-deep.el-dialog .el-dialog__body {
     padding: 0 0 40px 0;
   }
 

@@ -1,14 +1,14 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" content="批量审批" />
         <div class="options">
           <el-button @click="goBack()">{{$t('common.cancelButton')}}</el-button>
         </div>
       </div>
       <div class="main">
-        <el-row class="JNPF-common-search-box" :gutter="16">
+        <el-row class="WORKFLOW-common-search-box" :gutter="16">
           <el-form @submit.native.prevent>
             <el-col :span="6">
               <el-form-item label="关键词">
@@ -72,7 +72,7 @@
             </el-col>
           </el-form>
         </el-row>
-        <div class="JNPF-common-head">
+        <div class="WORKFLOW-common-head">
           <div>
             <el-button type="warning" @click="handleBatch(2)" :disabled="!listQuery.nodeCode">
               批量转办</el-button>
@@ -82,13 +82,13 @@
             </el-button>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" has-c @selection-change="handleChange">
+        <WORKFLOW-table v-loading="listLoading" :data="list" has-c @selection-change="handleChange">
           <el-table-column prop="fullName" label="流程标题" show-overflow-tooltip min-width="150" />
           <el-table-column prop="flowName" label="所属流程" width="130" />
           <el-table-column prop="flowVersion" label="流程版本" width="130" />
           <el-table-column prop="nodeName" label="所属节点" width="130" />
           <el-table-column prop="startTime" label="发起时间" width="130"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="userName" label="发起人员" width="130" />
           <el-table-column prop="flowUrgent" label="紧急程度" width="130">
             <template slot-scope="scope">
@@ -109,7 +109,7 @@
               {{scope.row.creatorTime | toDate() }}
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>
@@ -347,7 +347,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 0 0 10px;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     border-bottom: 1px solid #dcdfe6;
   }
   ::v-deep .el-table {

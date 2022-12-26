@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建连接' : '编辑连接'" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px">
       <el-form-item label="连接驱动" prop="dbType">
         <el-select v-model="dataForm.dbType" placeholder="请选择" :disabled='!!dataForm.id'

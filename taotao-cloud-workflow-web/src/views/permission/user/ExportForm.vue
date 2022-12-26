@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="导出数据" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center JNPF-dialog-export" lock-scroll width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center WORKFLOW-dialog-export" lock-scroll width="600px">
     <el-form label-position="top">
       <el-form-item>
         <el-radio-group v-model="type">
@@ -97,7 +97,7 @@ export default {
       ExportExcel(query).then(res => {
         this.btnLoading = false
         if (!res.data.url) return
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
         this.visible = false
       }).catch(() => { this.btnLoading = false })
     }

@@ -1,7 +1,7 @@
 <template>
-  <div class="app-container JNPF-flex-main systemConfig">
+  <div class="app-container WORKFLOW-flex-main systemConfig">
     <el-form ref="baseForm" :model="baseForm" label-width="100px">
-      <el-tabs v-model="activeName" type="border-card" class="JNPF-el_tabs">
+      <el-tabs v-model="activeName" type="border-card" class="WORKFLOW-el_tabs">
         <el-tab-pane label="基本设置" name="first">
           <el-row :gutter="20">
             <el-col :span="24">
@@ -68,7 +68,7 @@
               <el-form-item label="更新文本" prop="sysUpdateText">
                 <!-- <el-input v-model="baseForm.sysUpdateText" type="textarea"
                   :autosize="{ minRows: 5, maxRows: 10}" placeholder="更新文本" /> -->
-                <JNPFQuill v-model="baseForm.sysUpdateText" />
+                <WORKFLOWQuill v-model="baseForm.sysUpdateText" />
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" size="small" :loading="btnLoading" class="saveBtn"
@@ -288,7 +288,7 @@
                       <el-table-column prop="synFailCount" label="同步失败数" />
                       <el-table-column prop="unSynCount" label="未同步数" />
                       <el-table-column prop="synDate" label="同步时间"
-                        :formatter="jnpf.tableDateFormat" />
+                        :formatter="workflow.tableDateFormat" />
                       <el-table-column label="操作" width="70">
                         <template slot-scope="scope">
                           <el-button size="mini" type="text" @click="syncQy(scope.row)"
@@ -348,7 +348,7 @@
                       <el-table-column prop="synFailCount" label="同步失败数" />
                       <el-table-column prop="unSynCount" label="未同步数" />
                       <el-table-column prop="synDate" label="同步时间"
-                        :formatter="jnpf.tableDateFormat" />
+                        :formatter="workflow.tableDateFormat" />
                       <el-table-column label="操作" width="70">
                         <template slot-scope="scope">
                           <el-button size="mini" type="text" @click="syncDing(scope.row)"
@@ -405,10 +405,10 @@ import {
   setAdminList
 } from '@/api/system/sysConfig'
 import singleImg from '@/components/Upload/SingleImg'
-import JNPFQuill from '@/components/JNPFEditor/quill'
+import WORKFLOWQuill from '@/components/WORKFLOWEditor/quill'
 export default {
   name: 'system-sysConfig',
-  components: { singleImg ,JNPFQuill },
+  components: { singleImg ,WORKFLOWQuill },
   data() {
     return {
       activeName: 'first',

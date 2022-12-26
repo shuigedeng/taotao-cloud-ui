@@ -35,7 +35,7 @@
         <el-table-column
           prop="lastModifyTime"
           label="发布时间"
-          :formatter="jnpf.tableDateFormat"
+          :formatter="workflow.tableDateFormat"
           width="180"
         >
         </el-table-column>

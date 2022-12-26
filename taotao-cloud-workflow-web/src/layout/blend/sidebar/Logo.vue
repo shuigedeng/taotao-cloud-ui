@@ -4,14 +4,14 @@
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
         <!-- <img :src="define.comUrl+sysConfig.logoIcon" class="sidebar-logo"
           v-if="sysConfig && sysConfig.logoIcon" /> -->
-        <img src="@/assets/images/jnpf.png" class="sidebar-logo" />
+        <img src="@/assets/images/workflow.png" class="sidebar-logo" />
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
         <img :src="define.comUrl + sysConfig.navigationIcon" class="sidebar-logo"
           v-if="sysConfig && sysConfig.navigationIcon" />
         <template v-else>
-          <img src="@/assets/images/jnpf2.png" class="sidebar-logo" v-if="slideClass === 'lightWhite'" />
-          <img src="@/assets/images/jnpf1.png" class="sidebar-logo" v-else />
+          <img src="@/assets/images/workflow2.png" class="sidebar-logo" v-if="slideClass === 'lightWhite'" />
+          <img src="@/assets/images/workflow1.png" class="sidebar-logo" v-else />
         </template>
       </router-link>
     </transition>

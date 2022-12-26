@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout menu-list">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout menu-list">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,33 +19,33 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
         <el-tabs type="border-card" v-model="listQuery.category" class="menu-tab">
           <el-tab-pane label="Web菜单" name="Web"></el-tab-pane>
           <el-tab-pane label="App菜单" name="App"></el-tab-pane>
           <div class="box">
-            <div class="JNPF-common-head">
+            <div class="WORKFLOW-common-head">
               <topOpts @add="addOrUpdateHandle()">
                 <upload-btn url="/api/system/Menu/Action/Import" @on-success="initData" />
               </topOpts>
-              <div class="JNPF-common-head-right">
+              <div class="WORKFLOW-common-head-right">
                 <el-tooltip effect="dark" content="展开" placement="top">
                   <el-link v-show="!expands" type="text"
-                    icon="icon-ym icon-ym-btn-expand JNPF-common-head-icon" :underline="false"
+                    icon="icon-ym icon-ym-btn-expand WORKFLOW-common-head-icon" :underline="false"
                     @click="toggleExpand()" />
                 </el-tooltip>
                 <el-tooltip effect="dark" content="折叠" placement="top">
                   <el-link v-show="expands" type="text"
-                    icon="icon-ym icon-ym-btn-collapse JNPF-common-head-icon" :underline="false"
+                    icon="icon-ym icon-ym-btn-collapse WORKFLOW-common-head-icon" :underline="false"
                     @click="toggleExpand()" />
                 </el-tooltip>
                 <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-                  <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+                  <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                     @click="reset()" />
                 </el-tooltip>
               </div>
             </div>
-            <JNPF-table v-loading="listLoading" :data="treeList" row-key="id" v-if="refreshTable"
+            <WORKFLOW-table v-loading="listLoading" :data="treeList" row-key="id" v-if="refreshTable"
               :default-expand-all="expands" :tree-props="{children: 'children', hasChildren: ''}">
               <el-table-column prop="fullName" label="菜单名称" width="260" />
               <el-table-column prop="urlAddress" label="菜单地址" show-overflow-tooltip />
@@ -112,7 +112,7 @@
                   </tableOpts>
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
           </div>
         </el-tabs>
       </div>
@@ -267,7 +267,7 @@ export default {
         type: 'warning'
       }).then(() => {
         exportMenu(id).then(res => {
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
         })
       }).catch(() => { });
     }
@@ -280,7 +280,7 @@ export default {
     vertical-align: middle;
     font-size: 16px;
   }
-  .JNPF-common-layout-main {
+  .WORKFLOW-common-layout-main {
     padding: 0;
   }
   .menu-tab {

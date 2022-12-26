@@ -41,7 +41,7 @@ export default {
     addItem() {
       this.activeData.__config__.children.push({
         title: '新面板',
-        name: this.jnpf.idGenerator(),
+        name: this.workflow.idGenerator(),
         __config__: {
           children: []
         }

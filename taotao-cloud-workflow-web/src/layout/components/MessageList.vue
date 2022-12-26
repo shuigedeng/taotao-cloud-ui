@@ -1,20 +1,20 @@
 <template>
   <div>
     <el-drawer title="站内消息" :visible.sync="drawer" direction="rtl" size="280px"
-      class="JNPF-messageList JNPF-common-drawer" :before-close="handleClose">
+      class="WORKFLOW-messageList WORKFLOW-common-drawer" :before-close="handleClose">
       <div class="tool">
         <el-link :underline="false" @click.native="readAll">全部已读</el-link>
         <el-link :underline="false" @click.native="gotoCenter">消息中心</el-link>
       </div>
-      <div class="JNPF-messageList-box" v-loading="loading && listQuery.currentPage==1"
+      <div class="WORKFLOW-messageList-box" v-loading="loading && listQuery.currentPage==1"
         ref="messageListBody">
         <div v-if="list.length">
-          <div v-for="(item,i) in list" :key="i" class="JNPF-messageList-item"
+          <div v-for="(item,i) in list" :key="i" class="WORKFLOW-messageList-item"
             @click="readInfo(item)" :title="item.title">
             <el-badge is-dot :hidden="item.isRead=='1'" type="warning">
-              <i class="el-icon-chat-dot-square JNPF-messageList-item-icon"></i>
+              <i class="el-icon-chat-dot-square WORKFLOW-messageList-item-icon"></i>
             </el-badge>
-            <div class="JNPF-messageList-txt">
+            <div class="WORKFLOW-messageList-txt">
               <p class="title">{{item.title}}</p>
               <p class="name">
                 <span>{{item.creatorUser}}</span>
@@ -27,7 +27,7 @@
       </div>
     </el-drawer>
     <el-dialog title="查看消息" :close-on-click-modal="false" :visible.sync="visible"
-      class="JNPF-dialog JNPF-dialog_center JNPF-dialog-notice" lock-scroll width="80%">
+      class="WORKFLOW-dialog WORKFLOW-dialog_center WORKFLOW-dialog-notice" lock-scroll width="80%">
       <div class="notice-wrapper" v-loading="loading">
         <h1 class="title">{{info.title}}</h1>
         <div class="info">
@@ -35,7 +35,7 @@
         </div>
         <div class="main" v-html="info.bodyText"></div>
         <div class="file-list" v-if="files.length">
-          <JNPF-UploadFz v-model="files" disabled detailed />
+          <WORKFLOW-UploadFz v-model="files" disabled detailed />
         </div>
       </div>
       <span slot="footer" class="dialog-footer">
@@ -150,8 +150,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.JNPF-messageList {
-  .JNPF-messageList-title {
+.WORKFLOW-messageList {
+  .WORKFLOW-messageList-title {
     display: flex;
     align-items: center;
     padding-right: 20px;
@@ -181,7 +181,7 @@ export default {
       padding: 0 20px;
       background: #fff;
     }
-    .JNPF-messageList-box {
+    .WORKFLOW-messageList-box {
       overflow: auto;
       overflow-x: hidden;
       position: relative;
@@ -198,7 +198,7 @@ export default {
         padding-top: 20px;
       }
     }
-    .JNPF-messageList-item {
+    .WORKFLOW-messageList-item {
       position: relative;
       display: block;
       padding: 0 20px;
@@ -212,7 +212,7 @@ export default {
         background-color: #f5f7f9;
       }
 
-      .JNPF-messageList-item-icon {
+      .WORKFLOW-messageList-item-icon {
         background-color: #1890ff;
         width: 36px;
         height: 36px;
@@ -223,7 +223,7 @@ export default {
         border-radius: 50%;
         text-align: center;
       }
-      .JNPF-messageList-txt {
+      .WORKFLOW-messageList-txt {
         margin-left: 14px;
         overflow: hidden;
         flex: 1;

@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout JNPF-flex-main">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout WORKFLOW-flex-main">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item :label="$t('common.keyword')">
@@ -19,19 +19,19 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div>
             <el-button type="danger" size="small" @click="batchDel">强制下线</el-button>
           </div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="tableDataList" has-c
+        <WORKFLOW-table v-loading="listLoading" :data="tableDataList" has-c
           @selection-change="handleSelectionChange">
           <el-table-column prop="userName" label="在线用户" width="120" />
           <el-table-column prop="loginIPAddress" label="登录IP" width="120" />
@@ -39,13 +39,13 @@
           <el-table-column prop="loginPlatForm" label="登录设备" show-overflow-tooltip />
           <el-table-column label="操作" width="90">
             <template slot-scope="scope">
-              <el-button slot="reference" type="text" class="JNPF-table-delBtn"
+              <el-button slot="reference" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.row.userId)">
                 {{$t('userOnline.forcedOffline')}}
               </el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
   </div>

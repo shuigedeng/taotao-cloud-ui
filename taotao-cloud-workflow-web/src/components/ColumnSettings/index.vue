@@ -1,12 +1,12 @@
 <template>
   <span>
     <el-tooltip :content="$t('common.columnSettings')" placement="top">
-      <el-link icon="icon-ym icon-ym-options JNPF-common-head-icon" :underline="false"
+      <el-link icon="icon-ym icon-ym-options WORKFLOW-common-head-icon" :underline="false"
         @click="showDrawer" />
     </el-tooltip>
     <el-drawer title="列表显示设置" :visible.sync="drawerVisible" :wrapperClosable="false" size="320px"
-      append-to-body class="JNPF-common-drawer columnSettings-drawer">
-      <div class="JNPF-flex-main">
+      append-to-body class="WORKFLOW-common-drawer columnSettings-drawer">
+      <div class="WORKFLOW-flex-main">
         <div class="columnSetting-head">
           <span>表头设置</span>
           <el-link type="primary" :underline="false" @click="reset()">恢复默认</el-link>
@@ -103,7 +103,7 @@ export default {
 </script>
 <style lang="scss">
 .columnSettings-drawer {
-  .JNPF-flex-main {
+  .WORKFLOW-flex-main {
     overflow: hidden;
   }
   .columnSetting-head {

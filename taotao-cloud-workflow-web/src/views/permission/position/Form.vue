@@ -1,11 +1,11 @@
 <template>
   <el-dialog :title="!dataForm.id ? $t(`position.newPost`) : $t(`position.editPost`)"
     :close-on-click-modal="false" :close-on-press-escape="false" :visible.sync="visible" lock-scroll
-    class="JNPF-dialog JNPF-dialog_center" width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-form ref="dataForm" v-loading="formLoading" :model="dataForm" :rules="dataRule"
       label-width="90px">
       <el-form-item label="所属组织" prop="organizeId">
-        <JNPF-TreeSelect v-model="dataForm.organizeId" :options="treeData" placeholder="选择所属组织" />
+        <WORKFLOW-TreeSelect v-model="dataForm.organizeId" :options="treeData" placeholder="选择所属组织" />
       </el-form-item>
       <el-form-item label="岗位名称" prop="fullName">
         <el-input v-model="dataForm.fullName" placeholder="输入名称" />

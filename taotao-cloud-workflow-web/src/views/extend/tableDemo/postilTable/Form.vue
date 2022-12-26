@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="添加批注" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-input v-model="text" placeholder="输入内容" type="textarea" :rows="3" />
     <el-timeline class="timeline">
       <el-timeline-item v-for="(item, index) in activities" :key="index">

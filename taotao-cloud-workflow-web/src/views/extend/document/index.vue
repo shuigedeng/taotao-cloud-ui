@@ -3,8 +3,8 @@
     <el-tabs tab-position="left" style="height:100%" v-model="activeTab">
       <el-tab-pane name="allPanel">
         <span slot="label"><i class="icon-ym icon-ym-extend-folder-open"></i>全部文档</span>
-        <div class="main JNPF-flex-main">
-          <div class="JNPF-common-head">
+        <div class="main WORKFLOW-flex-main">
+          <div class="WORKFLOW-common-head">
             <el-breadcrumb>
               <el-breadcrumb-item v-if="levelList.length>1">
                 <a @click="jump(levelList[levelList.length-2],levelList.length-2)">返回上一级</a>
@@ -15,7 +15,7 @@
               </el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <el-row class="JNPF-common-search-box" :gutter="16">
+          <el-row class="WORKFLOW-common-search-box" :gutter="16">
             <el-form @submit.native.prevent>
               <el-col :span="6">
                 <el-form-item label="关键词">
@@ -32,7 +32,7 @@
                 </el-form-item>
               </el-col>
             </el-form>
-            <div class="JNPF-common-search-box-right">
+            <div class="WORKFLOW-common-search-box-right">
               <el-button @click="addFolder()" style="margin-right:10px">新建文件夹</el-button>
               <el-upload :action="uploadUrl" :headers="uploadHeaders" :on-success="handleSuccess"
                 :data='{parentId: parentId}' multiple :show-file-list="false" class="upload-box"
@@ -42,7 +42,7 @@
               </el-upload>
             </div>
           </el-row>
-          <JNPF-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
+          <WORKFLOW-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
             <el-table-column prop="fullName" label="文件名">
               <template slot-scope="scope">
                 <span v-if="scope.row.type">
@@ -64,13 +64,13 @@
             <el-table-column prop="fileSize" label="大小" width="90">
               <template slot-scope="scope">{{scope.row.fileSize | toFileSize()}}</template>
             </el-table-column>
-            <el-table-column prop="creatorTime" label="创建日期" :formatter="jnpf.tableDateFormat"
+            <el-table-column prop="creatorTime" label="创建日期" :formatter="workflow.tableDateFormat"
               width="120" />
             <el-table-column label="操作" fixed="right" width="150">
               <template slot-scope="scope">
                 <el-button size="mini" type="text" @click="handleDownLoad(scope.row.id)"
                   :disabled="!scope.row.type">下载</el-button>
-                <el-button size="mini" type="text" class="JNPF-table-delBtn"
+                <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                   @click="handleDel(scope.$index,scope.row.id)">删除</el-button>
                 <el-dropdown>
                   <el-button type="text" size="mini">
@@ -90,18 +90,18 @@
                 </el-dropdown>
               </template>
             </el-table-column>
-          </JNPF-table>
+          </WORKFLOW-table>
         </div>
       </el-tab-pane>
       <el-tab-pane name="shareoutPanel">
         <span slot="label"><i class="icon-ym icon-ym-extend-thumbs-up"></i>我的共享</span>
-        <div class="main JNPF-flex-main">
-          <div class="JNPF-common-head">
+        <div class="main WORKFLOW-flex-main">
+          <div class="WORKFLOW-common-head">
             <el-breadcrumb>
               <el-breadcrumb-item>我的共享</el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <el-row class="JNPF-common-search-box" :gutter="16">
+          <el-row class="WORKFLOW-common-search-box" :gutter="16">
             <el-form @submit.native.prevent>
               <el-col :span="6">
                 <el-form-item label="文件名">
@@ -118,7 +118,7 @@
               </el-col>
             </el-form>
           </el-row>
-          <JNPF-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
+          <WORKFLOW-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
             <el-table-column prop="fullName" label="文件名">
               <template slot-scope="scope">
                 <i :class='"icon-ym " + toFileExt(scope.row.fileExtension) + " i-default"' />
@@ -128,26 +128,26 @@
             <el-table-column prop="fileSize" label="大小" width="90">
               <template slot-scope="scope">{{scope.row.fileSize | toFileSize()}}</template>
             </el-table-column>
-            <el-table-column prop="shareTime" label="共享日期" :formatter="jnpf.tableDateFormat"
+            <el-table-column prop="shareTime" label="共享日期" :formatter="workflow.tableDateFormat"
               width="120" />
             <el-table-column label="操作" fixed="right" width="70">
               <template slot-scope="scope">
-                <el-button size="mini" type="text" class="JNPF-table-delBtn"
+                <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                   @click="unshare(scope.$index,scope.row.id)">取消共享</el-button>
               </template>
             </el-table-column>
-          </JNPF-table>
+          </WORKFLOW-table>
         </div>
       </el-tab-pane>
       <el-tab-pane name="sharetomePanel">
         <span slot="label"><i class="icon-ym icon-ym-extend-share"></i>共享给我</span>
-        <div class="main JNPF-flex-main">
-          <div class="JNPF-common-head">
+        <div class="main WORKFLOW-flex-main">
+          <div class="WORKFLOW-common-head">
             <el-breadcrumb>
               <el-breadcrumb-item>共享给我</el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <el-row class="JNPF-common-search-box" :gutter="16">
+          <el-row class="WORKFLOW-common-search-box" :gutter="16">
             <el-form @submit.native.prevent>
               <el-col :span="6">
                 <el-form-item label="文件名">
@@ -164,7 +164,7 @@
               </el-col>
             </el-form>
           </el-row>
-          <JNPF-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
+          <WORKFLOW-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
             <el-table-column prop="fullName" label="文件名">
               <template slot-scope="scope">
                 <i :class='"icon-ym " + toFileExt(scope.row.fileExtension) + " i-default"' />
@@ -174,7 +174,7 @@
             <el-table-column prop="fileSize" label="大小" width="90">
               <template slot-scope="scope">{{scope.row.fileSize | toFileSize()}}</template>
             </el-table-column>
-            <el-table-column prop="shareTime" label="共享日期" :formatter="jnpf.tableDateFormat"
+            <el-table-column prop="shareTime" label="共享日期" :formatter="workflow.tableDateFormat"
               width="120" />
             <el-table-column prop="creatorUserId" label="共享人员" width="120" />
             <el-table-column label="操作" fixed="right" width="50">
@@ -183,18 +183,18 @@
                 </el-button>
               </template>
             </el-table-column>
-          </JNPF-table>
+          </WORKFLOW-table>
         </div>
       </el-tab-pane>
       <el-tab-pane name="trashPanel">
         <span slot="label"><i class="icon-ym icon-ym-extend-trash"></i>回收站</span>
-        <div class="main JNPF-flex-main">
-          <div class="JNPF-common-head">
+        <div class="main WORKFLOW-flex-main">
+          <div class="WORKFLOW-common-head">
             <el-breadcrumb>
               <el-breadcrumb-item>回收站</el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <el-row class="JNPF-common-search-box" :gutter="16">
+          <el-row class="WORKFLOW-common-search-box" :gutter="16">
             <el-form @submit.native.prevent>
               <el-col :span="6">
                 <el-form-item label="文件名">
@@ -211,7 +211,7 @@
               </el-col>
             </el-form>
           </el-row>
-          <JNPF-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
+          <WORKFLOW-table v-loading="listLoading" :data="list" empty-text="该文件夹为空" size="mini">
             <el-table-column prop="fullName" label="文件名">
               <template slot-scope="scope">
                 <span v-if="scope.row.type">
@@ -227,17 +227,17 @@
             <el-table-column prop="fileSize" label="大小" width="90">
               <template slot-scope="scope">{{scope.row.fileSize | toFileSize()}}</template>
             </el-table-column>
-            <el-table-column prop="deleteTime" label="删除日期" :formatter="jnpf.tableDateFormat"
+            <el-table-column prop="deleteTime" label="删除日期" :formatter="workflow.tableDateFormat"
               width="120" />
             <el-table-column label="操作" fixed="right" width="100">
               <template slot-scope="scope">
                 <el-button size="mini" type="text" @click="recovery(scope.$index,scope.row.id)">
                   还原</el-button>
-                <el-button size="mini" type="text" class="JNPF-table-delBtn"
+                <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                   @click="trashDel(scope.$index,scope.row.id)">删除</el-button>
               </template>
             </el-table-column>
-          </JNPF-table>
+          </WORKFLOW-table>
         </div>
       </el-tab-pane>
     </el-tabs>
@@ -456,7 +456,7 @@ export default {
     // 下载文件
     handleDownLoad(id) {
       Download(id).then(res => {
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
       })
     },
     // 打开文件夹
@@ -510,11 +510,11 @@ export default {
 <style lang="scss" scoped>
 .Document-container {
   position: relative;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
     padding-left: 0;
   }
-  .JNPF-common-head {
+  .WORKFLOW-common-head {
     padding: 14px 0 10px;
   }
   ::v-deep .el-tabs__item {

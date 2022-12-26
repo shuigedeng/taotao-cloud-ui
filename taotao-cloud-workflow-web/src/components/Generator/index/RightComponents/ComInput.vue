@@ -103,7 +103,7 @@
   </el-row>
 </template>
 <script>
-import iconBox from '@/components/JNPF-iconBox'
+import iconBox from '@/components/WORKFLOW-iconBox'
 import comMixin from './mixin';
 export default {
   props: ['activeData'],

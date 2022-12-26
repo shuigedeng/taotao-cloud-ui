@@ -214,17 +214,17 @@ export default {
           for (let i = 0; i < list.length; i++) {
             const e = list[i]
             const config = e.__config__
-            if (this.$store.getters.hasTable && config.layout === "colFormItem" && !noVModelList.includes(config.jnpfKey) && !e.__vModel__) {
+            if (this.$store.getters.hasTable && config.layout === "colFormItem" && !noVModelList.includes(config.workflowKey) && !e.__vModel__) {
               reject({ msg: `请选择${config.label}的控件字段`, target: 1 })
               break
             }
-            if (config.jnpfKey === 'billRule') {
+            if (config.workflowKey === 'billRule') {
               if (!config.rule) {
                 reject({ msg: '单据组件“选择模板”属性为必填项', target: 1 })
                 break
               }
             }
-            if (config.jnpfKey === 'relationForm') {
+            if (config.workflowKey === 'relationForm') {
               if (!e.modelId) {
                 reject({ msg: '关联表单控件“关联功能”属性为必填项', target: 1 })
                 break
@@ -234,7 +234,7 @@ export default {
                 break
               }
             }
-            if (config.jnpfKey === 'popupSelect') {
+            if (config.workflowKey === 'popupSelect') {
               if (!e.interfaceId) {
                 reject({ msg: '弹窗选择控件“远端数据”属性为必填项', target: 1 })
                 break
@@ -272,7 +272,7 @@ export default {
       if (isRowContainer) return true
       if (conf.cmpType === 'custom') return false
       if (conf.__config__.rowType === 'table') {
-        if (noTableAllowList.includes(targetConf.__config__.jnpfKey)) {
+        if (noTableAllowList.includes(targetConf.__config__.workflowKey)) {
           // if (this.showTip) {
           //   this.$message.warning(`子表内暂不支持使用该组件`)
           //   this.showTip = false
@@ -358,17 +358,17 @@ export default {
       if (config.layout === 'colFormItem') {
         if (!this.$store.getters.hasTable) {
           // 分割线和按钮不加vModel
-          if (noVModelList.indexOf(config.jnpfKey) < 0) {
-            item.__vModel__ = `${config.jnpfKey}Field${this.idGlobal}`
+          if (noVModelList.indexOf(config.workflowKey) < 0) {
+            item.__vModel__ = `${config.workflowKey}Field${this.idGlobal}`
           }
         } else {
-          if (noVModelList.indexOf(config.jnpfKey) < 0) {
+          if (noVModelList.indexOf(config.workflowKey) < 0) {
             item.__vModel__ = ""
           }
         }
       } else if (config.layout === 'rowFormItem') {
-        if (config.jnpfKey === 'table') {
-          item.__vModel__ = `${config.jnpfKey}Field${this.idGlobal}`;
+        if (config.workflowKey === 'table') {
+          item.__vModel__ = `${config.workflowKey}Field${this.idGlobal}`;
         }
         config.componentName = `row${this.idGlobal}`
         !Array.isArray(config.children) && (config.children = [])

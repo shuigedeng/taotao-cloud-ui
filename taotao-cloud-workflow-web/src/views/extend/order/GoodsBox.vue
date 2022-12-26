@@ -1,7 +1,7 @@
 <template>
   <el-dialog title="选择商品" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width="700px">
-    <el-row class="JNPF-common-search-box" :gutter="16">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width="700px">
+    <el-row class="WORKFLOW-common-search-box" :gutter="16">
       <el-form @submit.native.prevent>
         <el-col :span="10">
           <el-form-item label="关键词">
@@ -18,21 +18,21 @@
           </el-form-item>
         </el-col>
       </el-form>
-      <div class="JNPF-common-search-box-right">
+      <div class="WORKFLOW-common-search-box-right">
         <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-          <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+          <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
             @click="refresh()" />
         </el-tooltip>
       </div>
     </el-row>
-    <JNPF-table v-loading="listLoading" :data="list" hasC @selection-change="handleSelectionChange"
+    <WORKFLOW-table v-loading="listLoading" :data="list" hasC @selection-change="handleSelectionChange"
       :border="false">
       <el-table-column prop="text" label="商品名称" width="200" />
       <el-table-column prop="code" label="商品编码" />
       <el-table-column prop="specifications" label="规格型号" />
       <el-table-column prop="unit" label="单位" />
       <el-table-column prop="price" label="售价" />
-    </JNPF-table>
+    </WORKFLOW-table>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">{{$t('common.cancelButton')}}</el-button>
       <el-button type="primary" @click="select()">{{$t('common.confirmButton')}}</el-button>
@@ -85,9 +85,9 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
-    .JNPF-common-search-box-right {
+    .WORKFLOW-common-search-box-right {
       padding: 10px 10px 0 0;
     }
   }

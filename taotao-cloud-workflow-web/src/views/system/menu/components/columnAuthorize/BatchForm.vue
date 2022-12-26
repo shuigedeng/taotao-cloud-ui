@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="批量新增" :close-on-click-modal="false" :close-on-press-escape="false"
-    :visible.sync="visible" lock-scroll class="JNPF-dialog JNPF-dialog_center" width="600px">
+    :visible.sync="visible" lock-scroll class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="80px"
       label-position="top" v-loading="formLoading">
       <!--      <el-form-item label="绑定表格" prop="bindTable">-->
@@ -22,7 +22,7 @@
       </div>
       <el-form-item label="字段Json" prop="columnJson">
         <div class="formCodeEditor">
-          <JNPFCodeEditor :options="options" v-model="content" ref="CodeEditor" />
+          <WORKFLOWCodeEditor :options="options" v-model="content" ref="CodeEditor" />
         </div>
       </el-form-item>
     </el-form>
@@ -36,10 +36,10 @@
 
 <script>
 import { batchCreateColumn } from '@/api/system/columnAuthorize'
-import JNPFCodeEditor from '@/components/JNPFEditor/monaco'
+import WORKFLOWCodeEditor from '@/components/WORKFLOWEditor/monaco'
 
 export default {
-  components: { JNPFCodeEditor },
+  components: { WORKFLOWCodeEditor },
   data() {
     return {
       options: {

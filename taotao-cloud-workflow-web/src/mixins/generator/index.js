@@ -99,7 +99,7 @@ export default {
           method = exportAppData
         }
         method(id).then(res => {
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
         })
       }).catch(() => {});
     },

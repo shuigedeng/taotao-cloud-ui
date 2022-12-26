@@ -5,8 +5,8 @@
         v-if="sysConfig && sysConfig.navigationIcon" />
 
       <template v-else>
-        <img src="@/assets/images/jnpf2.png" class="sidebar-logo" v-if="slideClass === 'lightWhite'" />
-        <img src="@/assets/images/jnpf1.png" class="sidebar-logo" v-else />
+        <img src="@/assets/images/workflow2.png" class="sidebar-logo" v-if="slideClass === 'lightWhite'" />
+        <img src="@/assets/images/workflow1.png" class="sidebar-logo" v-else />
       </template>
     </router-link>
   </div>

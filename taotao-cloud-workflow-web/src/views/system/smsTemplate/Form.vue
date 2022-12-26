@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main flow-form-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main flow-form-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="!dataForm.id ? '新建短信模板' : '编辑短信模板'" />
         <div class="options">
           <el-button type="primary" @click="dataFormSubmit()" :loading="btnLoading">
@@ -41,16 +41,16 @@
         </el-col>
       </el-row>
       <el-dialog title="测试" :visible.sync="testVisible" :close-on-click-modal="false"
-        class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width="600px">
+        class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width="600px">
         <el-form :model="testForm" :rules="testRule" ref="testForm" label-width="80px">
-          <JNPF-table :data="testList">
+          <WORKFLOW-table :data="testList">
             <el-table-column prop="field" label="参数名称" width="100" />
             <el-table-column prop="value" label="参数赋值">
               <template slot-scope="scope">
                 <el-input v-model="scope.row.value" placeholder="参数赋值"></el-input>
               </template>
             </el-table-column>
-          </JNPF-table>
+          </WORKFLOW-table>
           <el-form-item></el-form-item>
           <el-form-item label="接收号码" prop="phoneNumbers">
             <el-input v-model="testForm.phoneNumbers" placeholder="接收号码"></el-input>

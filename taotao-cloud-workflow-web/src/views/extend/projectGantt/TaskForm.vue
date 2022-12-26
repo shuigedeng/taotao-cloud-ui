@@ -1,13 +1,13 @@
 <template>
   <div>
     <el-dialog :title="!dataForm.id ? '新建任务' : '编辑任务'" :close-on-click-modal="false"
-      :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scrol append-to-body
+      :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scrol append-to-body
       width="600px">
       <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px"
         v-loading="loading">
         <el-form-item label="上级任务" prop="parentId">
-          <JNPF-TreeSelect :options="taskTreeData" v-model="dataForm.parentId" placeholder="选择上级任务">
-          </JNPF-TreeSelect>
+          <WORKFLOW-TreeSelect :options="taskTreeData" v-model="dataForm.parentId" placeholder="选择上级任务">
+          </WORKFLOW-TreeSelect>
         </el-form-item>
         <el-form-item label="任务名称" prop="fullName">
           <el-input v-model="dataForm.fullName" placeholder="任务名称" maxlength="50" />

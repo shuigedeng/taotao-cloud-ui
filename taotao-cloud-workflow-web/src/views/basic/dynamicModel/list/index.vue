@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-left" v-if="columnData.type === 2">
-      <div class="JNPF-common-title" v-if="columnData.treeTitle">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-left" v-if="columnData.type === 2">
+      <div class="WORKFLOW-common-title" v-if="columnData.treeTitle">
         <h2>{{ columnData.treeTitle }}</h2>
       </div>
       <el-tree
@@ -12,7 +12,7 @@
         ref="treeBox"
         :expand-on-click-node="false"
         @node-click="handleNodeClick"
-        class="JNPF-common-el-tree"
+        class="WORKFLOW-common-el-tree"
         :node-key="treeProps.value"
       >
         <span class="custom-tree-node" slot-scope="{ node, data }">
@@ -21,15 +21,15 @@
         </span>
       </el-tree>
     </div>
-    <div class="JNPF-common-layout-center">
+    <div class="WORKFLOW-common-layout-center">
       <Search
         ref="Search"
         :list="columnData.searchList"
         @reset="reset"
         @search="search"
       />
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div v-if="isPreview || !columnData.useBtnPermission">
             <el-button
               :type="i == 0 ? 'primary' : 'text'"
@@ -56,21 +56,21 @@
               {{ item.label }}</el-button
             >
           </div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip
               effect="dark"
               :content="$t('common.refresh')"
               placement="top"
             >
               <el-link
-                icon="icon-ym icon-ym-Refresh JNPF-common-head-icon"
+                icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon"
                 :underline="false"
                 @click="initData()"
               />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table
+        <WORKFLOW-table
           v-loading="listLoading"
           :data="list"
           row-key="id"
@@ -141,7 +141,7 @@
                       size="mini"
                       type="text"
                       :key="i"
-                      class="JNPF-table-delBtn"
+                      class="WORKFLOW-table-delBtn"
                       :disabled="
                         config.webType == 3 &&
                         [1, 2, 3, 5].indexOf(scope.row.flowState) > -1
@@ -217,7 +217,7 @@
                       size="mini"
                       type="text"
                       :key="i"
-                      class="JNPF-table-delBtn"
+                      class="WORKFLOW-table-delBtn"
                       :disabled="
                         config.webType == 3 &&
                         [1, 2, 3, 5].indexOf(scope.row.flowState) > -1
@@ -276,7 +276,7 @@
               </template>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <template v-if="columnData.type !== 3 && columnData.hasPage">
           <pagination
             :total="total"
@@ -351,7 +351,7 @@ export default {
       detailVisible: false,
       importBoxVisible: false,
       exportBoxVisible: false,
-      
+
       treeData: [],
       treeActiveId: "",
       columnData: {
@@ -401,7 +401,7 @@ export default {
         obj.userIds = obj.user_id.join(',');
       }
       let json = JSON.stringify(obj) === "{}" ? '' : JSON.stringify(obj)
-      
+
       if(json.indexOf("sampling_time") === -1){
         this.$message.error('核酸检测采样时间不能为空')
         return false;
@@ -495,7 +495,7 @@ export default {
       if (this.columnData.treeDataSource === "api") {
         if (!this.columnData.treePropsUrl) return;
         getDataInterfaceRes(this.columnData.treePropsUrl).then((res) => {
-          let data = this.jnpf.interfaceDataHandler(res.data);
+          let data = this.workflow.interfaceDataHandler(res.data);
           if (Array.isArray(data)) {
             this.treeData = data;
           } else {
@@ -657,7 +657,7 @@ export default {
       let query = { ...this.listQuery, ...data };
       exportModel(this.modelId, query).then((res) => {
         if (!res.data.url) return;
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.$refs.ExportBox.visible = false;
         this.exportBoxVisible = false;
       });
@@ -741,7 +741,7 @@ export default {
         toast: this.$message,
         refresh: this.initData,
       };
-      const func = this.jnpf.getScriptFunc.call(this, item.func);
+      const func = this.workflow.getScriptFunc.call(this, item.func);
       if (!func) return;
       func.call(this, parameter);
     },

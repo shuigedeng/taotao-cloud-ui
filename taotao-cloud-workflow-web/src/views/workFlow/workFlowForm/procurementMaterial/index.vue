@@ -77,7 +77,7 @@
         </el-col>
         <el-col :span="24" v-if="judgeShow('fileJson')">
           <el-form-item label="相关附件" prop="fileJson">
-            <JNPF-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
+            <WORKFLOW-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
           </el-form-item>
         </el-col>
         <el-col :span="24" v-if="judgeShow('reason')">
@@ -89,7 +89,7 @@
       </el-row>
     </el-form>
     <template v-if="judgeShow('entryList')">
-      <div class="JNPF-common-title">
+      <div class="WORKFLOW-common-title">
         <h2>采购原材料</h2>
       </div>
       <el-table :data="dataForm.entryList" size='mini'>
@@ -136,7 +136,7 @@
         </el-table-column>
         <el-table-column label="操作" width="50" v-if="!setting.readonly && !judgeWrite('entryList')">
           <template slot-scope="scope">
-            <el-button size="mini" type="text" class="JNPF-table-delBtn"
+            <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
               @click="handleDel(scope.$index)">删除</el-button>
           </template>
         </el-table-column>
@@ -205,7 +205,7 @@ export default {
     },
     count(row) {
       //金额 = 数量*单价
-      row.amount = this.jnpf.toDecimal(parseFloat(row.price) * parseFloat(row.qty))
+      row.amount = this.workflow.toDecimal(parseFloat(row.price) * parseFloat(row.qty))
     },
     handleDel(index) {
       this.dataForm.entryList.splice(index, 1);

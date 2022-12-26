@@ -1,6 +1,6 @@
 <template>
   <div class="fieldFrom">
-    <div class="JNPF-common-title">
+    <div class="WORKFLOW-common-title">
       <h2>字段设置</h2>
     </div>
     <el-table :data="drawingList" size='mini'>
@@ -23,7 +23,7 @@
       </el-table-column>
       <el-table-column label="操作" width="50">
         <template slot-scope="scope">
-          <el-button size="mini" type="text" class="JNPF-table-delBtn"
+          <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
             @click="handleDel(scope.$index)">删除</el-button>
         </template>
       </el-table-column>

@@ -1,9 +1,9 @@
 <template>
-  <div class="jnpf-table-box" :class="[config.__config__.type]">
-    <div class="JNPF-common-title" v-if="config.__config__.showTitle && config.__config__.label">
+  <div class="workflow-table-box" :class="[config.__config__.type]">
+    <div class="WORKFLOW-common-title" v-if="config.__config__.showTitle && config.__config__.label">
       <h2>{{ config.__config__.label }}</h2>
     </div>
-    <el-table :data="tableFormData" class="JNPF-common-table" @cell-click="focusInput"
+    <el-table :data="tableFormData" class="WORKFLOW-common-table" @cell-click="focusInput"
       v-bind="config.tableConf || {}" :show-summary="config['show-summary']"
       :summary-method="getTableSummaries" size="mini" ref="formTable">
       <el-table-column width="50" align="center" label="序号">
@@ -26,7 +26,7 @@
           </template>
           <template slot-scope="scope">
             <!-- 单选框组 多选框组 都替换成下拉 并添加options -->
-            <template v-if="['select', 'checkbox','radio'].includes(head.__config__.jnpfKey)">
+            <template v-if="['select', 'checkbox','radio'].includes(head.__config__.workflowKey)">
               <el-select v-model="tableFormData[scope.$index][cindex].value"
                 v-bind="getConfById(head.__config__.formId)" :rowIndex="scope.$index"
                 @blur="onFormBlur(scope.$index, cindex, 'el-select')"
@@ -38,7 +38,7 @@
               </el-select>
             </template>
             <!-- 单行输入 -->
-            <template v-else-if="head.__config__.jnpfKey==='comInput'">
+            <template v-else-if="head.__config__.workflowKey==='comInput'">
               <el-input v-model="tableFormData[scope.$index][cindex].value"
                 v-bind="getConfById(head.__config__.formId)" :rowIndex="scope.$index"
                 @blur="onFormBlur(scope.$index, cindex, 'el-input')"
@@ -121,8 +121,8 @@ export default {
     buildOptions() {
       this.tableData.forEach(cur => {
         const config = cur.__config__
-        if (dyOptionsList.indexOf(config.jnpfKey) > -1) {
-          let isTreeSelect = config.jnpfKey === 'treeSelect' || config.jnpfKey === 'cascader'
+        if (dyOptionsList.indexOf(config.workflowKey) > -1) {
+          let isTreeSelect = config.workflowKey === 'treeSelect' || config.workflowKey === 'cascader'
           if (config.dataType === 'dictionary') {
             if (!config.dictionaryType) return
             getDictionaryDataSelector(config.dictionaryType).then(res => {
@@ -132,7 +132,7 @@ export default {
           if (config.dataType === 'dynamic') {
             if (!config.propsUrl) return
             getDataInterfaceRes(config.propsUrl).then(res => {
-              let realData = this.jnpf.interfaceDataHandler(res.data)
+              let realData = this.workflow.interfaceDataHandler(res.data)
               if (Array.isArray(realData)) {
                 isTreeSelect ? cur.options = realData : cur.__slot__.options = realData
               } else {
@@ -161,8 +161,8 @@ export default {
       let activeRow = this.tableFormData[this.activeRowIndex]
       for (let i = 0; i < activeRow.length; i++) {
         let vModel = activeRow[i].__vModel__
-        if (activeRow[i].__vModel__.indexOf('_jnpfRelation_') >= 0) {
-          vModel = activeRow[i].__vModel__.substring(0, activeRow[i].__vModel__.indexOf('_jnpfRelation_'))
+        if (activeRow[i].__vModel__.indexOf('_workflowRelation_') >= 0) {
+          vModel = activeRow[i].__vModel__.substring(0, activeRow[i].__vModel__.indexOf('_workflowRelation_'))
         }
         if (vModel === prop) {
           activeRow[i].value = value
@@ -175,7 +175,7 @@ export default {
       for (let i = 0; i < this.tableData.length; i++) {
         if (this.tableData[i].__vModel__ === prop) {
           let item = this.tableData[i]
-          let isTreeSelect = item.__config__.jnpfKey === 'treeSelect' || item.__config__.jnpfKey === 'cascader'
+          let isTreeSelect = item.__config__.workflowKey === 'treeSelect' || item.__config__.workflowKey === 'cascader'
           isTreeSelect ? res = item.options || [] : res = item.__slot__.options || []
           break
         }
@@ -209,7 +209,7 @@ export default {
     onFormBlur(rowIndex, colIndex, tag) {
       const data = this.tableFormData[rowIndex][colIndex]
       if (data && data.on && data.on.blur) {
-        const func = this.jnpf.getScriptFunc.call(this, data.on.blur)
+        const func = this.workflow.getScriptFunc.call(this, data.on.blur)
         if (!func) return
         func.call(this, {
           data: null,
@@ -222,12 +222,12 @@ export default {
       const data = this.tableFormData[rowIndex][colIndex]
       this.activeRowIndex = rowIndex
       if (data && data.on && data.on.change) {
-        const func = this.jnpf.getScriptFunc.call(this, data.on.change)
+        const func = this.workflow.getScriptFunc.call(this, data.on.change)
         if (!func) return
         let value = ''
-        if (['select', 'radio', 'checkbox'].includes(data.jnpfKey)) {
+        if (['select', 'radio', 'checkbox'].includes(data.workflowKey)) {
           const options = data.options
-          if (data.config.multiple || data.jnpfKey === 'checkbox') {
+          if (data.config.multiple || data.workflowKey === 'checkbox') {
             let _value = []
             outer: for (let i = 0; i < params[0].length; i++) {
               inner: for (let j = 0; j < options.length; j++) {
@@ -248,7 +248,7 @@ export default {
             }
             value = _value
           }
-        } else if (data.jnpfKey === 'numInput') {
+        } else if (data.workflowKey === 'numInput') {
           value = params[0]
         } else {
           value = params.length > 1 ? params[1] : params[0]
@@ -329,12 +329,12 @@ export default {
           newObj[key] = this.disabled || item[key]
         }
       }
-      if (['relationForm', 'popupSelect'].includes(itemConfig.jnpfKey)) {
-        newObj['field'] = item.__vModel__ + '_jnpfRelation_' + rowIndex
+      if (['relationForm', 'popupSelect'].includes(itemConfig.workflowKey)) {
+        newObj['field'] = item.__vModel__ + '_workflowRelation_' + rowIndex
       }
-      if (['relationFormAttr', 'popupAttr'].includes(itemConfig.jnpfKey)) {
-        let prop = newObj['relationField'].split('_jnpfTable_')[0]
-        newObj['relationField'] = prop + '_jnpfRelation_' + rowIndex
+      if (['relationFormAttr', 'popupAttr'].includes(itemConfig.workflowKey)) {
+        let prop = newObj['relationField'].split('_workflowTable_')[0]
+        newObj['relationField'] = prop + '_workflowRelation_' + rowIndex
       }
       return newObj
     },
@@ -352,8 +352,8 @@ export default {
           regValid: true,
           regErrorText: '',
           on: t.on || {},
-          jnpfKey: t.__config__.jnpfKey,
-          __vModel__: ['relationForm', 'popupSelect'].includes(t.__config__.jnpfKey) ? t.__vModel__ + '_jnpfRelation_' + rowIndex : t.__vModel__,
+          workflowKey: t.__config__.workflowKey,
+          __vModel__: ['relationForm', 'popupSelect'].includes(t.__config__.workflowKey) ? t.__vModel__ + '_workflowRelation_' + rowIndex : t.__vModel__,
           regList: t.__config__.regList || [],
           required: t.__config__.required,
           config: t
@@ -366,8 +366,8 @@ export default {
     getTableValue() {
       return this.tableFormData.map(row => row.reduce((p, c) => {
         let str = c.__vModel__
-        if (c.__vModel__ && c.__vModel__.indexOf('_jnpfRelation_') >= 0) {
-          str = c.__vModel__.substring(0, c.__vModel__.indexOf('_jnpfRelation_'))
+        if (c.__vModel__ && c.__vModel__.indexOf('_workflowRelation_') >= 0) {
+          str = c.__vModel__.substring(0, c.__vModel__.indexOf('_workflowRelation_'))
         }
         p[str] = c.value
         return p
@@ -437,7 +437,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.jnpf-table-box {
+.workflow-table-box {
   margin-bottom: 0px;
   .row-action {
     display: flex;
@@ -527,7 +527,7 @@ export default {
   }
 }
 
-.jnpf-table-box.table {
+.workflow-table-box.table {
   // 索引和删除按钮切换
   ::v-deep .el-table__row:hover {
     .index {

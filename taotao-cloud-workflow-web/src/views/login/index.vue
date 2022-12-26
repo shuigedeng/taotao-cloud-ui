@@ -4,14 +4,14 @@
       <p class="login-version-text">{{ sysConfig.sysVersion }}</p>
     </div> -->
     <div class="login-left">
-      <!-- <a class="login-company-logo" target="_blank" href="https://www.jnpfsoft.com">
+      <!-- <a class="login-company-logo" target="_blank" href="https://www.workflowsoft.com">
         <img class="login-company-logo-img" src="../../assets/images/login-company-logo.png" alt="">
       </a>
       <img class="login-banner" src="../../assets/images/login-banner.png" alt="">
       <div class="login-left-txt" v-if="showTxt">
         <p class="title1">在线自动化，可视化系统开发，零代码实现80%的基础功能</p>
         <p class="title2">已帮助<span>20000+</span>家企业完成数字化转型升级</p>
-        <a class="link" target="_blank" href="https://www.jnpfsoft.com">了解更多</a>
+        <a class="link" target="_blank" href="https://www.workflowsoft.com">了解更多</a>
       </div> -->
     </div>
     <div class="login-content">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="login-foot">Copyright 引迈信息技术有限公司, All Rights Reserved. 沪ICP备17044791号-1
+    <!-- <div class="login-foot">Copyright 滔滔信息技术有限公司, All Rights Reserved. 沪ICP备17044791号-1
       助力企业和团队快速实现目标</div> -->
   </div>
 </template>

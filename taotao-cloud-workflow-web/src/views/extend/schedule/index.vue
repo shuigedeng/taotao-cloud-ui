@@ -57,25 +57,25 @@ export default {
   methods: {
     datesRender(calendar) {
       let view = calendar.view
-      this.startTime = this.jnpf.toDate(view.activeStart, "yyyy-MM-dd HH:mm")
-      this.endTime = this.jnpf.toDate(view.activeEnd, "yyyy-MM-dd HH:mm")
+      this.startTime = this.workflow.toDate(view.activeStart, "yyyy-MM-dd HH:mm")
+      this.endTime = this.workflow.toDate(view.activeEnd, "yyyy-MM-dd HH:mm")
       this.initData()
     },
     handleDateClick(arg) {
-      let startTime = this.jnpf.toDate(arg.date, "yyyy-MM-dd HH:00"),
-        clickTime = this.jnpf.toDate(arg.date, "yyyyMMdd"),
-        currTime = this.jnpf.toDate(new Date(), "yyyyMMdd");
+      let startTime = this.workflow.toDate(arg.date, "yyyy-MM-dd HH:00"),
+        clickTime = this.workflow.toDate(arg.date, "yyyyMMdd"),
+        currTime = this.workflow.toDate(new Date(), "yyyyMMdd");
       if (clickTime < currTime) return
       if (clickTime == currTime) {
         let thisDate = new Date();
         thisDate.setHours(thisDate.getHours() + 1);
-        startTime = this.jnpf.toDate(thisDate, "yyyy-MM-dd HH:00");
+        startTime = this.workflow.toDate(thisDate, "yyyy-MM-dd HH:00");
       }
       this.addOrUpdateHandle('', startTime)
       this.addOrUpdateHandle('', new Date(startTime).getTime())
     },
     eventClick(data) {
-      if (this.jnpf.toDate(data.event.start, "yyyyMMddHHmm") > this.jnpf.toDate(new Date(), "yyyyMMddHHmm")) {
+      if (this.workflow.toDate(data.event.start, "yyyyMMddHHmm") > this.workflow.toDate(new Date(), "yyyyMMddHHmm")) {
         this.addOrUpdateHandle(data.event.id)
       }
     },

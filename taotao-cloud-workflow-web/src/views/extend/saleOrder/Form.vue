@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main order-form">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main order-form">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="dataForm.id?'编辑':'新建'" />
         <div class="options">
           <el-button type="primary" @click="submit()" :loading="btnLoading">确 定</el-button>
@@ -132,12 +132,12 @@
             </el-form>
           </el-col>
         </el-row>
-        <JNPF-table :data="dataForm.productEntryList" size='small'>
+        <WORKFLOW-table :data="dataForm.productEntryList" size='small'>
           <el-table-column label="操作" width="80">
             <template slot-scope="scope">
               <el-button size="mini" type="text" icon="el-icon-plus" @click="addItem(scope.$index)">
               </el-button>
-              <el-button size="mini" type="text" class="JNPF-table-delBtn" icon="el-icon-minus"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn" icon="el-icon-minus"
                 @click="delItem(scope.$index)">
               </el-button>
             </template>
@@ -180,7 +180,7 @@
               <el-input v-model="scope.row.description"> </el-input>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <div class="order-footer">
           <span class="order-footer-item">订单总数：0</span>
           <span class="order-footer-item">下单总数：0</span>
@@ -284,7 +284,7 @@ export default {
       this.dataForm.productEntryList.splice(index, 1);
     },
     count(row) {
-      row.amount = this.jnpf.toDecimal(parseFloat(row.money) * parseFloat(row.qty))
+      row.amount = this.workflow.toDecimal(parseFloat(row.money) * parseFloat(row.qty))
     },
     openGoodsBox() {
       this.goodsBoxVisible = true
@@ -332,7 +332,7 @@ export default {
       row.productSpecification = item.productSpecification
       row.money = item.money
       row.type = item.type
-      row.amount = this.jnpf.toDecimal(parseFloat(row.money) * parseFloat(row.qty))
+      row.amount = this.workflow.toDecimal(parseFloat(row.money) * parseFloat(row.qty))
     },
     handleSelect(item) {
       this.dataForm.customerName = item.name
@@ -364,7 +364,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.JNPF-common-page-header {
+.WORKFLOW-common-page-header {
   height: 61px;
 }
 ::v-deep .el-tabs__header {

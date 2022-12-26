@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import jnpf from '@/utils/jnpf'
+import workflow from '@/utils/workflow'
 import elementEnLocale from 'element-ui/lib/locale/lang/en' // element-ui lang
 import elementZhLocale from 'element-ui/lib/locale/lang/zh-CN' // element-ui lang
 import elementZhTWLocale from 'element-ui/lib/locale/lang/zh-TW' // element-ui lang
@@ -25,7 +25,7 @@ const messages = {
   }
 }
 export function getLanguage() {
-  const chooseLanguage = jnpf.storageGet('language')
+  const chooseLanguage = workflow.storageGet('language')
   if (chooseLanguage) return chooseLanguage
 
   // if has not choose language

@@ -1,6 +1,6 @@
 <template>
   <div class="BarCode-container app-container">
-    <el-tabs type="border-card" class="JNPF-el_tabs">
+    <el-tabs type="border-card" class="WORKFLOW-el_tabs">
       <el-tab-pane label="生成二维码">
         <el-row>
           <el-col :span="16">

@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,24 +19,24 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()" addText="新建任务"></topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="fullName" label="任务标题" show-overflow-tooltip min-width="150" />
           <el-table-column prop="enCode" label="任务编码" width="200" />
           <el-table-column prop="runCount" label="执行次数" width="100" />
           <el-table-column prop="lastRunTime" label="最后执行时间" width="120"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="nextRunTime" label="下次运行时间" width="120"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="description" label="任务说明" show-overflow-tooltip />
           <el-table-column prop="enabledMark" label="状态" width="70" align="center">
             <template slot-scope="scope">
@@ -63,7 +63,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
         <Form v-show="formVisible" ref="Form" @close="closeForm" />

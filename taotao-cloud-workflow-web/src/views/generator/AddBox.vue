@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="新建" :close-on-click-modal="false" lock-scroll v-bind="$attrs" v-on="$listeners"
-    class="JNPF-dialog JNPF-dialog_center" width="800px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="800px">
     <div class="add-main">
       <div class="add-item add-item-form" @click="add(1)">
         <i class="add-icon el-icon-document"></i>
@@ -38,7 +38,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.JNPF-dialog {
+.WORKFLOW-dialog {
   ::v-deep .el-dialog__body {
     padding: 50px 30px !important;
   }

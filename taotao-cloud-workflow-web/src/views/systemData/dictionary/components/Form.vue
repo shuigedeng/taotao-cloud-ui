@@ -1,11 +1,11 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建分类' : '编辑分类'" :close-on-click-modal="false"
-    :visible.sync="visible" :append-to-body="true" class="JNPF-dialog JNPF-dialog_center"
+    :visible.sync="visible" :append-to-body="true" class="WORKFLOW-dialog WORKFLOW-dialog_center"
     lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" v-loading="formLoading"
       label-width="60px">
       <el-form-item label="上级" prop="parentId">
-        <JNPF-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择项目上级" />
+        <WORKFLOW-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择项目上级" />
       </el-form-item>
       <el-form-item label="名称" prop="fullName">
         <el-input v-model="dataForm.fullName" placeholder="输入名称" />

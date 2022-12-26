@@ -1,7 +1,7 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建方案' : '编辑方案'" :close-on-click-modal="false"
     :close-on-press-escape="false" :visible.sync="visible" lock-scroll
-    class="JNPF-dialog JNPF-dialog_center" width="630px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="630px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" v-loading="formLoading">
       <el-form-item prop="fullName">
         <el-input v-model="dataForm.fullName" placeholder="请输入方案名称" />

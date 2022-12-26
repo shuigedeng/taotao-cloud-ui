@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="邮箱配置" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px">
       <el-form-item label="POP3服务" prop="pop3Host">
         <el-input v-model="dataForm.pop3Host" placeholder="POP3服务" />

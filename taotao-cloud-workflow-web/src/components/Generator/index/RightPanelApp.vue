@@ -11,9 +11,9 @@
           labelPosition="left">
           <template v-if="activeData.__config__">
             <template v-if="$store.getters.hasTable">
-              <template v-if="activeData.__config__.jnpfKey === 'table'">
+              <template v-if="activeData.__config__.workflowKey === 'table'">
                 <el-form-item
-                  v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                  v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                   label="控件字段">
                   <el-input v-model="activeData.__vModel__" placeholder="请输入控件字段(v-model)"
                     disabled />
@@ -22,7 +22,7 @@
               <template v-else>
                 <template v-if="!activeData.__config__.isSubTable">
                   <el-form-item
-                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                    v-if="activeData.__vModel__!==undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                     label="数据库表" filterable>
                     <el-select v-model="activeData.__config__.tableName" placeholder="请选择数据库表"
                       @change="tableChange">
@@ -32,7 +32,7 @@
                     </el-select>
                   </el-form-item>
                   <el-form-item
-                    v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                    v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                     label="控件字段">
                     <el-select v-model="activeData.__vModel__" placeholder="请选择控件字段(v-model)"
                       clearable @change="fieldChange" filterable>
@@ -45,7 +45,7 @@
                 </template>
                 <template v-if="activeData.__config__.isSubTable && subTable.length">
                   <el-form-item
-                    v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                    v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                     label="控件字段">
                     <el-select v-model="activeData.__vModel__" placeholder="请选择控件字段(v-model)"
                       clearable @change="fieldChange1" filterable>
@@ -61,13 +61,13 @@
             </template>
             <template v-else>
               <el-form-item
-                v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.jnpfKey)"
+                v-if="activeData.__vModel__ !== undefined && !noVModelList.includes(activeData.__config__.workflowKey)"
                 label="控件字段">
                 <el-input v-model="activeData.__vModel__" placeholder="请输入控件字段(v-model)" disabled />
               </el-form-item>
             </template>
             <el-form-item label="控件标题"
-              v-if="activeData.__config__.label !== undefined && !['JNPFText','card','groupTitle','tab','collapse','button'].includes(activeData.__config__.jnpfKey)">
+              v-if="activeData.__config__.label !== undefined && !['WORKFLOWText','card','groupTitle','tab','collapse','button'].includes(activeData.__config__.workflowKey)">
               <el-input v-model="activeData.__config__.label" placeholder="请输入控件标题" />
             </el-form-item>
             <el-form-item v-if="activeData.placeholder !== undefined" label="占位提示">
@@ -78,7 +78,7 @@
                 <template slot="append">个字符</template>
               </el-input>
             </el-form-item>
-            <template v-if="activeData.__config__.jnpfKey === 'switch'">
+            <template v-if="activeData.__config__.workflowKey === 'switch'">
               <el-form-item label="开启展示值">
                 <el-input v-model="activeData.activeTxt" placeholder="请输入开启展示值" />
               </el-form-item>
@@ -87,8 +87,8 @@
               </el-form-item>
             </template>
             <template
-              v-if="activeData.__config__.jnpfKey === 'uploadFz'||activeData.__config__.jnpfKey === 'uploadImg'">
-              <el-form-item label="文件类型" v-if="activeData.__config__.jnpfKey === 'uploadFz'">
+              v-if="activeData.__config__.workflowKey === 'uploadFz'||activeData.__config__.workflowKey === 'uploadImg'">
+              <el-form-item label="文件类型" v-if="activeData.__config__.workflowKey === 'uploadFz'">
                 <el-select v-model="activeData.accept" placeholder="不限制" clearable>
                   <el-option label="图片" value="image/*" />
                   <el-option label="视频" value="video/*" />
@@ -107,7 +107,7 @@
                   </el-select>
                 </el-input>
               </el-form-item>
-              <el-form-item label="按钮文字" v-if="activeData.__config__.jnpfKey === 'uploadFz'">
+              <el-form-item label="按钮文字" v-if="activeData.__config__.workflowKey === 'uploadFz'">
                 <el-input v-model="activeData.buttonText" placeholder="请输入按钮文字" />
               </el-form-item>
               <el-form-item label="最大上传数">
@@ -116,7 +116,7 @@
               </el-form-item>
             </template>
             <template
-              v-if="activeData.__config__.jnpfKey === 'numInput' ||activeData.__config__.jnpfKey === 'slider'">
+              v-if="activeData.__config__.workflowKey === 'numInput' ||activeData.__config__.workflowKey === 'slider'">
               <el-form-item label="最小值">
                 <el-input-number v-model="activeData.min" placeholder="最小值"
                   controls-position="right" />
@@ -131,7 +131,7 @@
               </el-form-item>
             </template>
             <template
-              v-if="['radio', 'checkbox', 'select'].indexOf(activeData.__config__.jnpfKey) > -1">
+              v-if="['radio', 'checkbox', 'select'].indexOf(activeData.__config__.workflowKey) > -1">
               <el-divider>数据选项</el-divider>
               <el-form-item label="" label-width="40px">
                 <el-radio-group v-model="activeData.__config__.dataType" size="small"
@@ -166,9 +166,9 @@
               </template>
               <template v-if="activeData.__config__.dataType === 'dictionary'">
                 <el-form-item label="远端数据">
-                  <JNPF-TreeSelect v-model="activeData.__config__.dictionaryType"
+                  <WORKFLOW-TreeSelect v-model="activeData.__config__.dictionaryType"
                     :options="treeData" placeholder="请选择数据字典" lastLevel clearable>
-                  </JNPF-TreeSelect>
+                  </WORKFLOW-TreeSelect>
                 </el-form-item>
                 <el-form-item label="存储字段">
                   <el-select v-model="activeData.__config__.props.value" placeholder="请选择存储字段">
@@ -179,7 +179,7 @@
               </template>
               <template v-if="activeData.__config__.dataType === 'dynamic'">
                 <el-form-item label="远端数据">
-                  <JNPF-TreeSelect :options="dataInterfaceSelector"
+                  <WORKFLOW-TreeSelect :options="dataInterfaceSelector"
                     v-model="activeData.__config__.propsUrl" placeholder="请选择远端数据" lastLevel
                     lastLevelKey="categoryId" lastLevelValue="1" clearable />
                 </el-form-item>
@@ -193,7 +193,7 @@
               <el-divider></el-divider>
             </template>
             <template
-              v-if="activeData.__config__.jnpfKey === 'treeSelect' || activeData.__config__.jnpfKey === 'cascader'">
+              v-if="activeData.__config__.workflowKey === 'treeSelect' || activeData.__config__.workflowKey === 'cascader'">
               <el-divider>数据选项</el-divider>
               <el-form-item label="" label-width="40px">
                 <el-radio-group v-model="activeData.__config__.dataType" size="small"
@@ -214,9 +214,9 @@
               </template>
               <template v-if="activeData.__config__.dataType === 'dictionary'">
                 <el-form-item label="远端数据">
-                  <JNPF-TreeSelect v-model="activeData.__config__.dictionaryType"
+                  <WORKFLOW-TreeSelect v-model="activeData.__config__.dictionaryType"
                     :options="treeData" placeholder="请选择数据字典" lastLevel clearable>
-                  </JNPF-TreeSelect>
+                  </WORKFLOW-TreeSelect>
                 </el-form-item>
                 <el-form-item label="存储字段">
                   <el-select v-model="activeData.props.props.value" placeholder="请选择存储字段">
@@ -227,7 +227,7 @@
               </template>
               <template v-if="activeData.__config__.dataType === 'dynamic'">
                 <el-form-item label="远端数据">
-                  <JNPF-TreeSelect :options="dataInterfaceSelector"
+                  <WORKFLOW-TreeSelect :options="dataInterfaceSelector"
                     v-model="activeData.__config__.propsUrl" placeholder="请选择远端数据" lastLevel
                     lastLevelKey="categoryId" lastLevelValue="1" clearable />
                 </el-form-item>
@@ -243,7 +243,7 @@
               </template>
               <el-divider></el-divider>
             </template>
-            <template v-if="activeData.__config__.jnpfKey === 'JNPFText'">
+            <template v-if="activeData.__config__.workflowKey === 'WORKFLOWText'">
               <el-form-item label="文本内容">
                 <el-input v-model="activeData.__config__.defaultValue" placeholder="请输入文本内容" />
               </el-form-item>
@@ -281,7 +281,7 @@
                 </el-radio-group>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey === 'table'">
+            <template v-if="activeData.__config__.workflowKey === 'table'">
               <el-form-item label="关联子表" v-if="$store.getters.hasTable">
                 <el-select v-model="activeData.__config__.tableName" placeholder="请选择关联子表" clearable
                   @change="onTableNameChange">
@@ -301,12 +301,12 @@
                 <el-select v-model="activeData.summaryField" multiple placeholder="请选择合计字段">
                   <template v-for="(item,i) in activeData.__config__.children">
                     <el-option :key="i" :label="item.__config__.label" :value="item.__vModel__"
-                      v-if="['comInput','numInput','calculate'].includes(item.__config__.jnpfKey)" />
+                      v-if="['comInput','numInput','calculate'].includes(item.__config__.workflowKey)" />
                   </template>
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey === 'groupTitle'">
+            <template v-if="activeData.__config__.workflowKey === 'groupTitle'">
               <el-form-item label="标题">
                 <el-input v-model="activeData.content" placeholder="请输入标题" />
               </el-form-item>
@@ -318,7 +318,7 @@
                 </el-radio-group>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey === 'date'">
+            <template v-if="activeData.__config__.workflowKey === 'date'">
               <el-form-item label="时间类型">
                 <el-select v-model="activeData.type" placeholder="请选择时间类型">
                   <el-option label="日(date)" value="date" />
@@ -326,9 +326,9 @@
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey === 'relationForm'">
+            <template v-if="activeData.__config__.workflowKey === 'relationForm'">
               <el-form-item label="关联功能">
-                <JNPF-TreeSelect :options="featureData" v-model="activeData.modelId"
+                <WORKFLOW-TreeSelect :options="featureData" v-model="activeData.modelId"
                   placeholder="请选择关联功能" lastLevel clearable @change="onModelIdChange" />
               </el-form-item>
               <el-form-item label="显示字段">
@@ -378,12 +378,12 @@
               </el-form-item>
               <el-divider />
             </template>
-            <template v-if="activeData.__config__.jnpfKey === 'popupSelect'">
+            <template v-if="activeData.__config__.workflowKey === 'popupSelect'">
               <el-form-item label="远端数据">
-                <JNPF-TreeSelect :options="dataInterfaceSelector" v-model="activeData.interfaceId"
+                <WORKFLOW-TreeSelect :options="dataInterfaceSelector" v-model="activeData.interfaceId"
                   placeholder="请选择远端数据" lastLevel lastLevelKey='categoryId' lastLevelValue='1'
                   clearable>
-                </JNPF-TreeSelect>
+                </WORKFLOW-TreeSelect>
               </el-form-item>
               <el-form-item label="存储字段">
                 <el-input v-model.number="activeData.propsValue" placeholder="请输入存储字段" />
@@ -427,7 +427,7 @@
               </el-form-item>
               <el-divider />
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='relationFormAttr'">
+            <template v-if="activeData.__config__.workflowKey==='relationFormAttr'">
               <el-form-item label="关联功能">
                 <el-select v-model="activeData.relationField" placeholder="请选择关联功能" clearable
                   @change="onRelationFieldChange">
@@ -443,7 +443,7 @@
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='popupAttr'">
+            <template v-if="activeData.__config__.workflowKey==='popupAttr'">
               <el-form-item label="关联弹窗">
                 <el-select v-model="activeData.relationField" placeholder="请选择关联弹窗" clearable>
                   <el-option v-for="(item,i) in popupOptions" :key="i"
@@ -454,7 +454,7 @@
                 <el-input v-model="activeData.showField" placeholder="请输入关联字段" />
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='barcode'">
+            <template v-if="activeData.__config__.workflowKey==='barcode'">
               <el-form-item label="编码格式">
                 <el-select v-model="activeData.format" placeholder="请选择">
                   <el-option :label="item.label" :value="item.value"
@@ -490,7 +490,7 @@
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='qrcode'">
+            <template v-if="activeData.__config__.workflowKey==='qrcode'">
               <el-form-item label="实点颜色">
                 <el-color-picker v-model="activeData.colorDark"></el-color-picker>
               </el-form-item>
@@ -516,7 +516,7 @@
                 </el-select>
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='button'">
+            <template v-if="activeData.__config__.workflowKey==='button'">
               <el-form-item label="控件文本">
                 <el-input v-model="activeData.buttonText" placeholder="请输入控件文本" />
               </el-form-item>
@@ -538,7 +538,7 @@
                 </el-select>
               </el-form-item>
             </template>
-            <el-form-item label="显示内容" v-if="activeData.__config__.jnpfKey==='currOrganize'">
+            <el-form-item label="显示内容" v-if="activeData.__config__.workflowKey==='currOrganize'">
               <el-select v-model="activeData.showLevel" placeholder="请选择显示内容">
                 <el-option label="显示组织" value="all"></el-option>
                 <el-option label="显示部门" value="last"></el-option>
@@ -560,14 +560,14 @@
               <el-switch v-model="activeData.multiple" />
             </el-form-item>
             <el-form-item
-              v-if="activeData.disabled !== undefined && activeData.__config__.jnpfKey!=='button'"
+              v-if="activeData.disabled !== undefined && activeData.__config__.workflowKey!=='button'"
               label="是否禁用">
               <el-switch v-model="activeData.disabled" />
             </el-form-item>
             <el-form-item v-if="activeData.__config__.noShow !== undefined" label="是否隐藏">
               <el-switch v-model="activeData.__config__.noShow" />
             </el-form-item>
-            <template v-if="activeData.__config__.jnpfKey === 'comInput'">
+            <template v-if="activeData.__config__.workflowKey === 'comInput'">
               <el-divider>校验</el-divider>
               <el-form-item label="是否必填">
                 <el-switch v-model="activeData.__config__.required" />
@@ -606,12 +606,12 @@
                 </el-form-item>
               </template>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='card'">
+            <template v-if="activeData.__config__.workflowKey==='card'">
               <el-form-item label="卡片标题">
                 <el-input v-model="activeData.header" placeholder="请输入卡片标题" />
               </el-form-item>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='tab'">
+            <template v-if="activeData.__config__.workflowKey==='tab'">
               <el-divider>标签页配置</el-divider>
               <draggable :list="activeData.__config__.children" :animation="340" group="selectItem"
                 handle=".option-drag">
@@ -633,7 +633,7 @@
                 </el-button>
               </div>
             </template>
-            <template v-if="activeData.__config__.jnpfKey==='collapse'">
+            <template v-if="activeData.__config__.workflowKey==='collapse'">
               <el-form-item label="是否手风琴">
                 <el-switch v-model="activeData.accordion" />
               </el-form-item>
@@ -898,11 +898,11 @@ export default {
       let list = []
       const loop = (data, parent) => {
         if (!data) return
-        if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+        if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__vModel__ && data.__config__.jnpfKey !== 'table') {
+        if (data.__vModel__ && data.__config__.workflowKey !== 'table') {
           list.push(data)
         }
       }
@@ -918,14 +918,14 @@ export default {
       deep: true
     },
     activeData(val) {
-      if (!val.__config__.tableName && val.__config__.jnpfKey !== 'table') {
+      if (!val.__config__.tableName && val.__config__.workflowKey !== 'table') {
         val.__config__.tableName = this.mainTable
       }
-      if (val.__config__.jnpfKey == 'relationForm') {
+      if (val.__config__.workflowKey == 'relationForm') {
         this.getRelationFormFieldOptions()
       }
-      if (val.__config__.jnpfKey === 'relationFormAttr') this.getRelationFormOptions()
-      if (val.__config__.jnpfKey === 'popupAttr') this.getPopupOptions()
+      if (val.__config__.workflowKey === 'relationFormAttr') this.getRelationFormOptions()
+      if (val.__config__.workflowKey === 'popupAttr') this.getPopupOptions()
       this.setDefaultOptions()
     }
   },
@@ -935,7 +935,7 @@ export default {
     this.getFeatureSelector()
     this.getRelationFormFieldOptions()
     if (!this.activeData || !this.activeData.__config__) return
-    if (!this.activeData.__config__.tableName && this.activeData.__config__.jnpfKey !== 'table') {
+    if (!this.activeData.__config__.tableName && this.activeData.__config__.workflowKey !== 'table') {
       this.activeData.__config__.tableName = this.mainTable
     }
     this.setDefaultOptions()
@@ -997,7 +997,7 @@ export default {
         for (let i = 0; i < list.length; i++) {
           const e = list[i]
           const config = e.__config__
-          if (config.jnpfKey === 'table' && config.tableName === this.activeData.__config__.relationTable) {
+          if (config.workflowKey === 'table' && config.tableName === this.activeData.__config__.relationTable) {
             for (let j = 0; j < config.children.length; j++) {
               const child = config.children[j]
               if (child.__vModel__ === val) {
@@ -1006,7 +1006,7 @@ export default {
               }
             }
           }
-          if (config && config.jnpfKey != 'table' && config.children && Array.isArray(config.children)) {
+          if (config && config.workflowKey != 'table' && config.children && Array.isArray(config.children)) {
             loop(config.children)
           }
         }
@@ -1034,7 +1034,7 @@ export default {
             boo = true
             break
           }
-          if (config && config.jnpfKey != 'table' && config.children && Array.isArray(config.children)) {
+          if (config && config.workflowKey != 'table' && config.children && Array.isArray(config.children)) {
             loop(config.children)
           }
         }
@@ -1055,7 +1055,7 @@ export default {
     },
     setDefaultOptions() {
       if (!this.$store.getters.hasTable) return
-      if (this.activeData.__vModel__ === undefined || this.activeData.__config__.jnpfKey === 'table') return
+      if (this.activeData.__vModel__ === undefined || this.activeData.__config__.workflowKey === 'table') return
       if (!this.activeData.__config__.tableName || this.activeData.__config__.tableName === this.mainTable) {
         let fieldOptions = this.formItemList.map(o => ({ ...o, realField: o.field }))
         this.fieldOptions = fieldOptions.filter(o => o.primaryKey != 1)
@@ -1070,7 +1070,7 @@ export default {
           let item = list[0]
           let options = item.fields.map(o => ({
             ...o,
-            realField: 'jnpf_' + this.activeData.__config__.tableName + '_jnpf_' + o.field,
+            realField: 'workflow_' + this.activeData.__config__.tableName + '_workflow_' + o.field,
           }))
           this.fieldOptions = options.filter(o => o.primaryKey != 1)
         }
@@ -1087,11 +1087,11 @@ export default {
         for (let i = 0; i < list.length; i++) {
           const e = list[i]
           const config = e.__config__
-          if (config.jnpfKey === 'table' && config.tableName === tableName) {
+          if (config.workflowKey === 'table' && config.tableName === tableName) {
             boo = true
             break
           }
-          if (config && config.jnpfKey != 'table' && config.children && Array.isArray(config.children)) {
+          if (config && config.workflowKey != 'table' && config.children && Array.isArray(config.children)) {
             loop(config.children)
           }
         }
@@ -1131,7 +1131,7 @@ export default {
       if (val === "dictionary") {
         this.activeData.__config__.propsUrl = ""
       }
-      if (this.activeData.__config__.jnpfKey === 'treeSelect' || this.activeData.__config__.jnpfKey === 'cascader') {
+      if (this.activeData.__config__.workflowKey === 'treeSelect' || this.activeData.__config__.workflowKey === 'cascader') {
         this.activeData.props.props.value = 'id'
         this.activeData.props.props.label = 'fullName'
         this.activeData.props.props.children = 'children'
@@ -1202,8 +1202,8 @@ export default {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__config__ && data.__config__.jnpfKey) {
-          if (data.__config__.jnpfKey === 'relationForm' && data.__vModel__) {
+        if (data.__config__ && data.__config__.workflowKey) {
+          if (data.__config__.workflowKey === 'relationForm' && data.__vModel__) {
             list.push(data)
           }
         }
@@ -1211,7 +1211,7 @@ export default {
       loop(drawingList)
       this.relationFormOptions = list.map(o => ({
         ...o,
-        prop: o.__config__ && o.__config__.tableName ? o.__vModel__ + '_jnpfTable_' + o.__config__.tableName + (o.__config__.isSubTable ? '0' : "1") : o.__vModel__
+        prop: o.__config__ && o.__config__.tableName ? o.__vModel__ + '_workflowTable_' + o.__config__.tableName + (o.__config__.isSubTable ? '0' : "1") : o.__vModel__
       }))
       this.getRelationFieldOptions()
     },
@@ -1246,8 +1246,8 @@ export default {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__config__ && data.__config__.jnpfKey) {
-          if (data.__config__.jnpfKey === 'popupSelect' && data.__vModel__) {
+        if (data.__config__ && data.__config__.workflowKey) {
+          if (data.__config__.workflowKey === 'popupSelect' && data.__vModel__) {
             list.push(data)
           }
         }
@@ -1255,7 +1255,7 @@ export default {
       loop(drawingList)
       this.popupOptions = list.map(o => ({
         ...o,
-        prop: o.__config__ && o.__config__.tableName ? o.__vModel__ + '_jnpfTable_' + o.__config__.tableName + (o.__config__.isSubTable ? '0' : "1") : o.__vModel__
+        prop: o.__config__ && o.__config__.tableName ? o.__vModel__ + '_workflowTable_' + o.__config__.tableName + (o.__config__.isSubTable ? '0' : "1") : o.__vModel__
       }))
     },
     visibleChange(val) {
@@ -1349,7 +1349,7 @@ export default {
     addCollapseItem() {
       this.activeData.__config__.children.push({
         title: '新面板',
-        name: this.jnpf.idGenerator(),
+        name: this.workflow.idGenerator(),
         __config__: {
           children: []
         }

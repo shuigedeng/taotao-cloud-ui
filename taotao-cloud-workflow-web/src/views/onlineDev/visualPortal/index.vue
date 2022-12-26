@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -28,27 +28,27 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="dialogVisible=true" addText="新建门户">
             <upload-btn url="/api/visualdev/Portal/Model/Actions/ImportData"
               @on-success="initData" />
           </topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="initData()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="fullName" label="名称" show-overflow-tooltip min-width="200" />
           <el-table-column prop="enCode" label="编码" width="200" />
           <el-table-column prop="category" label="分类" width="150" />
           <el-table-column prop="creatorUser" label="创建人" width="120" />
-          <el-table-column prop="creatorTime" label="创建时间" :formatter="jnpf.tableDateFormat"
+          <el-table-column prop="creatorTime" label="创建时间" :formatter="workflow.tableDateFormat"
             width="120" />
-          <el-table-column prop="lastModifyTime" label="最后修改时间" :formatter="jnpf.tableDateFormat"
+          <el-table-column prop="lastModifyTime" label="最后修改时间" :formatter="workflow.tableDateFormat"
             width="120" />
           <el-table-column prop="sortCode" label="排序" width="70" align="center" />
           <el-table-column prop="enabledMark" label="状态" width="70" align="center">
@@ -78,7 +78,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>
@@ -88,7 +88,7 @@
     <Preview :visible.sync="previewVisible" :id="activeId" />
     <Transfer ref="transfer" :visible.sync="transferShow" :id="transferId" />
     <el-dialog title="新建门户" :visible.sync="dialogVisible"
-      class="JNPF-dialog JNPF-dialog-add JNPF-dialog_center" lock-scroll width="600px">
+      class="WORKFLOW-dialog WORKFLOW-dialog-add WORKFLOW-dialog_center" lock-scroll width="600px">
       <div class="add-main">
         <div class="add-item add-item-sys" @click="addOrUpdateHandle(1)">
           <i class="add-icon icon-ym icon-ym-customUrl"></i>
@@ -220,7 +220,7 @@ export default {
         type: 'warning'
       }).then(() => {
         exportTemplate(id).then(res => {
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
         })
       }).catch(() => { });
     },
@@ -251,7 +251,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.JNPF-dialog-add {
+.WORKFLOW-dialog-add {
   ::v-deep .el-dialog__body {
     padding: 50px 30px !important;
   }

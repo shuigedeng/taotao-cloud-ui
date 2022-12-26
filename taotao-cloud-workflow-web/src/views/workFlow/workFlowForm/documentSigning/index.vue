@@ -70,12 +70,12 @@
         </el-col>
         <el-col :span="24" v-if="judgeShow('fileJson')">
           <el-form-item label="相关附件" prop="fileJson">
-            <JNPF-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
+            <WORKFLOW-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
           </el-form-item>
         </el-col>
         <el-col :span="24" v-if="judgeShow('documentContent')">
           <el-form-item label="文件内容" prop="documentContent">
-            <JNPF-Quill v-model="dataForm.documentContent"
+            <WORKFLOW-Quill v-model="dataForm.documentContent"
               :disabled="judgeWrite('documentContent')" />
           </el-form-item>
         </el-col>

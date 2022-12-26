@@ -21,7 +21,7 @@ export default {
   },
   watch: {},
   created() {
-    
+
   },
   methods: {
     goBack() {
@@ -64,7 +64,7 @@ export default {
       delete params.time;
       delete params.sampling_time;
       ExportData(params).then((res) => {
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.exportBtnLoading = false;
       }).catch(() => {
         this.exportBtnLoading = false;

@@ -1,6 +1,6 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center banner">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center banner">
       <div class="banner-tips">
         <h3>banner图设置</h3>
         <p>
@@ -9,7 +9,7 @@
           <span class="blue">3M</span> 以内
         </p>
       </div>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
         <div class="banner-con">
           <div class="banner-con-list" v-loading="listLoading">
             <div v-for="(item, index) in list" :key="index">

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-const jnpf = require('./utils/jnpf').default
+const workflow = require('./utils/workflow').default
 
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 
@@ -27,7 +27,7 @@ import permission from "@/directive/permission";
 Vue.use(permission)
 
 Vue.use(Element, {
-  size: jnpf.storageGet('size') || 'small', // set element-ui default size
+  size: workflow.storageGet('size') || 'small', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
 })
 // 批量引入组件
@@ -37,7 +37,7 @@ Vue.use(components)
 // 添加实例属性
 Object.assign(Vue.prototype, {
   define: require('./utils/define'), // 常量
-  jnpf, // 公共方法
+  workflow, // 公共方法
   formValidate: require('./utils/formValidate').default, // 表单验证
   $message: message
 })

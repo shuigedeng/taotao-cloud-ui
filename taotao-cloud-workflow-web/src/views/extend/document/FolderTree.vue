@@ -1,9 +1,9 @@
 <template>
   <el-dialog title="移动到" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center JNPF-dialog-tree" lock-scroll width='450px'>
+    class="WORKFLOW-dialog WORKFLOW-dialog_center WORKFLOW-dialog-tree" lock-scroll width='450px'>
     <el-tree :data="treeData" :props="defaultProps" default-expand-all highlight-current
       ref="treeBox" :expand-on-click-node="false" @node-click="handleNodeClick"
-      class="JNPF-common-el-tree" node-key="id">
+      class="WORKFLOW-common-el-tree" node-key="id">
       <span class="custom-tree-node" slot-scope="{ node, data }">
         <i :class="data.icon"></i>
         <span class="text">{{node.label}}</span>

@@ -13,7 +13,7 @@
       <el-select v-model="activeData.summaryField" multiple placeholder="请选择合计字段">
         <template v-for="(item,i) in activeData.__config__.children">
           <el-option :key="i" :label="item.__config__.label" :value="item.__vModel__"
-            v-if="['comInput','numInput','calculate'].includes(item.__config__.jnpfKey)" />
+            v-if="['comInput','numInput','calculate'].includes(item.__config__.workflowKey)" />
         </template>
       </el-select>
     </el-form-item>

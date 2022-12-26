@@ -60,7 +60,7 @@ export default {
       btnExportLoading: false,
       multipleSelection:[],
       formVisible:false,
-      
+
     };
   },
   watch: {
@@ -139,7 +139,7 @@ export default {
       }else{
         params.originId = '';
       }
-      
+
       if(this.listQuery.destinationId.length > 0){
         params.destinationId = this.listQuery.destinationId.flat().join(',');
       }else{
@@ -181,7 +181,7 @@ export default {
         params.originId = this.listQuery.originId[0];
         params.destinationId = this.listQuery.destinationId.join(',');
         let res = await returnExportData(params);
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.btnExportLoading = false;
        } catch (e) {
         this.btnExportLoading = false;

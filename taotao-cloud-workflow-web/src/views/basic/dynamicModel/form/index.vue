@@ -1,7 +1,7 @@
 <template >
-  <div class="JNPF-common-layout">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <p>{{config.fullName}}</p>
         <div class="options">
           <el-button type="primary" @click="dataFormSubmit()" :loading="btnLoading">

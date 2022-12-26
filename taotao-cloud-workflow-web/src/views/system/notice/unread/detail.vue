@@ -1,13 +1,13 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main flow-form-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main flow-form-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="title" />
       </div>
-      <div class="JNPF-common-layout">
-        <div class="JNPF-common-layout-center">
-          <div class="JNPF-common-layout-main JNPF-flex-main">
-            <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout">
+        <div class="WORKFLOW-common-layout-center">
+          <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+            <div class="WORKFLOW-common-head">
               <div>
                 <el-button
                   type="primary"
@@ -16,21 +16,21 @@
                   >导出</el-button
                 >
               </div>
-              <div class="JNPF-common-head-right">
+              <div class="WORKFLOW-common-head-right">
                 <el-tooltip
                   effect="dark"
                   :content="$t('common.refresh')"
                   placement="top"
                 >
                   <el-link
-                    icon="icon-ym icon-ym-Refresh JNPF-common-head-icon"
+                    icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon"
                     :underline="false"
                     @click="reset()"
                   />
                 </el-tooltip>
               </div>
             </div>
-            <JNPF-table v-loading="listLoading" :data="list" max-height="100%">
+            <WORKFLOW-table v-loading="listLoading" :data="list" max-height="100%">
               <el-table-column
                 prop="username"
                 label="姓名"
@@ -53,7 +53,7 @@
                   >
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default {
           companyId: this.companyId,
         };
         let res = await exportData(query);
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.pageLoading = false;
       } catch (e) {
         //TODO handle the exception

@@ -1,20 +1,20 @@
 <template>
-  <el-dialog :visible.sync="visible" fullscreen lock-scroll class="JNPF-full-dialog"
+  <el-dialog :visible.sync="visible" fullscreen lock-scroll class="WORKFLOW-full-dialog"
     :show-close="false" :modal="false">
-    <div class="JNPF-full-dialog-header">
+    <div class="WORKFLOW-full-dialog-header">
       <div class="header-title">
-        <img src="@/assets/images/jnpf.png" class="header-logo" />
+        <img src="@/assets/images/workflow.png" class="header-logo" />
         <p class="header-txt"> · 代码预览</p>
       </div>
       <div class="options">
         <el-button @click="closeDialog()">{{$t('common.cancelButton')}}</el-button>
       </div>
     </div>
-    <div class="JNPF-common-layout main" v-loading="loading">
-      <div class="JNPF-common-layout-left">
+    <div class="WORKFLOW-common-layout main" v-loading="loading">
+      <div class="WORKFLOW-common-layout-left">
         <el-tree :data="treeData" :props="defaultProps" default-expand-all highlight-current
           ref="treeBox" :expand-on-click-node="false" @node-click="handleNodeClick"
-          class="JNPF-common-el-tree" node-key="id">
+          class="WORKFLOW-common-el-tree" node-key="id">
           <span class="custom-tree-node" slot-scope="{ node }">
             <el-tooltip :content="node.label" placement="right">
               <span class="text">{{node.label}}</span>
@@ -22,9 +22,9 @@
           </span>
         </el-tree>
       </div>
-      <div class="JNPF-common-layout-center">
-        <div class="JNPF-common-layout-main">
-          <JNPFCodeEditor v-model="currentContent" :options="options" ref="CodeEditor" />
+      <div class="WORKFLOW-common-layout-center">
+        <div class="WORKFLOW-common-layout-main">
+          <WORKFLOWCodeEditor v-model="currentContent" :options="options" ref="CodeEditor" />
         </div>
       </div>
     </div>
@@ -33,9 +33,9 @@
 
 <script>
 import { CodePreview } from '@/api/onlineDev/visualDev'
-import JNPFCodeEditor from '@/components/JNPFEditor/monaco'
+import WORKFLOWCodeEditor from '@/components/WORKFLOWEditor/monaco'
 export default {
-  components: { JNPFCodeEditor },
+  components: { WORKFLOWCodeEditor },
   data() {
     return {
       loading: false,
@@ -120,7 +120,7 @@ export default {
 <style lang="scss" scoped>
 ::v-deep .main {
   padding: 10px;
-  .JNPF-common-layout-main {
+  .WORKFLOW-common-layout-main {
     padding: 0;
   }
 }

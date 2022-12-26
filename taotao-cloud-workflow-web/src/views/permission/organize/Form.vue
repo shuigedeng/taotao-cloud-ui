@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main org-form">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main org-form">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack"
           :content="!dataForm.id ? $t(`Organize.addCompany`) : $t(`Organize.editCompany`)" />
         <div class="options">
@@ -12,13 +12,13 @@
       </div>
       <div class="main" v-loading="formLoading">
         <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="80px">
-          <div class="JNPF-common-title mb-20">
+          <div class="WORKFLOW-common-title mb-20">
             <h2 class="bold">基础信息</h2>
           </div>
           <el-row :gutter="20" class="custom-row">
             <el-col :sm="12" :xs="24">
               <el-form-item label="上级公司" prop="parentId">
-                <JNPF-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择上级公司"
+                <WORKFLOW-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择上级公司"
                   style="width: 100%" />
               </el-form-item>
             </el-col>
@@ -39,13 +39,13 @@
             </el-col>
             <el-col :sm="12" :xs="24">
               <el-form-item label="公司性质" prop="propertyJson.enterpriseNature">
-                <JNPF-TreeSelect v-model="dataForm.propertyJson.enterpriseNature" :options="natureData"
+                <WORKFLOW-TreeSelect v-model="dataForm.propertyJson.enterpriseNature" :options="natureData"
                   placeholder="请选择公司性质" style="width: 100%" />
               </el-form-item>
             </el-col>
             <el-col :sm="12" :xs="24">
               <el-form-item label="所属行业" prop="propertyJson.industry">
-                <JNPF-TreeSelect v-model="dataForm.propertyJson.industry" :options="industryData" placeholder="请选择所属行业"
+                <WORKFLOW-TreeSelect v-model="dataForm.propertyJson.industry" :options="industryData" placeholder="请选择所属行业"
                   style="width: 100%" />
               </el-form-item>
             </el-col>
@@ -87,7 +87,7 @@
               </el-form-item>
             </el-col>
           </el-row>
-          <div class="JNPF-common-title mb-20">
+          <div class="WORKFLOW-common-title mb-20">
             <h2 class="bold">经营信息</h2>
           </div>
           <el-row :gutter="20" class="custom-row">

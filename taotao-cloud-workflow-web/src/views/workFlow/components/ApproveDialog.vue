@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="eventType==='audit'?'审批通过':'审批拒绝'" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body
     width='600px'>
     <el-form label-width="130px" ref="dataForm" :model="dataForm">
       <template v-if="eventType==='audit'">

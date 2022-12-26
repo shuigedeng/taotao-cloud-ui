@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="所属公司">
@@ -24,23 +24,23 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
-          <div class="JNPF-common-head-right">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip
               effect="dark"
               :content="$t('common.refresh')"
               placement="top"
             >
               <el-link
-                icon="icon-ym icon-ym-Refresh JNPF-common-head-icon"
+                icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon"
                 :underline="false"
                 @click="reset()"
               />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" max-height="100%">
+        <WORKFLOW-table v-loading="listLoading" :data="list" max-height="100%">
           <el-table-column
             prop="companyName"
             label="公司名称"
@@ -60,7 +60,7 @@
               >
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
     <detail
@@ -122,7 +122,7 @@ export default {
           companyId: this.companyId[0]
         };
         let res = await exportData(query);
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.pageLoading = false;
       } catch (e) {
         //TODO handle the exception

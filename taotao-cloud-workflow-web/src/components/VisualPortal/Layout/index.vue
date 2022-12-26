@@ -5,23 +5,23 @@
         :is-resizable="false">
         <grid-item v-for="item in layout" :x="item.x" :y="item.y" :w="item.w" :h="item.h"
           :i="item.i" :key="item.i" static>
-          <Todo v-if="item.jnpfKey==='todo'" :title="item.title" />
-          <CommonFunc v-if="item.jnpfKey==='commonFunc'" :title="item.title" :list="item.list" />
-          <TodoList v-if="item.jnpfKey==='todoList'" :title="item.title" />
-          <HNotice v-if="item.jnpfKey==='notice'" :title="item.title" />
-          <HEmail v-if="item.jnpfKey==='email'" :title="item.title" />
-          <DataBoard v-if="item.jnpfKey==='dataBoard'" :title="item.title" :list="item.list" />
-          <HBarChart v-if="item.jnpfKey==='barChart'" :title="item.title" :option="item.option"
+          <Todo v-if="item.workflowKey==='todo'" :title="item.title" />
+          <CommonFunc v-if="item.workflowKey==='commonFunc'" :title="item.title" :list="item.list" />
+          <TodoList v-if="item.workflowKey==='todoList'" :title="item.title" />
+          <HNotice v-if="item.workflowKey==='notice'" :title="item.title" />
+          <HEmail v-if="item.workflowKey==='email'" :title="item.title" />
+          <DataBoard v-if="item.workflowKey==='dataBoard'" :title="item.title" :list="item.list" />
+          <HBarChart v-if="item.workflowKey==='barChart'" :title="item.title" :option="item.option"
             :dataType="item.dataType" :propsApi="item.propsApi" />
-          <HAnnularChart v-if="item.jnpfKey==='annularChart'" :title="item.title"
+          <HAnnularChart v-if="item.workflowKey==='annularChart'" :title="item.title"
             :option=" item.option" :dataType="item.dataType" :propsApi="item.propsApi" />
-          <HAreaChart v-if="item.jnpfKey==='areaChart'" :title="item.title" :option="item.option"
+          <HAreaChart v-if="item.workflowKey==='areaChart'" :title="item.title" :option="item.option"
             :dataType="item.dataType" :propsApi="item.propsApi" />
-          <HLineChart v-if="item.jnpfKey==='lineChart'" :title="item.title" :option="item.option"
+          <HLineChart v-if="item.workflowKey==='lineChart'" :title="item.title" :option="item.option"
             :dataType="item.dataType" :propsApi="item.propsApi" />
-          <HPieChart v-if="item.jnpfKey==='pieChart'" :title="item.title" :option="item.option"
+          <HPieChart v-if="item.workflowKey==='pieChart'" :title="item.title" :option="item.option"
             :dataType="item.dataType" :propsApi="item.propsApi" />
-          <HRadarChart v-if="item.jnpfKey==='radarChart'" :title="item.title" :option="item.option"
+          <HRadarChart v-if="item.workflowKey==='radarChart'" :title="item.title" :option="item.option"
             :dataType="item.dataType" :propsApi="item.propsApi" />
           <div class="mask" v-if="mask"></div>
         </grid-item>

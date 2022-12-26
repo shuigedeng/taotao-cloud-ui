@@ -1,6 +1,6 @@
 
 <template>
-  <el-drawer size="550px" class="drawer JNPF-common-drawer" :visible.sync="visible" @close="cancel"
+  <el-drawer size="550px" class="drawer WORKFLOW-common-drawer" :visible.sync="visible" @close="cancel"
     v-if="properties" append-to-body :wrapperClosable="false">
     <!-- 标题 -->
     <header slot="title" class="header"
@@ -168,7 +168,7 @@
                 </el-radio-group>
               </el-form-item>
               <el-form-item label="子流程表单">
-                <JNPF-TreeSelect :options="flowOptions" v-model="subFlowForm.flowId"
+                <WORKFLOW-TreeSelect :options="flowOptions" v-model="subFlowForm.flowId"
                   placeholder="请选择子流程表单" lastLevel clearable @change="subFlowForm.assignList=[]" />
               </el-form-item>
               <el-form-item label="数据传递">
@@ -276,8 +276,8 @@
                 </div>
                 <div class="per-cell" v-if="startForm.hasPrintBtn">
                   <p style="width:112px"></p>
-                  <JNPF-TreeSelect :options="printTplList" v-model="startForm.printId"
-                    placeholder="请选择打印模板" lastLevel clearable></JNPF-TreeSelect>
+                  <WORKFLOW-TreeSelect :options="printTplList" v-model="startForm.printId"
+                    placeholder="请选择打印模板" lastLevel clearable></WORKFLOW-TreeSelect>
                 </div>
               </el-form-item>
             </el-form>
@@ -307,7 +307,7 @@
         </el-tab-pane>
         <el-tab-pane label="表单权限">
           <div class="form-auth-table">
-            <el-table :data="getFormOperates()" class="JNPF-common-table" size="mini" height="100%">
+            <el-table :data="getFormOperates()" class="WORKFLOW-common-table" size="mini" height="100%">
               <el-table-column prop="name" label="表单字段" align="left"></el-table-column>
               <el-table-column prop="write" label="操作" align="center" width="250">
                 <template slot-scope="scope">
@@ -800,8 +800,8 @@
                 </div>
                 <div class="per-cell" v-if="approverForm.hasPrintBtn">
                   <p style="width:112px"></p>
-                  <JNPF-TreeSelect :options="printTplList" v-model="approverForm.printId"
-                    placeholder="请选择打印模板" lastLevel clearable></JNPF-TreeSelect>
+                  <WORKFLOW-TreeSelect :options="printTplList" v-model="approverForm.printId"
+                    placeholder="请选择打印模板" lastLevel clearable></WORKFLOW-TreeSelect>
                 </div>
               </el-form-item>
               <el-form-item label="签名设置">
@@ -844,7 +844,7 @@
         </el-tab-pane>
         <el-tab-pane label="表单权限" name="formAuth">
           <div class="form-auth-table">
-            <el-table :data="getFormOperates()" class="JNPF-common-table" size="mini" height="100%">
+            <el-table :data="getFormOperates()" class="WORKFLOW-common-table" size="mini" height="100%">
               <el-table-column prop="name" label="表单字段" align="left"></el-table-column>
               <el-table-column prop="write" label="操作" align="center" width="250">
                 <template slot-scope="scope">
@@ -1122,7 +1122,7 @@
       <el-button size="small" type="primary" @click="confirm">确定</el-button>
     </div>
     <el-dialog title="数据传递" :close-on-click-modal="false" :visible.sync="ruleVisible"
-      class="JNPF-dialog JNPF-dialog_center rule-dialog" lock-scroll append-to-body width='700px'>
+      class="WORKFLOW-dialog WORKFLOW-dialog_center rule-dialog" lock-scroll append-to-body width='700px'>
       <div class="option-box-tip">当父流程流转到子流程时，将对应的字段赋值给子流程</div>
       <el-row :gutter="10" v-for="(item,i) in assignList" :key="i" class="mb-10">
         <el-col :span="2" class="rule-cell">父流程</el-col>
@@ -1385,56 +1385,56 @@ const systemFieldOptions = [{
     label: '流程ID',
     required: true
   },
-  __vModel__: 'jnpfFlowId',
+  __vModel__: 'workflowFlowId',
 },
 {
   __config__: {
     label: '节点ID',
     required: true
   },
-  __vModel__: 'jnpfTaskNodeId',
+  __vModel__: 'workflowTaskNodeId',
 },
 {
   __config__: {
     label: '流程名称',
     required: true
   },
-  __vModel__: 'jnpfFlowFullName',
+  __vModel__: 'workflowFlowFullName',
 },
 {
   __config__: {
     label: '任务标题',
     required: true
   },
-  __vModel__: 'jnpfTaskFullName',
+  __vModel__: 'workflowTaskFullName',
 },
 {
   __config__: {
     label: '发起用户ID',
     required: true
   },
-  __vModel__: 'jnpfLaunchUserId',
+  __vModel__: 'workflowLaunchUserId',
 },
 {
   __config__: {
     label: '发起用户名',
     required: true
   },
-  __vModel__: 'jnpfLaunchUserName',
+  __vModel__: 'workflowLaunchUserName',
 },
 {
   __config__: {
     label: '当前操作用户ID',
     required: true
   },
-  __vModel__: 'jnpfFlowOperatorUserId',
+  __vModel__: 'workflowFlowOperatorUserId',
 },
 {
   __config__: {
     label: '当前操作用户名',
     required: true
   },
-  __vModel__: 'jnpfFlowOperatorUserName',
+  __vModel__: 'workflowFlowOperatorUserName',
 }]
 export default {
   props: [/*当前节点数据*/"value", /*整个节点数据*/"processData", "flowType"],
@@ -1515,11 +1515,11 @@ export default {
       let list = []
       const loop = (data, parent) => {
         if (!data) return
-        if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+        if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__vModel__ && data.__config__.jnpfKey !== 'table') list.push(data)
+        if (data.__vModel__ && data.__config__.workflowKey !== 'table') list.push(data)
       }
       loop(getDrawingList())
       const formItems = list
@@ -1578,7 +1578,7 @@ export default {
       if (!formOperates.length) {
         const loop = (data, parent) => {
           if (!data) return
-          if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+          if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
             loop(data.__config__.children, data)
           }
           if (Array.isArray(data)) data.forEach(d => loop(d, parent))

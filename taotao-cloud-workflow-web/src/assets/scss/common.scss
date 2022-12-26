@@ -1,13 +1,13 @@
 @import "./font.scss";
 
-.JNPF-common-head {
+.WORKFLOW-common-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 10px;
   flex-shrink: 0;
 
-  .JNPF-common-head-right {
+  .WORKFLOW-common-head-right {
     flex-shrink: 0;
     font-size: 0;
 
@@ -15,24 +15,24 @@
       margin-left: 12px;
     }
 
-    .JNPF-common-head-icon {
+    .WORKFLOW-common-head-icon {
       color: #606266;
     }
   }
 }
 
-.JNPF-common-el-tree {
+.WORKFLOW-common-el-tree {
   margin: 10px 0;
 }
 
-.JNPF-common-layout {
+.WORKFLOW-common-layout {
   height: 100%;
   width: 100%;
   display: flex;
   position: relative;
   background: #EBEEF5;
 
-  .JNPF-common-layout-left {
+  .WORKFLOW-common-layout-left {
     // width: 220px;
     width: 350px;
     background-color: #fff;
@@ -42,12 +42,12 @@
     flex-direction: column;
     margin-right: 10px;
 
-    .JNPF-common-title {
+    .WORKFLOW-common-title {
       flex-shrink: 0;
       padding: 0 10px;
     }
 
-    .JNPF-common-el-tree-scrollbar {
+    .WORKFLOW-common-el-tree-scrollbar {
       flex: 1;
 
       .el-scrollbar__wrap {
@@ -59,7 +59,7 @@
       width: calc(100% - 30px) !important;
     }
 
-    .JNPF-common-el-tree {
+    .WORKFLOW-common-el-tree {
       flex: 1;
       overflow: auto;
       overflow-x: hidden;
@@ -76,14 +76,14 @@
   }
 }
 
-.JNPF-common-layout-center {
+.WORKFLOW-common-layout-center {
   flex: 1;
   height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 
-  .JNPF-common-layout-main {
+  .WORKFLOW-common-layout-main {
     flex: 1;
     padding: 0 0 10px;
     background-color: #fff;
@@ -96,7 +96,7 @@
   }
 }
 
-.JNPF-common-search-box {
+.WORKFLOW-common-search-box {
   background: #fff;
   flex-shrink: 0;
   margin-bottom: 10px;
@@ -127,7 +127,7 @@
     }
   }
 
-  .JNPF-common-search-box-right {
+  .WORKFLOW-common-search-box-right {
     position: absolute;
     right: 10px;
     top: 15px;
@@ -214,7 +214,7 @@
   }
 }
 
-.JNPF-table-delBtn {
+.WORKFLOW-table-delBtn {
   color: #ff3a3a !important;
 
   &.el-button--text:hover,
@@ -232,8 +232,8 @@
   }
 }
 
-.JNPF-dialog {
-  &.JNPF-dialog_center {
+.WORKFLOW-dialog {
+  &.WORKFLOW-dialog_center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,7 +351,7 @@
             padding: 10px;
             overflow: auto;
 
-            .JNPF-common-el-tree {
+            .WORKFLOW-common-el-tree {
               margin: 0;
             }
           }
@@ -359,7 +359,7 @@
       }
     }
 
-    &.JNPF-dialog-tree-select {
+    &.WORKFLOW-dialog-tree-select {
       .el-dialog__body {
         height: 60vh;
         padding: 0 0 10px !important;
@@ -367,14 +367,14 @@
         flex-direction: column;
         overflow: hidden;
 
-        .JNPF-common-layout-left {
+        .WORKFLOW-common-layout-left {
           margin-right: 1px;
         }
 
-        .JNPF-common-search-box {
+        .WORKFLOW-common-search-box {
           margin-bottom: 0;
 
-          .JNPF-common-search-box-right {
+          .WORKFLOW-common-search-box-right {
             padding: 6px 10px 0 0;
           }
         }
@@ -391,7 +391,7 @@
   }
 }
 
-.JNPF-dialog-notice {
+.WORKFLOW-dialog-notice {
   .el-dialog__body {
     padding: 0 20px !important;
   }
@@ -427,7 +427,7 @@
   }
 }
 
-.JNPF-dialog-tree {
+.WORKFLOW-dialog-tree {
   .el-dialog {
     .el-dialog__body {
       .el-tree {
@@ -439,7 +439,7 @@
   }
 }
 
-.JNPF-dialog-export {
+.WORKFLOW-dialog-export {
   .el-dialog {
     .el-dialog__body {
       padding: 20px 20px 0 !important;
@@ -475,7 +475,7 @@
   }
 }
 
-.JNPF-dialog-import {
+.WORKFLOW-dialog-import {
   .el-dialog__body {
     padding: 20px 40px 2px !important;
   }
@@ -581,7 +581,7 @@
   }
 }
 
-.JNPF-common-title {
+.WORKFLOW-common-title {
   border-bottom: 1px solid #ebeef5;
   display: flex;
   justify-content: space-between;
@@ -666,7 +666,7 @@
   padding: 10px;
 }
 
-.JNPF-common-page-header {
+.WORKFLOW-common-page-header {
   padding: 14px 10px;
   display: flex;
   justify-content: flex-start;
@@ -702,7 +702,7 @@
   }
 }
 
-.JNPF-preview-main {
+.WORKFLOW-preview-main {
   position: absolute;
   background-color: #fff;
   left: 0;
@@ -734,7 +734,7 @@
     flex: 1;
   }
 
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
   }
 
@@ -746,7 +746,7 @@
   }
 }
 
-.JNPF-flex-main {
+.WORKFLOW-flex-main {
   display: flex;
   flex-direction: column;
 
@@ -767,7 +767,7 @@
 }
 
 // 处理el-tabs
-.JNPF-el_tabs {
+.WORKFLOW-el_tabs {
   height: 100%;
 
   &.el-tabs--top {
@@ -842,7 +842,7 @@
   color: #475059 !important;
 }
 
-.JNPF-select-tags {
+.WORKFLOW-select-tags {
   display: none !important;
 }
 
@@ -978,7 +978,7 @@
     padding: 0 10px;
   }
 
-  .JNPF-el_tabs .el-tabs__content {
+  .WORKFLOW-el_tabs .el-tabs__content {
     overflow: hidden;
 
     .el-tab-pane {
@@ -1301,7 +1301,7 @@
   }
 }
 
-.JNPF-full-dialog {
+.WORKFLOW-full-dialog {
   .el-dialog__header {
     padding: 0;
   }
@@ -1312,7 +1312,7 @@
     overflow: hidden;
   }
 
-  .JNPF-full-dialog-header {
+  .WORKFLOW-full-dialog-header {
     padding: 0 20px;
     height: 60px;
     display: flex;
@@ -1399,7 +1399,7 @@
   text-align: center;
 }
 
-.JNPF-common-drawer {
+.WORKFLOW-common-drawer {
   .el-drawer__header {
     height: 60px;
     border-bottom: 1px solid #dcdfe6;
@@ -1415,7 +1415,7 @@
     overflow: hidden;
   }
 
-  .JNPF-flex-main {
+  .WORKFLOW-flex-main {
     height: calc(100vh - 60px);
 
     .dynamicForm {
@@ -1432,10 +1432,10 @@
     }
   }
 
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
 
-    .JNPF-common-search-box-right {
+    .WORKFLOW-common-search-box-right {
       padding: 6px 10px 0 0;
     }
   }
@@ -1679,7 +1679,7 @@ textarea.el-textarea__inner {
   margin: 14px 0;
 }
 
-// 布局错位问题修正 
+// 布局错位问题修正
 .el-col {
   .el-form-item--small .el-form-item__label {
     line-height: 33px;
@@ -1811,7 +1811,7 @@ textarea.el-textarea__inner {
     margin-left: 15px;
   }
 
-  .JNPFAmount {
+  .WORKFLOWAmount {
     padding: 0 15px;
 
     .el-input-number {
@@ -1853,7 +1853,7 @@ textarea.el-textarea__inner {
     border-right: none !important;
   }
 
-  .JNPF-common-title {
+  .WORKFLOW-common-title {
     border-bottom: 1px solid #dcdfe6 !important;
   }
 }
@@ -2072,7 +2072,7 @@ textarea.el-textarea__inner {
 }
  .ql-align-justify {
   text-align: justify;
-  
+
 }
 
  .ql-align-right {

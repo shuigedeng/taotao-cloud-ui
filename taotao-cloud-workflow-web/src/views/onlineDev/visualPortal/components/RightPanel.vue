@@ -7,13 +7,13 @@
           <el-form-item v-if="activeData.title !== undefined" label="标题">
             <el-input v-model="activeData.title" placeholder="请输入标题" />
           </el-form-item>
-          <template v-if="activeData.jnpfKey === 'commonFunc'">
+          <template v-if="activeData.workflowKey === 'commonFunc'">
             <el-divider>选项</el-divider>
             <div v-for="(item, index) in activeData.list" :key="index" class="select-item">
-              <JNPF-TreeSelect :options="menuList" v-model="item.id" placeholder="请选择菜单" lastLevel
+              <WORKFLOW-TreeSelect :options="menuList" v-model="item.id" placeholder="请选择菜单" lastLevel
                 lastLevelKey='type' :lastLevelValue='2' clearable
                 @change="getSelectValue(arguments,index)">
-              </JNPF-TreeSelect>
+              </WORKFLOW-TreeSelect>
               <div class="close-btn select-line-icon" @click="delSelectItem(index)">
                 <i class="el-icon-remove-outline" />
               </div>
@@ -23,7 +23,7 @@
                 v-if="activeData.list.length<10">添加选项</el-button>
             </div>
           </template>
-          <template v-if="activeData.jnpfKey === 'dataBoard'">
+          <template v-if="activeData.workflowKey === 'dataBoard'">
             <div v-for="(item, index) in activeData.list" :key="index" class="dataBoard-item">
               <p class="head"><span>选项{{index+1}}</span>
                 <a class="head-icon el-icon-close" @click="delDataBoardItem(index)"></a>
@@ -38,7 +38,7 @@
                 </el-radio-group>
               </el-form-item>
               <el-form-item label="数据接口" v-if="item.dataType==='dynamic'">
-                <JNPF-TreeSelect :options="dataInterfaceOptions" v-model="item.propsApi"
+                <WORKFLOW-TreeSelect :options="dataInterfaceOptions" v-model="item.propsApi"
                   placeholder="请选择数据接口" lastLevel lastLevelKey='categoryId' lastLevelValue='1'
                   clearable />
               </el-form-item>
@@ -56,7 +56,7 @@
             <el-button icon="el-icon-plus" @click="addDataBoardItem"
               v-if="activeData.list.length<6">添加选项</el-button>
           </template>
-          <template v-if="activeData.jnpfKey && activeData.jnpfKey.indexOf('Chart')>-1">
+          <template v-if="activeData.workflowKey && activeData.workflowKey.indexOf('Chart')>-1">
             <el-form-item label="数据类型">
               <el-radio-group v-model="activeData.dataType" size="small" @change="dataTypeChange">
                 <el-radio-button label="static">静态数据</el-radio-button>
@@ -67,7 +67,7 @@
               <el-button @click="showData(activeData.option)">查看</el-button>
             </el-form-item>
             <el-form-item label="数据接口" v-if="activeData.dataType==='dynamic'">
-              <JNPF-TreeSelect :options="dataInterfaceOptions" v-model="activeData.propsApi"
+              <WORKFLOW-TreeSelect :options="dataInterfaceOptions" v-model="activeData.propsApi"
                 placeholder="请选择数据接口" lastLevel lastLevelKey='categoryId' lastLevelValue='1'
                 clearable />
             </el-form-item>
@@ -83,7 +83,7 @@
 import draggable from 'vuedraggable'
 import { getSelectorAll } from '@/api/system/menu'
 import { getDataInterfaceSelector } from '@/api/systemData/dataInterface'
-import iconBox from '@/components/JNPF-iconBox'
+import iconBox from '@/components/WORKFLOW-iconBox'
 import JSONArea from './JSONArea'
 export default {
   props: ['activeData'],

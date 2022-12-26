@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="查询字段">
@@ -28,20 +28,20 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div>
             <el-button type="primary" icon="el-icon-download" @click="exportForm">导出</el-button>
             <el-button type="text" icon="el-icon-upload2" @click="uploadForm">导入</el-button>
           </div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" :hasNO="false">
+        <WORKFLOW-table v-loading="listLoading" :data="list" :hasNO="false">
           <el-table-column type="index" width="50" label="序号" fixed="left" align="center" />
           <el-table-column prop="enCode" label="工号" width="100" sortable fixed="left" />
           <el-table-column prop="fullName" label="姓名" width="100" sortable fixed="left" />
@@ -76,11 +76,11 @@
           </el-table-column>
           <el-table-column label="操作" fixed="right" width="50">
             <template slot-scope="scope">
-              <el-button size="mini" type="text" class="JNPF-table-delBtn"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.row.id,scope.$index)">删除</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>

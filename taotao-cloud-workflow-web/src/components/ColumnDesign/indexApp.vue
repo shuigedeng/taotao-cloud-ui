@@ -3,7 +3,7 @@
     <div class="main-board">
       <div class="sort-box">
         <h4 class="cap">排序查询</h4>
-        <el-table :data="columnData.sortList" class="JNPF-common-table" ref="dragTableSort"
+        <el-table :data="columnData.sortList" class="WORKFLOW-common-table" ref="dragTableSort"
           :row-key="row=>row.prop">
           <el-table-column align="center" label="拖动" width="50">
             <template>
@@ -18,7 +18,7 @@
       <el-divider></el-divider>
       <div class="search-box">
         <h4 class="cap">查询条件</h4>
-        <el-table :data="columnData.searchList" class="JNPF-common-table" ref="dragTableSearch"
+        <el-table :data="columnData.searchList" class="WORKFLOW-common-table" ref="dragTableSearch"
           :row-key="row=>row.prop">
           <el-table-column align="center" label="拖动" width="50">
             <template>
@@ -38,7 +38,7 @@
       <el-divider></el-divider>
       <div class="column-box">
         <h4 class="cap">列表字段</h4>
-        <el-table :data="columnData.columnList" class="JNPF-common-table" ref="dragTable"
+        <el-table :data="columnData.columnList" class="WORKFLOW-common-table" ref="dragTable"
           :row-key="row=>row.prop">
           <el-table-column align="center" label="拖动" width="50">
             <template>
@@ -60,21 +60,21 @@
       </el-tabs>
       <div class="field-box">
         <div class="columnList" v-show="currentTab==='sort'">
-          <el-table :data="sortOptions" class="JNPF-common-table" height="100%"
+          <el-table :data="sortOptions" class="WORKFLOW-common-table" height="100%"
             @selection-change="sortSelectionChange" ref="sortTable">
             <el-table-column prop="label" label="排序字段" />
             <el-table-column type="selection" width="55" align="center" />
           </el-table>
         </div>
         <div class="columnList" v-show="currentTab==='search'">
-          <el-table :data="searchOptions" class="JNPF-common-table" height="100%"
+          <el-table :data="searchOptions" class="WORKFLOW-common-table" height="100%"
             @selection-change="searchSelectionChange" ref="searchTable">
             <el-table-column prop="label" label="查询字段" />
             <el-table-column type="selection" width="55" align="center" />
           </el-table>
         </div>
         <div class="columnList" v-show="currentTab==='field'">
-          <el-table :data="columnOptions" class="JNPF-common-table" height="100%"
+          <el-table :data="columnOptions" class="WORKFLOW-common-table" height="100%"
             @selection-change="columnSelectionChange" ref="columnTable">
             <el-table-column prop="label" label="列表字段" />
             <el-table-column type="selection" width="55" align="center" />
@@ -147,12 +147,12 @@ import { getDrawingList } from '@/components/Generator/utils/db'
 import { deepClone } from '@/utils'
 import { noColumnShowList, noSearchList, useInputList, useDateList } from '@/components/Generator/generator/comConfig'
 const getSearchType = item => {
-  const jnpfKey = item.__config__.jnpfKey
+  const workflowKey = item.__config__.workflowKey
   // 等于-1  模糊-2  范围-3
   const fuzzyList = [...useInputList]
   const RangeList = [...useDateList, 'time', 'date', 'numInput', 'calculate']
-  if (RangeList.includes(jnpfKey)) return 3
-  if (fuzzyList.includes(jnpfKey)) return 2
+  if (RangeList.includes(workflowKey)) return 3
+  if (fuzzyList.includes(workflowKey)) return 2
   return 1
 }
 const defaultColumnData = {
@@ -257,24 +257,24 @@ export default {
     let list1 = []
     const loop = (data, parent) => {
       if (!data) return
-      if (data.__config__ && data.__config__.jnpfKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
+      if (data.__config__ && data.__config__.workflowKey !== 'table' && data.__config__.children && Array.isArray(data.__config__.children)) {
         loop(data.__config__.children, data)
       }
       if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-      if (data.__config__ && data.__config__.jnpfKey) {
+      if (data.__config__ && data.__config__.workflowKey) {
         if (data.__config__.layout === "colFormItem" && data.__vModel__) {
           list.push(data)
         }
-        if (data.__config__.layout === "colFormItem" && data.__vModel__ && data.__vModel__.indexOf('_jnpf_') < 0) {
+        if (data.__config__.layout === "colFormItem" && data.__vModel__ && data.__vModel__.indexOf('_workflow_') < 0) {
           list1.push(data)
         }
       }
     }
     loop(getDrawingList())
     this.list = list
-    let options = list.filter(o => noColumnShowList.indexOf(o.__config__.jnpfKey) < 0)
-    let searchOptions = list.filter(o => noSearchList.indexOf(o.__config__.jnpfKey) < 0)
-    let sortOptions = list1.filter(o => noColumnShowList.indexOf(o.__config__.jnpfKey) < 0)
+    let options = list.filter(o => noColumnShowList.indexOf(o.__config__.workflowKey) < 0)
+    let searchOptions = list.filter(o => noSearchList.indexOf(o.__config__.workflowKey) < 0)
+    let sortOptions = list1.filter(o => noColumnShowList.indexOf(o.__config__.workflowKey) < 0)
     this.columnOptions = options.map(o => ({
       label: o.__config__.label,
       prop: o.__vModel__
@@ -282,7 +282,7 @@ export default {
     this.searchOptions = searchOptions.map(o => ({
       label: o.__config__.label,
       prop: o.__vModel__,
-      jnpfKey: o.__config__.jnpfKey,
+      workflowKey: o.__config__.workflowKey,
       searchType: getSearchType(o),
       ...o
     }));

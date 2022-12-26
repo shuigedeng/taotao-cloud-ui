@@ -1,11 +1,11 @@
 <template>
   <el-dialog title="按钮脚本" :close-on-click-modal="false"
-    class="JNPF-dialog JNPF-dialog_center form-script-dialog" lock-scroll append-to-body
+    class="WORKFLOW-dialog WORKFLOW-dialog_center form-script-dialog" lock-scroll append-to-body
     v-bind="$attrs" width="800px" :modal-append-to-body="false" v-on="$listeners" @open="onOpen">
     <div class="form-script-dialog-body">
       <div class="right-main">
         <div class="codeEditor">
-          <JNPFCodeEditor v-model="text" :options="options" ref="CodeEditor" />
+          <WORKFLOWCodeEditor v-model="text" :options="options" ref="CodeEditor" />
         </div>
         <div class="tips">
           <p>支持JavaScript的脚本，参考编写脚本API</p>
@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import JNPFCodeEditor from '@/components/JNPFEditor/monaco'
+import WORKFLOWCodeEditor from '@/components/WORKFLOWEditor/monaco'
 export default {
-  components: { JNPFCodeEditor },
+  components: { WORKFLOWCodeEditor },
   props: ['value'],
   data() {
     return {

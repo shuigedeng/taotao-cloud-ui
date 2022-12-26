@@ -15,7 +15,7 @@
         :precision="0" controls-position="right" />
     </el-form-item>
     <el-form-item label="关联功能">
-      <JNPF-TreeSelect :options="treeData" v-model="activeData.modelId" placeholder="请选择关联功能"
+      <WORKFLOW-TreeSelect :options="treeData" v-model="activeData.modelId" placeholder="请选择关联功能"
         lastLevel clearable @change="onModeIdChange" />
     </el-form-item>
     <el-form-item label="显示字段">

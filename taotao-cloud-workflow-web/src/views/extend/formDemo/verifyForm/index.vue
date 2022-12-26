@@ -1,8 +1,8 @@
 <template>
-  <div class="CommonForm-container app-container JNPF-flex-main">
-    <div class="JNPF-common-head">
+  <div class="CommonForm-container app-container WORKFLOW-flex-main">
+    <div class="WORKFLOW-common-head">
       <div></div>
-      <div class="JNPF-common-head-right">
+      <div class="WORKFLOW-common-head-right">
         <el-button type="text" icon="el-icon-refresh" @click="init">重置</el-button>
         <el-button type="primary" @click="dataFormSubmit()">提交验证</el-button>
       </div>
@@ -258,7 +258,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .CommonForm-container {
-  .JNPF-common-head {
+  .WORKFLOW-common-head {
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
   }

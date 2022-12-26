@@ -8,7 +8,7 @@
             <el-input v-model="dataForm.Ttextarea" placeholder="文本域" type="textarea" :rows="3" />
           </el-form-item>
           <el-form-item label="HTML编辑器">
-            <JNPF-Quill v-model="dataForm.ModifyOpinion" />
+            <WORKFLOW-Quill v-model="dataForm.ModifyOpinion" />
           </el-form-item>
         </el-form>
       </el-col>
@@ -49,7 +49,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .CommonForm-container {
-  .JNPF-common-head {
+  .WORKFLOW-common-head {
     height: 50px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;

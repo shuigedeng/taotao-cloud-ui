@@ -1,21 +1,21 @@
 <template>
   <div>
     <el-drawer :title="dialogTitle" :visible.sync="dataAuthorizeListDrawer" :wrapperClosable="false"
-      ref="drawer" size="700px" class="JNPF-common-drawer">
-      <div class="JNPF-flex-main">
+      ref="drawer" size="700px" class="WORKFLOW-common-drawer">
+      <div class="WORKFLOW-flex-main">
         <el-tabs type="border-card" v-model="tabActiveName" @tab-click="handleClick"
-          class="JNPF-flex-tabs">
+          class="WORKFLOW-flex-tabs">
           <el-tab-pane label="方案管理" name="dataAuthorizeScheme">
-            <div class="JNPF-common-head">
+            <div class="WORKFLOW-common-head">
               <topOpts @add="addOrUpdateHandle('')" />
-              <div class="JNPF-common-head-right">
+              <div class="WORKFLOW-common-head-right">
                 <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
                   <el-link icon="icon-ym icon-ym-Refresh
-                  JNPF-common-head-icon" :underline="false" @click="getAuthorizeSchemeList()" />
+                  WORKFLOW-common-head-icon" :underline="false" @click="getAuthorizeSchemeList()" />
                 </el-tooltip>
               </div>
             </div>
-            <JNPF-table v-loading="listLoading" :data="dataAuthorizeSchemeList" row-key="id"
+            <WORKFLOW-table v-loading="listLoading" :data="dataAuthorizeSchemeList" row-key="id"
               default-expand-all :tree-props="{children: 'children', hasChildren: ''}">
               <el-table-column prop="fullName" label="方案名称" width="160" />
               <el-table-column prop="conditionText" label="过滤条件" />
@@ -25,19 +25,19 @@
                     @del="handleDel(scope.row.id)" />
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
           </el-tab-pane>
           <el-tab-pane label="字段管理" name="dataAuthorize">
-            <div class="JNPF-common-head">
+            <div class="WORKFLOW-common-head">
               <topOpts @add="addOrUpdateHandle('')" />
-              <div class="JNPF-common-head-right">
+              <div class="WORKFLOW-common-head-right">
                 <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
                   <el-link icon="icon-ym icon-ym-Refresh
-                  JNPF-common-head-icon" :underline="false" @click="getAuthorizeList()" />
+                  WORKFLOW-common-head-icon" :underline="false" @click="getAuthorizeList()" />
                 </el-tooltip>
               </div>
             </div>
-            <JNPF-table v-loading="dataListLoading" :data="dataAuthorizeList" row-key="id"
+            <WORKFLOW-table v-loading="dataListLoading" :data="dataAuthorizeList" row-key="id"
               default-expand-all :tree-props="{children: 'children', hasChildren: ''}">
               <el-table-column prop="enCode" label="字段名称" />
               <el-table-column prop="fullName" label="字段说明" show-overflow-tooltip />
@@ -59,7 +59,7 @@
                     @del="handleDel(scope.row.id)" />
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
           </el-tab-pane>
         </el-tabs>
       </div>
@@ -192,7 +192,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.JNPF-flex-main {
+.WORKFLOW-flex-main {
   .el-tabs--border-card {
     border: none;
     box-shadow: none;
@@ -201,7 +201,7 @@ export default {
     }
   }
 }
-.JNPF-flex-tabs {
+.WORKFLOW-flex-tabs {
   height: 100%;
   display: flex;
   flex-direction: column;

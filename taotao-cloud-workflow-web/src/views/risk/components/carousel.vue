@@ -6,7 +6,7 @@
     :visible.sync="visible"
     @closed="closed"
     lock-scroll
-    class="JNPF-dialog JNPF-dialog_center"
+    class="WORKFLOW-dialog WORKFLOW-dialog_center"
     width="1200px"
   >
     <el-carousel indicator-position="outside" height="70vh">

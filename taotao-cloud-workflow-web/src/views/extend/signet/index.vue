@@ -5,7 +5,7 @@
     <div ref="print">
       <div class="tem_list">
         <div class="tem_main">
-          <h1>引迈信息技术有限公司</h1>
+          <h1>滔滔信息技术有限公司</h1>
           <h2>报 价 单</h2>
           <h4>TO：</h4>
           <p class="title"> 感谢惠顾，现将贵公司所需配件报价如下：</p>

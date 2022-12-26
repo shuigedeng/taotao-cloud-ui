@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout MessageRecord-container">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout MessageRecord-container">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,24 +19,24 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
         <el-tabs type="border-card" v-model="activeName" class="messageRecord-tab">
           <el-tab-pane label="全部" name="0"></el-tab-pane>
           <el-tab-pane label="通知" name="1"></el-tab-pane>
           <el-tab-pane label="私信" name="2"></el-tab-pane>
           <div class="box">
-            <div class="JNPF-common-head">
+            <div class="WORKFLOW-common-head">
               <div class="left-btn">
                 <el-button type="danger" @click="handleDel" icon="el-icon-delete">删除</el-button>
               </div>
-              <div class="JNPF-common-head-right">
+              <div class="WORKFLOW-common-head-right">
                 <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-                  <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+                  <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                     @click="reset()" />
                 </el-tooltip>
               </div>
             </div>
-            <JNPF-table v-loading="listLoading" :data="list" hasC
+            <WORKFLOW-table v-loading="listLoading" :data="list" hasC
               @selection-change="handleSelectionChange">
               <el-table-column prop="title" label="消息标题">
                 <template slot-scope="scope">
@@ -52,7 +52,7 @@
               </el-table-column>
               <el-table-column prop="creatorUser" label="发送人员" width="120">
               </el-table-column>
-              <el-table-column prop="lastModifyTime" label="发送时间" :formatter="jnpf.tableDateFormat"
+              <el-table-column prop="lastModifyTime" label="发送时间" :formatter="workflow.tableDateFormat"
                 width="120" />
               <el-table-column prop="isRead" label="状态" width="100">
                 <template slot-scope="scope">
@@ -60,7 +60,7 @@
                   <el-tag type="info" v-else>未读</el-tag>
                 </template>
               </el-table-column>
-            </JNPF-table>
+            </WORKFLOW-table>
             <pagination :total="total" :page.sync="listQuery.currentPage"
               :limit.sync="listQuery.pageSize" @pagination="initData" />
           </div>
@@ -175,7 +175,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .MessageRecord-container {
-  .JNPF-common-layout-main {
+  .WORKFLOW-common-layout-main {
     padding: 0;
   }
   .messageRecord-tab {

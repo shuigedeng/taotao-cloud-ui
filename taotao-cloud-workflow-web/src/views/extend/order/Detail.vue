@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main order-form">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main order-form">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" content="订单详细" />
         <div class="options">
           <el-button-group>
@@ -140,7 +140,7 @@
                 id="myTable2">
                 <el-table-column type="index" width="50" label="序号" align="center" />
                 <el-table-column prop="receivableDate" label="收款日期"
-                  :formatter="jnpf.tableDateFormat" />
+                  :formatter="workflow.tableDateFormat" />
                 <el-table-column prop="receivableRate" label="收款比率%" />
                 <el-table-column prop="receivableMoney" label="收款金额" />
                 <el-table-column prop="receivableMode" label="收款方式" />
@@ -213,8 +213,8 @@ export default {
           this.$refs['dataForm'].resetFields()
           Info('crmOrder', this.dataForm.id).then(res => {
             this.dataForm = res.data
-            this.dataForm.orderDate = this.jnpf.toDate(this.dataForm.orderDate)
-            this.dataForm.deliveryDate = this.jnpf.toDate(this.dataForm.deliveryDate, "yyyy-MM-dd")
+            this.dataForm.orderDate = this.workflow.toDate(this.dataForm.orderDate)
+            this.dataForm.deliveryDate = this.workflow.toDate(this.dataForm.deliveryDate, "yyyy-MM-dd")
             this.list = res.data.goodsList
             this.planList = res.data.collectionPlanList
             this.fileList = JSON.parse(this.dataForm.fileJson)
@@ -235,8 +235,8 @@ export default {
           return
         }
         this.dataForm = res.data
-        this.dataForm.orderDate = this.jnpf.toDate(this.dataForm.orderDate)
-        this.dataForm.deliveryDate = this.jnpf.toDate(this.dataForm.deliveryDate, "yyyy-MM-dd")
+        this.dataForm.orderDate = this.workflow.toDate(this.dataForm.orderDate)
+        this.dataForm.deliveryDate = this.workflow.toDate(this.dataForm.deliveryDate, "yyyy-MM-dd")
         this.list = res.data.goodsList
         this.planList = res.data.collectionPlanList
         this.fileList = JSON.parse(this.dataForm.fileJson)
@@ -255,8 +255,8 @@ export default {
           return
         }
         this.dataForm = res.data
-        this.dataForm.orderDate = this.jnpf.toDate(this.dataForm.orderDate)
-        this.dataForm.deliveryDate = this.jnpf.toDate(this.dataForm.deliveryDate, "yyyy-MM-dd")
+        this.dataForm.orderDate = this.workflow.toDate(this.dataForm.orderDate)
+        this.dataForm.deliveryDate = this.workflow.toDate(this.dataForm.deliveryDate, "yyyy-MM-dd")
         this.list = res.data.goodsList
         this.planList = res.data.collectionPlanList
         this.fileList = JSON.parse(this.dataForm.fileJson)
@@ -297,7 +297,7 @@ export default {
     exportExcel() {
       ExportExcel(this.dataForm.id).then(res => {
         if (res.data && res.data.url) {
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
         } else {
           this.$message({ message: '导出失败', type: 'error', duration: 1500 })
         }
@@ -313,7 +313,7 @@ export default {
           table thead{border-bottom:0!important;display:none;}
           .el-table__body, tr td .cell{width:100%!important}
           .el-table th.gutter{display: none;}
-          .el-table colgroup.gutter{display: none;}                
+          .el-table colgroup.gutter{display: none;}
           </style><body>`;
       // 表单数据
       let printForm = this.$refs.print1.innerHTML;
@@ -373,7 +373,7 @@ export default {
     },
     download(id) {
       getDownloadUrl('workFlow', id).then(res => {
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
       })
     }
   }

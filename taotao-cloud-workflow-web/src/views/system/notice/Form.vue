@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="!dataForm.id ? '新建公告' : '编辑公告'" />
         <div class="options">
           <el-button type="primary" :loading="btnLoading" @click="dataFormSubmit()">
@@ -18,10 +18,10 @@
           <el-input v-model="dataForm.title" placeholder="公告标题" />
         </el-form-item>
         <el-form-item label="附件" prop="files">
-          <JNPF-UploadFz v-model="files" />
+          <WORKFLOW-UploadFz v-model="files" />
         </el-form-item>
         <el-form-item label="正文" prop="bodyText">
-          <JNPFQuill v-model="dataForm.bodyText" />
+          <WORKFLOWQuill v-model="dataForm.bodyText" />
         </el-form-item>
       </el-form>
     </div>
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import JNPFQuill from '@/components/JNPFEditor/quill'
+import WORKFLOWQuill from '@/components/WORKFLOWEditor/quill'
 import { createNotice, updateNotice, getNoticeInfo } from '@/api/system/message'
 
 export default {
-  components: { JNPFQuill },
+  components: { WORKFLOWQuill },
   data() {
     return {
       visible: false,
@@ -109,7 +109,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.JNPF-preview-main {
+.WORKFLOW-preview-main {
   .content {
     ::v-deep {
       p {

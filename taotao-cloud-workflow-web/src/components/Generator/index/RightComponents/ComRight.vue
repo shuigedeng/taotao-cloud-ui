@@ -3,7 +3,7 @@
     <el-form-item label="控件标题">
       <el-input v-model="activeData.__config__.label" placeholder="请输入控件标题" />
     </el-form-item>
-    <el-form-item label="占位提示" v-if="activeData.__config__.jnpfKey !=='editor'">
+    <el-form-item label="占位提示" v-if="activeData.__config__.workflowKey !=='editor'">
       <el-input v-model="activeData.placeholder" placeholder="请输入占位提示" />
     </el-form-item>
     <template v-if="!activeData.__config__.isSubTable">
@@ -22,33 +22,33 @@
     </el-form-item>
     <el-form-item label="默认值">
       <com-select v-model="activeData.__config__.defaultValue" placeholder="选择默认值" clearable
-        v-if="activeData.__config__.jnpfKey==='comSelect'" :multiple="activeData.multiple"
+        v-if="activeData.__config__.workflowKey==='comSelect'" :multiple="activeData.multiple"
         :key="key" />
       <dep-select v-model="activeData.__config__.defaultValue" placeholder="选择默认值" clearable
-        v-if="activeData.__config__.jnpfKey==='depSelect'" :multiple="activeData.multiple"
+        v-if="activeData.__config__.workflowKey==='depSelect'" :multiple="activeData.multiple"
         :key="key" />
       <pos-select v-model="activeData.__config__.defaultValue" placeholder="选择默认值" clearable
-        v-if="activeData.__config__.jnpfKey==='posSelect'" :multiple="activeData.multiple"
+        v-if="activeData.__config__.workflowKey==='posSelect'" :multiple="activeData.multiple"
         :key="key" />
       <user-select v-model="activeData.__config__.defaultValue" placeholder="选择默认值" clearable
-        v-if="activeData.__config__.jnpfKey==='userSelect'" :multiple="activeData.multiple"
+        v-if="activeData.__config__.workflowKey==='userSelect'" :multiple="activeData.multiple"
         :key="key" />
       <BillRule v-model="activeData.__config__.defaultValue" placeholder="选择默认值" clearable
-        v-if="activeData.__config__.jnpfKey==='billRule'" :key="key" />
+        v-if="activeData.__config__.workflowKey==='billRule'" :key="key" />
       <el-input :value="setDefaultValue(activeData.__config__.defaultValue)" placeholder="请输入默认值"
-        @input="onDefaultValueInput" v-if="activeData.__config__.jnpfKey==='editor'" />
+        @input="onDefaultValueInput" v-if="activeData.__config__.workflowKey==='editor'" />
     </el-form-item>
-    <el-form-item label="能否清空" v-if="activeData.__config__.jnpfKey!=='editor'">
+    <el-form-item label="能否清空" v-if="activeData.__config__.workflowKey!=='editor'">
       <el-switch v-model="activeData.clearable" />
     </el-form-item>
     <el-form-item label="能否搜索"
-      v-if="['depSelect','posSelect'].includes(activeData.__config__.jnpfKey)">
+      v-if="['depSelect','posSelect'].includes(activeData.__config__.workflowKey)">
       <el-switch v-model="activeData.filterable" />
     </el-form-item>
     <el-form-item label="能否多选" v-if="needMultiple">
       <el-switch v-model="activeData.multiple" @change="multipleChange" />
     </el-form-item>
-    <el-form-item label="是否禁用" v-if="activeData.__config__.jnpfKey !=='editor'">
+    <el-form-item label="是否禁用" v-if="activeData.__config__.workflowKey !=='editor'">
       <el-switch v-model="activeData.disabled" />
     </el-form-item>
     <el-form-item label="是否必填">
@@ -68,7 +68,7 @@ export default {
   },
   computed: {
     needMultiple() {
-      return ['posSelect', 'userSelect', 'comSelect', 'depSelect'].indexOf(this.activeData.__config__.jnpfKey) > -1
+      return ['posSelect', 'userSelect', 'comSelect', 'depSelect'].indexOf(this.activeData.__config__.workflowKey) > -1
     },
   },
   created() { },

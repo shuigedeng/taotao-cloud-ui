@@ -62,12 +62,12 @@
         </el-col>
         <el-col :span="24" v-if="judgeShow('fileJson')">
           <el-form-item label="相关附件" prop="fileJson">
-            <JNPF-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
+            <WORKFLOW-UploadFz v-model="fileList" type="workFlow" :disabled="judgeWrite('fileJson')" />
           </el-form-item>
         </el-col>
         <el-col :span="24" v-if="judgeShow('modifyOpinion')">
           <el-form-item label="修改意见" prop="modifyOpinion">
-            <JNPF-Quill v-model="dataForm.modifyOpinion" :disabled="judgeWrite('modifyOpinion')" />
+            <WORKFLOW-Quill v-model="dataForm.modifyOpinion" :disabled="judgeWrite('modifyOpinion')" />
           </el-form-item>
         </el-col>
       </el-row>

@@ -1,5 +1,5 @@
 <template>
-  <div class="JNPFAmount">
+  <div class="WORKFLOWAmount">
     <el-input-number v-model="innerValue" v-bind="$attrs" v-on="$listeners"></el-input-number>
     <div class="explain-text" v-if="showChinese">大写：{{chinese}}</div>
   </div>
@@ -12,7 +12,7 @@ export default {
     event: 'change'
   },
   props: ["value", "showChinese"],
-  name: 'JNPFAmount',
+  name: 'WORKFLOWAmount',
   data() {
     return {
       innerValue: this.value
@@ -39,7 +39,7 @@ export default {
   color: #aaa;
   line-height: 20px;
 }
-.JNPFAmount {
+.WORKFLOWAmount {
   .el-input-number {
     width: 100%;
   }

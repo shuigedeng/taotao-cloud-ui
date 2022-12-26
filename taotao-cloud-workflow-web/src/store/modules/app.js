@@ -1,14 +1,14 @@
-import jnpf from '@/utils/jnpf'
+import workflow from '@/utils/workflow'
 import { getLanguage } from '@/lang/index'
 
 const state = {
   sidebar: {
-    opened: jnpf.storageGet('sidebarStatus') ? !!+jnpf.storageGet('sidebarStatus') : true,
+    opened: workflow.storageGet('sidebarStatus') ? !!+workflow.storageGet('sidebarStatus') : true,
     withoutAnimation: false
   },
   device: 'desktop',
   language: getLanguage(),
-  size: jnpf.storageGet('size') || 'medium'
+  size: workflow.storageGet('size') || 'medium'
 }
 
 const mutations = {
@@ -16,13 +16,13 @@ const mutations = {
     state.sidebar.opened = !state.sidebar.opened
     state.sidebar.withoutAnimation = false
     if (state.sidebar.opened) {
-      jnpf.storageSet({ sidebarStatus: 1 })
+      workflow.storageSet({ sidebarStatus: 1 })
     } else {
-      jnpf.storageSet({ sidebarStatus: 0 })
+      workflow.storageSet({ sidebarStatus: 0 })
     }
   },
   CLOSE_SIDEBAR: (state, withoutAnimation) => {
-    jnpf.storageSet({ sidebarStatus: 0 })
+    workflow.storageSet({ sidebarStatus: 0 })
     state.sidebar.opened = false
     state.sidebar.withoutAnimation = withoutAnimation
   },
@@ -31,11 +31,11 @@ const mutations = {
   },
   SET_LANGUAGE: (state, language) => {
     state.language = language
-    jnpf.storageSet({ language })
+    workflow.storageSet({ language })
   },
   SET_SIZE: (state, size) => {
     state.size = size
-    jnpf.storageSet({ size })
+    workflow.storageSet({ size })
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-drawer title="内部聊天" :visible.sync="drawer" direction="rtl"
-      class="contacts-drawer JNPF-common-drawer" size="280px" :modal="true" :wrapperClosable="false"
+      class="contacts-drawer WORKFLOW-common-drawer" size="280px" :modal="true" :wrapperClosable="false"
       :before-close="handleClose" ref="drawer">
       <el-tabs v-model="activeTab">
         <el-tab-pane label="消息" name="reply">
@@ -51,7 +51,7 @@
         </el-tab-pane>
       </el-tabs>
     </el-drawer>
-    <Im ref="JNPFIm" append-to-body />
+    <Im ref="WORKFLOWIm" append-to-body />
   </div>
 </template>
 
@@ -204,7 +204,7 @@ export default {
         }
       }
       this.toggleBlink()
-      this.$refs.JNPFIm.list = []
+      this.$refs.WORKFLOWIm.list = []
       //获取消息列表
       var messageList = {
         method: "MessageList",
@@ -216,7 +216,7 @@ export default {
         sord: "desc"
       }
       socket.send(JSON.stringify(messageList));
-      this.$refs.JNPFIm.init(item)
+      this.$refs.WORKFLOWIm.init(item)
     },
     getMsgText(text, type) {
       let message = ''
@@ -234,7 +234,7 @@ export default {
       return message
     },
     handleClose(done) {
-      this.$refs.JNPFIm.closeIM()
+      this.$refs.WORKFLOWIm.closeIM()
       let vBody = this.$refs.userList;
       vBody.removeEventListener("scroll", function () { });
       done();

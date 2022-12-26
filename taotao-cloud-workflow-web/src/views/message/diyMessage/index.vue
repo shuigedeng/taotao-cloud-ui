@@ -1,16 +1,16 @@
 <template>
-    <div class="JNPF-common-layout">
-        <div class="JNPF-common-layout-center">
-            <div class="JNPF-common-layout-main JNPF-flex-main diy">
+    <div class="WORKFLOW-common-layout">
+        <div class="WORKFLOW-common-layout-center">
+            <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main diy">
                 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" class="">
                     <el-form-item label="接收人">
                         <el-col :span="10">
-                            <!-- <el-select 
-                                v-model="value1" 
-                                filterable 
+                            <!-- <el-select
+                                v-model="value1"
+                                filterable
                                 clearable
-                                multiple 
-                                size="" 
+                                multiple
+                                size=""
                                 placeholder="请选择">
                                 <el-option
                                 v-for="item in companyData"
@@ -19,7 +19,7 @@
                                 :value="item.id">
                                 </el-option>
                             </el-select> -->
-                            <JNPF-TreeSelect v-model="ruleForm.ids" :options="companyData" multiple placeholder="全部公司" />
+                            <WORKFLOW-TreeSelect v-model="ruleForm.ids" :options="companyData" multiple placeholder="全部公司" />
                         </el-col>
                     </el-form-item>
                     <div class="diy-tips">
@@ -87,7 +87,7 @@ export default {
         //     if(this.ruleForm.content.length > 0){
         //         console.log("🚀 ~ file: index.vue ~ line 49 ~ submitForm ~ this.ruleForm", this.ruleForm)
         //     }
-            
+
         // },
         initPage(){
             let id = 0;
@@ -112,7 +112,7 @@ export default {
                             this.$set(this.ruleForm,'ids',[]);
                         }
                     })
-                        
+
                 }
             });
         },

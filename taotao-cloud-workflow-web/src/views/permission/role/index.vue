@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-left">
-      <div class="JNPF-common-title">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-left">
+      <div class="WORKFLOW-common-title">
         <h2>{{ $t('common.organization') }}</h2>
         <span class="options">
           <el-tooltip content="组织架构图" placement="top">
@@ -9,9 +9,9 @@
           </el-tooltip>
         </span>
       </div>
-      <el-scrollbar class="JNPF-common-el-tree-scrollbar" v-loading="treeLoading">
+      <el-scrollbar class="WORKFLOW-common-el-tree-scrollbar" v-loading="treeLoading">
         <el-tree ref="treeBox" :data="treeData" :props="defaultProps" :default-expand-all="false" highlight-current
-          :expand-on-click-node="false" node-key="id" @node-click="handleNodeClick" class="JNPF-common-el-tree">
+          :expand-on-click-node="false" node-key="id" @node-click="handleNodeClick" class="WORKFLOW-common-el-tree">
           <span class="custom-tree-node" slot-scope="{ data }" :title="data.fullName">
             <i :class="data.icon" />
             <span class="text">{{ data.fullName }}</span>
@@ -19,8 +19,8 @@
         </el-tree>
       </el-scrollbar>
     </div>
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item :label="$t('common.keyword')">
@@ -38,21 +38,21 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()"></topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false" @click="initData()" />
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false" @click="initData()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="fullName" label="角色名称" width="200" />
           <el-table-column prop="enCode" label="角色编码" width="150" />
           <el-table-column prop="type" label="角色类型" width="70" align="center" />
           <el-table-column prop="organizeInfo" label="所属组织" min-width="150" show-overflow-tooltip />
-          <el-table-column prop="creatorTime" label="创建时间" :formatter="jnpf.tableDateFormat" width="120" />
+          <el-table-column prop="creatorTime" label="创建时间" :formatter="workflow.tableDateFormat" width="120" />
           <el-table-column prop="sortCode" label="排序" width="70" align="center" />
           <el-table-column prop="enabledMark" label="状态" width="70" align="center">
             <template slot-scope="scope">
@@ -81,7 +81,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage" :limit.sync="listQuery.pageSize"
           @pagination="initData" />
       </div>

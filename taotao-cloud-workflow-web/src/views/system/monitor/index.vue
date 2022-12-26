@@ -242,8 +242,8 @@ export default {
           this.cpuInfo.series[0].data.shift()
           this.memoryInfo.series[0].data.shift()
         }
-        this.cpuInfo.xAxis.data.push(this.jnpf.dateFormat(this.data.time, 'HH:mm:ss'))
-        this.memoryInfo.xAxis.data.push(this.jnpf.dateFormat(this.data.time, 'HH:mm:ss'))
+        this.cpuInfo.xAxis.data.push(this.workflow.dateFormat(this.data.time, 'HH:mm:ss'))
+        this.memoryInfo.xAxis.data.push(this.workflow.dateFormat(this.data.time, 'HH:mm:ss'))
         this.cpuInfo.series[0].data.push(parseFloat(this.data.memory.used))
         this.memoryInfo.series[0].data.push(parseFloat(this.data.memory.usageRate))
         this.loading = false

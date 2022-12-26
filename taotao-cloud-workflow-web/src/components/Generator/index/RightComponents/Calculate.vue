@@ -32,7 +32,7 @@
       <el-switch v-model="activeData.__config__.noShow" />
     </el-form-item>
     <el-dialog title="编辑计算公式" custom-class="calc-dialog" :visible.sync="expDialogVisible"
-      width="600px" class="JNPF-dialog JNPF-dialog_center" @open="onOpen" append-to-body>
+      width="600px" class="WORKFLOW-dialog WORKFLOW-dialog_center" @open="onOpen" append-to-body>
       <div class="calc-box">
         <div class="calc-preview" :class="{error: !expValid}">
           计算公式 =
@@ -105,9 +105,9 @@ export default {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__config__ && data.__config__.jnpfKey) {
-          if (['numInput', 'calculate'].includes(data.__config__.jnpfKey)) {
-            const isTableChild = parent && parent.__config__ && parent.__config__.jnpfKey === 'table'
+        if (data.__config__ && data.__config__.workflowKey) {
+          if (['numInput', 'calculate'].includes(data.__config__.workflowKey)) {
+            const isTableChild = parent && parent.__config__ && parent.__config__.workflowKey === 'table'
             calcList.push({
               __vModel__: isTableChild ? parent.__vModel__ + '.' + data.__vModel__ : data.__vModel__,
               label: isTableChild ? parent.__config__.label + '.' + data.__config__.label : data.__config__.label

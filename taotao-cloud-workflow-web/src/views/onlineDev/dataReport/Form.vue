@@ -5,7 +5,7 @@
     lock-scroll
     :show-close="false"
     :modal="false"
-    class="JNPF-full-dialog jnpf-datav"
+    class="WORKFLOW-full-dialog workflow-datav"
   >
     <iframe
       :src="src"
@@ -57,7 +57,7 @@
   }
 </script>
 <style lang="scss" scoped>
-.jnpf-datav {
+.workflow-datav {
   ::v-deep .el-dialog__header {
     display: none;
   }

@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center ">
-      <div class="JNPF-common-layout-main JNPF-flex-main sms">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center ">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main sms">
         <el-form ref="baseForm" :model="baseForm" label-width="100px">
             <el-form-item label="短信提示开关">
                 <el-switch

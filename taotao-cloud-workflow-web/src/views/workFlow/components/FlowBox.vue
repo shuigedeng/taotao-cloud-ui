@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main flow-form-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main flow-form-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="title" />
         <div class="options">
           <el-button type="primary" @click="addComment" v-if="activeTab==='comment'">评 论</el-button>
@@ -53,7 +53,7 @@
       <div class="approve-result" v-if="(setting.opType==0||setting.opType==4) && activeTab==='0'">
         <div class="approve-result-img" :class="flowTaskInfo.status | flowStatus()"></div>
       </div>
-      <el-tabs class="JNPF-el_tabs" v-model="activeTab">
+      <el-tabs class="WORKFLOW-el_tabs" v-model="activeTab">
         <el-tab-pane label="表单信息" v-loading="loading">
           <component :is="currentView" @close="goBack" ref="form" @eventReceiver="eventReceiver"
             @setLoad="setLoad" @setCandidateLoad="setCandidateLoad" @setPageLoad="setPageLoad" />
@@ -74,7 +74,7 @@
         </el-tab-pane>
       </el-tabs>
       <el-dialog :title="eventType==='audit'?'审批通过':'审批拒绝'" :close-on-click-modal="false"
-        :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body
+        :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body
         width='600px'>
         <el-form label-width="130px" ref="candidateForm" :model="candidateForm">
           <template v-if="eventType==='audit'">
@@ -118,7 +118,7 @@
         </span>
       </el-dialog>
       <el-dialog title="指派" :close-on-click-modal="false" :visible.sync="assignVisible"
-        class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width='600px'>
+        class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width='600px'>
         <el-form label-width="80px" :model="assignForm" :rules="assignRules" ref="assignForm">
           <el-form-item label="指派节点" prop="nodeCode">
             <el-select v-model="assignForm.nodeCode" placeholder="请选择指派节点">
@@ -239,7 +239,7 @@ export default {
       this.setting = data
       /**
        * opType
-       * -1 - 我发起的新建/编辑 
+       * -1 - 我发起的新建/编辑
        * 0 - 我发起的详情
        * 1 - 待办事宜
        * 2 - 已办事宜
@@ -685,7 +685,7 @@ export default {
   }
 }
 .flow-form-main {
-  .JNPF-el_tabs {
+  .WORKFLOW-el_tabs {
     overflow: hidden;
   }
 }

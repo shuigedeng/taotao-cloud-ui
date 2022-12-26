@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -19,17 +19,17 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <topOpts @add="addOrUpdateHandle()" addText="新建委托"></topOpts>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="toUserName" label="被委托人" width="150" />
           <el-table-column prop="flowName" label="委托流程" width="250" />
           <el-table-column prop="flowCategory" label="流程分类" width="100">
@@ -38,9 +38,9 @@
             </template>
           </el-table-column>
           <el-table-column prop="startTime" label="开始时间" width="120"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="endTime" label="结束时间" width="120"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="status" label="状态" width="100">
             <template slot-scope="scope">
               <el-tag type="info" v-if='scope.row.status==1'>未开始</el-tag>
@@ -56,7 +56,7 @@
               </tableOpts>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>
@@ -123,11 +123,11 @@ export default {
       }
       FlowDelegateList(query).then(res => {
         this.list = res.data.list
-        let currTime = this.jnpf.toDate(new Date())
+        let currTime = this.workflow.toDate(new Date())
         for (let i = 0; i < this.list.length; i++) {
           let e = this.list[i];
-          let startTime = this.jnpf.toDate(e.startTime);
-          let endTime = this.jnpf.toDate(e.endTime);
+          let startTime = this.workflow.toDate(e.startTime);
+          let endTime = this.workflow.toDate(e.endTime);
           e.startTime = startTime
           e.endTime = endTime
           // 0-委托中 1-未开始 2-已失效
@@ -162,7 +162,7 @@ export default {
       })
     },
     formatter(row, column) {
-      return this.jnpf.dateFormat(row, column)
+      return this.workflow.dateFormat(row, column)
     },
     // 新增 / 修改
     addOrUpdateHandle(id) {

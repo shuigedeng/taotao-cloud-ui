@@ -1,20 +1,20 @@
 <template>
   <el-drawer title="字典分类管理" :visible.sync="drawer" :wrapperClosable="false" ref="drawer"
-    size="700px" :before-close="handleDrawerClose" class="JNPF-common-drawer">
-    <div class="JNPF-flex-main">
-      <div class="JNPF-common-head">
+    size="700px" :before-close="handleDrawerClose" class="WORKFLOW-common-drawer">
+    <div class="WORKFLOW-flex-main">
+      <div class="WORKFLOW-common-head">
         <topOpts @refresh="getDictionaryTypeList()" @add="addOrUpdateHandle()">
           <upload-btn url="/api/system/DictionaryData/Action/Import"
             @on-success="getDictionaryTypeList" />
         </topOpts>
-        <div class="JNPF-common-head-right">
+        <div class="WORKFLOW-common-head-right">
           <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
             <el-link icon="icon-ym icon-ym-Refresh
-              JNPF-common-head-icon" :underline="false" @click="reset()" />
+              WORKFLOW-common-head-icon" :underline="false" @click="reset()" />
           </el-tooltip>
         </div>
       </div>
-      <JNPF-table v-loading="listLoading" :data="tableData" row-key="id" default-expand-all
+      <WORKFLOW-table v-loading="listLoading" :data="tableData" row-key="id" default-expand-all
         :tree-props="{children: 'children', hasChildren: ''}">
         <el-table-column prop="fullName" label="名称" />
         <el-table-column prop="enCode" label="编码" />
@@ -33,7 +33,7 @@
             </tableOpts>
           </template>
         </el-table-column>
-      </JNPF-table>
+      </WORKFLOW-table>
       <TypeForm v-if="typeFormVisible" ref="TypeForm" @refreshDataList="getDictionaryTypeList" />
     </div>
   </el-drawer>
@@ -110,7 +110,7 @@ export default {
         type: 'warning'
       }).then(() => {
         exportData(id).then(res => {
-          this.jnpf.downloadFile(res.data.url)
+          this.workflow.downloadFile(res.data.url)
         })
       }).catch(() => { });
     }

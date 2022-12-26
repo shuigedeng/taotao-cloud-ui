@@ -1,11 +1,11 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建按钮' : '编辑按钮'" :close-on-click-modal="false"
     :close-on-press-escape="false" :visible.sync="visible" lock-scroll
-    class="JNPF-dialog JNPF-dialog_center" width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="80px"
       v-loading="formLoading" class="menuForm">
       <el-form-item label="上级" prop="parentId">
-        <JNPF-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择上级菜单" />
+        <WORKFLOW-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择上级菜单" />
       </el-form-item>
       <el-form-item label="名称" prop="fullName">
         <el-input v-model="dataForm.fullName" placeholder="输入名称" />
@@ -46,7 +46,7 @@ import {
   updateButton,
   getButtonInfo
 } from '@/api/system/buttonAuthorize'
-import iconBox from '@/components/JNPF-iconBox'
+import iconBox from '@/components/WORKFLOW-iconBox'
 
 export default {
   components: { iconBox },

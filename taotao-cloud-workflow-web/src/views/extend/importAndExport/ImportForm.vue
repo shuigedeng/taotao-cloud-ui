@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="批量导入" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center JNPF-dialog-import" lock-scroll width="1000px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center WORKFLOW-dialog-import" lock-scroll width="1000px">
     <el-steps :active="active" align-center>
       <el-step title="上传文件"></el-step>
       <el-step title="数据预览"></el-step>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="import-main" v-show="active==2">
-      <JNPF-table v-loading="listLoading" :data="list">
+      <WORKFLOW-table v-loading="listLoading" :data="list">
         <el-table-column prop="enCode" label="工号" width="150">
           <template slot-scope="scope">
             <el-input v-model="scope.row.enCode" />
@@ -108,11 +108,11 @@
         </el-table-column>
         <el-table-column label="操作" fixed="right" width="50">
           <template slot-scope="scope">
-            <el-button size="mini" type="text" class="JNPF-table-delBtn"
+            <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
               @click="handleDel(scope.$index)">删除</el-button>
           </template>
         </el-table-column>
-      </JNPF-table>
+      </WORKFLOW-table>
     </div>
     <div class="import-main" v-show="active==3">
       <div class="success" v-if="!result.resultType">
@@ -136,7 +136,7 @@
           </div>
         </div>
         <p class="contips">以下文件数据为导入异常数据</p>
-        <JNPF-table :data="resultList" height="280px">
+        <WORKFLOW-table :data="resultList" height="280px">
           <el-table-column prop="enCode" label="工号" width="100" />
           <el-table-column prop="fullName" label="姓名" width="100" />
           <el-table-column prop="gender" label="性别" width="80" />
@@ -151,7 +151,7 @@
           <el-table-column prop="major" label="所学专业" width="120" />
           <el-table-column prop="graduationAcademy" label="毕业院校" width="150" />
           <el-table-column prop="graduationTime" label="毕业时间" width="100" />
-        </JNPF-table>
+        </WORKFLOW-table>
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
@@ -226,7 +226,7 @@ export default {
     },
     templateDownload() {
       TemplateDownload().then(res => {
-        this.jnpf.downloadFile(res.data.url)
+        this.workflow.downloadFile(res.data.url)
       })
     },
     beforeUpload(file) {

@@ -1,20 +1,20 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-left">
-      <div class="JNPF-common-title">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-left">
+      <div class="WORKFLOW-common-title">
         <h2>项目分类</h2>
       </div>
       <el-tree :data="industryTypeList" :props="defaultProps" default-expand-all highlight-current
         ref="treeBox" :expand-on-click-node="false" @node-click="handleNodeClick"
-        class="JNPF-common-el-tree" node-key="id">
+        class="WORKFLOW-common-el-tree" node-key="id">
         <span class="custom-tree-node" slot-scope="{ node, data }">
           <i :class="data.icon"></i>
           <span class="text">{{node.label}}</span>
         </span>
       </el-tree>
     </div>
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -32,17 +32,17 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div></div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="refresh()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="projectName" label="项目名称" sortable width="200" />
           <el-table-column prop="projectCode" label="项目编码" sortable width="160" />
           <el-table-column prop="projectPhase" label="项目阶段" sortable width="120" />
@@ -65,7 +65,7 @@
             </template>
           </el-table-column>
           <el-table-column prop="description" label="备注" sortable width="300" />
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage" :limit.sync="listQuery.rows"
           @pagination="initData" />
       </div>

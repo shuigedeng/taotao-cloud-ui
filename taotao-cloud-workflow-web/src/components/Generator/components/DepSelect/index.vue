@@ -1,8 +1,8 @@
 <template>
   <div class="comSelect-container">
-    <JNPF-TreeSelect :options="treeData" v-model="innerValue" v-on="$listeners" v-bind="$attrs"
+    <WORKFLOW-TreeSelect :options="treeData" v-model="innerValue" v-on="$listeners" v-bind="$attrs"
       :lastLevel="lastLevel" lastLevelKey='type' lastLevelValue='department'>
-    </JNPF-TreeSelect>
+    </WORKFLOW-TreeSelect>
   </div>
 </template>
 

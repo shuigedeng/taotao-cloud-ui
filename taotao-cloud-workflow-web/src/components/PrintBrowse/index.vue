@@ -1,10 +1,10 @@
 <template>
   <el-dialog v-bind="$attrs" :close-on-click-modal="false" :modal-append-to-body="false"
-    v-on="$listeners" @open="onOpen" fullscreen lock-scroll class="JNPF-full-dialog"
+    v-on="$listeners" @open="onOpen" fullscreen lock-scroll class="WORKFLOW-full-dialog"
     :show-close="false" :modal="false" append-to-body>
-    <div class="JNPF-full-dialog-header">
+    <div class="WORKFLOW-full-dialog-header">
       <div class="header-title">
-        <img src="@/assets/images/jnpf.png" class="header-logo" />
+        <img src="@/assets/images/workflow.png" class="header-logo" />
         <p class="header-txt"> · 打印预览</p>
       </div>
       <div class="options">
@@ -126,14 +126,14 @@ export default {
     replaceSysValue() {
       const recordList = this.recordList.filter(o => o.handleStatus == 0 || o.handleStatus == 1)
       const systemPrinter = this.userInfo.userName + '/' + this.userInfo.userAccount
-      const systemPrintTime = this.jnpf.toDate(new Date())
+      const systemPrintTime = this.workflow.toDate(new Date())
       let systemApprovalContent = ''
       if (recordList.length) {
         systemApprovalContent += '<table style="border-collapse: collapse; width: 100%;" border="1" data-mce-style="border-collapse: collapse; width: 100%;"><tbody><tr><td style="width:30%;" data-mce-style="width: 30%;">审批节点</td><td style="width: 70%;" data-mce-style="width: 70%;">审批内容</td></tr>'
         let content = ''
         for (let i = 0; i < recordList.length; i++) {
           const record = recordList[i];
-          let desc = (record.userName || record.handleId) + '于' + this.jnpf.toDate(record.handleTime) + (record.handleStatus == 1 ? '审批通过' : '审批拒绝') + (record.handleOpinion ? '，审批意见：' + record.handleOpinion : '')
+          let desc = (record.userName || record.handleId) + '于' + this.workflow.toDate(record.handleTime) + (record.handleStatus == 1 ? '审批通过' : '审批拒绝') + (record.handleOpinion ? '，审批意见：' + record.handleOpinion : '')
           content += `<tr><td style="width: 30%;" data-mce-style="width: 30%;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false">${record.nodeName}</span></td><td style="width: 70%;" data-mce-style="width: 70%;"><span class="wk-print-tag-wukong wk-tiny-color--common" contenteditable="false">${desc}</span></td></tr>`
         }
         systemApprovalContent += content

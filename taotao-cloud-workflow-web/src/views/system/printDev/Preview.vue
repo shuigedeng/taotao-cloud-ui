@@ -1,10 +1,10 @@
 <template>
   <el-dialog v-bind="$attrs" :close-on-click-modal="false" :modal-append-to-body="false"
-    v-on="$listeners" @open="onOpen" fullscreen lock-scroll class="JNPF-full-dialog"
+    v-on="$listeners" @open="onOpen" fullscreen lock-scroll class="WORKFLOW-full-dialog"
     :show-close="false" :modal="false">
-    <div class="JNPF-full-dialog-header">
+    <div class="WORKFLOW-full-dialog-header">
       <div class="header-title">
-        <img src="@/assets/images/jnpf.png" class="header-logo" />
+        <img src="@/assets/images/workflow.png" class="header-logo" />
         <p class="header-txt"> · 打印预览</p>
       </div>
       <div class="options">

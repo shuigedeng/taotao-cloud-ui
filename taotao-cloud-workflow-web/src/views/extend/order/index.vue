@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -27,19 +27,19 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div>
             <topOpts @add="addOrUpdateHandle()" addText="新建订单"></topOpts>
           </div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="refresh()" />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table v-loading="listLoading" :data="list" @expand-change="expandChange"
+        <WORKFLOW-table v-loading="listLoading" :data="list" @expand-change="expandChange"
           :hasNO="false" @sort-change="sortChange">
           <el-table-column type="expand" width="40">
             <template slot-scope="props">
@@ -61,7 +61,7 @@
                 <el-tab-pane label="收款计划">
                   <el-table :data="props.row.childTable1" stripe size='mini' show-summary>
                     <el-table-column prop="receivableDate" label="收款日期"
-                      :formatter="jnpf.tableDateFormat" width="120" />
+                      :formatter="workflow.tableDateFormat" width="120" />
                     <el-table-column prop="receivableRate" label="收款比率%" width="100" />
                     <el-table-column prop="receivableMoney" label="收款金额" width="100" />
                     <el-table-column prop="receivableMode" label="收款方式" width="100" />
@@ -74,7 +74,7 @@
           <el-table-column type="index" width="50" label="序号" align="center" />
           <el-table-column prop="orderCode" label="订单编码" width="150" sortable="custom" />
           <el-table-column prop="orderDate" label="订单日期" width="120" sortable="custom"
-            :formatter="jnpf.tableDateFormat" />
+            :formatter="workflow.tableDateFormat" />
           <el-table-column prop="customerName" label="客户名称" width="220" sortable="custom" />
           <el-table-column prop="salesmanName" label="业务人员" width="120" sortable="custom" />
           <el-table-column prop="receivableMoney" label="付款金额" width="100" sortable="custom" />
@@ -95,7 +95,7 @@
               <el-button size="mini" type="text" @click="addOrUpdateHandle(scope.row.id)"
                 :disabled="[1,2,5].indexOf(scope.row.currentState)>-1" v-has="'btn_edit'">编辑
               </el-button>
-              <el-button size="mini" type="text" class="JNPF-table-delBtn"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.$index,scope.row.id)"
                 :disabled="[1,2,3,5].indexOf(scope.row.currentState)>-1" v-has="'btn_remove'">删除
               </el-button>
@@ -104,7 +104,7 @@
                 v-has="'btn_flowDetail'">详情</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>

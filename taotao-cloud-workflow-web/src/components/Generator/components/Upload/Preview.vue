@@ -1,8 +1,8 @@
 <template>
   <el-dialog v-bind="$attrs" :close-on-click-modal="false" :modal-append-to-body="false"
-    v-on="$listeners" @open="onOpen" fullscreen lock-scroll class="JNPF-full-dialog" append-to-body
+    v-on="$listeners" @open="onOpen" fullscreen lock-scroll class="WORKFLOW-full-dialog" append-to-body
     :show-close="false" :modal="false">
-    <div class="JNPF-full-dialog-header">
+    <div class="WORKFLOW-full-dialog-header">
       <div class="header-title">
         <p class="header-txt">{{title}}</p>
       </div>

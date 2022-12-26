@@ -1,6 +1,6 @@
 <template>
-  <div class="JNPF-preview-main flow-form-main">
-    <div class="JNPF-common-page-header">
+  <div class="WORKFLOW-preview-main flow-form-main">
+    <div class="WORKFLOW-common-page-header">
       <el-page-header @back="goBack" content="" />
       <el-steps :active="active" finish-status="success" simple class="steps">
         <el-step title="基本信息"></el-step>
@@ -27,7 +27,7 @@
             <el-input v-model="dataForm.enCode" placeholder="输入编码" maxlength="50" />
           </el-form-item>
           <el-form-item label="分类" prop="categoryId">
-            <JNPF-TreeSelect v-model="dataForm.categoryId" :options="selectData" placeholder="选择分类"
+            <WORKFLOW-TreeSelect v-model="dataForm.categoryId" :options="selectData" placeholder="选择分类"
               clearable />
           </el-form-item>
           <el-form-item label="授权" prop="checkType">
@@ -143,7 +143,7 @@
                 <template slot-scope="scope">
                   <el-button type="text" @click="addOrUpdateHandle(scope.row)"
                     icon="el-icon-edit-outline"></el-button>
-                  <el-button type="text" class="JNPF-table-delBtn" icon="el-icon-delete"
+                  <el-button type="text" class="WORKFLOW-table-delBtn" icon="el-icon-delete"
                     @click="removeParameter(scope.$index)"></el-button>
                 </template>
               </el-table-column>
@@ -228,7 +228,7 @@
                 <template slot-scope="scope">
                   <el-button type="text" @click="addOrUpdateHandle(scope.row)"
                     icon="el-icon-edit-outline"></el-button>
-                  <el-button type="text" class="JNPF-table-delBtn" icon="el-icon-delete"
+                  <el-button type="text" class="WORKFLOW-table-delBtn" icon="el-icon-delete"
                     @click="removeParameter(scope.$index)"></el-button>
                 </template>
               </el-table-column>
@@ -255,8 +255,8 @@ import {
 } from '@/api/systemData/dataInterface'
 import { getDataSourceListAll } from '@/api/systemData/dataSource'
 import { DataModelList } from '@/api/systemData/dataModel'
-import SQLEditor from '@/components/JNPFEditor/monaco'
-import JSONEditor from '@/components/JNPFEditor/monaco'
+import SQLEditor from '@/components/WORKFLOWEditor/monaco'
+import JSONEditor from '@/components/WORKFLOWEditor/monaco'
 import FieldForm from './FieldForm'
 import FormScript from './FormScript'
 import { deepClone } from '@/utils'

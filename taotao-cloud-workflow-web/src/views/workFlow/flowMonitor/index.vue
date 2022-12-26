@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center" v-loading="pageLoading">
-      <el-row class="JNPF-common-search-box" :gutter="16">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center" v-loading="pageLoading">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="关键词">
@@ -81,7 +81,7 @@
                   :multiple="true"
                   placeholder="选择发起人员"
                 />
-                
+
               </el-form-item>
             </el-col>
             <el-col :span="6">
@@ -129,8 +129,8 @@
           </el-col>
         </el-form>
       </el-row>
-      <div class="JNPF-common-layout-main JNPF-flex-main">
-        <div class="JNPF-common-head">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+        <div class="WORKFLOW-common-head">
           <div>
             <el-button
               type="danger"
@@ -146,21 +146,21 @@
               >导出</el-button
             >
           </div>
-          <div class="JNPF-common-head-right">
+          <div class="WORKFLOW-common-head-right">
             <el-tooltip
               effect="dark"
               :content="$t('common.refresh')"
               placement="top"
             >
               <el-link
-                icon="icon-ym icon-ym-Refresh JNPF-common-head-icon"
+                icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon"
                 :underline="false"
                 @click="refresh()"
               />
             </el-tooltip>
           </div>
         </div>
-        <JNPF-table
+        <WORKFLOW-table
           v-loading="listLoading"
           :data="list"
           hasC
@@ -177,7 +177,7 @@
             prop="startTime"
             label="发起时间"
             width="130"
-            :formatter="jnpf.tableDateFormat"
+            :formatter="workflow.tableDateFormat"
           />
           <el-table-column prop="userName" label="发起人员" width="130" />
           <el-table-column prop="thisStep" label="审批节点" width="130" />
@@ -235,7 +235,7 @@
               >
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination
           :total="total"
           :page.sync="listQuery.currentPage"
@@ -483,7 +483,7 @@ export default {
           creatorUserIds: this.creatorUserIds,
         };
         let res = await ExportData(query);
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.pageLoading = false;
       } catch (e) {
         //TODO handle the exception

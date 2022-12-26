@@ -1,6 +1,6 @@
 <template>
   <div class="password">
-    <div class="JNPF-common-title mb-20">
+    <div class="WORKFLOW-common-title mb-20">
       <h2 class="bold">修改密码</h2>
     </div>
     <el-row>

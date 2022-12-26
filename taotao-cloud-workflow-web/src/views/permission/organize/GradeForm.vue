@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="分级管理" :close-on-click-modal="false" :close-on-press-escape="false"
-    :visible.sync="visible" lock-scroll class="JNPF-dialog JNPF-dialog_center" width="600px">
+    :visible.sync="visible" lock-scroll class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-alert title="设置当前组织部门的管理和相关操作权限" type="warning" :closable="false" show-icon />
     <el-form ref="dataForm" v-loading="formLoading" :model="dataForm" :rules="dataRule"
       label-position="top" class="mt-10">

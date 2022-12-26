@@ -1,6 +1,6 @@
 <template>
   <el-dialog title="共享文件" :close-on-click-modal="false" :visible.sync="visible"
-    class="JNPF-dialog JNPF-dialog_center transfer-dialog" lock-scroll width='800px'>
+    class="WORKFLOW-dialog WORKFLOW-dialog_center transfer-dialog" lock-scroll width='800px'>
     <userTransfer v-model="checkedKeys" ref="userTransfer" multiple />
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">{{$t('common.cancelButton')}}</el-button>
@@ -11,7 +11,7 @@
 
 <script>
 import { ShareCreate, ShareUserList } from '@/api/extend/document'
-import userTransfer from '@/components/JNPF-userTransfer'
+import userTransfer from '@/components/WORKFLOW-userTransfer'
 export default {
   components: { userTransfer },
   data() {

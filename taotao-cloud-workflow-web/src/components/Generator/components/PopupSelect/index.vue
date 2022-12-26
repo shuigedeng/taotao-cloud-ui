@@ -13,9 +13,9 @@
     </div>
     <template v-if="popupType==='dialog'">
       <el-dialog :title="popupTitle" :close-on-click-modal="false" :visible.sync="visible"
-        v-if="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body
+        v-if="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body
         :width='popupWidth'>
-        <el-row class="JNPF-common-search-box" :gutter="16">
+        <el-row class="WORKFLOW-common-search-box" :gutter="16">
           <el-form @submit.native.prevent>
             <el-col :span="10">
               <el-form-item label="关键词">
@@ -33,14 +33,14 @@
               </el-form-item>
             </el-col>
           </el-form>
-          <div class="JNPF-common-search-box-right">
+          <div class="WORKFLOW-common-search-box-right">
             <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-              <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+              <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                 @click="reset()" />
             </el-tooltip>
           </div>
         </el-row>
-        <JNPF-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
+        <WORKFLOW-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
           @row-click="rowClick" :hasNO="false">
           <el-table-column width="35">
             <template slot-scope="scope">
@@ -50,7 +50,7 @@
           <el-table-column type="index" width="50" label="序号" align="center" />
           <el-table-column :prop="item.value" :label="item.label" v-for="(item,i) in columnOptions"
             :key="i" />
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" v-if="hasPage" />
         <span slot="footer" class="dialog-footer">
@@ -62,9 +62,9 @@
     </template>
     <template v-if="popupType ==='drawer'">
       <el-drawer :title="popupTitle" :visible.sync="visible" :wrapperClosable="false" ref="drawer"
-        :size='popupWidth' append-to-body class="JNPF-common-drawer">
-        <div class="JNPF-flex-main">
-          <el-row class="JNPF-common-search-box" :gutter="16">
+        :size='popupWidth' append-to-body class="WORKFLOW-common-drawer">
+        <div class="WORKFLOW-flex-main">
+          <el-row class="WORKFLOW-common-search-box" :gutter="16">
             <el-form @submit.native.prevent>
               <el-col :span="10">
                 <el-form-item label="关键词">
@@ -82,14 +82,14 @@
                 </el-form-item>
               </el-col>
             </el-form>
-            <div class="JNPF-common-search-box-right">
+            <div class="WORKFLOW-common-search-box-right">
               <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-                <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+                <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                   @click="reset()" />
               </el-tooltip>
             </div>
           </el-row>
-          <JNPF-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
+          <WORKFLOW-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
             @row-click="rowClick" :hasNO="false">
             <el-table-column width="35">
               <template slot-scope="scope">
@@ -99,7 +99,7 @@
             <el-table-column type="index" width="50" label="序号" align="center" />
             <el-table-column :prop="item.value" :label="item.label"
               v-for="(item,i) in columnOptions" :key="i" />
-          </JNPF-table>
+          </WORKFLOW-table>
           <pagination :total="total" :page.sync="listQuery.currentPage"
             :limit.sync="listQuery.pageSize" @pagination="initData" v-if="hasPage" />
           <div class="drawer-footer">
@@ -244,7 +244,7 @@ export default {
     },
     interfaceDataHandler(data) {
       if (!data.dataProcessing) return data.list
-      const dataHandler = this.jnpf.getScriptFunc.call(this, data.dataProcessing)
+      const dataHandler = this.workflow.getScriptFunc.call(this, data.dataProcessing)
       if (!dataHandler) return data.list
       return dataHandler(data.list)
     },
@@ -319,9 +319,9 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
-    .JNPF-common-search-box-right {
+    .WORKFLOW-common-search-box-right {
       padding: 10px 10px 0 0;
     }
   }

@@ -246,7 +246,7 @@ export default {
         params.flowStartAddressId = this.listQuery.flowStartAddressId[0];
         params.flowDestinationIds = this.listQuery.flowDestinationIds.join(',');
         let res = await leaveExportData(params);
-        this.jnpf.downloadFile(res.data.url);
+        this.workflow.downloadFile(res.data.url);
         this.btnExportLoading = false;
        } catch (e) {
         this.btnExportLoading = false;

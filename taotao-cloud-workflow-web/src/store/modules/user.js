@@ -202,7 +202,7 @@ const actions = {
                 }
                 routerList.push(newObj)
               } else {
-                const path = e.urlAddress.replace(/\${dataV}/g, define.dataV).replace(/\${jnpfToken}/g, getToken())
+                const path = e.urlAddress.replace(/\${dataV}/g, define.dataV).replace(/\${workflowToken}/g, getToken())
                 e.path = path
               }
             }

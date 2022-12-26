@@ -1,6 +1,6 @@
 <template>
   <div class="chart-container app-container nohead">
-    <el-alert title="免责声明：Highcharts组件不属于JNPF产品，只用于介绍第三方组件如何在《JNPF快速开发平台》中使用。如果对这些组件感兴趣，请使用正版。"
+    <el-alert title="免责声明：Highcharts组件不属于WORKFLOW产品，只用于介绍第三方组件如何在《WORKFLOW快速开发平台》中使用。如果对这些组件感兴趣，请使用正版。"
       type="warning" :closable="false" class="mb-10" />
     <div style="float: right;padding-right: 10px; margin-top:20px;">
       <el-button type="primary" icon="icon-ym icon-ym-extend-bar-chart" @click="change('plain')">柱状

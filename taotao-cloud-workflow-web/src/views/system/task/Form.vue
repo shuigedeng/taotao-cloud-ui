@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main flow-form-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main flow-form-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="!dataForm.id ? '新建任务' : '编辑任务'" />
         <div class="options">
           <el-button type="primary" @click="dataFormSubmit()" :loading="btnLoading">
@@ -89,7 +89,7 @@
         </el-col>
       </el-row>
       <el-dialog title="Cron表达式" :visible.sync="showCron" :close-on-click-modal="false"
-        class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width="700px"
+        class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width="700px"
         @closed="showCrontab = false">
         <vcrontab ref="vcrontab" @hide="showCron=false" @fill="crontabFill"
           :expression="dataForm.executeContent.cron" v-if="showCrontab" />

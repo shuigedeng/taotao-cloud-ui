@@ -1,24 +1,24 @@
-import jnpf from '@/utils/jnpf'
+import workflow from '@/utils/workflow'
 
 export function getToken() {
-  return jnpf.storageGet('token')
+  return workflow.storageGet('token')
 }
 
 export function setToken(token) {
-  return jnpf.storageSet({ token })
+  return workflow.storageSet({ token })
 }
 
 export function removeToken() {
-  return jnpf.storageRemove('token')
+  return workflow.storageRemove('token')
 }
 
 export function getLock() {
-  return jnpf.storageGet('lock')
+  return workflow.storageGet('lock')
 }
 
 export function setLock(lock) {
-  return jnpf.storageSet({ lock })
+  return workflow.storageSet({ lock })
 }
 export function removeLock() {
-  return jnpf.storageRemove('lock')
+  return workflow.storageRemove('lock')
 }

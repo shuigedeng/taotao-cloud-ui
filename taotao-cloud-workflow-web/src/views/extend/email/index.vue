@@ -20,8 +20,8 @@
       <el-tab-pane name="setAccount">
         <span slot="label"><i class="icon-ym icon-ym-extend-cog"></i>邮箱配置</span>
       </el-tab-pane>
-      <div class="main JNPF-flex-main">
-        <el-row class="JNPF-common-search-box" :gutter="16">
+      <div class="main WORKFLOW-flex-main">
+        <el-row class="WORKFLOW-common-search-box" :gutter="16">
           <el-form @submit.native.prevent>
             <el-col :span="6">
               <el-form-item label="关键词">
@@ -46,12 +46,12 @@
               </el-form-item>
             </el-col>
           </el-form>
-          <div class="JNPF-common-search-box-right">
+          <div class="WORKFLOW-common-search-box-right">
             <el-button type="primary" icon="el-icon-download" @click="receiveEmail"
               :loading="receiveing">收邮件</el-button>
           </div>
         </el-row>
-        <JNPF-table v-loading="listLoading" :data="list">
+        <WORKFLOW-table v-loading="listLoading" :data="list">
           <el-table-column prop="isRead" label="" width="40">
             <template slot-scope="scope">
               <template v-if="activeTab==='inBox'|| activeTab==='star'">
@@ -107,11 +107,11 @@
           </el-table-column>
           <el-table-column label="操作" fixed="right" width="50">
             <template slot-scope="scope">
-              <el-button size="mini" type="text" class="JNPF-table-delBtn"
+              <el-button size="mini" type="text" class="WORKFLOW-table-delBtn"
                 @click="handleDel(scope.$index,scope.row.id)">删除</el-button>
             </template>
           </el-table-column>
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>
@@ -360,7 +360,7 @@ export default {
 <style lang="scss" scoped>
 .Email-container {
   position: relative;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
   }
   ::v-deep .el-tabs__item {

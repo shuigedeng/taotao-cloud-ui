@@ -1,7 +1,7 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main user-form">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main user-form">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" content="组织架构图" />
         <div class="options">
           <el-button @click="goBack">{{$t('common.cancelButton')}} </el-button>

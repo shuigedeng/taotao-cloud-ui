@@ -1,7 +1,7 @@
 <template>
   <el-dialog :title="$t(`user.resetPassword`)" :close-on-click-modal="false"
     :close-on-press-escape="false" :visible.sync="visible" lock-scroll
-    class="JNPF-dialog JNPF-dialog_center" width="600px">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center" width="600px">
     <el-form ref="dataForm" v-loading="formLoading" :model="dataForm" :rules="dataRule"
       label-width="100px">
       <el-form-item label="账户" prop="account">

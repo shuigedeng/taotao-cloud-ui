@@ -1,11 +1,11 @@
 <template>
   <el-dialog :title="!dataForm.id ? '新建字典' : '编辑字典'" :close-on-click-modal="false"
     :close-on-press-escape="false" :visible.sync="visible" lock-scroll width="600px"
-    class="JNPF-dialog JNPF-dialog_center">
+    class="WORKFLOW-dialog WORKFLOW-dialog_center">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" v-loading="formLoading"
       label-width="80px">
       <el-form-item label="项目上级" prop="parentId">
-        <JNPF-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择项目上级"
+        <WORKFLOW-TreeSelect v-model="dataForm.parentId" :options="treeData" placeholder="选择项目上级"
           :disabled="parentDisabled" />
       </el-form-item>
       <el-form-item label="字典名称" prop="fullName">

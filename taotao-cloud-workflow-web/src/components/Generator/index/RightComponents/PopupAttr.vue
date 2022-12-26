@@ -44,8 +44,8 @@ export default {
           loop(data.__config__.children, data)
         }
         if (Array.isArray(data)) data.forEach(d => loop(d, parent))
-        if (data.__config__ && data.__config__.jnpfKey) {
-          if (data.__config__.jnpfKey === 'popupSelect' && data.__vModel__) {
+        if (data.__config__ && data.__config__.workflowKey) {
+          if (data.__config__.workflowKey === 'popupSelect' && data.__vModel__) {
             list.push(data)
           }
         }
@@ -53,7 +53,7 @@ export default {
       loop(drawingList)
       this.options = list.map(o => ({
         ...o,
-        prop: o.__config__ && o.__config__.tableName ? o.__vModel__ + '_jnpfTable_' + o.__config__.tableName + (o.__config__.isSubTable ? '0' : "1") : o.__vModel__
+        prop: o.__config__ && o.__config__.tableName ? o.__vModel__ + '_workflowTable_' + o.__config__.tableName + (o.__config__.isSubTable ? '0' : "1") : o.__vModel__
       }))
     }
   }

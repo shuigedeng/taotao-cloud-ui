@@ -1,14 +1,14 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="title" />
         <div class="options">
           <el-button @click="goBack()">{{$t('common.cancelButton')}}</el-button>
         </div>
       </div>
       <div class="main">
-        <el-row class="JNPF-common-search-box" :gutter="16">
+        <el-row class="WORKFLOW-common-search-box" :gutter="16">
           <el-form @submit.native.prevent>
             <el-col :span="6">
               <el-form-item label="执行时间">
@@ -35,8 +35,8 @@
             </el-col>
           </el-form>
         </el-row>
-        <JNPF-table v-loading="listLoading" :data="list">
-          <el-table-column prop="runTime" label="执行时间" :formatter="jnpf.tableDateFormat"
+        <WORKFLOW-table v-loading="listLoading" :data="list">
+          <el-table-column prop="runTime" label="执行时间" :formatter="workflow.tableDateFormat"
             width="130" />
           <el-table-column prop="runResult" label="执行结果" width="100" align="center">
             <template slot-scope="scope">
@@ -45,7 +45,7 @@
             </template>
           </el-table-column>
           <el-table-column prop="description" label="执行说明" />
-        </JNPF-table>
+        </WORKFLOW-table>
         <pagination :total="total" :page.sync="listQuery.currentPage"
           :limit.sync="listQuery.pageSize" @pagination="initData" />
       </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="app-container TableTree-container">
-    <JNPF-table v-loading="listLoading" :data="industryTypeList" row-key="id"
+    <WORKFLOW-table v-loading="listLoading" :data="industryTypeList" row-key="id"
       :tree-props="{children: 'children', hasChildren: ''}" default-expand-all>
       <el-table-column prop="fullName" label="名称" />
       <el-table-column prop="id" label="编码" />
-    </JNPF-table>
+    </WORKFLOW-table>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
+    <div class="WORKFLOW-preview-main">
       <iframe width="100%" height="100%" :src="url" frameborder="0"></iframe>
     </div>
   </transition>

@@ -21,7 +21,7 @@ export default {
     if (this.dataType === 'dynamic') {
       if (!this.propsApi) return
       getDataInterfaceRes(this.propsApi).then(res => {
-        let data = this.jnpf.interfaceDataHandler(res.data)
+        let data = this.workflow.interfaceDataHandler(res.data)
         this.currOption = data
         this.resetChart()
       })

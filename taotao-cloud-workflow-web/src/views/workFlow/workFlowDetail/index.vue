@@ -1,7 +1,7 @@
 <template>
-  <div class="JNPF-common-layout">
-    <div class="JNPF-common-layout-center">
-      <div class="JNPF-common-layout-main JNPF-flex-main">
+  <div class="WORKFLOW-common-layout">
+    <div class="WORKFLOW-common-layout-center">
+      <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
         <FlowBox v-if="formVisible" ref="FlowBox" @close="closeForm" />
         <el-empty description="暂无数据" :image-size="120" v-else></el-empty>
       </div>

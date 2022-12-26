@@ -1,12 +1,12 @@
 <template>
-  <el-row class="JNPF-common-search-box" :gutter="16" v-if="searchList.length">
+  <el-row class="WORKFLOW-common-search-box" :gutter="16" v-if="searchList.length">
     <el-form @submit.native.prevent>
       <el-col :span="6" v-for="(item, index) in searchList" :key="index">
         <el-form-item
           :label="item.__config__.label"
           v-show="index < 3 || (index >= 3 && showAll)"
         >
-          <template v-if="useInputList.indexOf(item.__config__.jnpfKey) > -1">
+          <template v-if="useInputList.indexOf(item.__config__.workflowKey) > -1">
             <el-input
               v-model="item.value"
               :placeholder="item.__config__.label"
@@ -16,7 +16,7 @@
             </el-input>
           </template>
           <template
-            v-else-if="useDateList.indexOf(item.__config__.jnpfKey) > -1"
+            v-else-if="useDateList.indexOf(item.__config__.workflowKey) > -1"
           >
             <el-date-picker
               v-model="item.value"
@@ -30,7 +30,7 @@
             />
           </template>
           <template
-            v-else-if="useSelectList.indexOf(item.__config__.jnpfKey) > -1"
+            v-else-if="useSelectList.indexOf(item.__config__.workflowKey) > -1"
           >
             <el-select
               v-model="item.value"
@@ -50,13 +50,13 @@
           <template v-else>
             <template
               v-if="
-                item.__config__.jnpfKey === 'numInput' ||
-                item.__config__.jnpfKey === 'calculate'
+                item.__config__.workflowKey === 'numInput' ||
+                item.__config__.workflowKey === 'calculate'
               "
             >
               <num-range v-model="item.value"></num-range>
             </template>
-            <template v-if="item.__config__.jnpfKey === 'cascader'">
+            <template v-if="item.__config__.workflowKey === 'cascader'">
               <el-cascader
                 v-model="item.value"
                 :options="item.options"
@@ -70,8 +70,8 @@
             </template>
             <template
               v-if="
-                item.__config__.jnpfKey === 'time' ||
-                item.__config__.jnpfKey === 'timeRange'
+                item.__config__.workflowKey === 'time' ||
+                item.__config__.workflowKey === 'timeRange'
               "
             >
               <el-time-picker
@@ -85,7 +85,7 @@
                 class="item"
               />
             </template>
-            <template v-if="item.__config__.jnpfKey === 'date'">
+            <template v-if="item.__config__.workflowKey === 'date'">
               <el-date-picker
                 v-model="item.value"
                 :type="item.type + 'range'"
@@ -98,7 +98,7 @@
               >
               </el-date-picker>
             </template>
-            <template v-if="item.__config__.jnpfKey === 'dateRange'">
+            <template v-if="item.__config__.workflowKey === 'dateRange'">
               <el-date-picker
                 v-model="item.value"
                 :type="item.type"
@@ -111,7 +111,7 @@
               >
               </el-date-picker>
             </template>
-            <template v-if="commonList.includes(item.__config__.jnpfKey)">
+            <template v-if="commonList.includes(item.__config__.workflowKey)">
               <component
                 :is="item.__config__.tag"
                 v-model="item.value"
@@ -120,8 +120,8 @@
                 class="item"
               />
             </template>
-            <template v-if="item.__config__.jnpfKey === 'address'">
-              <JNPFAddress
+            <template v-if="item.__config__.workflowKey === 'address'">
+              <WORKFLOWAddress
                 v-model="item.value"
                 :placeholder="'请选择' + item.__config__.label"
                 :level="item.level"
@@ -129,8 +129,8 @@
                 clearable
               />
             </template>
-            <template v-if="item.__config__.jnpfKey === 'treeSelect'">
-              <JNPF-TreeSelect
+            <template v-if="item.__config__.workflowKey === 'treeSelect'">
+              <WORKFLOW-TreeSelect
                 v-model="item.value"
                 :placeholder="'请选择' + item.__config__.label"
                 :options="item.options"
@@ -141,8 +141,8 @@
             </template>
             <template
               v-if="
-                item.__config__.jnpfKey === 'createUser' ||
-                item.__config__.jnpfKey === 'modifyUser'
+                item.__config__.workflowKey === 'createUser' ||
+                item.__config__.workflowKey === 'modifyUser'
               "
             >
               <userSelect
@@ -153,7 +153,7 @@
                 class="item"
               />
             </template>
-            <template v-if="item.__config__.jnpfKey === 'currOrganize'">
+            <template v-if="item.__config__.workflowKey === 'currOrganize'">
               <comSelect
                 v-model="item.value"
                 :placeholder="'请选择' + item.__config__.label"
@@ -161,7 +161,7 @@
                 class="item"
               />
             </template>
-            <template v-if="item.__config__.jnpfKey === 'currDept'">
+            <template v-if="item.__config__.workflowKey === 'currDept'">
               <depSelect
                 v-model="item.value"
                 :placeholder="'请选择' + item.__config__.label"
@@ -169,7 +169,7 @@
                 class="item"
               />
             </template>
-            <template v-if="item.__config__.jnpfKey === 'currPosition'">
+            <template v-if="item.__config__.workflowKey === 'currPosition'">
               <posSelect
                 v-model="item.value"
                 :placeholder="'请选择' + item.__config__.label"
@@ -264,10 +264,10 @@ export default {
       //end by xyb
       componentList.forEach((cur) => {
         const config = cur.__config__;
-        if (config.jnpfKey === "cascader") cur.props.props.multiple = false;
-        if (dyOptionsList.indexOf(config.jnpfKey) > -1) {
+        if (config.workflowKey === "cascader") cur.props.props.multiple = false;
+        if (dyOptionsList.indexOf(config.workflowKey) > -1) {
           let isTreeSelect =
-            config.jnpfKey === "treeSelect" || config.jnpfKey === "cascader";
+            config.workflowKey === "treeSelect" || config.workflowKey === "cascader";
           if (config.dataType === "dictionary") {
             if (!config.dictionaryType) return;
             getDictionaryDataSelector(config.dictionaryType).then((res) => {
@@ -279,7 +279,7 @@ export default {
           if (config.dataType === "dynamic") {
             if (!config.propsUrl) return;
             getDataInterfaceRes(config.propsUrl).then((res) => {
-              let data = this.jnpf.interfaceDataHandler(res.data);
+              let data = this.workflow.interfaceDataHandler(res.data);
               if (Array.isArray(data)) {
                 isTreeSelect
                   ? (cur.options = data)
@@ -295,7 +295,7 @@ export default {
     setProps(componentList) {
       componentList.forEach((cur) => {
         const config = cur.__config__;
-        if (config.jnpfKey === "cascader") cur.props.props.multiple = false;
+        if (config.workflowKey === "cascader") cur.props.props.multiple = false;
       });
     },
     search() {

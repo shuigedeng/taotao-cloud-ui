@@ -12,8 +12,8 @@
       </el-input>
     </div>
     <el-dialog title="选择数据" :close-on-click-modal="false" :visible.sync="visible" v-if="visible"
-      class="JNPF-dialog JNPF-dialog_center" lock-scroll append-to-body width='800px'>
-      <el-row class="JNPF-common-search-box" :gutter="16">
+      class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll append-to-body width='800px'>
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="10">
             <el-form-item label="关键词">
@@ -31,14 +31,14 @@
             </el-form-item>
           </el-col>
         </el-form>
-        <div class="JNPF-common-search-box-right">
+        <div class="WORKFLOW-common-search-box-right">
           <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-            <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+            <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
               @click="reset()" />
           </el-tooltip>
         </div>
       </el-row>
-      <JNPF-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
+      <WORKFLOW-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
         @row-click="rowClick" :hasNO="false">
         <el-table-column width="35">
           <template slot-scope="scope">
@@ -48,7 +48,7 @@
         <el-table-column type="index" width="50" label="序号" align="center" />
         <el-table-column :prop="item.value" :label="item.label" v-for="(item,i) in columnOptions"
           :key="i" />
-      </JNPF-table>
+      </WORKFLOW-table>
       <pagination :total="total" :page.sync="listQuery.currentPage" :limit.sync="listQuery.pageSize"
         @pagination="initData" v-if="hasPage" />
       <span slot="footer" class="dialog-footer">
@@ -238,9 +238,9 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
-    .JNPF-common-search-box-right {
+    .WORKFLOW-common-search-box-right {
       padding: 10px 10px 0 0;
     }
   }

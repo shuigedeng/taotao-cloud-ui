@@ -1,5 +1,5 @@
 <template>
-  <el-container class="JNPF-Portal">
+  <el-container class="WORKFLOW-Portal">
     <el-aside width="250px" class="left-box">
       <el-scrollbar class="aside-scrollbar">
         <div class="components-list">
@@ -31,25 +31,25 @@
             :i="item.i" :key="item.i" :maxH="item.maxH" :minH="item.minH" :minW="item.minW"
             :maxW="item.maxW" :class="{'active-item': item.i===activeId}" @resized="resizedEvent"
             @click.native="handleClick(item)">
-            <Todo v-if="item.jnpfKey==='todo'" :title="item.title" />
-            <CommonFunc v-if="item.jnpfKey==='commonFunc'" :title="item.title" :list="item.list" />
-            <TodoList v-if="item.jnpfKey==='todoList'" :title="item.title" />
-            <HNotice v-if="item.jnpfKey==='notice'" :title="item.title" />
-            <HEmail v-if="item.jnpfKey==='email'" :title="item.title" />
-            <DataBoard v-if="item.jnpfKey==='dataBoard'" :title="item.title" :list="item.list" />
-            <HBarChart v-if="item.jnpfKey==='barChart'" :title="item.title" :option="item.option"
+            <Todo v-if="item.workflowKey==='todo'" :title="item.title" />
+            <CommonFunc v-if="item.workflowKey==='commonFunc'" :title="item.title" :list="item.list" />
+            <TodoList v-if="item.workflowKey==='todoList'" :title="item.title" />
+            <HNotice v-if="item.workflowKey==='notice'" :title="item.title" />
+            <HEmail v-if="item.workflowKey==='email'" :title="item.title" />
+            <DataBoard v-if="item.workflowKey==='dataBoard'" :title="item.title" :list="item.list" />
+            <HBarChart v-if="item.workflowKey==='barChart'" :title="item.title" :option="item.option"
               :dataType="item.dataType" :propsApi="item.propsApi" :ref="'eChart'+item.i" />
-            <HAnnularChart v-if="item.jnpfKey==='annularChart'" :title="item.title"
+            <HAnnularChart v-if="item.workflowKey==='annularChart'" :title="item.title"
               :option="item.option" :dataType="item.dataType" :propsApi="item.propsApi"
               :ref="'eChart'+item.i" />
-            <HAreaChart v-if="item.jnpfKey==='areaChart'" :title="item.title" :option="item.option"
+            <HAreaChart v-if="item.workflowKey==='areaChart'" :title="item.title" :option="item.option"
               :dataType="item.dataType" :propsApi="item.propsApi" :ref="'eChart'+item.i" />
-            <HLineChart v-if="item.jnpfKey==='lineChart'" :title="item.title" :option="item.option"
+            <HLineChart v-if="item.workflowKey==='lineChart'" :title="item.title" :option="item.option"
               :dataType="item.dataType" :propsApi="item.propsApi" :ref="'eChart'+item.i" />
 
-            <HPieChart v-if="item.jnpfKey==='pieChart'" :title="item.title" :option="item.option"
+            <HPieChart v-if="item.workflowKey==='pieChart'" :title="item.title" :option="item.option"
               :dataType="item.dataType" :propsApi="item.propsApi" :ref="'eChart'+item.i" />
-            <HRadarChart v-if="item.jnpfKey==='radarChart'" :title="item.title"
+            <HRadarChart v-if="item.workflowKey==='radarChart'" :title="item.title"
               :option="item.option" :dataType="item.dataType" :propsApi="item.propsApi"
               :ref="'eChart'+item.i" />
             <div class="mask"></div>
@@ -94,7 +94,7 @@ const defaultConf = {
 }
 
 export default {
-  name: 'JNPF-PortalDesigner',
+  name: 'WORKFLOW-PortalDesigner',
   props: ['conf'],
   components: {
     GridLayout: VueGridLayout.GridLayout,
@@ -192,7 +192,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 $lighterBlue: #409eff;
-.JNPF-Portal {
+.WORKFLOW-Portal {
   height: 100%;
   .el-aside,
   ::v-deep .el-aside {

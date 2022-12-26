@@ -1,13 +1,13 @@
 <template>
   <transition name="el-zoom-in-center">
-    <div class="JNPF-preview-main">
-      <div class="JNPF-common-page-header">
+    <div class="WORKFLOW-preview-main">
+      <div class="WORKFLOW-common-page-header">
         <el-page-header @back="goBack" :content="table+'表的数据'" />
         <div class="options">
           <el-button @click="goBack()">{{$t('common.cancelButton')}}</el-button>
         </div>
       </div>
-      <el-row class="JNPF-common-search-box" :gutter="16">
+      <el-row class="WORKFLOW-common-search-box" :gutter="16">
         <el-form @submit.native.prevent>
           <el-col :span="6">
             <el-form-item label="字段">
@@ -34,10 +34,10 @@
           </el-col>
         </el-form>
       </el-row>
-      <JNPF-table v-loading="listLoading" :data="list">
+      <WORKFLOW-table v-loading="listLoading" :data="list">
         <el-table-column :prop="item.field.toLowerCase()" :label="item.field" show-overflow-tooltip
           v-for="item in options" :key="item.field" />
-      </JNPF-table>
+      </WORKFLOW-table>
       <pagination :total="total" :page.sync="listQuery.currentPage" :limit.sync="listQuery.pageSize"
         @pagination="initData" />
     </div>
@@ -117,7 +117,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.JNPF-preview-main {
+.WORKFLOW-preview-main {
   padding-bottom: 10px;
 }
 </style>

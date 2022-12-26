@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ?  $t(`role.addRole`) : $t(`role.editRole`)"
-    :close-on-click-modal="false" :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center"
+    :close-on-click-modal="false" :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center"
     lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" v-loading="formLoading"
       label-width="100px">

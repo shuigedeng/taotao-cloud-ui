@@ -1,8 +1,8 @@
 <template>
   <el-dialog title="数据选择" :close-on-click-modal="false" width="700px"
-    class="JNPF-dialog JNPF-dialog_center table-dialog" lock-scroll append-to-body v-bind="$attrs"
+    class="WORKFLOW-dialog WORKFLOW-dialog_center table-dialog" lock-scroll append-to-body v-bind="$attrs"
     v-on="$listeners" @open="onOpen">
-    <el-row class="JNPF-common-search-box" :gutter="16">
+    <el-row class="WORKFLOW-common-search-box" :gutter="16">
       <el-form @submit.native.prevent>
         <el-col :span="10">
           <el-form-item label="关键词">
@@ -19,19 +19,19 @@
           </el-form-item>
         </el-col>
       </el-form>
-      <div class="JNPF-common-search-box-right">
+      <div class="WORKFLOW-common-search-box-right">
         <el-tooltip effect="dark" :content="$t('common.refresh')" placement="top">
-          <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+          <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
             @click="refresh()" />
         </el-tooltip>
       </div>
     </el-row>
-    <JNPF-table v-loading="listLoading" :data="list" hasC @selection-change="handleSelectionChange"
+    <WORKFLOW-table v-loading="listLoading" :data="list" hasC @selection-change="handleSelectionChange"
       :border="false">
       <el-table-column prop="table" label="表名" show-overflow-tooltip />
       <el-table-column prop="sum" label="总数" width="90" />
       <el-table-column prop="tableName" label="说明" width="150" show-overflow-tooltip />
-    </JNPF-table>
+    </WORKFLOW-table>
     <span slot="footer" class="dialog-footer">
       <el-button @click="closeDialog">{{$t('common.cancelButton')}}</el-button>
       <el-button type="primary" @click="select()">{{$t('common.confirmButton')}}</el-button>
@@ -88,9 +88,9 @@ export default {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    .JNPF-common-search-box {
+    .WORKFLOW-common-search-box {
       margin-bottom: 0;
-      .JNPF-common-search-box-right {
+      .WORKFLOW-common-search-box-right {
         padding: 10px 10px 0 0;
       }
     }

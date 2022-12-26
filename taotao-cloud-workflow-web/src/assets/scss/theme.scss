@@ -69,7 +69,7 @@ $redSub: #FF5D65;
     }
   }
 
-  .JNPF-Portal .el-main .layout-area .vue-grid-item {
+  .WORKFLOW-Portal .el-main .layout-area .vue-grid-item {
     &.active-item {
       border: 1px solid $color;
     }
@@ -291,7 +291,7 @@ $redSub: #FF5D65;
     }
   }
 
-  &.JNPF-select-tree {
+  &.WORKFLOW-select-tree {
     .el-tree.single .is-current>.el-tree-node__content .custom-tree-node {
       color: $color;
     }

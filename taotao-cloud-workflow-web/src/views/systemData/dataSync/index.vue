@@ -1,5 +1,5 @@
 <template>
-  <div class="DbCopy-container app-container nohead  JNPF-flex-main">
+  <div class="DbCopy-container app-container nohead  WORKFLOW-flex-main">
     <el-alert title="温馨提示：数据同步是由A数据库同步到B数据库，必须确保数据库表结构一致否则会同步失败。" type="warning" :closable="false"
       show-icon class="mb-20">
     </el-alert>
@@ -23,10 +23,10 @@
         <el-button type="primary" @click="check" style="margin-left:10px">验证连接</el-button>
       </el-form-item>
     </el-form>
-    <div class="JNPF-common-title">
+    <div class="WORKFLOW-common-title">
       <h2>数据库表</h2>
     </div>
-    <JNPF-table v-loading="listLoading" :data="list">
+    <WORKFLOW-table v-loading="listLoading" :data="list">
       <el-table-column prop="table" label="表名" show-overflow-tooltip />
       <el-table-column prop="sum" label="总数" />
       <el-table-column prop="result" label="结果" />
@@ -37,7 +37,7 @@
           </el-button>
         </template>
       </el-table-column>
-    </JNPF-table>
+    </WORKFLOW-table>
   </div>
 </template>
 

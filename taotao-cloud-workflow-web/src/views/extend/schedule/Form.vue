@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="!dataForm.id ? '添加日程' : '编辑日程'" :close-on-click-modal="false"
-    :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll width="600px">
+    :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll width="600px">
     <el-form ref="dataForm" :model="dataForm" :rules="dataRule" label-width="100px">
       <el-form-item label="起始时间" prop="startTime">
         <el-date-picker v-model="dataForm.startTime" type="datetime" placeholder="选择日期时间"

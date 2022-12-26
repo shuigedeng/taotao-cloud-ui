@@ -2,7 +2,7 @@
   <div>
     <template v-if="formConf.popupType==='general'">
       <el-dialog :title="!dataForm.id ? '新建' : '编辑'" :close-on-click-modal="false"
-        :visible.sync="visible" class="JNPF-dialog JNPF-dialog_center" lock-scroll
+        :visible.sync="visible" class="WORKFLOW-dialog WORKFLOW-dialog_center" lock-scroll
         :width="formConf.generalWidth">
         <parser :form-conf="formConf" @submit="submitForm" :key="key" ref="dynamicForm"
           v-if="!loading" />
@@ -20,8 +20,8 @@
     </template>
     <template v-if="formConf.popupType==='fullScreen'">
       <transition name="el-zoom-in-center">
-        <div class="JNPF-preview-main">
-          <div class="JNPF-common-page-header">
+        <div class="WORKFLOW-preview-main">
+          <div class="WORKFLOW-common-page-header">
             <el-page-header @back="goBack" :content="!dataForm.id ? '新建' : '编辑'" />
             <div class="options">
               <template v-if="formConf.hasPrintBtn && formConf.printId && dataForm.id && false">
@@ -44,8 +44,8 @@
     <template v-if="formConf.popupType==='drawer'">
       <el-drawer :title="!dataForm.id ? '新建' : '编辑'" :visible.sync="visible"
         :wrapperClosable="false" :size='formConf.drawerWidth' append-to-body
-        class="JNPF-common-drawer">
-        <div class="JNPF-flex-main">
+        class="WORKFLOW-common-drawer">
+        <div class="WORKFLOW-flex-main">
           <div class="dynamicForm">
             <parser :form-conf="formConf" @submit="submitForm" :key="key" ref="dynamicForm"
               v-if="!loading" />
@@ -160,7 +160,7 @@ export default {
               this.$set(item.__config__, 'noShow', noShow)
             }
           }
-          if (item.__config__ && item.__config__.jnpfKey !== 'table' && item.__config__.children && Array.isArray(item.__config__.children)) {
+          if (item.__config__ && item.__config__.workflowKey !== 'table' && item.__config__.children && Array.isArray(item.__config__.children)) {
             loop(item.__config__.children)
           }
         }

@@ -12,11 +12,11 @@
       </el-input>
     </div>
     <el-dialog title="短信模板" :close-on-click-modal="false" :visible.sync="visible"
-      class="JNPF-dialog JNPF-dialog_center JNPF-dialog-tree-select" lock-scroll append-to-body
+      class="WORKFLOW-dialog WORKFLOW-dialog_center WORKFLOW-dialog-tree-select" lock-scroll append-to-body
       width='600px'>
-      <div class="JNPF-common-layout">
-        <div class="JNPF-common-layout-center">
-          <el-row class="JNPF-common-search-box" :gutter="16">
+      <div class="WORKFLOW-common-layout">
+        <div class="WORKFLOW-common-layout-center">
+          <el-row class="WORKFLOW-common-search-box" :gutter="16">
             <el-form @submit.native.prevent>
               <el-col :span="10">
                 <el-form-item label="关键词">
@@ -31,15 +31,15 @@
                 </el-form-item>
               </el-col>
             </el-form>
-            <div class="JNPF-common-search-box-right">
+            <div class="WORKFLOW-common-search-box-right">
               <el-tooltip effect="dark" content="刷新" placement="top">
-                <el-link icon="icon-ym icon-ym-Refresh JNPF-common-head-icon" :underline="false"
+                <el-link icon="icon-ym icon-ym-Refresh WORKFLOW-common-head-icon" :underline="false"
                   @click="initData()" />
               </el-tooltip>
             </div>
           </el-row>
-          <div class="JNPF-common-layout-main JNPF-flex-main">
-            <JNPF-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
+          <div class="WORKFLOW-common-layout-main WORKFLOW-flex-main">
+            <WORKFLOW-table v-loading="listLoading" :data="list" :border="false" highlight-current-row
               @row-click="rowClick" :hasNO="false">
               <el-table-column width="35">
                 <template slot-scope="scope">
@@ -51,7 +51,7 @@
                 min-width="150" />
               <el-table-column prop="templateId" label="模板编号" width="200" />
               <el-table-column prop="signContent" label="签名内容" show-overflow-tooltip />
-            </JNPF-table>
+            </WORKFLOW-table>
             <pagination :total="total" :page.sync="listQuery.currentPage"
               :limit.sync="listQuery.pageSize" @pagination="initData" />
           </div>
@@ -168,9 +168,9 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .JNPF-common-search-box {
+  .WORKFLOW-common-search-box {
     margin-bottom: 0;
-    .JNPF-common-search-box-right {
+    .WORKFLOW-common-search-box-right {
       padding: 10px 10px 0 0;
     }
   }
