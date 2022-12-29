@@ -66,7 +66,7 @@ Requires:
 ```
 JAVA_VERSION >= 17 (推荐使用graalvm)
 GRALE_VERSION >= 7.6
-IDEA_VERSION >= 2022.3
+IDEA_VERSION >= 2023.3.01
 ```
 
 Gradle:
@@ -74,7 +74,7 @@ Gradle:
 ```
 dependencyManagement{
   imports {
-    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2022.12"
+    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.3.01"
   }
 }
 
@@ -89,7 +89,7 @@ Maven:
     <dependency>
       <groupId>io.github.shuigedeng</groupId>
       <artifactId>taotao-cloud-dependencies</artifactId>
-      <version>2022.12</version>
+      <version>2023.3.01</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
