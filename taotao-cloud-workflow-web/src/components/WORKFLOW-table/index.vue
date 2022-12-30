@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import JnpfTableColumn from './Column'
+import WorkflowTableColumn from './Column'
 import ColumnSettings from './ColumnSettings'
 export default {
   name: 'WORKFLOW-table',
