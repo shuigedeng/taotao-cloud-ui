@@ -1,21 +1,22 @@
-# <p align="center"><strong> taotao-cloud </strong></p>
+# <p align="center"><strong> taotao-cloud-ui </strong></p>
 
 [comment]: <> (# <center>**taotao-cloud-project**</center>)
 
 <p align="center">
-  <img src='https://img.shields.io/badge/license-Apac****he%202-green' alt='License'/>
-  <img src="https://img.shields.io/badge/Spring-5.3.22-red" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Spring%20Boot-2.7.2-orange" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Spring%20Cloud-2021.0.3-yellowgreen" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Spring%20Cloud%20alibaba-2021.0.1.0-blue" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Netty-4.1.79.Final-blue" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Spring%20Security-5.7.2-brightgreen" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Elasticsearch-7.13.7-green" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Mybatis%20Plus-3.5.2-yellow" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Knife4j-3.0.3-brightgreen" alt="Downloads"/>
+  <img src='https://img.shields.io/badge/license-Apache%202-green' alt='License'/>
+  <img src="https://img.shields.io/badge/6.0.4-Spring-red" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/3.0.1-Spring%20Boot-orange" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/2022.0.0-Spring%20Cloud-yellowgreen" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/2022.0.0.0--RC1-Spring%20Cloud%20Alibaba-blue" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/1.8.2--2022.0.0-Spring%20Cloud%20Tencent-orange" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/4.1.87.Final-Netty-blue" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/6.0.1-Spring%20Security-brightgreen" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/8.5.3-Elasticsearch-green" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/3.5.3.1-Mybatis%20Plus-yellow" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/4.0.0-Knife4j-brightgreen" alt="Downloads"/>
   <img src="https://img.shields.io/badge/Swagger-3.0.0-red" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Redisson-3.17.5-lightgrey" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Hutool-5.8.4-green" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/3.19.1-Redisson-lightgrey" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/5.8.11-Hutool-green" alt="Downloads"/>
 </p>
 
 ## 1. 如果您觉得有帮助，请点右上角 "Star" 支持一下谢谢
@@ -64,9 +65,9 @@
 Requires:
 
 ```
-JAVA_VERSION >= 17 (推荐使用graalvm)
+JAVA_VERSION >= 17 (推荐使用graalvm-22.3)
 GRALE_VERSION >= 7.6
-IDEA_VERSION >= 2022.3
+IDEA_VERSION >= 2022.3.2
 ```
 
 Gradle:
@@ -74,7 +75,7 @@ Gradle:
 ```
 dependencyManagement{
   imports {
-    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.2.01"
+    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.01"
   }
 }
 
@@ -89,7 +90,7 @@ Maven:
     <dependency>
       <groupId>io.github.shuigedeng</groupId>
       <artifactId>taotao-cloud-dependencies</artifactId>
-      <version>2023.2.01</version>
+      <version>2023.01</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -109,23 +110,24 @@ Maven:
 
 依赖                   | 版本
 ----------------------|---------------
-Spring               | 5.3.24
-Spring Boot          | 2.7.6
-Spring Cloud         | 2021.0.5
-Spring Cloud alibaba | 2021.0.4.0
-Spring Security      | 5.8.0
-Mybatis Plus         | 3.5.2
-Hutool               | 5.5.10
-Mysql                | 8.0.30
+Spring               | 6.0.4
+Spring Boot          | 3.0.1
+Spring Cloud         | 2022.0.0
+Spring Cloud Alibaba | 2022.0.0.0--RC1
+Spring Cloud Tencent | 1.8.2--2022.0.0
+Spring Security      | 6.0.1
+Mybatis Plus         | 3.5.3.1
+Hutool               | 5.8.11
+Mysql                | 8.0.31
 Querydsl             | 5.0.0
-Swagger              | 3.3.0
-Knife4j              | 3.0.2
-Redisson             | 3.15.0
+Swagger              | 3.0.0
+Knife4j              | 4.0.0
+Redisson             | 3.19.1
 Lettuce              | 6.0.2.RELEASE
-Elasticsearch        | 7.1.2
-Xxl-job              | 2.2.0
+Elasticsearch        | 8.5.3
+Xxl-job              | 2.3.1
 EasyCaptcha          | 1.6.2
-Guava                | 29.0-jre
+Guava                | 31.1-jre
 
 ## 6. 演示地址
 
@@ -134,20 +136,20 @@ Guava                | 29.0-jre
 * 代码质量检测结果地址: [https://qodana.taotaocloud.top](https://qodana.taotaocloud.top) (带宽有限,
   需多刷新几次)
 * 商城首页地址: [https://taotaocloud.top](https://taotaocloud.top)
-  源码地址: [taotao-cloud-front](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-front)
+  源码地址: [taotao-cloud-front](https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-microservice/taotao-cloud-front)
 * 大屏展示地址: [https://datav.taotaocloud.top](https://datav.taotaocloud.top)
-  源码地址: [taotao-cloud-datav](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-datav)
+  源码地址: [taotao-cloud-datav](https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-ui/taotao-cloud-datav)
 * 平台管理地址(进度15%): [https://manager.taotaocloud.top](https://manager.taotaocloud.top) (
   admin/123456)
-  源码地址: [taotao-cloud-manager](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-manager)
+  源码地址: [taotao-cloud-manager](https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-ui/taotao-cloud-manager)
 * 商户管理地址(进度5%): [https://merchant.taotaocloud.top](https://merchant.taotaocloud.top) (
   taotao/123456)
-  源码地址: [taotao-cloud-merchant](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-merchant)
+  源码地址: [taotao-cloud-merchant](https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-web/taotao-cloud-merchant)
 * 开放平台地址(进度15%): [https://open.taotaocloud.top](https://open.taotaocloud.top) (
   taotao/123456)
-  源码地址: [taotao-cloud-open](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-open)
+  源码地址: [taotao-cloud-open](https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-ui/taotao-cloud-open)
 * 移动端在线预览(进度5%)
-  源码地址: [taotao-cloud-mall](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-taro-mall)
+  源码地址: [taotao-cloud-mall](https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-web/taotao-cloud-mall)
 
 | <center>移动端 ReactNative</center>                                                                                                                                                                                                                                                         | <center>小程序</center>     | <center>H5</center>                               |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|---------------------------------------------------|
@@ -157,8 +159,8 @@ Guava                | 29.0-jre
 
 * **微服务技术框架**: 前后端分离的企业级微服务架构、主要针对解决微服务和业务开发时常见的**
   非功能性需求**
-* **主体框架**：采用最新的Spring Boot 2.7.6、Spring Cloud 2021.0.5、Spring Cloud Alibaba
-  2021.0.4.0版本进行设计
+* **主体框架**：采用最新的Spring Boot 3.0.1、Spring Cloud 2022.0.0、Spring Cloud Alibaba
+  2022.0.0.0--RC1版本进行设计
 * **统一注册**：支持Nacos作为注册中心，实现多配置、分群组、分命名空间、多业务模块的注册和发现功能
 * **统一认证**：统一Oauth2认证协议，采用jwt的方式，实现统一认证，完备的RBAC权限管理、数据权限处理、网关统一鉴权、灰度发布
 * **业务监控**：利用Spring Boot admin 监控各个独立服务的运行状态
@@ -184,15 +186,58 @@ Guava                | 29.0-jre
 ## 8. 模块说明
 
 ```
-├─taotao-cloud-ui -- 前端模块
-│  ├─taotao-cloud-react-mall -- 基于react的商城页面
-│  ├─taotao-cloud-react-manager -- 基于react的商城管理页面
-│  ├─taotao-cloud-taro-mall  -- 基于taro的商城多端合一模块
-│  ├─taotao-cloud-vue3-datav -- 基于vue3的大屏PC端展示模块
-│  ├─taotao-cloud-vue3-front -- 基于vue3的商城PC端模块
-│  ├─taotao-cloud-vue3-manager  -- 基于vue3的平台管理端模块
-│  ├─taotao-cloud-vue3-merchant  -- 基于vue3的商户管理端模块
-│  ├─taotao-cloud-vue3-open -- 基于vue3的开放平台PC端模块
+taotao-cloud-project -- 父项目
+│  ├─taotao-cloud-bigdata -- 大数据模块
+│  ├─taotao-cloud-container -- 容器模块
+│  ├─taotao-cloud-dependencies -- 全局公共依赖模块
+│  ├─taotao-cloud-go -- go模块
+│  ├─taotao-cloud-java -- java模块
+│  ├─taotao-cloud-microservice -- 微服务业务模块
+│  │  ├─taotao-cloud-monitor  -- 监控模块
+│  │  ├─taotao-cloud-auth  -- oauth2认证中心模块
+│  │  ├─taotao-cloud-customer  -- 客服模块
+│  │  ├─taotao-cloud-distribution  -- 营销/分销模块
+│  │  ├─taotao-cloud-front  -- 前端pc模块
+│  │  ├─taotao-cloud-gateway  -- 网关模块
+│  │  ├─taotao-cloud-goods  -- 商品模块
+│  │  ├─taotao-cloud-graphql  -- graphql模块
+│  │  ├─taotao-cloud-member  -- 会员模块
+│  │  ├─taotao-cloud-message  -- 消息模块
+│  │  ├─taotao-cloud-open  -- 开放模块
+│  │  ├─taotao-cloud-operation  -- 运营模块
+│  │  ├─taotao-cloud-order  -- 订单模块
+│  │  ├─taotao-cloud-payment -- 支付模块
+│  │  ├─taotao-cloud-promotion  -- 促销模块
+│  │  ├─taotao-cloud-recommend  -- 推荐模块
+│  │  ├─taotao-cloud-report  -- 报表模块
+│  │  ├─taotao-cloud-starter  -- starter组件模块
+│  │  ├─taotao-cloud-stock  -- 库存模块
+│  │  ├─taotao-cloud-store  -- 店铺模块
+│  │  ├─taotao-cloud-sys  -- 系统模块
+│  │  ├─taotao-cloud-xxljob  -- xxl-job模块
+│  ├─taotao-cloud-netty -- netty模块
+│  ├─taotao-cloud-nod -- node模块
+│  ├─taotao-cloud-plugin -- 插件模块
+│  ├─taotao-cloud-python -- python模块
+│  ├─taotao-cloud-reactive -- spring web响应式模块
+│  ├─taotao-cloud-rpc -- rpc模块
+│  ├─taotao-cloud-scala -- scala模块
+│  ├─taotao-cloud-spring-native -- spring模块
+│  ├─taotao-cloud-standlone -- 单项目模块
+│  ├─taotao-cloud-warehouse -- 数仓模块
+│  │  ├─taotao-cloud-offline-warehouse  -- 离线仓库模块
+│  │  ├─taotao-cloud-offline-weblog -- 离线日志分析模块
+│  │  ├─taotao-cloud-realtime-datalake  -- 准实时数据湖模块
+│  │  ├─taotao-cloud-realtime-mall -- 商城日志分析模块
+│  │  ├─taotao-cloud-realtime-recommend -- 实时推荐模块
+│  │  ├─taotao-cloud-realtime-travel -- 实时旅游模块
+│  ├─taotao-cloud-ui -- 前端模块
+│  │  ├─taotao-cloud-datav -- 大屏PC端展示模块
+│  │  ├─taotao-cloud-front -- 商城PC端模块
+│  │  ├─taotao-cloud-mall  -- 商城移动端模块
+│  │  ├─taotao-cloud-manager  -- 平台管理端模块
+│  │  ├─taotao-cloud-merchant  -- 商户管理端模块
+│  │  ├─taotao-cloud-open -- 开放平台PC端模块
 ```
 
 ## 9.开源共建

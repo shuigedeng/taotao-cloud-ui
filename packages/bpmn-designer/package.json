@@ -1,0 +1,42 @@
+{
+  "name": "@taotaocloud/bpmn-designer",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./dist/assets/style.css": "./dist/assets/style.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@bpmn-io/properties-panel": "0.21.0",
+    "@taotaocloud/bpmn-apis": "workspace:^1.0.0",
+    "@taotaocloud/components": "workspace:^1.0.0",
+    "@taotaocloud/core": "workspace:^1.0.0",
+    "bpmn-js": "^10.3.0",
+    "bpmn-js-properties-panel": "^1.14.0",
+    "bpmn-js-token-simulation": "^0.28.0",
+    "camunda-bpmn-js-behaviors": "^0.2.2",
+    "camunda-bpmn-moddle": "^7.0.1",
+    "diagram-js": "^9.1.0",
+    "preact": "^10.11.3",
+    "zeebe-bpmn-moddle": "^0.15.0"
+  }
+}

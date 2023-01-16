@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<title class="title">[文件管理器]</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			.content {background: transparent;}
+			.btn {position: relative;top: 0;left: 0;bottom: 0;right: 0;}
+			.btn .file {position: fixed;z-index: 93;left: 0;right: 0;top: 0;bottom: 0;width: 100%;opacity: 0;}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="content" class="content">
+			<div v-show="!disabled" class="btn">
+				<input @change="onChange" :accept="accept" ref="file" class="file" type="file" />
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script type="text/javascript">
+			var xhr;
+			var vm = new Vue({
+				el: '#content',
+				data: {
+					accept: '',
+					disabled: false
+				},
+				mounted() {
+					this.fileMap = new Map();
+					let fileDom = this.$refs.file;
+					fileDom.value = '';
+					console.log('加载webview');
+				},
+				methods: {
+					submit(data){
+						try{
+							data = JSON.parse(data);
+						}catch(e){
+							//TODO handle the exception
+							data={};
+						}
+						console.log('------------下个版本更新异步提交-------------：'+JSON.stringify(data));
+					},
+					onChange(e) {
+						let fileDom = this.$refs.file;
+						let file = fileDom.files[0];
+						let {size = 10,manual=false} = plus.webview.currentWebview();
+						// 限制文件小于10M,可自行修改
+						if(file.size > (1024*1024 * Math.abs(size))) {
+							plus.nativeUI.toast(`附件大小请勿超过${size}M`);
+							return;
+						}
+						return !manual ? this.createUpload(file) : this.addFile(file);
+					},
+					addFile(file) {
+						this.fileMap.set(file.name,file);
+						let arr = [...this.fileMap.keys()];
+						location.href = 'callback?retype=change&files=' + escape(JSON.stringify(arr));
+					},
+					createUpload(file) {
+						let {debug = false,url,name = 'file',method = 'POST',header = {},formData:data = {}} = plus.webview.currentWebview();
+						if (!url) {console.error('url为必传参数');return;}
+						data['fileName'] = file.name;
+						
+						debug&&console.log(`
+						上传接口地址:${url}\n
+						附件key:${name}\n 
+						附件名称:${file.name}\n 
+						附件大小:${file.size}\n
+						请求头:${JSON.stringify(header)}\n
+						参数:${JSON.stringify(data)}
+						`);
+						
+						let formData = new FormData();
+						for (let keys in data) {formData.append(keys, data[keys]);}
+						formData.append(name, file);
+						xhr = new XMLHttpRequest();
+						xhr.open(method, url, true);
+						for (let keys in header) {xhr.setRequestHeader(keys, header[keys]);}
+						
+						xhr.upload.addEventListener("progress",(event) => {
+							if(event.lengthComputable){
+								let percent = Math.ceil(event.loaded * 100 / event.total);
+								if (percent <= 100) {
+									location.href = 'callback?retype=percent&percent=' + escape(percent);
+								}
+							}
+						}, false);
+						
+						xhr.ontimeout = function(){
+							this.disabled = false;
+							location.href = 'callback?retype=complete&status=408&msg=' + escape('请求超时');
+						};
+						
+						xhr.onreadystatechange = (ev) => {
+							if(xhr.readyState == 4) {
+								let fileDom = this.$refs.file;
+								fileDom.value = '';
+								this.disabled = false;
+								if (xhr.status == 200) {
+									debug&&console.log('上传完成：'+xhr.responseText);
+									location.href = `callback?retype=complete&fileName=${escape(file.name)}&responseText=${escape(xhr.responseText)}&success=true&status=${xhr.status}&msg=${escape('上传成功')}`;
+									return;
+								}
+								else if (xhr.status == 0) {
+									console.error('status = 0 :请检查请求头Content-Type与服务端是否匹配，服务端已正确开启跨域，并且nginx未拦截阻止请求');
+								}
+								location.href = `callback?retype=complete&fileName=${escape(file.name)}&status=${xhr.status}&msg=${escape('上传失败')}`;
+							}
+						};
+						this.disabled = true;
+						xhr.send(formData);
+					}
+				}
+			});
+			
+		</script>
+	</body>
+
+</html>

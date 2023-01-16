@@ -1,0 +1,17 @@
+.diySearch {
+    &-header {
+        border:0;
+    }
+}
+::v-deep .el-tabs--top .el-tabs__item {
+    padding: 0 20px !important;
+}
+::v-deep .el-tabs__nav-next,::v-deep  .el-tabs__nav-prev {
+    font-size: 24px;
+}
+::v-deep .el-tab-pane {
+    height:calc(100vh - 238px);
+}
+::v-deep .tableContainer {
+    height:calc(100% - 52px)
+}

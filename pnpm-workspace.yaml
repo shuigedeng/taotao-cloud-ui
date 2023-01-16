@@ -1,0 +1,12 @@
+prefer-workspace-packages: true
+packages:
+  # 实际的项目
+  - 'projects/**'
+  # 存放公共的ui组件和util组件
+  - 'packages/**'
+  # 存放ui组件和util组件的使用文档
+  - 'packages-docs/**'
+  # 存放公共ui组件和util组件的使用示例
+  - 'examples/**'
+  # 排除目录
+  - '!**/test/**'
