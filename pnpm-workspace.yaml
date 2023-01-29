@@ -1,5 +1,8 @@
 prefer-workspace-packages: true
 packages:
+  #.npmrc文件 一般教程都是这样配置的：shamefully-hoist=true，
+  #但本人不推荐。这样做会把里面的依赖提升到全局node_module里面，有可能出现幽灵依赖的风险。
+
   # 实际的项目
   - 'projects/**'
   # 存放公共的ui组件和util组件
