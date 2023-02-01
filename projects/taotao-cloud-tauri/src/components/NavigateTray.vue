@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
-import { ref } from 'vue'
+import {ref} from 'vue'
 import {
   EditOutlined,
   HomeOutlined,
@@ -9,18 +8,18 @@ import {
   PlusOutlined,
   SettingOutlined,
 } from '@vicons/antd'
-import { storeToRefs } from 'pinia'
+import {storeToRefs} from 'pinia'
 import router from '../router'
-import { useMissionStore, useSettingStore } from '../store/index'
+import {useMissionStore, useSettingStore} from '../store'
 
 const props = defineProps({
-  fns: { type: Array, required: true },
+  fns: {type: Array, required: true},
 })
 const emit = defineEmits(['toggleLock'])
 const globalSetting = useSettingStore()
 const missionStore = useMissionStore()
-const { is_password_protected } = storeToRefs(globalSetting)
-const { mission_list, current_mission } = storeToRefs(missionStore)
+const {is_password_protected} = storeToRefs(globalSetting)
+const {mission_list, current_mission} = storeToRefs(missionStore)
 
 const isShow = ref(false)
 
@@ -48,9 +47,9 @@ const toggle_hover = () => {
 const jump_to = (to: string, params?: string) => {
   if (isShow.value) {
     if (params)
-      router.push({ path: to, query: { mode: params } })
+      router.push({path: to, query: {mode: params}})
     else
-      router.push({ path: to })
+      router.push({path: to})
   }
 }
 
@@ -107,12 +106,17 @@ const toggle_click = (button: string) => {
         @mouseleave="toggle_leave"
       >
         <el-button-group>
-          <el-button v-if="isShowButtons.lock" :icon="LockOutlined" :disabled="!is_password_protected" @click="toggle_click('lock')" />
-          <el-button v-if="isShowButtons.edit" :icon="EditOutlined" :disabled="mission_list.length === 0 || current_mission === null" @click="toggle_click('edit')" />
-          <el-button v-if="isShowButtons.add" :icon="PlusOutlined" @click="toggle_click('add')" />
-          <el-button v-if="isShowButtons.home" :icon="HomeOutlined" @click="toggle_click('home')" />
-          <el-button v-if="isShowButtons.setting" :icon="SettingOutlined" @click="toggle_click('setting')" />
-          <el-button v-if="isShowButtons.statistic" :icon="LineChartOutlined" @click="toggle_click('statistic')" />
+          <el-button v-if="isShowButtons.lock" :icon="LockOutlined"
+                     :disabled="!is_password_protected" @click="toggle_click('lock')"/>
+          <el-button v-if="isShowButtons.edit" :icon="EditOutlined"
+                     :disabled="mission_list.length === 0 || current_mission === null"
+                     @click="toggle_click('edit')"/>
+          <el-button v-if="isShowButtons.add" :icon="PlusOutlined" @click="toggle_click('add')"/>
+          <el-button v-if="isShowButtons.home" :icon="HomeOutlined" @click="toggle_click('home')"/>
+          <el-button v-if="isShowButtons.setting" :icon="SettingOutlined"
+                     @click="toggle_click('setting')"/>
+          <el-button v-if="isShowButtons.statistic" :icon="LineChartOutlined"
+                     @click="toggle_click('statistic')"/>
         </el-button-group>
       </div>
     </transition>
@@ -121,36 +125,37 @@ const toggle_click = (button: string) => {
 
 <style lang="less" scoped>
 @import "../assets/style/theme/default-vars.less";
+
 .navigate {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    z-index: 5;
-    color: var(--el-color-primary);
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  color: var(--el-color-primary);
 }
 
 .trigger {
-    z-index: 10;
-    opacity: 0;
+  z-index: 10;
+  opacity: 0;
 }
 
 .position_down {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    min-height: 8%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 8%;
 }
 
 .tray {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    z-index: 20;
-    background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  z-index: 20;
+  background-color: transparent;
 
-    :deep(.el-button-group .el-button) {
-        background-color: transparent;
-    }
+  :deep(.el-button-group .el-button) {
+    background-color: transparent;
+  }
 }
 </style>

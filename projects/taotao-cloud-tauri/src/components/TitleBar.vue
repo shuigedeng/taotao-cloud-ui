@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { appWindow } from '@tauri-apps/api/window'
-import { AppstoreOutlined, BorderOutlined } from '@vicons/antd'
-import { CloseBold, FullScreen, SemiSelect } from '@element-plus/icons-vue'
-import { useMissionStore, useSettingStore } from '../store/index'
-import { TauriCommand, execute_rust_command } from '../utils'
+import {onMounted} from 'vue'
+import {useI18n} from 'vue-i18n'
+import {appWindow} from '@tauri-apps/api/window'
+import {BorderOutlined} from '@vicons/antd'
+import {CloseBold, SemiSelect} from '@element-plus/icons-vue'
+import {useMissionStore, useSettingStore} from '../store'
+import {execute_rust_command, TauriCommand} from '../utils'
 import AppIcon from '~icons/icons/favicon'
 
-const { t, locale } = useI18n({ useScope: 'global' })
+const {t, locale} = useI18n({useScope: 'global'})
 const globalSetting = useSettingStore()
 const missionStore = useMissionStore()
 
@@ -30,7 +30,7 @@ onMounted(() => {
     <div id="titlebar-left" class="titlebar-left">
       <div id="titlebar-icon" class="titlebar-icon">
         <el-icon class="app-icon">
-          <AppIcon />
+          <AppIcon/>
         </el-icon>
       </div>
       <div id="titlebar-title" class="titlebar-title">
@@ -39,13 +39,19 @@ onMounted(() => {
     </div>
     <div id="titlebar-right" class="titlebar-right">
       <div id="titlebar-minimize" class="titlebar-button">
-        <el-icon><SemiSelect /></el-icon>
+        <el-icon>
+          <SemiSelect/>
+        </el-icon>
       </div>
       <div id="titlebar-maximize" class="titlebar-button">
-        <el-icon><BorderOutlined /></el-icon>
+        <el-icon>
+          <BorderOutlined/>
+        </el-icon>
       </div>
       <div id="titlebar-close" class="titlebar-button">
-        <el-icon><CloseBold /></el-icon>
+        <el-icon>
+          <CloseBold/>
+        </el-icon>
       </div>
     </div>
   </div>
@@ -53,6 +59,7 @@ onMounted(() => {
 
 <style lang="less" scoped>
 @import "../assets/style/theme/default-vars.less";
+
 .titlebar {
   height: 30px;
   color: var(--el-text-color-regular);
@@ -72,18 +79,18 @@ onMounted(() => {
     flex-direction: row;
 
     .titlebar-icon {
-        width: 30px;
-        height: 30px;
-        padding-top: 5px;
-        padding-left: 5px;
+      width: 30px;
+      height: 30px;
+      padding-top: 5px;
+      padding-left: 5px;
 
-        .app-icon {
-            font-size: 20px;
-        }
+      .app-icon {
+        font-size: 20px;
+      }
     }
 
     .titlebar-title {
-        padding-top: 6px;
+      padding-top: 6px;
     }
   }
 
@@ -92,18 +99,19 @@ onMounted(() => {
     flex-direction: row;
 
     .titlebar-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
     }
+
     .titlebar-button:hover {
-        background: var(--el-border-color);
+      background: var(--el-border-color);
     }
 
     #titlebar-close:hover {
-        background: red;
+      background: red;
     }
   }
 }

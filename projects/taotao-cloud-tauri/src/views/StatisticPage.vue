@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { storeToRefs } from 'pinia'
+import {ref} from 'vue'
+import {useI18n} from 'vue-i18n'
+import {storeToRefs} from 'pinia'
 import * as echarts from 'echarts/core'
 import type {
   GridComponentOption,
@@ -15,22 +15,12 @@ import {
   ToolboxComponent,
   TooltipComponent,
 } from 'echarts/components'
-import type {
-  BarSeriesOption,
-  LineSeriesOption,
-} from 'echarts/charts'
-import {
-  BarChart,
-  LineChart,
-} from 'echarts/charts'
-import {
-  UniversalTransition,
-} from 'echarts/features'
-import {
-  CanvasRenderer,
-} from 'echarts/renderers'
-import { TauriCommand, execute_rust_command } from '../utils'
-import { useMissionStore, useSettingStore } from '../store/index'
+import type {BarSeriesOption, LineSeriesOption,} from 'echarts/charts'
+import {BarChart, LineChart,} from 'echarts/charts'
+import {UniversalTransition,} from 'echarts/features'
+import {CanvasRenderer,} from 'echarts/renderers'
+import {execute_rust_command, TauriCommand} from '../utils'
+import {useMissionStore, useSettingStore} from '../store'
 import PageHeader from '../components/PageHeader.vue'
 import Lock from '../components/Lock.vue'
 
@@ -39,20 +29,20 @@ echarts.use(
 )
 
 type EChartsOption = echarts.ComposeOption<
-    ToolboxComponentOption | TooltipComponentOption | GridComponentOption | LegendComponentOption | BarSeriesOption | LineSeriesOption
+  ToolboxComponentOption | TooltipComponentOption | GridComponentOption | LegendComponentOption | BarSeriesOption | LineSeriesOption
 >
 
 let statistic_chart
 
-const { t, locale } = useI18n({
+const {t, locale} = useI18n({
   useScope: 'global',
   inheritLocale: true,
 })
 
 const globalSetting = useSettingStore()
-const { is_light_theme } = storeToRefs(globalSetting)
+const {is_light_theme} = storeToRefs(globalSetting)
 const missionStore = useMissionStore()
-const { mission_list, current_mission } = storeToRefs(missionStore)
+const {mission_list, current_mission} = storeToRefs(missionStore)
 
 const selected_mission = ref('')
 const selected_mission_status = ref('')
@@ -156,11 +146,11 @@ const option = ref({
     data: [
       {
         name: t('statistic.size'),
-        textStyle: { color: colors[0] },
+        textStyle: {color: colors[0]},
       },
       {
         name: t('statistic.count'),
-        textStyle: { color: colors[1] },
+        textStyle: {color: colors[1]},
       },
     ],
   },
@@ -232,36 +222,36 @@ async function select_date(val: any) {
       selected_query_time_type.value,
       val,
       'Mib')
-      .then((res) => {
-        if (res.code === 200) {
-          console.log(res.data)
-          let updated_xAxis = []
-          const value_length = res.data.count.length
-          switch (selected_query_time_type.value) {
-            case 'date':
-              updated_xAxis = form_x_axis(2, 24, 2)
-              break
+    .then((res) => {
+      if (res.code === 200) {
+        console.log(res.data)
+        let updated_xAxis = []
+        const value_length = res.data.count.length
+        switch (selected_query_time_type.value) {
+          case 'date':
+            updated_xAxis = form_x_axis(2, 24, 2)
+            break
 
-            case 'week':
-              updated_xAxis = form_x_axis_with_datetime(val, 7)
-              break
+          case 'week':
+            updated_xAxis = form_x_axis_with_datetime(val, 7)
+            break
 
-            case 'month':
-              updated_xAxis = form_x_axis_with_datetime(val, value_length)
-              break
+          case 'month':
+            updated_xAxis = form_x_axis_with_datetime(val, value_length)
+            break
 
-            case 'year':
-              updated_xAxis = form_x_axis(1, 12, 1)
-              break
+          case 'year':
+            updated_xAxis = form_x_axis(1, 12, 1)
+            break
 
-            default:
-              updated_xAxis = form_x_axis(2, 24, 2)
-              break
-          }
-
-          update_chart_option(updated_xAxis, res.data.count, res.data.size)
+          default:
+            updated_xAxis = form_x_axis(2, 24, 2)
+            break
         }
-      })
+
+        update_chart_option(updated_xAxis, res.data.count, res.data.size)
+      }
+    })
   }
 }
 
@@ -298,9 +288,10 @@ function update_chart_option(xAxis: number[] | string[], count: number[], size: 
 
 <template>
   <div class="container">
-    <PageHeader :title="t('component.pageHeaderStatisticPage')" to="/" />
+    <PageHeader :title="t('component.pageHeaderStatisticPage')" to="/"/>
     <div class="select">
-      <el-select v-model="selected_mission" clearable :placeholder="t('statistic.chooseMission')" @change="change_current_mission">
+      <el-select v-model="selected_mission" clearable :placeholder="t('statistic.chooseMission')"
+                 @change="change_current_mission">
         <el-option
           v-for="item in mission_list"
           :key="item.config.id"
@@ -332,37 +323,38 @@ function update_chart_option(xAxis: number[] | string[], count: number[], size: 
         @change="select_date"
       />
     </div>
-    <v-chart id="statistic" class="chart" :option="option" :autoresize="true" theme="light" />
+    <v-chart id="statistic" class="chart" :option="option" :autoresize="true" theme="light"/>
 
-    <Lock :tray="['lock', 'home']" />
+    <Lock :tray="['lock', 'home']"/>
   </div>
 </template>
 
 <style lang="less" scoped>
-  @import "../assets/style/theme/default-vars.less";
+@import "../assets/style/theme/default-vars.less";
+
 .container {
-    width: 100%;
-    min-height: 100vh;
-    padding-top: @title-bar-height;
-    color: var(--el-color-primary);
-    background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  min-height: 100vh;
+  padding-top: @title-bar-height;
+  color: var(--el-color-primary);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .select {
-    padding-top: @title-bar-height;
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
-    margin-right: 10px;
+  padding-top: @title-bar-height;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .action {
-    padding-top: 20px;
-    text-align: center;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .chart {
-    width: 100%;
-    height: 88vh;
+  width: 100%;
+  height: 88vh;
 }
 </style>

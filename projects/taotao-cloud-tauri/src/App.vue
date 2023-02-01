@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useI18n } from 'vue-i18n'
-import type { UnlistenFn } from '@tauri-apps/api/event'
-import { listen } from '@tauri-apps/api/event'
-import { appWindow } from '@tauri-apps/api/window'
-import { useMissionStore, useSettingStore } from './store/index'
-import { TauriCommand, execute_rust_command } from './utils/index'
+import {onMounted} from 'vue'
+import {storeToRefs} from 'pinia'
+import {useI18n} from 'vue-i18n'
+import type {UnlistenFn} from '@tauri-apps/api/event'
+import {listen} from '@tauri-apps/api/event'
+import {appWindow} from '@tauri-apps/api/window'
+import {useMissionStore, useSettingStore} from './store'
+import {execute_rust_command, TauriCommand} from './utils'
 import router from './router'
 import TitleBar from './components/TitleBar.vue'
 
-const { t, locale } = useI18n({ useScope: 'global' })
+const {t, locale} = useI18n({useScope: 'global'})
 const globalSetting = useSettingStore()
 const missionStore = useMissionStore()
-const { is_initialized, language } = storeToRefs(globalSetting)
+const {is_initialized, language} = storeToRefs(globalSetting)
 
 /**
  * initialize data when mounted
  */
 async function initialize_data() {
   await execute_rust_command(TauriCommand.COMMAND_INITIALIZE_DATA)
-    .then((data) => {
-      globalSetting.initialize_settings(data.setting)
-      missionStore.initialize_mission_list(data.list)
-      locale.value = data.setting.language
-      is_initialized.value = true
-    })
+  .then((data) => {
+    globalSetting.initialize_settings(data.setting)
+    missionStore.initialize_mission_list(data.list)
+    locale.value = data.setting.language
+    is_initialized.value = true
+  })
 }
 
 async function initialize_program_status() {
@@ -42,18 +42,18 @@ async function initialize_mission() {
   for (const mission of mission_list) {
     if (mission.info.status !== 'pausing') {
       await execute_rust_command(TauriCommand.COMMAND_START_MISSION, mission.config.id)
-        .then((res) => {
-          if (!res.data) {
-            const errMsg = `${mission.config.name}: ${res.msg.includes('path') ? t('error.unavailablePath') : t('error.startMissionFailed')}`
-            error_list.push({
-              showClose: true,
-              message: errMsg,
-              center: true,
-            })
+      .then((res) => {
+        if (!res.data) {
+          const errMsg = `${mission.config.name}: ${res.msg.includes('path') ? t('error.unavailablePath') : t('error.startMissionFailed')}`
+          error_list.push({
+            showClose: true,
+            message: errMsg,
+            center: true,
+          })
 
-            missionStore.update_mission_status(mission.config.id, 'unavailable')
-          }
-        })
+          missionStore.update_mission_status(mission.config.id, 'unavailable')
+        }
+      })
     }
   }
 
@@ -74,8 +74,7 @@ async function initialize_page_theme() {
     globalSetting.update_theme(current_theme)
     const root_element = document.documentElement
     root_element.setAttribute('class', current_theme ? '' : 'dark')
-  }
-  else {
+  } else {
     globalSetting.update_theme(!current_theme)
   }
 }
@@ -134,9 +133,8 @@ async function listen_to_drop_event() {
   const unlisten = await appWindow.onFileDropEvent((event: any) => {
     if (event.payload.type === 'drop') {
       missionStore.update_current_drop_mission_path(event.payload.paths[0])
-      router.push({ path: '/config', query: { mode: 'drop' } })
-    }
-    else {
+      router.push({path: '/config', query: {mode: 'drop'}})
+    } else {
       // console.log('File drop cancelled')
     }
   })
@@ -208,7 +206,7 @@ onMounted(() => {
     execute_rust_command(TauriCommand.COMMAND_CLOSE_SPLASHSCREEN)
     execute_rust_command(TauriCommand.COMMAND_IS_PASSWORD_SET).then((res) => {
       if (!res)
-        router.push({ path: '/password_setting' })
+        router.push({path: '/password_setting'})
     })
   })
 
@@ -235,18 +233,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <TitleBar />
+  <TitleBar/>
   <router-view v-slot="{ Component, route }">
     <transition :name="build_router_transitionname(route.meta.transitionName)">
-      <component :is="Component" />
+      <component :is="Component"/>
     </transition>
   </router-view>
 </template>
 
 <style lang="less">
-@import "./assets/style/reset.css";
-@import "./assets/style/RouteTransition.less";
-@import "./assets/style/theme/default-vars.less";
+@import "assets/style/reset.css";
+@import "assets/style/RouteTransition.less";
+@import "assets/style/theme/default-vars.less";
 
 html, body {
   // overflow: hidden;

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { FormInstance } from 'element-plus'
-import { InfoFilled, Moon, Sunny } from '@element-plus/icons-vue'
-import { storeToRefs } from 'pinia'
-import { useI18n } from 'vue-i18n'
-import { useMissionStore, useSettingStore } from '../store/index'
+import {ref} from 'vue'
+import type {FormInstance} from 'element-plus'
+import {Moon, Sunny} from '@element-plus/icons-vue'
+import {storeToRefs} from 'pinia'
+import {useI18n} from 'vue-i18n'
+import {useMissionStore, useSettingStore} from '../store'
 import PageHeader from '../components/PageHeader.vue'
 import Lock from '../components/Lock.vue'
-import { TauriCommand, execute_rust_command } from '../utils'
+import {execute_rust_command, TauriCommand} from '../utils'
 // import { ElMessage } from 'element-plus';
 
-const { t, locale } = useI18n({ useScope: 'global' })
+const {t, locale} = useI18n({useScope: 'global'})
 
 const globalSettingFormRef = ref<FormInstance>()
 const globalSetting = useSettingStore()
@@ -24,7 +24,7 @@ const {
   monitor_delay,
   software_version,
 } = storeToRefs(globalSetting)
-const { mission_list } = storeToRefs(missionStore)
+const {mission_list} = storeToRefs(missionStore)
 
 const langOptions = [
   {
@@ -71,8 +71,7 @@ async function toggle_change_auto_start(data: boolean) {
   if (res) {
     console.log(globalSetting.is_auto_start)
     globalSetting.update_auto_start(data)
-  }
-  else {
+  } else {
     globalSetting.update_auto_start(!data)
     show_error_message('normal')
   }
@@ -84,8 +83,7 @@ async function toggle_change_theme(data: boolean) {
     globalSetting.update_theme(data)
     const root_element = document.documentElement
     root_element.setAttribute('class', data ? '' : 'dark')
-  }
-  else {
+  } else {
     globalSetting.update_theme(!data)
     show_error_message('normal')
   }
@@ -96,8 +94,7 @@ async function toggle_change_language(data: string) {
   if (res) {
     locale.value = data
     globalSetting.update_language(data)
-  }
-  else {
+  } else {
     show_error_message('normal')
   }
 }
@@ -106,8 +103,7 @@ async function toggle_change_close_event(data: boolean) {
   const res = await execute_rust_command(TauriCommand.COMMAND_CHANGE_SETTING_IS_CLOSE_TO_TRAY, data)
   if (res) {
     globalSetting.update_close_to_tray(data)
-  }
-  else {
+  } else {
     globalSetting.update_close_to_tray(!data)
     show_error_message('normal')
   }
@@ -117,8 +113,7 @@ async function toggle_change_password_protect(data: boolean) {
   const res = await execute_rust_command(TauriCommand.COMMAND_CHANGE_SETTING_IS_PASSWORD_PROTECTED, data)
   if (res) {
     globalSetting.update_password_protect(data)
-  }
-  else {
+  } else {
     globalSetting.update_password_protect(!data)
     show_error_message('normal')
   }
@@ -135,8 +130,7 @@ async function toggle_change_password() {
       message: t('setting.changePasswordSuccess'),
       center: true,
     })
-  }
-  else {
+  } else {
     input_origin_password.value = ''
     input_new_password.value = ''
     show_error_message('password')
@@ -178,8 +172,7 @@ async function toggle_change_monitor_delay() {
       message: t('setting.changeDelaySuccess'),
       center: true,
     })
-  }
-  else {
+  } else {
     show_error_message('delay')
   }
 }
@@ -187,7 +180,7 @@ async function toggle_change_monitor_delay() {
 
 <template>
   <div class="container">
-    <PageHeader :title="t('component.pageHeaderGlobalSetting')" to="/" />
+    <PageHeader :title="t('component.pageHeaderGlobalSetting')" to="/"/>
     <div class="settingForm">
       <el-form
         ref="globalSettingFormRef"
@@ -196,7 +189,7 @@ async function toggle_change_monitor_delay() {
         <el-row :gutter="10" justify="space-between">
           <el-col :span="12">
             <el-form-item :label="t('setting.autoStart')">
-              <el-switch v-model="is_auto_start" @change="toggle_change_auto_start" />
+              <el-switch v-model="is_auto_start" @change="toggle_change_auto_start"/>
             </el-form-item>
           </el-col>
           <el-col :span="12" :pull="2">
@@ -263,27 +256,33 @@ async function toggle_change_monitor_delay() {
       </el-form>
     </div>
 
-    <el-dialog v-model="change_password_dialog_visiable" :show-close="false" :title="t('setting.resetPassword')">
-      <el-form class="setting-dialog" label-position="right" :label-width="language === 'zh-CN' ? 'auto' : '110px'">
+    <el-dialog v-model="change_password_dialog_visiable" :show-close="false"
+               :title="t('setting.resetPassword')">
+      <el-form class="setting-dialog" label-position="right"
+               :label-width="language === 'zh-CN' ? 'auto' : '110px'">
         <el-form-item :label="t('setting.originPassword')">
-          <el-input v-model="input_origin_password" class="oldPasswordInput" show-password />
+          <el-input v-model="input_origin_password" class="oldPasswordInput" show-password/>
         </el-form-item>
         <el-form-item :label="t('setting.newPassword')">
-          <el-input v-model="input_new_password" show-password />
+          <el-input v-model="input_new_password" show-password/>
         </el-form-item>
       </el-form>
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="toggle_dialog_cancel">{{ t('general.cancel') }}</el-button>
-          <el-button type="primary" @click="toggle_change_password">{{ t('general.confirm') }}</el-button>
+          <el-button type="primary" @click="toggle_change_password">{{
+              t('general.confirm')
+            }}</el-button>
         </span>
       </template>
     </el-dialog>
 
-    <el-dialog v-model="change_delay_dialog_visiable" :show-close="false" :title="t('setting.resetMonitorDelay')">
-      <el-form class="setting-dialog" label-position="right" :label-width="language === 'zh-CN' ? 'auto' : '110px'">
+    <el-dialog v-model="change_delay_dialog_visiable" :show-close="false"
+               :title="t('setting.resetMonitorDelay')">
+      <el-form class="setting-dialog" label-position="right"
+               :label-width="language === 'zh-CN' ? 'auto' : '110px'">
         <el-form-item :label="t('setting.targetDelay')">
-          <el-input-number v-model="input_delay_time" :min="1" :max="60" />
+          <el-input-number v-model="input_delay_time" :min="1" :max="60"/>
         </el-form-item>
       </el-form>
       <span class="delayTip">
@@ -292,66 +291,69 @@ async function toggle_change_monitor_delay() {
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="toggle_dialog_cancel">{{ t('general.cancel') }}</el-button>
-          <el-button type="primary" @click="toggle_change_monitor_delay">{{ t('general.confirm') }}</el-button>
+          <el-button type="primary" @click="toggle_change_monitor_delay">{{
+              t('general.confirm')
+            }}</el-button>
         </span>
       </template>
     </el-dialog>
 
-    <Lock :tray="['lock', 'home']" />
+    <Lock :tray="['lock', 'home']"/>
   </div>
 </template>
 
 <style lang="less" scoped>
 @import "../assets/style/theme/default-vars.less";
+
 .container {
-    width: 100%;
-    min-height: 100vh;
-    padding-top: @title-bar-height;
-    color: var(--el-color-primary);
-    background-color: var(--el-bg-color);
+  width: 100%;
+  min-height: 100vh;
+  padding-top: @title-bar-height;
+  color: var(--el-color-primary);
+  background-color: var(--el-bg-color);
 
-    :deep(.el-overlay-dialog){
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+  :deep(.el-overlay-dialog) {
+    &::-webkit-scrollbar {
+      display: none;
     }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 .title {
-    padding-top: 20px;
-    text-align: center;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .action {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .settingForm {
-    padding-top: 28px;
-    padding-bottom: 26px;
+  padding-top: 28px;
+  padding-bottom: 26px;
 }
 
 .content {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .menu_tabs {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .delayTip {
-    display: flex;
-    flex-direction: row-reverse;
-    font-size: 78%;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 78%;
 }
 
 .software-version {
-    color: var(--el-text-color-regular);
+  color: var(--el-text-color-regular);
 }
 </style>
