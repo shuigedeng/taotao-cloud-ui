@@ -1,4 +1,33 @@
 {
   "commentTranslate.hover.enabled": true,
-  "editor.fontFamily": "JetBrains Mono,Menlo, Monaco, 'Courier New', monospace"
+  "editor.fontFamily": "JetBrains Mono,Menlo, Monaco, 'Courier New', monospace",
+  "i18n-ally.localesPaths": [
+    "packages-docs/plugins/src/i18n",
+    "projects/taotao-cloud-react-manager/src/locales",
+    "projects/taotao-cloud-tauri/src/locales",
+    "projects/taotao-cloud-vue3-manager/src/locales",
+    "projects/taotao-cloud-vue3-merchant/src/locales",
+    "projects/taotao-cloud-vue3-open/src/locales",
+    "projects/taotao-cloud-workflow-web/src/lang",
+    "projects/taotao-cloud-react-manager/src/store/locale",
+    "projects/taotao-cloud-tauri/src/locales/langs",
+    "projects/taotao-cloud-vue3-manager/src/locales/lang",
+    "projects/taotao-cloud-vue3-merchant/src/locales/lang",
+    "projects/taotao-cloud-vue3-open/src/locales/lang",
+    "packages/bpmn-designer/src/lib/plugins/i18n",
+    "projects/taotao-cloud-react-manager/public/resource/tinymce/langs",
+    "projects/taotao-cloud-vue3-manager/public/resource/tinymce/langs",
+    "projects/taotao-cloud-vue3-merchant/public/resource/tinymce/langs",
+    "projects/taotao-cloud-vue3-open/public/resource/tinymce/langs",
+    "projects/taotao-cloud-workflow-web/public/cdn/monaco-editor/language",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-calendar/components/uni-calendar/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-countdown/components/uni-countdown/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-fav/components/uni-fav/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-load-more/components/uni-load-more/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-pagination/components/uni-pagination/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-popup/components/uni-popup/i18n",
+    "projects/taotao-cloud-workflow-app/uni_modules/uni-search-bar/components/uni-search-bar/i18n"
+  ]
 }
