@@ -75,7 +75,7 @@ Gradle:
 ```
 dependencyManagement{
   imports {
-    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.02"
+    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.03"
   }
 }
 
@@ -90,7 +90,7 @@ Maven:
     <dependency>
       <groupId>io.github.shuigedeng</groupId>
       <artifactId>taotao-cloud-dependencies</artifactId>
-      <version>2023.02</version>
+      <version>2023.03</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -122,7 +122,7 @@ Maven:
  Querydsl             | 5.0.0           
  Swagger              | 3.0.0           
  Knife4j              | 4.0.0           
- Redisson             | 3.19.13          
+ Redisson             | 3.19.13         
  Lettuce              | 6.0.3.RELEASE   
  Elasticsearch        | 8.5.3           
  Xxl-job              | 2.3.1           
