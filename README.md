@@ -67,7 +67,7 @@ Requires:
 ```
 JAVA_VERSION >= 17 (推荐使用graalvm-22.3)
 GRALE_VERSION >= 8.0.1
-IDEA_VERSION >= 2022.3.2
+IDEA_VERSION >= 2023.1
 ```
 
 Gradle:
@@ -75,7 +75,7 @@ Gradle:
 ```
 dependencyManagement{
   imports {
-    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.03"
+    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2023.04"
   }
 }
 
@@ -90,7 +90,7 @@ Maven:
     <dependency>
       <groupId>io.github.shuigedeng</groupId>
       <artifactId>taotao-cloud-dependencies</artifactId>
-      <version>2023.03</version>
+      <version>2023.04</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -110,24 +110,35 @@ Maven:
 
  依赖                   | 版本              
 ----------------------|-----------------
- Spring               | 6.0.6           
- Spring Boot          | 3.0.4           
+ Spring               | 6.0.7           
+ Spring Boot          | 3.0.5           
  Spring Cloud         | 2022.0.1        
  Spring Cloud Alibaba | 2022.0.0.0--RC1 
- Spring Cloud Tencent | 1.9.1--2022.0.0 
- Spring Security      | 6.0.2           
+ Spring Cloud Tencent | 1.10.2-2022.0.1 
+ Seata                | 1.6.1           
+ Sentinel             | 1.8.6           
+ Spring-kafka         | 6.0.5           
+ Roketmq              | 5.0.0           
+ Spring Security      | 6.0.3           
  Mybatis Plus         | 3.5.3.1         
- Hutool               | 5.8.15          
+ Hutool               | 5.8.16          
  Mysql                | 8.0.32          
  Querydsl             | 5.0.0           
  Swagger              | 3.0.0           
- Knife4j              | 4.0.0           
- Redisson             | 3.20.0          
+ Knife4j              | 4.1.0           
+ Redisson             | 3.20.1          
  Lettuce              | 6.0.3.RELEASE   
  Elasticsearch        | 8.5.3           
- Xxl-job              | 2.3.1           
+ Xxl-job              | 2.4.0           
  EasyCaptcha          | 1.6.2           
  Guava                | 31.1-jre        
+ Grpc                 | 1.54.0          
+ Arthas               | 3.6.7           
+ Dynamic-tp           | 1.1.2           
+ Elasticjob           | 3.0.2           
+ Forest               | 1.5.30          
+ Netty                | 4.1.90.Final    
+ Querydsl             | 5.0.0           
 
 ## 6. 演示地址
 
@@ -159,8 +170,8 @@ Maven:
 
 * **微服务技术框架**: 前后端分离的企业级微服务架构、主要针对解决微服务和业务开发时常见的**
   非功能性需求**
-* **主体框架**：采用最新的Spring Boot 3.0.4、Spring Cloud 2022.0.1、Spring Cloud Alibaba
-  2022.0.0.0--RC1版本进行设计
+* **主体框架**：采用最新的Spring Boot 3.0.5、Spring Cloud 2022.0.1、Spring Cloud Alibaba
+  2022.0.0.0--RC1 版本进行设计
 * **统一注册**：支持Nacos作为注册中心，实现多配置、分群组、分命名空间、多业务模块的注册和发现功能
 * **统一认证**：统一Oauth2认证协议，采用jwt的方式，实现统一认证，完备的RBAC权限管理、数据权限处理、网关统一鉴权、灰度发布
 * **业务监控**：利用Spring Boot admin 监控各个独立服务的运行状态
@@ -188,36 +199,28 @@ Maven:
 ```
 taotao-cloud-project -- 父项目
 │  ├─taotao-cloud-bigdata -- 大数据模块
+│  ├─taotao-cloud-custom -- 自定义模块
+│  │  ├─taotao-cloud-distributed-tx  -- 手写分布式事务
+│  │  ├─taotao-cloud-rpc  -- 手写rpc框架
+│  │  ├─taotao-cloud-storm  -- 手写storm
 │  ├─taotao-cloud-demo -- demo模块
 │  ├─taotao-cloud-go -- go模块
 │  ├─taotao-cloud-microservice -- 微服务模块
-│  │  ├─taotao-cloud-monitor  -- 监控模块
+│  │  ├─taotao-cloud-business  -- 所有的业务模块
 │  │  ├─taotao-cloud-data-sync  -- 数据同步模块
-│  │  ├─taotao-cloud-auth  -- oauth2认证中心模块
-│  │  ├─taotao-cloud-customer  -- 客服模块
-│  │  ├─taotao-cloud-distribution  -- 营销/分销模块
+│  │  ├─taotao-cloud-data-analysis  -- 数据分析模块
 │  │  ├─taotao-cloud-front  -- 前端pc模块
 │  │  ├─taotao-cloud-gateway  -- 网关模块
-│  │  ├─taotao-cloud-goods  -- 商品模块
+│  │  ├─taotao-cloud-gateway-shenyu  -- 基于shenyu网关模块
 │  │  ├─taotao-cloud-graphql  -- graphql模块
-│  │  ├─taotao-cloud-member  -- 会员模块
-│  │  ├─taotao-cloud-message  -- 消息模块
-│  │  ├─taotao-cloud-open  -- 开放模块
-│  │  ├─taotao-cloud-operation  -- 运营模块
-│  │  ├─taotao-cloud-order  -- 订单模块
-│  │  ├─taotao-cloud-payment -- 支付模块
-│  │  ├─taotao-cloud-promotion  -- 促销模块
+│  │  ├─taotao-cloud-monitor  -- 监控模块
+│  │  ├─taotao-cloud-open-platform  -- 开放模块
 │  │  ├─taotao-cloud-recommend  -- 推荐模块
-│  │  ├─taotao-cloud-report  -- 报表模块
-│  │  ├─taotao-cloud-stock  -- 库存模块
-│  │  ├─taotao-cloud-store  -- 店铺模块
-│  │  ├─taotao-cloud-sys  -- 系统模块
 │  │  ├─taotao-cloud-xxljob  -- xxl-job模块
 │  ├─taotao-cloud-netty -- netty模块
 │  ├─taotao-cloud-node -- node模块
 │  ├─taotao-cloud-plugin -- 插件模块
 │  ├─taotao-cloud-python -- python模块
-│  ├─taotao-cloud-rpc -- rpc模块
 │  ├─taotao-cloud-scala -- scala模块
 │  ├─taotao-cloud-standlone -- 单项目模块
 │  ├─taotao-cloud-warehouse -- 数仓模块
@@ -292,3 +295,141 @@ taotao-cloud-project -- 父项目
 
 [comment]: <> (    </tr>)
 </table>
+
+## 12.基础组件starter项目模块 (暂未开源)
+
+```
++--- Project ':taotao-cloud-dependencies'
++--- Project ':taotao-cloud-starter-agent'
++--- Project ':taotao-cloud-starter-alibaba'
+|    +--- Project ':taotao-cloud-starter-alibaba:taotao-cloud-starter-alibaba-common'
+|    +--- Project ':taotao-cloud-starter-alibaba:taotao-cloud-starter-alibaba-seata'
+|    \--- Project ':taotao-cloud-starter-alibaba:taotao-cloud-starter-alibaba-sentinel'
++--- Project ':taotao-cloud-starter-apt'
++--- Project ':taotao-cloud-starter-cache'
+|    +--- Project ':taotao-cloud-starter-cache:taotao-cloud-starter-cache-caffeine'
+|    +--- Project ':taotao-cloud-starter-cache:taotao-cloud-starter-cache-common'
+|    +--- Project ':taotao-cloud-starter-cache:taotao-cloud-starter-cache-hazelcast'
+|    +--- Project ':taotao-cloud-starter-cache:taotao-cloud-starter-cache-jetcache'
+|    \--- Project ':taotao-cloud-starter-cache:taotao-cloud-starter-cache-redis'
++--- Project ':taotao-cloud-starter-canal'
++--- Project ':taotao-cloud-starter-captcha'
++--- Project ':taotao-cloud-starter-common'
++--- Project ':taotao-cloud-starter-core'
++--- Project ':taotao-cloud-starter-crypto'
++--- Project ':taotao-cloud-starter-data'
+|    +--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-common'
+|    +--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-elasticsearch'
+|    +--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-jpa'
+|    +--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-mongodb'
+|    +--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-mybatis-plus'
+|    +--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-p6spy'
+|    \--- Project ':taotao-cloud-starter-data:taotao-cloud-starter-data-shardingsphere'
++--- Project ':taotao-cloud-starter-dingtalk'
++--- Project ':taotao-cloud-starter-disruptor'
++--- Project ':taotao-cloud-starter-dubbo'
++--- Project ':taotao-cloud-starter-elk'
++--- Project ':taotao-cloud-starter-encrypt'
++--- Project ':taotao-cloud-starter-facility'
+|    +--- Project ':taotao-cloud-starter-facility:taotao-cloud-starter-facility-alibaba'
+|    +--- Project ':taotao-cloud-starter-facility:taotao-cloud-starter-facility-common'
+|    +--- Project ':taotao-cloud-starter-facility:taotao-cloud-starter-facility-huawei'
+|    +--- Project ':taotao-cloud-starter-facility:taotao-cloud-starter-facility-tencent'
+|    \--- Project ':taotao-cloud-starter-facility:taotao-cloud-starter-facility-zookeeper'
++--- Project ':taotao-cloud-starter-grpc'
++--- Project ':taotao-cloud-starter-idempotent'
++--- Project ':taotao-cloud-starter-idgenerator'
++--- Project ':taotao-cloud-starter-ip2region'
++--- Project ':taotao-cloud-starter-job'
+|    +--- Project ':taotao-cloud-starter-job:taotao-cloud-starter-job-common'
+|    +--- Project ':taotao-cloud-starter-job:taotao-cloud-starter-job-elastic'
+|    +--- Project ':taotao-cloud-starter-job:taotao-cloud-starter-job-powerjob'
+|    +--- Project ':taotao-cloud-starter-job:taotao-cloud-starter-job-quartz'
+|    +--- Project ':taotao-cloud-starter-job:taotao-cloud-starter-job-schedule'
+|    \--- Project ':taotao-cloud-starter-job:taotao-cloud-starter-job-xxl'
++--- Project ':taotao-cloud-starter-laytpl'
++--- Project ':taotao-cloud-starter-limit'
++--- Project ':taotao-cloud-starter-lock'
++--- Project ':taotao-cloud-starter-logger'
++--- Project ':taotao-cloud-starter-mail'
++--- Project ':taotao-cloud-starter-metrics'
++--- Project ':taotao-cloud-starter-monitor'
++--- Project ':taotao-cloud-starter-mq'
+|    +--- Project ':taotao-cloud-starter-mq:taotao-cloud-starter-mq-common'
+|    +--- Project ':taotao-cloud-starter-mq:taotao-cloud-starter-mq-kafka'
+|    +--- Project ':taotao-cloud-starter-mq:taotao-cloud-starter-mq-pulsar'
+|    +--- Project ':taotao-cloud-starter-mq:taotao-cloud-starter-mq-rabbitmq'
+|    +--- Project ':taotao-cloud-starter-mq:taotao-cloud-starter-mq-rocketmq'
+|    \--- Project ':taotao-cloud-starter-mq:taotao-cloud-starter-mq-stream'
++--- Project ':taotao-cloud-starter-office'
++--- Project ':taotao-cloud-starter-openai'
++--- Project ':taotao-cloud-starter-openapi'
++--- Project ':taotao-cloud-starter-openfeign'
++--- Project ':taotao-cloud-starter-oss'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-aliyun'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-aws'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-baidu'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-common'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-fastdfs'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-ftp'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-huawei'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-jd'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-jdbc'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-jinshan'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-local'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-minio'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-nginx'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-pingan'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-qingyun'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-qiniu'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-sftp'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-tencent'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-ucloud'
+|    +--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-up'
+|    \--- Project ':taotao-cloud-starter-oss:taotao-cloud-starter-oss-wangyi'
++--- Project ':taotao-cloud-starter-pay'
+|    +--- Project ':taotao-cloud-starter-pay:taotao-cloud-starter-pay-alipay'
+|    +--- Project ':taotao-cloud-starter-pay:taotao-cloud-starter-pay-common'
+|    \--- Project ':taotao-cloud-starter-pay:taotao-cloud-starter-pay-wxpay'
++--- Project ':taotao-cloud-starter-pinyin'
++--- Project ':taotao-cloud-starter-prometheus'
++--- Project ':taotao-cloud-starter-retry'
++--- Project ':taotao-cloud-starter-rxjava'
++--- Project ':taotao-cloud-starter-security'
+|    +--- Project ':taotao-cloud-starter-security:taotao-cloud-starter-security-common'
+|    +--- Project ':taotao-cloud-starter-security:taotao-cloud-starter-security-justauth'
+|    +--- Project ':taotao-cloud-starter-security:taotao-cloud-starter-security-satoken'
+|    \--- Project ':taotao-cloud-starter-security:taotao-cloud-starter-security-springsecurity'
++--- Project ':taotao-cloud-starter-sensitive'
++--- Project ':taotao-cloud-starter-sign'
++--- Project ':taotao-cloud-starter-sms'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-aliyun'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-baiducloud'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-chinamobile'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-common'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-huaweicloud'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-jdcloud'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-jpush'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-netease'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-qiniu'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-tencent'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-tencentv3'
+|    +--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-upyun'
+|    \--- Project ':taotao-cloud-starter-sms:taotao-cloud-starter-sms-yunpian'
++--- Project ':taotao-cloud-starter-spi'
++--- Project ':taotao-cloud-starter-springdoc'
++--- Project ':taotao-cloud-starter-third-client'
++--- Project ':taotao-cloud-starter-threadpool'
++--- Project ':taotao-cloud-starter-tracing'
+|    +--- Project ':taotao-cloud-starter-tracing:taotao-cloud-starter-tracing-common'
+|    +--- Project ':taotao-cloud-starter-tracing:taotao-cloud-starter-tracing-jaeger'
+|    +--- Project ':taotao-cloud-starter-tracing:taotao-cloud-starter-tracing-micrometer'
+|    \--- Project ':taotao-cloud-starter-tracing:taotao-cloud-starter-tracing-skywalking'
++--- Project ':taotao-cloud-starter-translation'
++--- Project ':taotao-cloud-starter-web'
++--- Project ':taotao-cloud-starter-websocket'
++--- Project ':taotao-cloud-starter-websocket-netty'
++--- Project ':taotao-cloud-starter-xss'
+\--- Project ':taotao-cloud-starter-zookeeper'
+
+```
