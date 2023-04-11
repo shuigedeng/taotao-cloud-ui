@@ -22,11 +22,13 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v3
 
+      # https://github.com/marketplace/actions/setup-node-js-environment
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
+      # https://github.com/marketplace/actions/cache
       - name: Cache Node_modules Folder
         uses: actions/cache@v3
         with:
@@ -38,6 +40,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
+      # https://github.com/marketplace/actions/cache
       - name: Cache Yarn
         uses: actions/cache@v3
         env:
@@ -53,6 +56,7 @@ jobs:
           yarn
           yarn build
 
+      # https://github.com/marketplace/actions/ssh-deploy
       - name: Deploy To Server
         uses: easingthemes/ssh-deploy@main
         env:

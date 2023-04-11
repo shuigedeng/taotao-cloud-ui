@@ -64,6 +64,7 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_OPEN_TARGET }}
 
+      # https://github.com/elgohr/Publish-Docker-Github-Action
       - name: pulish docker image taotao-cloud-open
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
@@ -75,6 +76,7 @@ jobs:
           tags: "${{env.TAOTAO_CLOUD_VERSION}}"
           workdir: taotao-cloud-vue3-open
 
+      # https://github.com/zcong1993/actions-ding
       - name: send failure dingding notify
         if: failure()
         uses: zcong1993/actions-ding@master

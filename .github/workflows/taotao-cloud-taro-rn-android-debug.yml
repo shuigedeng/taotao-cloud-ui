@@ -107,12 +107,14 @@ jobs:
             -Pkeystore_key_alias='${{ env.KEYSTORE_KEY_ALIAS }}' \
             -Pkeystore_key_password='${{ env.KEYSTORE_KEY_PASSWORD }}'
 
+      # https://github.com/marketplace/actions/upload-a-build-artifact
       - name: upload android products
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: app-${{ env.BUILD_TYPE }}
           path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
 
+      #https://github.com/marketplace/actions/taro-react-native-release
       - name: release taro react native bundle
         uses: zhiqingchen/taro-react-native-release@v1
         with:
@@ -120,6 +122,7 @@ jobs:
           appname: taotao-cloud
           logo: https://pic3.58cdn.com.cn/nowater/fangfe/n_v25b1523466b894881b9bdeda7618a8af2.png
 
+      # https://github.com/softprops/action-gh-release
       - name: release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
