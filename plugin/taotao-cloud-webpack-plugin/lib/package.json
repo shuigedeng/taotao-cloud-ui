@@ -1,0 +1,35 @@
+{
+  "name": "auto-import-webpack-plugin",
+  "version": "0.1.10",
+  "description": "自动生成按需引入组件库",
+  "main": "plugin.js",
+  "typings": "typings.d.ts",
+  "unpkg": "plugin.js",
+  "jsdelivr": "plugin.js",
+  "bin": {
+    "auto-import": "cli.js"
+  },
+  "keywords": [
+    "auto-import",
+    "webpack",
+    "plugin"
+  ],
+  "author": "948533798@qq.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wc19950724/auto-import-webpack-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wc19950724/auto-import-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/wc19950724/auto-import-webpack-plugin#readme",
+  "dependencies": {
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8",
+    "webpack": "^5.82.1"
+  },
+  "peerDependencies": {
+    "webpack": ">=5"
+  }
+}

@@ -1,0 +1,15 @@
+.img-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-height: 240px;
+  overflow-y: auto;
+  width: 100%;
+}
+.img-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+  margin: 10px;
+  border: 1px solid blue;
+}

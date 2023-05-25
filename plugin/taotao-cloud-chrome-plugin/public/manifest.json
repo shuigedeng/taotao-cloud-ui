@@ -1,0 +1,47 @@
+{
+  "short_name": "My Extension",
+  "name": "My Extension",
+  "description": "基于react的chrome插件架子",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "app/background.js"
+  },
+  "action": {
+    "default_icon": "img/react-128.png",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "img/react-16.png",
+    "48": "img/react-48.png",
+    "128": "img/react-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "/css/root.css"
+      ],
+      "js": []
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/static/css/*"
+      ],
+      "matches": []
+    }
+  ],
+  "commands": {
+    "execute_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Inject a script on the page"
+    }
+  }
+}

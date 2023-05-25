@@ -1,0 +1,39 @@
+name: Release & Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Publish to npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
+          cd lib
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Delete tag on failure
+        if: failure()
+        run: git push --delete origin ${{ github.ref }}
+
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Create Release for Tag
+        id: release_tag
+        uses: actions/create-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHP_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          body: "Please refer to [CHANGELOG.md](https://github.com/${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}/blob/master/CHANGELOG.md) for details."

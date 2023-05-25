@@ -1,0 +1,24 @@
+{
+  "name": "@vitejs/plugin-markdown",
+  "version": "0.0.1",
+  "description": "convert markdown tag to html",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && run-s build-bundle",
+    "build-bundle": "esbuild src/index.ts --bundle --platform=node --target=node12 --external:@vue/compiler-sfc --external:vue/compiler-sfc --external:vite --outfile=dist/index.js"
+  },
+  "peerDependencies": {
+    "vite": "^2.5.10"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "esbuild": "^0.14.27"
+  },
+  "dependencies": {
+    "@types/qs": "^6.9.7",
+    "markdown-it": "^12.3.2",
+    "qs": "^6.10.3"
+  }
+}

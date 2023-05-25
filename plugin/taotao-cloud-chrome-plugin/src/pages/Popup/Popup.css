@@ -1,0 +1,11 @@
+.App {
+  height: 300px;
+  width: 320px;
+  padding: 10px;
+}
+.button-tool {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
