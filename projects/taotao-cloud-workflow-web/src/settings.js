@@ -1,5 +1,5 @@
 module.exports = {
-  title: '中国四联集团疫情防控系统',
+  title: '中国xxx系统',
 
   /**
    * @type {boolean} true | false
@@ -37,7 +37,7 @@ module.exports = {
     navigationIcon: '',
     logoIcon: '',
     loginIcon: '',
-    sysName: '中国四联集团疫情防控系统'
+    sysName: '中国xxx系统'
   },
   themeClass: 'blue',
   layoutType: 'classic',

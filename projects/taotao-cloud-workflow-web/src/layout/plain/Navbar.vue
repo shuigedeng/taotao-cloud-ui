@@ -1,6 +1,6 @@
 <template>
   <div class="navbar" :class="slideClass">
-    <!-- <span class="navbar-platform">中国四联集团疫情防控系统</span> -->
+    <!-- <span class="navbar-platform">中国xxx系统</span> -->
     <NavbarRight />
   </div>
 </template>

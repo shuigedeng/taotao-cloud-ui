@@ -1,5 +1,5 @@
 {
-  "name": "artemis-admin",
+  "name": "@taotaocloud/taotao-cloud-vue3-manager",
   "version": "4.0.8-M4",
   "author": {
     "name": "matevip",
@@ -7,15 +7,15 @@
     "url": "https://github.com/matevip/artemis"
   },
   "scripts": {
-    "bootstrap": "yarn install",
-    "serve": "npm run dev",
+    "bootstrap": "pnpm install",
+    "serve": "pnpm run dev",
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build && esno ./script/script/postBuild.ts",
     "build:test": "cross-env vite build --mode test && esno ./script/script/postBuild.ts",
     "build:no-cache": "yarn clean:cache && npm run build",
     "report": "cross-env REPORT=true npm run build",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
-    "preview": "npm run build && vite preview",
+    "preview": "pnpm run build && vite preview",
     "preview:dist": "vite preview",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",

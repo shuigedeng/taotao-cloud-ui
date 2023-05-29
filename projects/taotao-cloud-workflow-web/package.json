@@ -1,8 +1,8 @@
 {
-  "name": "sicc-web",
+  "name": "@taotaocloud/taotao-cloud-workflow-web",
   "version": "1.1.0",
-  "description": "中国四联集团疫情防控系统",
-  "author": "中国四联",
+  "description": "xxxx",
+  "author": "xxxxx",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve --open",

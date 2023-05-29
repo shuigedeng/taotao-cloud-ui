@@ -8,8 +8,8 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-// const name = defaultSettings.title || '中国四联集团疫情防控系统' // page title
-const name = defaultSettings.title || "中国四联集团"; // 苹果审核 先控制一下名字
+// const name = defaultSettings.title || '中国xxxx系统' // page title
+const name = defaultSettings.title || "中国xxxx"; // 苹果审核 先控制一下名字
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.

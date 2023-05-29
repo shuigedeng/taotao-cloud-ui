@@ -1,5 +1,5 @@
 {
-  "name": "taotao-cloud-svelte",
+  "name": "@taotaocloud/taotao-cloud-svelte",
   "version": "0.0.1",
   "private": true,
   "scripts": {

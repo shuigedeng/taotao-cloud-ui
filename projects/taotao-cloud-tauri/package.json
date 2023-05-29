@@ -1,5 +1,5 @@
 {
-  "name": "mission-backup",
+  "name": "@taotaocloud/taotao-cloud-tauri",
   "type": "module",
   "version": "1.0.0",
   "private": true,

@@ -1,5 +1,5 @@
 {
-  "name": "workflow-app-next",
+  "name": "@taotaocloud/taotao-cloud-workflow-app",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
