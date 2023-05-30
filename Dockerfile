@@ -29,8 +29,6 @@ WORKDIR /workspace
 COPY --from=builder /workspace/jeepay-ui-${PLATFORM}/dist /workspace
 RUN chmod a+r /workspace
 
-
-
 RUN rm -rf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /workspace/default.conf.template /etc/nginx/templates/default.conf.template
