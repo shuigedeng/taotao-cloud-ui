@@ -8,7 +8,7 @@
     "折叠",
     "折叠面板",
     "手风琴"
-],
+  ],
   "repository": "https://github.com/dcloudio/uni-ui",
   "engines": {
     "HBuilderX": ""
@@ -41,7 +41,7 @@
   },
   "uni_modules": {
     "dependencies": [
-			"uni-scss",
+      "uni-scss",
       "uni-icons"
     ],
     "encrypt": [],
@@ -80,8 +80,8 @@
           "联盟": "u"
         },
         "Vue": {
-            "vue2": "y",
-            "vue3": "y"
+          "vue2": "y",
+          "vue3": "y"
         }
       }
     }

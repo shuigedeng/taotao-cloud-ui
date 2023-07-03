@@ -8,7 +8,7 @@
     "uniui",
     "countdown",
     "倒计时"
-],
+  ],
   "repository": "https://github.com/dcloudio/uni-ui",
   "engines": {
     "HBuilderX": ""
@@ -40,7 +40,9 @@
     "npmurl": "https://www.npmjs.com/package/@dcloudio/uni-ui"
   },
   "uni_modules": {
-    "dependencies": ["uni-scss"],
+    "dependencies": [
+      "uni-scss"
+    ],
     "encrypt": [],
     "platforms": {
       "cloud": {
@@ -77,8 +79,8 @@
           "联盟": "u"
         },
         "Vue": {
-            "vue2": "y",
-            "vue3": "y"
+          "vue2": "y",
+          "vue3": "y"
         }
       }
     }

@@ -4,12 +4,12 @@
 	"version": "1.7.9",
 	"description": " Popup 组件，提供常用的弹层",
 	"keywords": [
-        "uni-ui",
-        "弹出层",
-        "弹窗",
-        "popup",
-        "弹框"
-    ],
+		"uni-ui",
+		"弹出层",
+		"弹窗",
+		"popup",
+		"弹框"
+	],
 	"repository": "https://github.com/dcloudio/uni-ui",
 	"engines": {
 		"HBuilderX": ""
@@ -79,11 +79,11 @@
 				"快应用": {
 					"华为": "u",
 					"联盟": "u"
-                },
-                "Vue": {
-                    "vue2": "y",
-                    "vue3": "y"
-                }
+				},
+				"Vue": {
+					"vue2": "y",
+					"vue3": "y"
+				}
 			}
 		}
 	}

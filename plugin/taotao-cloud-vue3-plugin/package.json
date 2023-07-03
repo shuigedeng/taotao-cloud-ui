@@ -32,8 +32,7 @@
     "url": "https://github.com/wc19950724/auto-import-webpack-plugin/issues"
   },
   "homepage": "https://github.com/wc19950724/auto-import-webpack-plugin#readme",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "lint-staged": {
     "*.{js,cjs,mjs,ts,cts,mts}": [
       "pnpm fix"
@@ -45,9 +44,9 @@
     }
   },
   "dependencies": {
-    "eslint": "^8.40.0",
+    "eslint": "^8.44.0",
     "prettier": "^2.8.8",
-    "webpack": "^5.82.1"
+    "webpack": "^5.88.1"
   },
   "peerDependencies": {
     "webpack": ">=5"

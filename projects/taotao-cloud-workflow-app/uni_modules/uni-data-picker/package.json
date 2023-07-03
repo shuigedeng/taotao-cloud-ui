@@ -10,7 +10,7 @@
     "级联",
     "省市区",
     ""
-],
+  ],
   "repository": "https://github.com/dcloudio/uni-ui",
   "engines": {
     "HBuilderX": ""
@@ -44,8 +44,8 @@
   "uni_modules": {
     "dependencies": [
       "uni-load-more",
-			"uni-icons",
-			"uni-scss"
+      "uni-icons",
+      "uni-scss"
     ],
     "encrypt": [],
     "platforms": {
@@ -83,8 +83,8 @@
           "联盟": "u"
         },
         "Vue": {
-            "vue2": "y",
-            "vue3": "y"
+          "vue2": "y",
+          "vue3": "y"
         }
       }
     }
