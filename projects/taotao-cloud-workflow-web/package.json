@@ -68,7 +68,7 @@
     "file-saver": "2.0.1",
     "fuse.js": "6.6.2",
     "highcharts": "11.1.0",
-    "highcharts-vue": "^1.4.2",
+    "highcharts-vue": "^1.4.3",
     "js-base64": "^3.7.5",
     "js-md5": "^0.7.3",
     "jsbarcode": "^3.11.0",
