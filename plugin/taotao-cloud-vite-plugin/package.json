@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.16.19",
-    "esbuild": "^0.18.11"
+    "esbuild": "^0.18.13"
   },
   "dependencies": {
     "@types/qs": "^6.9.7",
