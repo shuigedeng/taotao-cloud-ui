@@ -29,8 +29,8 @@
     "@mdi/js": "^7.2.96",
     "@taotaocloud/core": "workspace:^1.0.0",
     "particles.vue3": "^2.11.0",
-    "quasar": "^2.12.2",
-    "tsparticles": "^2.11.0",
-    "tsparticles-engine": "^2.11.0"
+    "quasar": "^2.12.3",
+    "tsparticles": "^2.11.1",
+    "tsparticles-engine": "^2.11.1"
   }
 }
