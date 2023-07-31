@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.17.0",
-    "esbuild": "^0.18.16"
+    "@types/node": "^18.17.1",
+    "esbuild": "^0.18.17"
   },
   "dependencies": {
     "@types/qs": "^6.9.7",
