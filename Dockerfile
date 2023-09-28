@@ -17,7 +17,6 @@ RUN npm config set registry https://registry.npmmirror.com
 
 RUN cd /workspace/jeepay-ui-${PLATFORM} && npm install  && npm run build
 
-
 FROM nginx:alpine
 
 ARG PLATFORM=$PLATFORM
