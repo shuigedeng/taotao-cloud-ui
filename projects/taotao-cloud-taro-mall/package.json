@@ -41,8 +41,8 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.23.2",
-    "@react-native-async-storage/async-storage": "~1.19.5",
+    "@babel/runtime": "^7.23.4",
+    "@react-native-async-storage/async-storage": "~1.19.8",
     "@react-native-community/cameraroll": "~4.1.2",
     "@react-native-community/clipboard": "~1.5.1",
     "@react-native-community/geolocation": "~3.0.6",
@@ -96,8 +96,8 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sa-sdk-javascript": "^1.25.23",
-    "sa-sdk-miniprogram": "^1.19.12",
+    "sa-sdk-javascript": "^1.25.24",
+    "sa-sdk-miniprogram": "^1.20.2",
     "sr-sdk-h5": "^1.5.1",
     "sr-sdk-wxapp": "^1.8.8-dev.0",
     "taro-hooks": "latest",
@@ -111,13 +111,13 @@
     "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",
     "@tarojs/webpack-runner": "3.6.8",
-    "@types/react": "^18.2.37",
+    "@types/react": "^18.2.38",
     "@types/webpack-env": "^1.18.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "babel-plugin-import": "^1.13.8",
     "babel-preset-taro": "3.6.8",
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "eslint-config-taro": "3.6.8",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-react": "^7.33.2",
@@ -125,6 +125,6 @@
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.39",
     "stylelint": "15.9.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   }
 }
