@@ -20,13 +20,13 @@ jobs:
     #if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-datav') }}
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v34
 
       # https://github.com/marketplace/actions/setup-node-js-environment
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 18
 
       # https://github.com/marketplace/actions/cache
       - name: Cache Node_modules Folder
