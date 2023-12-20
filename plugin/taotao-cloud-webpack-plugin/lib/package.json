@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/wc19950724/auto-import-webpack-plugin#readme",
   "dependencies": {
-    "eslint": "^8.54.0",
+    "eslint": "^8.56.0",
     "prettier": "^2.8.8",
     "webpack": "^5.89.0"
   },
