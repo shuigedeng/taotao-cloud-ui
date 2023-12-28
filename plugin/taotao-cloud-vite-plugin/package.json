@@ -17,7 +17,7 @@
     "esbuild": "^0.18.20"
   },
   "dependencies": {
-    "@types/qs": "^6.9.10",
+    "@types/qs": "^6.9.11",
     "markdown-it": "^13.0.2",
     "qs": "^6.11.2"
   }

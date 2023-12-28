@@ -32,7 +32,7 @@
 	},
 	"devDependencies": {
 		"node-sass": "^9.0.0",
-		"sass-loader": "^13.3.2"
+		"sass-loader": "^13.3.3"
 	},
 	"author": "uView",
 	"license": "MIT"
