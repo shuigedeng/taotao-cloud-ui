@@ -41,7 +41,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.7",
     "@react-native-async-storage/async-storage": "~1.19.8",
     "@react-native-community/cameraroll": "~4.1.2",
     "@react-native-community/clipboard": "~1.5.1",
@@ -96,7 +96,7 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sa-sdk-javascript": "^1.26.4",
+    "sa-sdk-javascript": "^1.26.5",
     "sa-sdk-miniprogram": "^1.20.2",
     "sr-sdk-h5": "^1.5.1",
     "sr-sdk-wxapp": "^1.10.0",
@@ -106,12 +106,12 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
+    "@babel/core": "^7.23.7",
     "@tarojs/cli": "3.6.8",
     "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",
     "@tarojs/webpack-runner": "3.6.8",
-    "@types/react": "^18.2.45",
+    "@types/react": "^18.2.46",
     "@types/webpack-env": "^1.18.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
