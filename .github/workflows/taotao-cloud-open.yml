@@ -18,7 +18,7 @@ env:
 jobs:
   assemble:
     runs-on: ubuntu-latest
-    #if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-open') }}
+    if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-open') }}
     steps:
       - name: checkout project
         uses: actions/checkout@v4
@@ -110,25 +110,3 @@ jobs:
                   "messageUrl": "https://github.com/shuigedeng/taotao-cloud-project/actions/runs/${{github.run_id}}"
               }
             }
-
-#      - name: show runner
-#        run: echo "$RUNNER_CONTEXT"
-#        env:
-#          RUNNER_CONTEXT: ${{ toJSON(runner) }}
-#
-#      - name: show github
-#        run: echo "$GITHUB_CONTEXT"
-#        env:
-#          GITHUB_CONTEXT: ${{ toJSON(github) }}
-
-#      - name: login to registry
-#        uses: docker/login-action@v1
-#        with:
-#          registry: registry.cn-hangzhou.aliyuncs.com
-#          username: ${{ secrets.TAOTAO_CLOUD_REGISTRY_USERNAME }}
-#          password: ${{ secrets.TAOTAO_CLOUD_REGISTRY_PASSWORD }}
-
-#      - name: build docker image taotao-cloud-open
-#        run: |
-#          docker build --tag registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-open:${{env.TAOTAO_CLOUD_VERSION}} .
-#          docker push registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-open:${{env.TAOTAO_CLOUD_VERSION}}
