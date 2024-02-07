@@ -20,17 +20,17 @@ jobs:
     if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-datav') }}
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v34
+        uses: actions/checkout@v4
 
       # https://github.com/marketplace/actions/setup-node-js-environment
-      - name: Use Node.js 18
+      - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       # https://github.com/marketplace/actions/cache
       - name: Cache Node_modules Folder
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/node_modules
           key: ${{ runner.os }}-node_modules
@@ -42,7 +42,7 @@ jobs:
 
       # https://github.com/marketplace/actions/cache
       - name: Cache Yarn
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: yarn-cache
         with:
