@@ -21,10 +21,10 @@
     "koa2-cors": "^2.0.6"
   },
   "devDependencies": {
-    "@types/koa": "^2.14.0",
+    "@types/koa": "^2.15.0",
     "@types/koa-bodyparser": "^5.0.2",
     "@types/koa-router": "^7.4.8",
-    "@types/node": "^20.11.6",
+    "@types/node": "^20.11.20",
     "nodemon": "^2.0.22",
     "pm2": "^5.3.1",
     "rimraf": "^5.0.5",
