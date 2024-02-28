@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+<dictPO>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -27,16 +27,16 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
-	<dict>
+	<dictPO>
 		<key>NSExceptionDomains</key>
-		<dict>
+		<dictPO>
 			<key>localhost</key>
-			<dict>
+			<dictPO>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
-			</dict>
-		</dict>
-	</dict>
+			</dictPO>
+		</dictPO>
+	</dictPO>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow $(PRODUCT_NAME) to use your camera</string>
 	<key>NSContactsUsageDescription</key>
@@ -63,5 +63,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-</dict>
+</dictPO>
 </plist>
