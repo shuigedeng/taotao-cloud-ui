@@ -5,7 +5,6 @@ FROM node:16-alpine AS builder
 
 ARG PLATFORM=$PLATFORM
 
-
 WORKDIR /workspace
 
 COPY . /workspace
