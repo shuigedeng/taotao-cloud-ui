@@ -41,7 +41,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/eslint": "^8.56.5",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.26",
     "@types/prettier": "^2.7.3",
     "@typescript-eslint/parser": "^5.62.0",
     "chalk-cjs": "^5.2.0",
@@ -56,7 +56,7 @@
     "rollup": "^3.29.4",
     "rollup-plugin-dts": "^5.3.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   },
   "lint-staged": {
     "*.{js,cjs,mjs,ts,cts,mts}": [
