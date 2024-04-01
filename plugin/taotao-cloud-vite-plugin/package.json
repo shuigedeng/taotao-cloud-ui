@@ -13,11 +13,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.11.26",
+    "@types/node": "^20.12.2",
     "esbuild": "^0.18.20"
   },
   "dependencies": {
-    "@types/qs": "^6.9.12",
+    "@types/qs": "^6.9.14",
     "markdown-it": "^13.0.2",
     "qs": "^6.12.0"
   }

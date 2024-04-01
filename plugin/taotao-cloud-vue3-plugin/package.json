@@ -46,7 +46,7 @@
   "dependencies": {
     "eslint": "^8.57.0",
     "prettier": "^2.8.8",
-    "webpack": "^5.90.3"
+    "webpack": "^5.91.0"
   },
   "peerDependencies": {
     "webpack": ">=5"
