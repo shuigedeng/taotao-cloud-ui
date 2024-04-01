@@ -32,6 +32,7 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /workspace/default.conf.template /etc/nginx/templates/default.conf.template
 
+
 # 编译命令
 # docker buildx build . --build-arg PLATFORM=cashier -t jeepay-payment:latest
 # docker buildx build . --build-arg PLATFORM=manager -t jeepay-manager:latest
