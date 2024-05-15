@@ -70,7 +70,7 @@
     "@babel/core": "^7.24.5",
     "@tarojs/mini-runner": "^3.6.29",
     "@tarojs/webpack-runner": "^3.6.29",
-    "@types/react": "^18.3.1",
+    "@types/react": "^18.3.2",
     "@types/webpack-env": "^1.18.5",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
