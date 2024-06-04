@@ -53,7 +53,7 @@
     "@tarojs/components": "^3.6.30",
     "@tarojs/plugin-mock": "^0.0.9",
     "@tarojs/react": "^3.6.30",
-    "@tarojs/runtime": "^3.6.30",
+    "@tarojs/runtime": "^3.6.31",
     "@tarojs/taro": "^3.6.30",
     "@tarojs/taro-rn": "^3.6.30",
     "@types/graphql": "^14.5.0",
