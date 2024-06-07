@@ -33,15 +33,15 @@
   },
   "homepage": "https://github.com/wc19950724/auto-import-webpack-plugin#readme",
   "devDependencies": {
-    "@babel/core": "^7.24.6",
-    "@babel/preset-env": "^7.24.6",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.8",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/eslint": "^8.56.10",
-    "@types/node": "^20.14.1",
+    "@types/node": "^20.14.2",
     "@types/prettier": "^2.7.3",
     "@typescript-eslint/parser": "^5.62.0",
     "chalk-cjs": "^5.2.0",
@@ -55,7 +55,7 @@
     "release-base-cli": "^1.0.3",
     "rollup": "^3.29.4",
     "rollup-plugin-dts": "^5.3.1",
-    "tslib": "^2.6.2",
+    "tslib": "^2.6.3",
     "typescript": "^5.4.5"
   },
   "lint-staged": {

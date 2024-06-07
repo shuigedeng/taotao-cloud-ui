@@ -48,12 +48,12 @@
     "management-system"
   ],
   "dependencies": {
-    "@fullcalendar/bootstrap": "^6.1.13",
-    "@fullcalendar/core": "^6.1.13",
-    "@fullcalendar/daygrid": "^6.1.13",
-    "@fullcalendar/interaction": "^6.1.13",
-    "@fullcalendar/timegrid": "^6.1.13",
-    "@fullcalendar/vue": "^6.1.13",
+    "@fullcalendar/bootstrap": "^6.1.14",
+    "@fullcalendar/core": "^6.1.14",
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/interaction": "^6.1.14",
+    "@fullcalendar/timegrid": "^6.1.14",
+    "@fullcalendar/vue": "^6.1.14",
     "@tinymce/tinymce-vue": "^5.1.1",
     "axios": "1.4.0",
     "clipboard": "2.0.11",
