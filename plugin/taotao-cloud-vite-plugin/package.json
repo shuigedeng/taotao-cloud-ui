@@ -19,6 +19,6 @@
   "dependencies": {
     "@types/qs": "^6.9.15",
     "markdown-it": "^13.0.2",
-    "qs": "^6.12.1"
+    "qs": "^6.12.2"
   }
 }

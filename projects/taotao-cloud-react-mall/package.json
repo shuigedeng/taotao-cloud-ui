@@ -59,7 +59,7 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sa-sdk-javascript": "^1.26.12",
+    "sa-sdk-javascript": "^1.26.13",
     "sa-sdk-miniprogram": "^1.20.4",
     "taro-plugin-tailwind": "^1.3.4",
     "taro-ui": "^2.3.4",
@@ -81,6 +81,6 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "stylelint": "^16.6.1",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.3"
   }
 }
