@@ -41,7 +41,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.24.7",
+    "@babel/runtime": "^7.25.0",
     "@react-native-async-storage/async-storage": "~1.19.8",
     "@react-native-community/cameraroll": "~4.1.2",
     "@react-native-community/clipboard": "~1.5.1",
@@ -50,12 +50,12 @@
     "@react-native-community/netinfo": "~9.4.2",
     "@react-native-community/slider": "~4.4.4",
     "@react-native-picker/picker": "~2.4.10",
-    "@tarojs/components": "^3.6.33",
+    "@tarojs/components": "^4.0.3",
     "@tarojs/plugin-mock": "^0.0.9",
-    "@tarojs/react": "^3.6.33",
-    "@tarojs/runtime": "^3.6.33",
-    "@tarojs/taro": "^3.6.33",
-    "@tarojs/taro-rn": "^3.6.33",
+    "@tarojs/react": "^4.0.3",
+    "@tarojs/runtime": "^4.0.3",
+    "@tarojs/taro": "^4.0.3",
+    "@tarojs/taro-rn": "^4.0.3",
     "@types/graphql": "^14.5.0",
     "@types/moment": "^2.13.0",
     "apollo-boost": "^0.4.9",
@@ -75,7 +75,7 @@
     "moment": "^2.30.1",
     "nerv-redux": "^1.5.7",
     "nervjs": "^1.5.7",
-    "preact": "^10.22.1",
+    "preact": "^10.23.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-native": "^0.73.9",
@@ -97,7 +97,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "sa-sdk-javascript": "^1.26.14",
-    "sa-sdk-miniprogram": "^1.20.4",
+    "sa-sdk-miniprogram": "^1.20.5",
     "sr-sdk-h5": "^1.5.1",
     "sr-sdk-wxapp": "^1.10.1",
     "taro-hooks": "latest",
@@ -106,7 +106,7 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
+    "@babel/core": "^7.24.9",
     "@tarojs/cli": "3.6.8",
     "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",
@@ -120,11 +120,11 @@
     "eslint": "^8.57.0",
     "eslint-config-taro": "3.6.8",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.39",
     "stylelint": "15.9.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }
