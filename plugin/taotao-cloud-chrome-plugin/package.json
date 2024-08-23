@@ -13,18 +13,18 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
-    "antd": "^5.20.0",
+    "antd": "^5.20.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@types/chrome": "^0.0.239",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.3",
@@ -54,7 +54,7 @@
     "ts-loader": "^9.5.1",
     "type-fest": "^3.13.1",
     "typescript": "^5.5.4",
-    "webpack": "^5.93.0",
+    "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
     "zip-webpack-plugin": "^4.0.1"

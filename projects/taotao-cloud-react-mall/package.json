@@ -36,7 +36,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.25.0",
+    "@babel/runtime": "^7.25.4",
     "@tarojs/cli": "^4.0.4",
     "@tarojs/components": "^4.0.4",
     "@tarojs/plugin-mock": "^0.0.9",
@@ -59,7 +59,7 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sa-sdk-javascript": "^1.26.14",
+    "sa-sdk-javascript": "^1.26.15",
     "sa-sdk-miniprogram": "^1.20.5",
     "taro-plugin-tailwind": "^1.3.4",
     "taro-ui": "^2.3.4",
@@ -70,7 +70,7 @@
     "@babel/core": "^7.25.2",
     "@tarojs/mini-runner": "^4.0.3",
     "@tarojs/webpack-runner": "^4.0.3",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.4",
     "@types/webpack-env": "^1.18.5",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -80,7 +80,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "stylelint": "^16.8.1",
+    "stylelint": "^16.8.2",
     "typescript": "^5.5.4"
   }
 }
