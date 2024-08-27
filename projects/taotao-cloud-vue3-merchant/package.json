@@ -39,7 +39,7 @@
     "@vueuse/core": "^10.11.1",
     "@zxcvbn-ts/core": "^3.0.4",
     "ant-design-vue": "^3.2.20",
-    "axios": "^1.7.4",
+    "axios": "^1.7.5",
     "codemirror": "^6.0.1",
     "cropperjs": "^1.6.2",
     "crypto-js": "^4.2.0",
@@ -68,7 +68,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
-    "@iconify/json": "^2.2.239",
+    "@iconify/json": "^2.2.241",
     "@purge-icons/generated": "^0.9.0",
     "@types/codemirror": "^5.60.15",
     "@types/crypto-js": "^4.2.2",
@@ -121,7 +121,7 @@
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-order": "^6.0.4",
-    "ts-jest": "^29.2.4",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "5.1.6",
     "vite": "^5.4.2",
@@ -141,7 +141,7 @@
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china",
-    "rollup": "^4.21.0"
+    "rollup": "^4.21.1"
   },
   "repository": {
     "type": "git",
