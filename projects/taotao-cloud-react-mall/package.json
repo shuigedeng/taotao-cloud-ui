@@ -36,7 +36,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.25.4",
+    "@babel/runtime": "^7.25.6",
     "@tarojs/cli": "^4.0.5",
     "@tarojs/components": "^4.0.5",
     "@tarojs/plugin-mock": "^0.0.9",
@@ -80,7 +80,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "stylelint": "^16.8.2",
+    "stylelint": "^16.9.0",
     "typescript": "^5.5.4"
   }
 }
