@@ -4,37 +4,37 @@
 
 <p align="center">
   <img src='https://img.shields.io/badge/license-Apache%202-green' alt='License'/>
-  <img src="https://img.shields.io/badge/taotao--cloud--project-2024.08-red" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/spring-6.1.11-red" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/spring_boot-3.3.2-orange" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/taotao--cloud--project-2024.09-red" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/spring-6.1.12-red" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/spring_boot-3.3.3-orange" alt="Downloads"/>
   <img src="https://img.shields.io/badge/spring_cloud-2023.0.3-yellowgree" alt="Downloads"/>
   <img src="https://img.shields.io/badge/spring_cloud_alibaba-2023.0.1.2-blue" alt="Downloads"/>
   <img src="https://img.shields.io/badge/spring_cloud_tencent-1.14.0--2023.0.0--RC2-orange" alt="Downloads"/>
   <img src="https://img.shields.io/badge/netty-4.1.112.Final-blue" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/spring_security-6.3.1-brightgreen" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/spring_security-6.3.2-brightgreen" alt="Downloads"/>
   <img src="https://img.shields.io/badge/elasticsearch-8.11.4-green" alt="Downloads"/>
   <img src="https://img.shields.io/badge/mybatis_plus-3.5.7-yellow" alt="Downloads"/>
   <img src="https://img.shields.io/badge/knife4j-4.5.0-brightgreen" alt="Downloads"/>
   <img src="https://img.shields.io/badge/swagger-3.0.0-red" alt="Downloads"/>
   <img src="https://img.shields.io/badge/redisson-3.33.0-lightgrey" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/hutool-6.0.0--M14-gree" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/hutool-6.0.0--M15-gree" alt="Downloads"/>
 </p>
 
 ## 1. 如果您觉得有帮助，请点右上角 "Star" 支持一下谢谢
 
-`taotao-cloud` (taotao云平台) 基于gradle8.9、jdk21, 支持graalvm21, 采用最新的spring 6.1.11、SpringBoot 3.3.2、SpringCloud 2023.0.3、SpringSecurity 6.3.1、Nacos 2.3.2、Mybatis-Plus 3.5.7、Redis 7等框架，开发的一款企业级微服务架构的云服务平台， 具有组件化、高性能、功能丰富的特点。代码简洁，架构清晰，组件可自由搭配，遵循SpringBoot编程思想，高度模块化和可配置化。
+`taotao-cloud` (taotao云平台) 基于gradle8.10、jdk21, 支持graalvm21, 采用最新的spring 6.1.12、SpringBoot 3.3.3、SpringCloud 2023.0.3、SpringSecurity 6.3.2、Nacos 2.4.1、Mybatis-Plus 3.5.7、Redis 7等框架，开发的一款企业级微服务架构的云服务平台，
+
+具有组件化、高性能、功能丰富的特点。代码简洁，架构清晰，组件可自由搭配，遵循SpringBoot编程思想，高度模块化和可配置化。
 
 具备服务注册&发现、配置中心、服务限流、熔断降级、监控报警、多数据源、工作流、高亮搜索、定时任务、分布式缓存、分布式事务、分布式存储等功能，用于快速构建微服务项目。
 
-目前支持Shell、Docker、Docker-compose、K8s、Github/Genkins ci/cd等多种部署方式，实现RBAC权限。 遵循阿里代码规范，采用restful设计风格及DDD(领域驱动设计)思想，代码简洁、架构清晰，非常适合作为基础框架使用。基于DDD（领域驱动设计）的轻量级快速开发框架，致力于企业技术架构的可沉淀和可传承，解决复杂业务场景的扩展问题
+目前支持Shell、Docker、Docker-compose、K8s、Github/Genkins ci/cd等多种部署方式，实现RBAC权限。
 
-仓库的目的: 工作以来的技术总结和技术沉淀(业余时间进行开发) **仓库代码中不涉及公司任何业务代码**
+遵循阿里代码规范，采用restful设计风格及DDD(领域驱动设计)思想，代码简洁、架构清晰，非常适合作为基础框架使用。基于DDD（领域驱动设计）的轻量级快速开发框架，致力于企业技术架构的可沉淀和可传承，解决复杂业务场景的扩展问题
+
+**仓库的目的**: 工作以来的技术总结和技术沉淀(业余时间进行开发) **仓库代码中不涉及公司任何业务代码**
 
 主要包括如下几部分
-
-- **大数据模块** 集成基于**hadoop、hive、dolphinscheduler**的离线批量日志数据处理和分析, 用户行为分析、推荐系统, **flink、flink cdc、flink cep、spark
-  streaming、presto、seatunnel**流式处理计算框架, **tidb、doris**离线数据仓库, **hudi、paimon**数据湖等大数据处理
-
 
 - **微服务模块** 基于**spring cloud alibaba**微服务基础脚手架框架,用于基础服务的集成和跟业务无关的基础技术集成,
   提供**大量的starters组件**作为技术底层支持,同时基础框架集中统一优化中间件相关服务及使用,
@@ -42,10 +42,20 @@
 
 
 - **saas商城模块** 基于**微服务模块**构建的前后端分离的B2B2C商城系统, 支持商家入驻支, 持分布式部署,
-  使用**github action
-  CI/CD**持续集成, 前后端均使用**kubernetes**部署，
+  使用**github action CI/CD**持续集成, 前后端均使用**kubernetes**部署，
   各个API独立, 管理前端使用**vue3 ant-design-vue**开发, 移动端使用**taro taro-ui**开发, **
   系统全端全部代码开源**
+
+
+- **大数据模块** 集成基于**hadoop、hive、dolphinscheduler**的离线批量日志数据处理和分析, 用于用户行为分析、推荐系统,
+  **flink、flink cdc、flink cep、spark streaming、presto、seatunnel**流式处理计算框架, **tidb、doris**离线数据仓库, **hudi、paimon**数据湖等大数据处理
+
+
+- **数仓模块**  基于Doris、Piamon、Hudi的离线数仓和实时数仓(数据湖)
+  * 数据源模块：业务数据写入 **MySQL** 数据库,生成的日志数据被写入 **Kafka**, **rocketmq** 消息队列
+  * 数据采集模块：**Dinky**开发**FlinkSQL**，消费**Kafka**中的日志数据，并将其写入**Doris**、**Paimon** 、**Hudi**的在线数据存储（ODS）层。使用**DolphinScheduler**配置**SeaTunnel**任务，同步**MySQL**中的业务数据到**Doris**的ODS层。**FlinkSQL/CDC**从**Kafka**和**MySQL**采集数据，分别写入**Paimon** 、**Hudi**的ODS层。
+  * 数仓模块：遵循标准的ODS(数据存储)->DWD(数据仓库明细层)/DIM(维度数据层)->DWS(数据服务层)->ADS(应用数据存储)的四级数据分层架构。数据在**Doris** 、**Paimon**、**Hudi**中通过批量和实时两种调度方式流转。
+  * 数据可视化：ADS层和DWS层的数据可以利用**SuperSet**和**DataRT**工具进行报表和数据大屏的制作、展示
 
 
 - **sass商城多端前端模块** 主要使用**react antd**进行前后端分离开发, 集成以**taro, taro-ui, react native**
@@ -55,7 +65,7 @@
 - **python模块** 主要是集成了基于**django**的web开发, 基于**scrapy**爬虫开发, **homeassistant**
   家庭自动化框架原理的分析
 
-总之基于**spring cloud alibaba**的微服务架构 **hadoop hive flink spark hive**
+总之基于**spring cloud alibaba**的微服务架构 **hadoop hive flink flink-cdc paimon doris hudi**
 等大数据处理实践。旨在提供技术框架的基础能力的封装，减少开发工作，只关注业务
 
 ## 2. spring cloud 微服务架构图
@@ -72,8 +82,8 @@ Requires:
 
 ```
 JAVA_VERSION >= 21 (推荐使用graalvm-jdk-21)
-GRALE_VERSION >= 8.9
-IDEA_VERSION >= 2024.1.4
+GRALE_VERSION >= 8.10
+IDEA_VERSION >= 2024.2.0.2
 ```
 
 Gradle:
@@ -116,19 +126,19 @@ Maven:
 
  依赖                   | 版本              
 ----------------------|-----------------
- Spring               | 6.1.11           
- Spring Boot          | 3.3.2           
+ Spring               | 6.1.12           
+ Spring Boot          | 3.3.3           
  Spring Cloud         | 2023.0.3        
  Spring Cloud Alibaba | 2023.0.1.2
  Spring Cloud Tencent | 1.14.0-2023.0.0-RC2
- Spring Cloud huawei  | 1.11.8-2023.0.x
+ Spring Cloud huawei  | 1.11.9-2023.0.x
  Seata                | 2.0.0
  Sentinel             | 1.8.8           
- Spring-kafka         | 3.2.1         
+ Spring-kafka         | 3.2.2         
  Roketmq              | 5.2.0           
- Spring Security      | 6.3.1           
+ Spring Security      | 6.3.2           
  Mybatis Plus         | 3.5.7         
- Hutool               | 6.0.0-M14         
+ Hutool               | 6.0.0-M15         
  Mysql                | 8.4.0          
  Querydsl             | 5.1.0           
  Swagger              | 3.0.0           
@@ -138,16 +148,16 @@ Maven:
  Elasticsearch        | 8.11.5           
  Xxl-job              | 2.4.1           
  EasyCaptcha          | 1.6.2           
- Guava                | 33.2.1-jre       
- Grpc                 | 1.65.1          
- Arthas               | 3.7.2           
+ Guava                | 33.3.0-jre       
+ Grpc                 | 1.66.0          
+ Arthas               | 4.0.0           
  Dynamic-tp           | 1.1.7-3.x           
  Elasticjob           | 3.0.4           
  Powerjob             | 5.0.1-beta           
  Forest               | 1.5.36          
  Netty                | 4.1.112.Final
 
-## 6. 演示地址
+## 6. 演示地址 (云服务器已到期)
 
 * TaotaoCloud脚手架：[https://start.taotaocloud.top/](https://start.taotaocloud.top/)
 * 文档地址：[https://docs.taotaocloud.top](https://docs.taotaocloud.top)
@@ -177,7 +187,7 @@ Maven:
 ## 7. 功能特点
 
 * **微服务技术框架**: 前后端分离的企业级微服务架构、主要针对解决微服务和业务开发时常见的 **非功能性需求** 简化开发工作、提高生产率、解决通用问题
-* **主体框架**：采用最新的`Spring Boot 3.3.2`、`Spring Cloud 2023.0.3`、`Spring Cloud Alibaba 2023.0.1.2` 版本进行设计
+* **主体框架**：采用最新的`Spring Boot 3.3.3`、`Spring Cloud 2023.0.3`、`Spring Cloud Alibaba 2023.0.1.2` 版本进行设计
 * **统一注册**：支持`spring cloud alibaba Nacos`作为注册中心，实现多配置、分群组、分命名空间、多业务模块的注册和发现功能
 * **统一认证**：统一Oauth2认证协议，采用jwt的方式，实现统一认证，完备的RBAC权限管理、数据权限处理、网关统一鉴权、灰度发布。 支持多种登录方式，如账号密码，验证码登陆、支持支付宝、钉钉、码云、GitHub、GitLab、QQ、微信、企业微信、微博等第三方登录，微信登录，指纹登录，手势登录，手机号码登录，人脸识别登录等 优化Spring Security内部实现 ,实现API调用的统一出口和权限认证授权中心
 * **业务监控**：利用`Spring Boot admin`监控各个独立服务的运行状态
@@ -214,13 +224,13 @@ Maven:
 ```
 taotao-cloud-project -- 父项目
 │  ├─taotao-cloud-bigdata -- 大数据模块
-│  ├─taotao-cloud-cache -- cache模块
+│  ├─taotao-cloud-cache -- 本地缓存模块
 │  ├─taotao-cloud-design-partterns  -- 设计模式
 │  ├─taotao-cloud-jdbcpool  -- jdbcpool模块
 │  ├─taotao-cloud-microservice -- 微服务模块
 │  │  ├─taotao-cloud-ai  -- ai模块
 │  │  ├─taotao-cloud-bff  -- bff模块
-│  │  ├─taotao-cloud-business  -- 所有的业务模块
+│  │  ├─taotao-cloud-business  -- 业务模块
 │  │  ├─taotao-cloud-data-sync  -- 数据同步模块
 │  │  ├─taotao-cloud-data-analysis  -- 数据分析模块
 │  │  ├─taotao-cloud-gateway  -- 网关模块
@@ -229,21 +239,21 @@ taotao-cloud-project -- 父项目
 │  │  ├─taotao-cloud-open-platform  -- 开放平台模块
 │  │  ├─taotao-cloud-recommend  -- 推荐模块
 │  │  ├─taotao-cloud-shell  -- shell模块
-│  │  ├─taotao-cloud-xxljob  -- xxl-job模块
+│  │  ├─taotao-cloud-xxljob  -- job模块
 │  ├─taotao-cloud-mq -- 分布式消息中间件
 │  ├─taotao-cloud-plugin -- 插件模块
-│  ├─taotao-cloud-job -- job模块
+│  ├─taotao-cloud-job -- 分布式任务调度中间件
 │  ├─taotao-cloud-python -- python模块
 │  ├─taotao-cloud-scala -- scala模块
-│  ├─taotao-cloud-rpc -- 分布式rpc框架
-│  ├─taotao-cloud-tx -- 分布式事务框架
+│  ├─taotao-cloud-rpc -- 分布式rpc中间件
+│  ├─taotao-cloud-tx -- 分布式事务中间件
 │  ├─taotao-cloud-warehouse -- 数仓模块
 │  │  ├─taotao-cloud-offline-warehouse  -- 离线仓库模块
 │  │  ├─taotao-cloud-offline-weblog -- 离线日志分析模块
-│  │  ├─taotao-cloud-realtime-datalake  -- 准实时数据湖模块
-│  │  ├─taotao-cloud-realtime-mall -- 商城日志分析模块
+│  │  ├─taotao-cloud-realtime-datalake  -- 实时数据湖模块
+│  │  ├─taotao-cloud-realtime-mall -- 实时商城数据分析模块
 │  │  ├─taotao-cloud-realtime-recommend -- 实时推荐模块
-│  │  ├─taotao-cloud-realtime-warehouse -- 实时旅游模块
+│  │  ├─taotao-cloud-realtime-warehouse -- 实时数仓模块
 ```
 
 ## 9.开源共建
@@ -318,7 +328,6 @@ taotao-cloud-project -- 父项目
 +--- Project ':taotao-cloud-starter-apt'
 +--- Project ':taotao-cloud-starter-cache'
 +--- Project ':taotao-cloud-starter-canal'
-+--- Project ':taotao-cloud-starter-captcha'
 +--- Project ':taotao-cloud-starter-common'
 +--- Project ':taotao-cloud-starter-core'
 +--- Project ':taotao-cloud-starter-bootstrap'
@@ -327,7 +336,6 @@ taotao-cloud-project -- 父项目
 +--- Project ':taotao-cloud-starter-dubbo'
 +--- Project ':taotao-cloud-starter-grpc'
 +--- Project ':taotao-cloud-starter-idempotent'
-+--- Project ':taotao-cloud-starter-idgenerator'
 +--- Project ':taotao-cloud-starter-ip2region'
 +--- Project ':taotao-cloud-starter-job'
 +--- Project ':taotao-cloud-starter-limit'
@@ -345,7 +353,6 @@ taotao-cloud-project -- 父项目
 +--- Project ':taotao-cloud-starter-prometheus'
 +--- Project ':taotao-cloud-starter-retry'
 +--- Project ':taotao-cloud-starter-security'
-+--- Project ':taotao-cloud-starter-sensitive'
 +--- Project ':taotao-cloud-starter-sms'
 +--- Project ':taotao-cloud-starter-springdoc'
 +--- Project ':taotao-cloud-starter-third-client'
