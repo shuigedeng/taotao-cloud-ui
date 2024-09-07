@@ -9,5 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "@taotaocloud/taotao-cloud-workflow-app": "file:"
+  }
 }

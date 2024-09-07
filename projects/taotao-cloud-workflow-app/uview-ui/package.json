@@ -35,5 +35,8 @@
 		"sass-loader": "^13.3.3"
 	},
 	"author": "uView",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"uview-ui": "file:"
+	}
 }

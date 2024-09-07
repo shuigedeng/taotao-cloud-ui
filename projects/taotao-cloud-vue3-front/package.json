@@ -7,8 +7,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@taotao-cloud/taotao-cloud-vue3-front": "file:"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
