@@ -14,9 +14,9 @@
     "format": "prettier --plugin-search-dir  --write ."
   },
   "devDependencies": {
-    "@playwright/test": "^1.46.1",
+    "@playwright/test": "^1.47.0",
     "@sveltejs/adapter-auto": "^2.1.1",
-    "@sveltejs/kit": "^2.5.25",
+    "@sveltejs/kit": "^2.5.26",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.57.0",
@@ -28,7 +28,7 @@
     "svelte-check": "^3.8.6",
     "tslib": "^2.7.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2",
+    "vite": "^5.4.3",
     "vitest": "^0.32.4"
   },
   "type": "module"
