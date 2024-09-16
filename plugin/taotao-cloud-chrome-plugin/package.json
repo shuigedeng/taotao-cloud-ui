@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@taotaocloud/taotao-cloud-chrome-plugin": "file:",
-    "antd": "^5.20.5",
+    "antd": "^5.20.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -38,7 +38,7 @@
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react": "^7.36.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "file-loader": "^6.2.0",
     "fs-extra": "^11.2.0",
@@ -54,7 +54,7 @@
     "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
     "type-fest": "^3.13.1",
-    "typescript": "^5.5.4",
+    "typescript": "^5.6.2",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
