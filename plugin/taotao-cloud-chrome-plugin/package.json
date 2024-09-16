@@ -13,6 +13,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
+    "@taotaocloud/taotao-cloud-chrome-plugin": "file:",
     "antd": "^5.20.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

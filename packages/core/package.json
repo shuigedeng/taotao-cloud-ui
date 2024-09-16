@@ -26,6 +26,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@taotaocloud/core": "file:",
     "axios": "^1.7.7",
     "generate-avatar": "^1.4.10",
     "js-base64": "^3.7.7",
