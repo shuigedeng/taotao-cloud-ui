@@ -37,11 +37,11 @@
     "@babel/preset-env": "^7.25.4",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.8",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^20.16.5",
+    "@types/node": "^20.16.9",
     "@types/prettier": "^2.7.3",
     "@typescript-eslint/parser": "^5.62.0",
     "chalk-cjs": "^5.2.0",
@@ -53,7 +53,7 @@
     "ignore": "^5.3.2",
     "lint-staged": "^13.3.0",
     "release-base-cli": "^1.0.3",
-    "rollup": "^3.29.4",
+    "rollup": "^3.29.5",
     "rollup-plugin-dts": "^5.3.1",
     "tslib": "^2.7.0",
     "typescript": "^5.6.2"
@@ -69,9 +69,9 @@
     }
   },
   "dependencies": {
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "prettier": "^2.8.8",
-    "webpack": "^5.94.0"
+    "webpack": "^5.95.0"
   },
   "peerDependencies": {
     "webpack": ">=5"
