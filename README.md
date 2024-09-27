@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src='https://img.shields.io/badge/license-Apache%202-green' alt='License'/>
-  <img src="https://img.shields.io/badge/taotao--cloud--project-2024.10-red" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/taotao--cloud--project-2024.11-red" alt="Downloads"/>
   <img src="https://img.shields.io/badge/spring-6.1.13-red" alt="Downloads"/>
   <img src="https://img.shields.io/badge/spring_boot-3.3.3-orange" alt="Downloads"/>
   <img src="https://img.shields.io/badge/spring_cloud-2023.0.3-yellowgree" alt="Downloads"/>
@@ -92,14 +92,14 @@ Gradle:
 BOOT: 
 dependencyManagement{
   imports {
-    mavenBom "io.github.shuigedeng:taotao-boot-dependencies:2024.10"
+    mavenBom "io.github.shuigedeng:taotao-boot-dependencies:2024.11"
   }
 }
 
 CLOUD:
 dependencyManagement{
   imports {
-    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2024.10"
+    mavenBom "io.github.shuigedeng:taotao-cloud-dependencies:2024.11"
   }
 }
 
@@ -115,7 +115,7 @@ BOOT:
     <dependency>
       <groupId>io.github.shuigedeng</groupId>
       <artifactId>taotao-boot-dependencies</artifactId>
-      <version>2024.10</version>
+      <version>2024.11</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -128,7 +128,7 @@ CLOUD:
     <dependency>
       <groupId>io.github.shuigedeng</groupId>
       <artifactId>taotao-cloud-dependencies</artifactId>
-      <version>2024.10</version>
+      <version>2024.11</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
