@@ -29,15 +29,15 @@
   "dependencies": {
     "@quasar/extras": "^1.16.12",
     "lodash-es": "^4.17.21",
-    "pinia": "^2.2.2",
+    "pinia": "^2.2.4",
     "pinia-plugin-persistedstate": "^3.2.3",
     "qs": "^6.13.0",
     "quasar": "^2.17.0",
-    "vue": "^3.5.10",
+    "vue": "^3.5.11",
     "vue-i18n": "^9.14.1"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.8",
+    "@changesets/cli": "^2.27.9",
     "@quasar/vite-plugin": "^1.7.0",
     "@types/lodash-es": "^4.17.12",
     "@types/qs": "^6.9.16",
@@ -68,7 +68,7 @@
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "terser": "^5.34.1",
-    "typescript": "^5.6.2",
+    "typescript": "^5.6.3",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-icons": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
