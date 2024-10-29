@@ -9,7 +9,7 @@
         </el-table-column>
       </el-table>
       <el-table :data="tableData4" style="border-top: none">
-        <el-table-column label="入账机构：黄河银行营业部">
+        <el-table-column label="入账机构：xxxx银行营业部">
           <el-table-column label="入库详情" width="120">
             <el-table-column label="合同编码" prop="data1"></el-table-column>
           </el-table-column>
