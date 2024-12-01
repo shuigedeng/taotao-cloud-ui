@@ -97,7 +97,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "sa-sdk-javascript": "^1.27.1",
-    "sa-sdk-miniprogram": "^1.21.1",
+    "sa-sdk-miniprogram": "^1.21.3",
     "sr-sdk-h5": "^1.5.1",
     "sr-sdk-wxapp": "^1.10.1",
     "taro-hooks": "latest",
@@ -125,6 +125,6 @@
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.39",
     "stylelint": "15.9.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   }
 }
