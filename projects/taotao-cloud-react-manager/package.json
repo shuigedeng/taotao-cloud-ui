@@ -8,7 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@apollo/client": "^3.12.6",
+    "@apollo/client": "^3.12.7",
     "@apollo/react-hooks": "^4.0.0",
     "@iconify/iconify": "^3.1.1",
     "@iconify/types": "^2.0.0",
@@ -27,7 +27,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-transition-group": "^4.4.12",
     "@types/screenfull": "^4.1.0",
-    "antd": "^5.23.1",
+    "antd": "^5.23.2",
     "apollo-boost": "^0.4.9",
     "dotenv": "^16.4.7",
     "dotenv-expand": "^10.0.0",
@@ -111,7 +111,7 @@
     "tailwindcss-transitions": "^2.2.0",
     "ts-jest": "^29.2.5",
     "typescript": "^5.7.3",
-    "vite": "^5.4.11",
+    "vite": "^6.0.11",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-mock": "^3.0.2",

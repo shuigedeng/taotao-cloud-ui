@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@taotaocloud/taotao-cloud-chrome-plugin": "file:",
-    "antd": "^5.23.1",
+    "antd": "^5.23.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
