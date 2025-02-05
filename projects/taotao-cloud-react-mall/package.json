@@ -36,7 +36,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.26.0",
+    "@babel/runtime": "^7.26.7",
     "@tarojs/cli": "^4.0.9",
     "@tarojs/components": "^4.0.9",
     "@tarojs/plugin-mock": "^0.0.9",
@@ -67,11 +67,11 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
+    "@babel/core": "^7.26.7",
     "@tarojs/mini-runner": "^4.0.3",
     "@tarojs/webpack-runner": "^4.0.3",
-    "@types/react": "^19.0.7",
-    "@types/webpack-env": "^1.18.5",
+    "@types/react": "^19.0.8",
+    "@types/webpack-env": "^1.18.8",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "babel-preset-taro": "^4.0.9",
@@ -80,7 +80,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "stylelint": "^16.13.2",
+    "stylelint": "^16.14.1",
     "typescript": "^5.7.3"
   }
 }
