@@ -57,6 +57,7 @@ unpackage/
 /*/out/
 /out
 /vendor
+/*/.gradle
 
 !.mvn/wrapper/maven-wrapper.jar
 
