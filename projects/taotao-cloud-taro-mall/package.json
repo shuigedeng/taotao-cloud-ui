@@ -41,7 +41,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.26.9",
+    "@babel/runtime": "^7.27.0",
     "@react-native-async-storage/async-storage": "~1.19.8",
     "@react-native-community/cameraroll": "~4.1.2",
     "@react-native-community/clipboard": "~1.5.1",
@@ -96,8 +96,8 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sa-sdk-javascript": "^1.27.2",
-    "sa-sdk-miniprogram": "^1.21.3",
+    "sa-sdk-javascript": "^1.27.3",
+    "sa-sdk-miniprogram": "^1.21.5",
     "sr-sdk-h5": "^1.5.1",
     "sr-sdk-wxapp": "^1.10.1",
     "taro-hooks": "latest",
@@ -106,12 +106,12 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "@tarojs/cli": "3.6.8",
     "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",
     "@tarojs/webpack-runner": "3.6.8",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.12",
     "@types/webpack-env": "^1.18.8",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -122,7 +122,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "install-peerdeps": "^3.0.3",
+    "install-peerdeps": "^3.0.6",
     "pod-install": "^0.1.39",
     "stylelint": "15.9.0",
     "typescript": "^5.8.2"
