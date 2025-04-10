@@ -28,7 +28,7 @@
     "auto-import-webpack-plugin": "file:",
     "eslint": "^8.57.1",
     "prettier": "^2.8.8",
-    "webpack": ">=5.98.0"
+    "webpack": ">=5.99.5"
   },
   "peerDependencies": {
     "webpack": ">=5"
