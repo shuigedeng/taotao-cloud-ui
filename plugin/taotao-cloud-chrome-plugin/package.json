@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@taotaocloud/taotao-cloud-chrome-plugin": "file:",
-    "antd": "^5.24.7",
+    "antd": "^5.24.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -47,7 +47,7 @@
     "prettier": "^2.8.8",
     "react-refresh": "^0.14.2",
     "react-refresh-typescript": "^2.0.10",
-    "sass": "^1.86.3",
+    "sass": "^1.87.0",
     "sass-loader": "^13.3.3",
     "source-map-loader": "^3.0.2",
     "style-loader": "^3.3.4",
@@ -55,7 +55,7 @@
     "ts-loader": "^9.5.2",
     "type-fest": "^3.13.1",
     "typescript": "^5.8.3",
-    "webpack": "^5.99.5",
+    "webpack": "^5.99.7",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
     "zip-webpack-plugin": "^4.0.3"
