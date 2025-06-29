@@ -96,7 +96,7 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
-    "sa-sdk-javascript": "^1.27.5",
+    "sa-sdk-javascript": "^1.27.6",
     "sa-sdk-miniprogram": "^1.21.7",
     "sr-sdk-h5": "^1.5.1",
     "sr-sdk-wxapp": "^1.10.1",
@@ -106,7 +106,7 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.27.4",
+    "@babel/core": "^7.27.7",
     "@tarojs/cli": "3.6.8",
     "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",
