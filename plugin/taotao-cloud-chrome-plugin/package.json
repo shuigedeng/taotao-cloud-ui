@@ -14,14 +14,14 @@
   },
   "dependencies": {
     "@taotaocloud/taotao-cloud-chrome-plugin": "file:",
-    "antd": "^5.26.2",
+    "antd": "^5.26.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.27.7",
+    "@babel/core": "^7.28.0",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
     "@types/chrome": "^0.0.239",
@@ -55,7 +55,7 @@
     "ts-loader": "^9.5.2",
     "type-fest": "^3.13.1",
     "typescript": "^5.8.3",
-    "webpack": "^5.99.9",
+    "webpack": "^5.100.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
     "zip-webpack-plugin": "^4.0.3"
