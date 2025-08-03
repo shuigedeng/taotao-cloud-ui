@@ -41,13 +41,13 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^24.0.14",
+    "@types/node": "^24.1.0",
     "@types/prettier": "^2.7.3",
     "@typescript-eslint/parser": "^5.62.0",
     "chalk-cjs": "^5.2.0",
     "commander": "^11.1.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "ghooks": "^2.0.4",
     "ignore": "^5.3.2",
@@ -56,7 +56,7 @@
     "rollup": "^3.29.5",
     "rollup-plugin-dts": "^5.3.1",
     "tslib": "^2.8.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "lint-staged": {
     "*.{js,cjs,mjs,ts,cts,mts}": [
@@ -71,7 +71,7 @@
   "dependencies": {
     "eslint": "^8.57.1",
     "prettier": "^2.8.8",
-    "webpack": "^5.100.2"
+    "webpack": "^5.101.0"
   },
   "peerDependencies": {
     "webpack": ">=5"
