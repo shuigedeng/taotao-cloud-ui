@@ -17,12 +17,12 @@
     "commit": "git-cz"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
+    "@element-plus/icons-vue": "^2.3.2",
     "@tauri-apps/api": "^1.6.0",
     "animate.css": "^4.1.1",
     "cronstrue": "^2.61.0",
     "echarts": "^5.6.0",
-    "element-plus": "^2.10.5",
+    "element-plus": "^2.10.6",
     "pinia": "^2.3.1",
     "vue": "^3.5.18",
     "vue-echarts": "^6.7.3",
@@ -38,7 +38,7 @@
     "@antfu/eslint-config": "^0.39.8",
     "@intlify/vite-plugin-vue-i18n": "^7.0.0",
     "@tauri-apps/cli": "^1.6.3",
-    "@types/node": "^24.1.0",
+    "@types/node": "^24.2.1",
     "@vicons/antd": "^0.12.0",
     "@vitejs/plugin-vue": "^5.2.4",
     "commitizen": "^4.3.1",
