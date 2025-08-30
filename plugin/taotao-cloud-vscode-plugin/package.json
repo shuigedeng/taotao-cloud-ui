@@ -4,7 +4,7 @@
   "description": "taotao-cloud-vscode-plugin",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.102.0"
+    "vscode": "^1.103.0"
   },
   "categories": [
     "Other"
@@ -33,17 +33,17 @@
   "devDependencies": {
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.2.1",
-    "@types/vscode": "^1.102.0",
+    "@types/node": "^24.3.0",
+    "@types/vscode": "^1.103.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vscode/test-electron": "^2.5.2",
     "eslint": "^8.57.1",
     "glob": "^10.4.5",
     "mocha": "^10.8.2",
-    "ts-loader": "^9.5.2",
+    "ts-loader": "^9.5.4",
     "typescript": "^5.9.2",
-    "webpack": "^5.101.0",
+    "webpack": "^5.101.3",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
