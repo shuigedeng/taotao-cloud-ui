@@ -41,7 +41,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.10.1",
     "@types/prettier": "^2.7.3",
     "@typescript-eslint/parser": "^5.62.0",
     "chalk-cjs": "^5.2.0",
@@ -71,7 +71,7 @@
   "dependencies": {
     "eslint": "^8.57.1",
     "prettier": "^2.8.8",
-    "webpack": "^5.102.1"
+    "webpack": "^5.103.0"
   },
   "peerDependencies": {
     "webpack": ">=5"
