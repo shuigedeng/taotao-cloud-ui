@@ -10,7 +10,7 @@
     "stop": "npx pm2 stop ecosystem.config.js"
   },
   "dependencies": {
-    "fs-extra": "^11.3.2",
+    "fs-extra": "^11.3.3",
     "koa": "^3.1.1",
     "koa-body": "^6.0.1",
     "koa-bodyparser": "^4.4.1",
@@ -25,7 +25,7 @@
     "@types/koa": "^2.15.0",
     "@types/koa-bodyparser": "^5.0.2",
     "@types/koa-router": "^7.4.9",
-    "@types/node": "^24.10.2",
+    "@types/node": "^25.0.3",
     "nodemon": "^2.0.22",
     "pm2": "^5.4.3",
     "rimraf": "^6.1.2",
