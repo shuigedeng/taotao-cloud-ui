@@ -39,7 +39,7 @@
     "@vueuse/core": "^10.11.1",
     "@zxcvbn-ts/core": "^3.0.4",
     "ant-design-vue": "3.2.20",
-    "axios": "^1.13.6",
+    "axios": "^1.14.0",
     "codemirror": "^6.0.2",
     "cropperjs": "^1.6.2",
     "crypto-js": "^4.2.0",
@@ -50,7 +50,7 @@
     "lodash-es": "^4.17.23",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
-    "path-to-regexp": "^8.3.0",
+    "path-to-regexp": "^8.4.0",
     "pinia": "^2.3.1",
     "print-js": "^1.6.0",
     "qrcode": "^1.5.4",
@@ -58,7 +58,7 @@
     "sortablejs": "^1.15.7",
     "tinymce": "^7.9.2",
     "vditor": "^3.11.2",
-    "vue": "^3.5.30",
+    "vue": "^3.5.31",
     "vue-i18n": "^11.3.0",
     "vue-json-pretty": "^2.6.0",
     "vue-router": "^4.6.4",
@@ -68,7 +68,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
-    "@iconify/json": "^2.2.452",
+    "@iconify/json": "^2.2.455",
     "@purge-icons/generated": "^0.9.0",
     "@types/codemirror": "^5.60.17",
     "@types/crypto-js": "^4.2.2",
@@ -140,7 +140,7 @@
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china",
-    "rollup": "^4.59.0"
+    "rollup": "^4.60.0"
   },
   "repository": {
     "type": "git",
