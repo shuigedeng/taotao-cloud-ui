@@ -13,13 +13,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^25.5.0",
+    "@types/node": "^25.6.0",
     "esbuild": "^0.18.20"
   },
   "dependencies": {
     "@types/qs": "^6.15.0",
     "@vitejs/plugin-markdown": "file:",
     "markdown-it": "^13.0.2",
-    "qs": "^6.15.0"
+    "qs": "^6.15.1"
   }
 }

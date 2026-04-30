@@ -27,10 +27,10 @@
   },
   "dependencies": {
     "@taotaocloud/core": "file:",
-    "axios": "^1.14.0",
+    "axios": "^1.15.2",
     "generate-avatar": "^1.4.10",
     "js-base64": "^3.7.8",
-    "lodash-es": "^4.17.23",
+    "lodash-es": "^4.18.1",
     "moment": "^2.30.1",
     "sm-crypto": "^0.3.14",
     "sweetalert2": "^11.26.24"
