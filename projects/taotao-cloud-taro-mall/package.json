@@ -41,7 +41,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.29.2",
+    "@babel/runtime": "^7.29.7",
     "@react-native-async-storage/async-storage": "~1.19.8",
     "@react-native-community/cameraroll": "~4.1.2",
     "@react-native-community/clipboard": "~1.5.1",
@@ -106,7 +106,7 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
+    "@babel/core": "^7.29.7",
     "@tarojs/cli": "3.6.8",
     "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",

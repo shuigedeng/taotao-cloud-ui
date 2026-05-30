@@ -36,7 +36,7 @@
   "author": "",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@babel/runtime": "^7.29.2",
+    "@babel/runtime": "^7.29.7",
     "@tarojs/cli": "^4.2.0",
     "@tarojs/components": "^4.2.0",
     "@tarojs/plugin-mock": "^0.0.9",
@@ -67,7 +67,7 @@
     "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
+    "@babel/core": "^7.29.7",
     "@tarojs/mini-runner": "^4.0.3",
     "@tarojs/webpack-runner": "^4.0.3",
     "@types/react": "^19.2.15",

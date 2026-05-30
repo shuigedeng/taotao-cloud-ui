@@ -58,7 +58,7 @@
     "axios": "1.4.0",
     "clipboard": "2.0.11",
     "codemirror": "^6.0.2",
-    "dayjs": "^1.11.20",
+    "dayjs": "^1.11.21",
     "driver.js": "0.9.5",
     "dropzone": "5.5.1",
     "echarts": "5.4.2",
