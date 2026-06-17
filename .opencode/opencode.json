@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "default_agent": "frontend-dev",
+  "agent": {
+    "frontend-dev": {
+      "description": "默认前端开发代理 - Vue/Quasar/TypeScript 项目开发"
+    },
+    "reviewer": {
+      "description": "代码审查代理 - Vue/TS/SCSS 代码质量检查"
+    }
+  },
+  "permission": {
+    "bash": "allow",
+    "read": "allow",
+    "edit": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "write": "ask",
+    "task": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow",
+    "lsp": "allow",
+    "skill": "allow"
+  }
+}
