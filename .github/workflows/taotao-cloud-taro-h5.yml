@@ -56,7 +56,7 @@ jobs:
           yarn build:h5
 
       - name: deploy to server
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@6.0.1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO --delete"
