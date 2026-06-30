@@ -1,41 +1,73 @@
-
-## 3. 团队配置
-
-**`.claude/settings.json`** - 团队共享配置
-```json
 {
-"version": "1.0",
-"permissions": {
-"read": ["src/**/*.java", "src/**/*.yml", "pom.xml"],
-"write": ["src/**/*.java", "src/**/*.xml"],
-"execute": ["./mvnw", "git", "docker"],
-"network": ["localhost:8080", "localhost:3306", "api.github.com"]
-},
-"model": {
-"default": "claude-3.5-sonnet-20240620",
-"fallback": "claude-3-opus-20240229",
-"temperature": 0.3,
-"maxTokens": 4096
-},
-"git": {
-"autoCommit": false,
-"requireTests": true,
-"commitMessageTemplate": "type(scope): description\n\nCloses #{{issue}}"
-},
-"java": {
-"buildTool": "maven",
-"testCommand": "./mvnw test",
-"compileCommand": "./mvnw compile",
-"packageCommand": "./mvnw clean package -DskipTests=false"
-},
-"integrations": {
-"jira": {
-"enabled": false,
-"project": "SPRING"
-},
-"sonarqube": {
-"enabled": true,
-"url": "http://localhost:9000"
-}
-}
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "agent": "frontend-dev",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install)",
+      "Bash(pnpm run dev)",
+      "Bash(pnpm run build)",
+      "Bash(pnpm run lint:*)",
+      "Bash(pnpm run test:*)",
+      "Bash(pnpm run type:check)",
+      "Bash(pnpm run shared:build)",
+      "Bash(pnpm run --filter=*)",
+      "Bash(git status)",
+      "Bash(git diff)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(git branch *)",
+      "Bash(npx only-allow pnpm)",
+      "Bash(node *)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(projects/**/.env)",
+      "Read(projects/**/.env.*)"
+    ],
+    "deny": [
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(pnpm publish *)",
+      "Bash(npm publish *)",
+      "Bash(rm -rf *)",
+      "Bash(rm -r /*)",
+      "Read(projects/**/node_modules/**)",
+      "Read(**/.git/credentials)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/*.p12)"
+    ],
+    "ask": [
+      "Bash(pnpm publish)",
+      "Bash(npm publish)",
+      "Bash(rm *)",
+      "Write(.env)",
+      "Write(.env.*)",
+      "Write(projects/**/.env)",
+      "Write(projects/**/.env.*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Checking file extension...'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  },
+  "attribution": {
+    "commit": "refactor(ui): {commit_message}",
+    "pr": "feat(ui): {pr_title}"
+  }
 }

@@ -1,15 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
-    "read": ["/Users/username/.m2/settings.xml"],
-    "write": ["/tmp/claude-output"],
-    "network": ["localhost:9090"]
+    "allow": [
+      "Bash(pnpm run dev)",
+      "Bash(pnpm run build)",
+      "Bash(pnpm run lint:*)",
+      "Bash(pnpm run test:*)"
+    ]
   },
-  "model": {
-    "temperature": 0.5
-  },
-  "custom": {
-    "theme": "dark",
-    "notifications": true,
-    "autoSave": true
-  }
+  "autoUpdatesChannel": "stable",
+  "autoScrollEnabled": true,
+  "verbose": false
 }

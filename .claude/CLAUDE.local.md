@@ -1,26 +1,20 @@
+# 本地开发配置（个人）
 
-## 2. 个人配置
+## 开发环境
+- **编辑器**: VS Code + Volar + ESLint + Prettier
+- **终端**: PowerShell 7（Windows）
+- **包管理**: pnpm 9.x
 
-**`CLAUDE.local.md`**
-```markdown
-# 个人DDD开发配置
+## 本地工作流
+- 开发前先 `pnpm run type:check`
+- 提交前 `pnpm run lint:*` 全部通过
+- 先更新共享包 `pnpm shared:build` 再构建应用
 
-## 开发工具
-- **IDE**: IntelliJ IDEA Ultimate with DDD插件
-- **建模工具**: Miro（事件风暴）
-- **文档工具**: PlantUML（领域模型图）
+## 常用项目别名
+- `manager` → `projects/taotao-cloud-vue3-manager`
+- `front` → `projects/taotao-cloud-vue3-front`
+- `datav` → `projects/taotao-cloud-vue3-datav`
 
-## 个人偏好
-- **测试驱动**: 先写领域层单元测试
-- **代码生成**: 使用Lombok减少样板代码
-- **调试模式**: 开启SQL日志查看仓储实现
-
-## 本地DDD设置
-```yaml
-ddd:
-  event-storming:
-    output: docs/event-storming/
-  aggregate:
-    max-size: 10  # 单个聚合最大实体数
-  repository:
-    batch-size: 100  # 批量操作大小
+## 本地构建优化
+- `pnpm install --frozen-lockfile` 避免 lock 变更
+- `pnpm store prune` 定期清理缓存
