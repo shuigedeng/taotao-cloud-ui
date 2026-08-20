@@ -8,18 +8,21 @@
     "build-bundle": "esbuild src/index.ts --bundle --platform=node --target=node12 --external:@vue/compiler-sfc --external:vue/compiler-sfc --external:vite --outfile=dist/index.js"
   },
   "peerDependencies": {
-    "vite": "^2.5.10"
+    "vite": "2.5.10"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^26.0.1",
-    "esbuild": "^0.18.20"
+    "@types/node": "26.2.0",
+    "esbuild": "0.18.20"
   },
   "dependencies": {
-    "@types/qs": "^6.15.1",
+    "@types/qs": "6.15.1",
     "@vitejs/plugin-markdown": "file:",
-    "markdown-it": "^13.0.2",
-    "qs": "^6.15.3"
+    "markdown-it": "13.0.2",
+    "qs": "6.15.3"
+  },
+  "engines": {
+    "node": ">=26"
   }
 }

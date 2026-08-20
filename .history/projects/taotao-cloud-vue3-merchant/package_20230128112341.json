@@ -153,6 +153,6 @@
   },
   "homepage": "https://github.com/anncwb/vue-vben-admin",
   "engines": {
-    "node": "^12 || >=14"
+    "node": ">=26"
   }
 }

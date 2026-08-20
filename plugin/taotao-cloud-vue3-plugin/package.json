@@ -44,11 +44,14 @@
   },
   "dependencies": {
     "auto-import-webpack-plugin": "file:",
-    "eslint": "^8.57.1",
-    "prettier": "^2.8.8",
-    "webpack": ">=5.108.1"
+    "eslint": "8.57.1",
+    "prettier": "2.8.8",
+    "webpack": ">=5.109.2"
   },
   "peerDependencies": {
     "webpack": ">=5"
+  },
+  "engines": {
+    "node": ">=26"
   }
 }

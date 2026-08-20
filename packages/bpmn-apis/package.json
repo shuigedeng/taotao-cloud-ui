@@ -26,6 +26,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@taotaocloud/core": "workspace:^1.0.0"
+    "@taotaocloud/core": "workspace:1.0.0"
+  },
+  "engines": {
+    "node": ">=26"
   }
 }

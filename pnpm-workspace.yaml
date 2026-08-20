@@ -8,6 +8,6 @@ packages:
   # 存放plugin插件
   - 'plugin/*'
   # 项目目录
-  - 'projects/*'
+  - 'apps/*'
   # 排除目录
   - '!**/test/*'
