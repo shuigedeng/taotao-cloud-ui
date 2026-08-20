@@ -12,9 +12,9 @@ Vue3 / Quasar / Vite / TypeScript 多框架前端 Monorepo。pnpm workspace 管�
 │   ├── components/         # 公共 UI 组件库
 │   └── bpmn-*/             # BPMN 流程相关
 ├── projects/               # 独立应用
-│   ├── taotao-cloud-vue3-manager/   # 管理后台（Ant Design Vue）
-│   ├── taotao-cloud-vue3-front/     # 商城前端（Quasar）
-│   ├── taotao-cloud-vue3-datav/     # 数据大屏
+│   ├── taotao-cloud-admin-vue3/   # 管理后台（Ant Design Vue）
+│   ├── taotao-cloud-front-vue3/     # 商城前端（Quasar）
+│   ├── taotao-cloud-datav-vue3/     # 数据大屏
 │   ├── taotao-cloud-vue3-merchant/  # 商户管理
 │   ├── taotao-cloud-vue3-open/      # 开放平台
 │   ├── taotao-cloud-taro-mall/      # 移动端（Taro + RN）
@@ -62,7 +62,7 @@ Vue3 / Quasar / Vite / TypeScript 多框架前端 Monorepo。pnpm workspace 管�
 pnpm install                           # 安装依赖
 pnpm dev                               # 启动默认项目
 pnpm shared:build                      # 构建所有 packages
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run dev                           # 启动开发服务器
 pnpm run build                         # 生产构建
 pnpm run lint:eslint                   # ESLint

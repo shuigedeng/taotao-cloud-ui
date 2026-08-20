@@ -20,9 +20,9 @@ taotao-cloud-ui/
 │   ├── bpmn-apis/                     # BPMN 流程 API 封装
 │   └── bpmn-designer/                 # BPMN 流程设计器
 ├── projects/                          # 独立应用项目
-│   ├── taotao-cloud-vue3-manager/     # 平台管理后台（Ant Design Vue）
-│   ├── taotao-cloud-vue3-front/       # 商城前端（Quasar）
-│   ├── taotao-cloud-vue3-datav/       # 数据大屏
+│   ├── taotao-cloud-admin-vue3/     # 平台管理后台（Ant Design Vue）
+│   ├── taotao-cloud-front-vue3/       # 商城前端（Quasar）
+│   ├── taotao-cloud-datav-vue3/       # 数据大屏
 │   ├── taotao-cloud-vue3-merchant/    # 商户管理端
 │   ├── taotao-cloud-vue3-open/        # 开放平台
 │   ├── taotao-cloud-taro-mall/        # 移动端商城（Taro + React Native）
@@ -69,7 +69,7 @@ taotao-cloud-ui/
 ## CONVENTIONS
 
 ### 命名规范
-- **项目名**: `taotao-cloud-{framework}-{app}`（如 taotao-cloud-vue3-manager）
+- **项目名**: `taotao-cloud-{framework}-{app}`（如 taotao-cloud-admin-vue3）
 - **包名**: `@taotaocloud/{name}`（如 @taotaocloud/core）
 - **组件**: PascalCase（如 `UserAvatar.vue`、`AppTable.vue`）
 - **文件/目录**: kebab-case（如 `user-profile.ts`、`api-service.ts`）
@@ -207,7 +207,7 @@ pnpm prod                             # 生产构建默认项目
 pnpm shared:build                     # 构建所有 packages
 
 # 各项目自身命令（以 manager 为例）
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run dev                          # 启动开发服务器
 pnpm run build                        # 生产构建
 pnpm run build:test                   # 测试环境构建
@@ -231,4 +231,4 @@ pnpm run commit                       # commitizen 交互式提交
 - mock 数据在各项目中 `mock/` 目录（vite-plugin-mock）
 - 共享包的构建产物在 `packages/{name}/dist/` 目录
 - CI/CD 使用 GitHub Actions，配置在 `.github/` 目录
-- 部分项目（taotao-cloud-vue3-manager）基于 vue-vben-admin 模板二次开发
+- 部分项目（taotao-cloud-admin-vue3）基于 vue-vben-admin 模板二次开发

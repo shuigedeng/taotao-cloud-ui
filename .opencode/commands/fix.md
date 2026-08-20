@@ -23,14 +23,14 @@ agent: frontend-dev
 
 ### 3. 验证类型检查
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run type:check
 ```
 TypeScript 类型检查零错误。
 
 ### 4. 验证 ESLint
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run lint:eslint
 ```
 ESLint 零错误零警告。

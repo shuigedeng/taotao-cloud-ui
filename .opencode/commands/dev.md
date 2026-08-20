@@ -5,7 +5,7 @@ agent: frontend-dev
 
 你是 taotao-cloud-ui 项目的开发助手，正在执行 /dev 命令。
 
-项目名称：$ARGUMENTS（如 taotao-cloud-vue3-manager，默认启动根项目）
+项目名称：$ARGUMENTS（如 taotao-cloud-admin-vue3，默认启动根项目）
 
 ## 执行步骤
 
@@ -17,11 +17,11 @@ agent: frontend-dev
 ### 2. 启动开发服务器
 ```bash
 # 指定项目
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run dev
 
 # 或根目录（使用 filter）
-pnpm run --filter=@taotaocloud/taotao-cloud-vue3-manager dev
+pnpm run --filter=@taotaocloud/taotao-cloud-admin-vue3 dev
 ```
 
 ### 3. 确认服务启动
@@ -30,9 +30,9 @@ pnpm run --filter=@taotaocloud/taotao-cloud-vue3-manager dev
 ### 常见项目端口参考
 | 项目 | 默认端口 | 备注 |
 |------|---------|------|
-| taotao-cloud-vue3-manager | 5173 | 管理后台 |
-| taotao-cloud-vue3-front | 5174 | 商城前端 |
-| taotao-cloud-vue3-datav | 5175 | 数据大屏 |
+| taotao-cloud-admin-vue3 | 5173 | 管理后台 |
+| taotao-cloud-front-vue3 | 5174 | 商城前端 |
+| taotao-cloud-datav-vue3 | 5175 | 数据大屏 |
 | taotao-cloud-vue3-merchant | 5176 | 商户管理 |
 
 ## 输出格式

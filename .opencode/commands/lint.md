@@ -17,25 +17,25 @@ agent: frontend-dev
 
 ### 1. ESLint 检查
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run lint:eslint
 ```
 
 ### 2. Stylelint 检查
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run lint:stylelint
 ```
 
 ### 3. Prettier 格式化
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run lint:prettier
 ```
 
 ### 4. TypeScript 类型检查
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run type:check
 ```
 

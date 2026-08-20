@@ -2,17 +2,17 @@ name: assemble front
 
 on:
   push:
-    paths:
-      - 'taotao-cloud-vue3-front/**'
-    branches: [ master ]
+    #paths:
+    #  - 'taotao-cloud-front-vue3/**'
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: taotao-cloud-vue3-front
+    working-directory: taotao-cloud-front-vue3
 
 jobs:
   assemble:
@@ -59,7 +59,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO --delete"
-          SOURCE: "taotao-cloud-vue3-front/dist/"
+          SOURCE: "taotao-cloud-front-vue3/dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_FRONT_TARGET }}

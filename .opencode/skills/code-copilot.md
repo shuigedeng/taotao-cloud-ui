@@ -87,13 +87,13 @@ function handleClick(e: MouseEvent) {
 
 ### `/dev` — 启动开发服务器
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run dev
 ```
 
 ### `/build` — 生产构建
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run build
 ```
 

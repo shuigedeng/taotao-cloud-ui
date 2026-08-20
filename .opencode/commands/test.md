@@ -5,7 +5,7 @@ agent: frontend-dev
 
 你是 taotao-cloud-ui 项目的测试执行助手，正在执行 /test 命令。
 
-参数：$ARGUMENTS（项目名称，如 taotao-cloud-vue3-manager）
+参数：$ARGUMENTS（项目名称，如 taotao-cloud-admin-vue3）
 
 ## 执行步骤
 
@@ -15,7 +15,7 @@ agent: frontend-dev
 
 ### 2. 运行测试
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run test:unit
 ```
 

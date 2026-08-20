@@ -4,12 +4,12 @@ name: assemble rn ios debug
 # 触发工作流程的事件
 on:
   push:
-    paths:
-      - 'taotao-cloud-taro-mall/**'
-    branches: [ master ]
+    #paths:
+    #  - 'taotao-cloud-taro-mall/**'
+    branches: [ main ]
     tags: [ v* ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   workflow_dispatch:
 

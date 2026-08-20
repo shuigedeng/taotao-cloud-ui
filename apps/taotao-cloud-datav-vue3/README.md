@@ -1,9 +1,9 @@
 
-# taotao-cloud-vue3-datav
+# taotao-cloud-datav-vue3
 
 #### 1.大屏展示系统简介
 
-**taotao-cloud-vue3-datav**
+**taotao-cloud-datav-vue3**
 ```
 后台基于
 Spring Boot 2.4.3 、
@@ -23,13 +23,13 @@ echarts 、
 
 ```
 
-**taotao-cloud-vue3-datav** 大屏展示源码
+**taotao-cloud-datav-vue3** 大屏展示源码
 
 #### 2.项目源码
 
 |     |   后端源码  |   前端源码  |
 |---  |--- | --- |
-|  github   |  https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-microservice  |  https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-web/taotao-cloud-vue3-datav   |
+|  github   |  https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-microservice  |  https://github.com/shuigedeng/taotao-cloud-project/tree/master/taotao-cloud-web/taotao-cloud-datav-vue3   |
 
 
 #### 3.前端模板

@@ -718,7 +718,7 @@ importers:
 
   apps/taotao-cloud-front-vue3:
     dependencies:
-      '@taotaocloud/taotao-cloud-vue3-front':
+      '@taotaocloud/taotao-cloud-front-vue3':
         specifier: 'file:'
         version: 'link:'
 

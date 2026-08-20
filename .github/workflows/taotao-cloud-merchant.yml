@@ -2,12 +2,12 @@ name: assemble merchant
 
 on:
   push:
-    paths:
-      - 'taotao-cloud-vue3-merchant/**'
-    branches: [ master ]
+    #paths:
+    #  - 'taotao-cloud-vue3-merchant/**'
+    branches: [ main ]
     #tags: [ v* ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   workflow_dispatch:
 

@@ -2,12 +2,12 @@ name: assemble taro mall h5
 
 on:
   push:
-    paths:
-      - 'taotao-cloud-taro-mall/**'
-    branches: [ master ]
+    #paths:
+    #  - 'taotao-cloud-taro-mall/**'
+    branches: [ main ]
     #tags: [ v* ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   workflow_dispatch:
 

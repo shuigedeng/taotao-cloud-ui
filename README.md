@@ -199,12 +199,12 @@ Maven:
 * 博客地址: [https://blog.taotaocloud.top](https://blog.taotaocloud.top)
 * 代码质量检测结果地址: [https://qodana.taotaocloud.top](https://qodana.taotaocloud.top) (带宽有限, 需多刷新几次)
 * 商城首页地址: [https://taotaocloud.top](https://taotaocloud.top)
-  源码地址: [taotao-cloud-front](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-front)
+  源码地址: [taotao-cloud-front](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-front-vue3)
 * 大屏展示地址: [https://datav.taotaocloud.top](https://datav.taotaocloud.top)
-  源码地址: [taotao-cloud-datav](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-datav)
+  源码地址: [taotao-cloud-datav](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-datav-vue3)
 * 平台管理地址(进度15%): [https://manager.taotaocloud.top](https://manager.taotaocloud.top) (
   admin/123456)
-  源码地址: [taotao-cloud-manager](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-manager)
+  源码地址: [taotao-cloud-manager](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-admin-vue3)
 * 商户管理地址(进度5%): [https://merchant.taotaocloud.top](https://merchant.taotaocloud.top) (
   taotao/123456)
   源码地址: [taotao-cloud-merchant](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-vue3-merchant)

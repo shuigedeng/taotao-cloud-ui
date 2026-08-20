@@ -2,11 +2,11 @@ name: assemble open
 
 on:
   push:
-    paths:
-      - 'taotao-cloud-vue3-open/**'
-    branches: [ master ]
+    #paths:
+    #  - 'taotao-cloud-vue3-open/**'
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 defaults:
   run:

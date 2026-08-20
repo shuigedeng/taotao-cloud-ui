@@ -21,13 +21,13 @@ pnpm shared:build
 
 ### 2. 构建指定项目
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run build
 ```
 
 ### 3. 类型检查前置（推荐）
 ```bash
-cd projects/taotao-cloud-vue3-manager
+cd projects/taotao-cloud-admin-vue3
 pnpm run type:check
 ```
 类型检查失败则不继续构建。

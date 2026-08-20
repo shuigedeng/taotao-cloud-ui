@@ -11,9 +11,9 @@
 - 先更新共享包 `pnpm shared:build` 再构建应用
 
 ## 常用项目别名
-- `manager` → `projects/taotao-cloud-vue3-manager`
-- `front` → `projects/taotao-cloud-vue3-front`
-- `datav` → `projects/taotao-cloud-vue3-datav`
+- `manager` → `projects/taotao-cloud-admin-vue3`
+- `front` → `projects/taotao-cloud-front-vue3`
+- `datav` → `projects/taotao-cloud-datav-vue3`
 
 ## 本地构建优化
 - `pnpm install --frozen-lockfile` 避免 lock 变更
