@@ -12,7 +12,7 @@
     ],
     "repository": "",
     "engines": {
-        "HBuilderX": "^3.1.6"
+        "HBuilderX": "3.1.6"
     },
     "dcloudext": {
         "category": [

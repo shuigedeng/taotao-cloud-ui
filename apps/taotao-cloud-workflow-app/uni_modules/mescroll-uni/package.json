@@ -12,7 +12,7 @@
   ],
   "repository": "https://github.com/mescroll/mescroll",
   "engines": {
-    "HBuilderX": "^3.1.0"
+    "HBuilderX": "3.1.0"
   },
   "dcloudext": {
     "category": [

@@ -2,6 +2,7 @@
   "name": "taotao-cloud-ui",
   "private": false,
   "version": "1.0.0",
+  "description": "App monorepo - 小程序/H5 + 跨端App + 共享业务层",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "commit": "git add . && git status && git-cz",

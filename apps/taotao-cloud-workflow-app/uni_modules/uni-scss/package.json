@@ -10,7 +10,7 @@
   ],
   "repository": "https://github.com/dcloudio/uni-ui",
   "engines": {
-    "HBuilderX": "^3.1.0"
+    "HBuilderX": "3.1.0"
   },
   "dcloudext": {
     "category": [
