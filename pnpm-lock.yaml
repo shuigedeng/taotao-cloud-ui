@@ -22,6 +22,15 @@ importers:
       '@iconify/types':
         specifier: 2.0.0
         version: 2.0.0
+      '@taotaocloud/apis':
+        specifier: workspace:*
+        version: link:../../packages/apis
+      '@taotaocloud/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@taotaocloud/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@types/antd':
         specifier: 1.0.4
         version: 1.0.4(luxon@3.7.2)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -349,16 +358,16 @@ importers:
         version: 1.2.28
       '@logicflow/extension':
         specifier: 1.2.28
-        version: 1.2.28(bufferutil@4.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.1.6))(utf-8-validate@5.0.2)
+        version: 1.2.28(bufferutil@4.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3))(utf-8-validate@5.0.2)
       '@vueuse/core':
         specifier: 10.11.1
-        version: 10.11.1(vue@3.5.41(typescript@5.1.6))
+        version: 10.11.1(vue@3.5.41(typescript@5.9.3))
       '@zxcvbn-ts/core':
         specifier: 3.0.4
         version: 3.0.4
       ant-design-vue:
         specifier: 3.2.20
-        version: 3.2.20(vue@3.5.41(typescript@5.1.6))
+        version: 3.2.20(vue@3.5.41(typescript@5.9.3))
       axios:
         specifier: 1.19.0
         version: 1.19.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
@@ -397,7 +406,7 @@ importers:
         version: 8.4.2
       pinia:
         specifier: 2.3.1
-        version: 2.3.1(typescript@5.1.6)(vue@3.5.41(typescript@5.1.6))
+        version: 2.3.1(typescript@5.9.3)(vue@3.5.41(typescript@5.9.3))
       print-js:
         specifier: 1.6.0
         version: 1.6.0
@@ -418,19 +427,19 @@ importers:
         version: 3.11.3
       vue:
         specifier: 3.5.41
-        version: 3.5.41(typescript@5.1.6)
+        version: 3.5.41(typescript@5.9.3)
       vue-i18n:
         specifier: 11.4.8
-        version: 11.4.8(vue@3.5.41(typescript@5.1.6))
+        version: 11.4.8(vue@3.5.41(typescript@5.9.3))
       vue-json-pretty:
         specifier: 2.6.0
-        version: 2.6.0(vue@3.5.41(typescript@5.1.6))
+        version: 2.6.0(vue@3.5.41(typescript@5.9.3))
       vue-router:
         specifier: 4.6.4
-        version: 4.6.4(vue@3.5.41(typescript@5.1.6))
+        version: 4.6.4(vue@3.5.41(typescript@5.9.3))
       vue-types:
         specifier: 5.1.3
-        version: 5.1.3(vue@3.5.41(typescript@5.1.6))
+        version: 5.1.3(vue@3.5.41(typescript@5.9.3))
       xlsx:
         specifier: 0.18.5
         version: 0.18.5
@@ -491,31 +500,31 @@ importers:
         version: 1.15.9
       '@typescript-eslint/eslint-plugin':
         specifier: 5.62.0
-        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6)
+        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
         specifier: 5.62.0
-        version: 5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6)
+        version: 5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
       '@vitejs/plugin-legacy':
         specifier: 4.1.1
         version: 4.1.1(supports-color@8.1.1)(terser@5.50.0)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0))
       '@vitejs/plugin-vue':
         specifier: 5.2.4
-        version: 5.2.4(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.1.6))
+        version: 5.2.4(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3))
       '@vitejs/plugin-vue-jsx':
         specifier: 3.1.0
-        version: 3.1.0(supports-color@8.1.1)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.1.6))
+        version: 3.1.0(supports-color@8.1.1)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3))
       '@vue/compiler-sfc':
         specifier: 3.3.4
         version: 3.3.4
       '@vue/test-utils':
         specifier: 2.4.11
-        version: 2.4.11(@vue/compiler-dom@3.5.41)(@vue/server-renderer@3.5.41)(vue@3.5.41(typescript@5.1.6))
+        version: 2.4.11(@vue/compiler-dom@3.5.41)(@vue/server-renderer@3.5.41)(vue@3.5.41(typescript@5.9.3))
       autoprefixer:
         specifier: 10.5.4
         version: 10.5.4(postcss@8.5.26)
       commitizen:
         specifier: 4.3.2
-        version: 4.3.2(@types/node@26.2.0)(typescript@5.1.6)
+        version: 4.3.2(@types/node@26.2.0)(typescript@5.9.3)
       conventional-changelog-cli:
         specifier: 3.0.0
         version: 3.0.0
@@ -536,13 +545,13 @@ importers:
         version: 1.24.1
       eslint-plugin-jest:
         specifier: 27.9.0
-        version: 27.9.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6))(eslint@8.57.1(supports-color@8.1.1))(jest@29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.1.6)))(supports-color@8.1.1)(typescript@5.1.6)
+        version: 27.9.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(jest@29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3)))(supports-color@8.1.1)(typescript@5.9.3)
       eslint-plugin-prettier:
         specifier: 5.5.6
         version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@8.57.1(supports-color@8.1.1)))(eslint@8.57.1(supports-color@8.1.1))(prettier@2.8.8)
       eslint-plugin-vue:
         specifier: 10.10.0
-        version: 10.10.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6))(eslint@8.57.1(supports-color@8.1.1))(vue-eslint-parser@9.4.3(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1))
+        version: 10.10.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(vue-eslint-parser@9.4.3(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1))
       esno:
         specifier: 0.16.3
         version: 0.16.3
@@ -563,7 +572,7 @@ importers:
         version: 3.0.1
       jest:
         specifier: 29.7.0
-        version: 29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.1.6))
+        version: 29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3))
       less:
         specifier: 4.9.0
         version: 4.9.0(supports-color@8.1.1)
@@ -590,25 +599,25 @@ importers:
         version: 5.14.0(rolldown@1.2.4)(rollup@4.62.4)
       stylelint:
         specifier: 16.26.1
-        version: 16.26.1(supports-color@8.1.1)(typescript@5.1.6)
+        version: 16.26.1(supports-color@8.1.1)(typescript@5.9.3)
       stylelint-config-prettier:
         specifier: 9.0.5
-        version: 9.0.5(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.1.6))
+        version: 9.0.5(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3))
       stylelint-config-standard:
         specifier: 33.0.0
-        version: 33.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.1.6))
+        version: 33.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3))
       stylelint-order:
         specifier: 6.0.4
-        version: 6.0.4(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.1.6))
+        version: 6.0.4(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3))
       ts-jest:
         specifier: 29.4.12
-        version: 29.4.12(@babel/core@7.29.7(supports-color@8.1.1))(@jest/transform@29.7.0(supports-color@8.1.1))(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(esbuild@0.28.2)(jest-util@29.7.0)(jest@29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.1.6)))(typescript@5.1.6)
+        version: 29.4.12(@babel/core@7.29.7(supports-color@8.1.1))(@jest/transform@29.7.0(supports-color@8.1.1))(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(esbuild@0.28.2)(jest-util@29.7.0)(jest@29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3)))(typescript@5.9.3)
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.1.6)
+        version: 10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3)
       typescript:
-        specifier: 5.1.6
-        version: 5.1.6
+        specifier: 5.9.3
+        version: 5.9.3
       vite:
         specifier: 8.2.1
         version: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0)
@@ -650,7 +659,7 @@ importers:
         version: 9.4.3(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)
       vue-tsc:
         specifier: 1.8.27
-        version: 1.8.27(typescript@5.1.6)
+        version: 1.8.27(typescript@5.9.3)
 
   apps/taotao-cloud-datav-vue3:
     dependencies:
@@ -2225,6 +2234,16 @@ importers:
       '@types/lodash-es':
         specifier: 4.17.12
         version: 4.17.12
+
+  packages/shared:
+    dependencies:
+      '@reduxjs/toolkit':
+        specifier: 2.12.0
+        version: 2.12.0(react-redux@8.1.3(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+    devDependencies:
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
 
   plugin/taotao-cloud-chrome-plugin:
     dependencies:
@@ -5913,6 +5932,17 @@ packages:
       react-native-safe-area-context: '>= 3.0.0'
       react-native-screens: '>= 3.0.0'
 
+  '@reduxjs/toolkit@2.12.0':
+    resolution: {integrity: sha512-KiT+RzZbp6mQET+Mg+h2c97+9j1sNflUxQkIHI7Yuzf6Peu+OYpmkn6nbHWmLLWj+1ZODUJFwGZ7gx3L9R9EOw==}
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18 || ^19
+      react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
+
   '@rnx-kit/babel-preset-metro-react-native@1.1.8':
     resolution: {integrity: sha512-8DotuBK1ZgV0H/tmCmtW/3ofA7JR/8aPqSu9lKnuqwBfq4bxz+w1sMyfFl89m4teWlkhgyczWBGD6NCLqTgi9A==}
     peerDependencies:
@@ -6407,6 +6437,9 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@stencil/core@2.22.3':
     resolution: {integrity: sha512-kmVA0M/HojwsfkeHsifvHVIYe4l5tin7J5+DLgtl8h6WWfiMClND5K3ifCXXI2ETDNKiEk21p6jql3Fx9o2rng==}
@@ -14136,6 +14169,9 @@ packages:
   immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
+  immer@11.1.17:
+    resolution: {integrity: sha512-8Vu44Y0MuMBlTQz/jQ8HEMYNq/bBqk87MnBwYR5mC8AthfhEXidZ5aT/oA/CUqboa8THKltnD9L3xyqhU/Sy1Q==}
+
   immutable@5.1.9:
     resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
 
@@ -19230,8 +19266,16 @@ packages:
     peerDependencies:
       redux: ^4
 
+  redux-thunk@3.1.0:
+    resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
+    peerDependencies:
+      redux: ^5.0.0
+
   redux@4.2.1:
     resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
+
+  redux@5.0.1:
+    resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
 
   reflect.getprototypeof@1.0.10:
     resolution: {integrity: sha512-00o4I+DVrefhv+nX0ulyi3biSHCPDe+yLv5o/p6d/UVlirijB8E16FtfwSAi4g3tcqrQ4lRAqQSoFEZJehYEcw==}
@@ -19360,6 +19404,9 @@ packages:
 
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+
+  reselect@5.2.0:
+    resolution: {integrity: sha512-AgZ3UOZm3YndfrJ4OYjgrT7bmCm/1iqkjvEfH/oYjzh6PD2qw4QuT3jjnXIrpdt4MTpMXclMT3lXbmRY+XRakw==}
 
   resize-detector@0.3.0:
     resolution: {integrity: sha512-R/tCuvuOHQ8o2boRP6vgx8hXCCy87H1eY9V5imBYeVNyNVpuL9ciReSccLj2gDcax9+2weXy3bc8Vv+NRXeEvQ==}
@@ -23063,6 +23110,12 @@ snapshots:
       '@ant-design/colors': 6.0.0
       '@ant-design/icons-svg': 4.5.0
       vue: 3.5.41(typescript@5.1.6)
+
+  '@ant-design/icons-vue@6.1.0(vue@3.5.41(typescript@5.9.3))':
+    dependencies:
+      '@ant-design/colors': 6.0.0
+      '@ant-design/icons-svg': 4.5.0
+      vue: 3.5.41(typescript@5.9.3)
 
   '@ant-design/icons@6.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -27142,6 +27195,21 @@ snapshots:
       - ts-node
       - utf-8-validate
 
+  '@logicflow/extension@1.2.28(bufferutil@4.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3))(utf-8-validate@5.0.2)':
+    dependencies:
+      '@logicflow/core': 1.2.28
+      jest: 27.5.1(bufferutil@4.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3))(utf-8-validate@5.0.2)
+      lodash-es: 4.18.1
+      preact: 10.29.8
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - node-notifier
+      - preact-render-to-string
+      - supports-color
+      - ts-node
+      - utf-8-validate
+
   '@marijn/find-cluster-break@1.0.3': {}
 
   '@mdi/js@7.4.47': {}
@@ -28086,6 +28154,28 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  '@react-native/community-cli-plugin@0.73.18(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)':
+    dependencies:
+      '@react-native-community/cli-server-api': 12.3.7(bufferutil@4.1.0)(encoding@0.1.13)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      '@react-native-community/cli-tools': 12.3.7(encoding@0.1.13)
+      '@react-native/dev-middleware': 0.73.8(bufferutil@4.1.0)(encoding@0.1.13)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      '@react-native/metro-babel-transformer': 0.73.15(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
+      chalk: 4.0.0
+      execa: 5.1.1
+      metro: 0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      metro-config: 0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      metro-core: 0.80.3
+      node-fetch: 2.7.0(encoding@0.1.13)
+      readline: 1.3.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@babel/preset-env'
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    optional: true
+
   '@react-native/debugger-frontend@0.73.3': {}
 
   '@react-native/dev-middleware@0.73.6(encoding@0.1.13)(supports-color@8.1.1)':
@@ -28156,6 +28246,13 @@ snapshots:
       invariant: 2.2.4
       nullthrows: 1.1.1
       react-native: 0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(encoding@0.1.13)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+
+  '@react-native/virtualized-lists@0.73.4(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))':
+    dependencies:
+      invariant: 2.2.4
+      nullthrows: 1.1.1
+      react-native: 0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+    optional: true
 
   '@react-navigation/bottom-tabs@6.5.20(a1dd8b2e2989490050d41b821ad26f8c)':
     dependencies:
@@ -28273,6 +28370,18 @@ snapshots:
       react-native-safe-area-context: 4.8.2(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(encoding@0.1.13)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)
       react-native-screens: 3.29.0(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(encoding@0.1.13)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)
       warn-once: 0.1.1
+
+  '@reduxjs/toolkit@2.12.0(react-redux@8.1.3(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)(redux@5.0.1))(react@18.3.1)':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@standard-schema/utils': 0.3.0
+      immer: 11.1.17
+      redux: 5.0.1
+      redux-thunk: 3.1.0(redux@5.0.1)
+      reselect: 5.2.0
+    optionalDependencies:
+      react: 18.3.1
+      react-redux: 8.1.3(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)(redux@5.0.1)
 
   '@rnx-kit/babel-preset-metro-react-native@1.1.8(@babel/core@7.29.7(supports-color@8.1.1))(@babel/plugin-transform-typescript@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@babel/runtime@7.29.7)(@react-native/babel-preset@0.87.0(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(metro-react-native-babel-preset@0.72.4(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
@@ -28675,6 +28784,8 @@ snapshots:
   '@soda/get-current-script@1.0.2': {}
 
   '@standard-schema/spec@1.1.0': {}
+
+  '@standard-schema/utils@0.3.0': {}
 
   '@stencil/core@2.22.3': {}
 
@@ -31040,6 +31151,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@vitejs/plugin-vue-jsx@3.1.0(supports-color@8.1.1)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3))':
+    dependencies:
+      '@babel/core': 7.29.7(supports-color@8.1.1)
+      '@babel/plugin-transform-typescript': 7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
+      '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
+      vite: 8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.6.1)(less@4.9.0(supports-color@8.1.1))(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)(yaml@2.9.0)
+      vue: 3.5.41(typescript@5.9.3)
+    transitivePeerDependencies:
+      - supports-color
+
   '@vitejs/plugin-vue@4.2.3(vite@4.4.0-beta.3(@types/node@26.2.0)(less@4.9.0(supports-color@8.1.1))(lightningcss@1.33.0)(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0))(vue@3.5.41(typescript@5.9.3))':
     dependencies:
       vite: 4.4.0-beta.3(@types/node@26.2.0)(less@4.9.0(supports-color@8.1.1))(lightningcss@1.33.0)(sass@1.103.0)(stylus@0.63.0(supports-color@8.1.1))(terser@5.50.0)
@@ -31718,6 +31839,15 @@ snapshots:
     optionalDependencies:
       '@vue/server-renderer': 3.5.41
 
+  '@vue/test-utils@2.4.11(@vue/compiler-dom@3.5.41)(@vue/server-renderer@3.5.41)(vue@3.5.41(typescript@5.9.3))':
+    dependencies:
+      '@vue/compiler-dom': 3.5.41
+      js-beautify: 1.14.9
+      vue: 3.5.41(typescript@5.9.3)
+      vue-component-type-helpers: 3.3.10
+    optionalDependencies:
+      '@vue/server-renderer': 3.5.41
+
   '@vue/web-component-wrapper@1.3.0': {}
 
   '@vueuse/core@10.11.1(vue@3.5.41(typescript@5.1.6))':
@@ -32256,6 +32386,27 @@ snapshots:
       shallow-equal: 1.2.1
       vue: 3.5.41(typescript@5.1.6)
       vue-types: 3.0.0(vue@3.5.41(typescript@5.1.6))
+      warning: 4.0.3
+
+  ant-design-vue@3.2.20(vue@3.5.41(typescript@5.9.3)):
+    dependencies:
+      '@ant-design/colors': 6.0.0
+      '@ant-design/icons-vue': 6.1.0(vue@3.5.41(typescript@5.9.3))
+      '@babel/runtime': 7.29.7
+      '@ctrl/tinycolor': 3.6.1
+      '@simonwep/pickr': 1.8.0
+      array-tree-filter: 2.1.0
+      async-validator: 4.2.5
+      dayjs: 1.11.23
+      dom-align: 1.12.4
+      dom-scroll-into-view: 2.0.1
+      lodash: 4.18.1
+      lodash-es: 4.18.1
+      resize-observer-polyfill: 1.5.1
+      scroll-into-view-if-needed: 2.2.31
+      shallow-equal: 1.2.1
+      vue: 3.5.41(typescript@5.9.3)
+      vue-types: 3.0.0(vue@3.5.41(typescript@5.9.3))
       warning: 4.0.3
 
   antd@6.6.1(luxon@3.7.2)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
@@ -36507,6 +36658,17 @@ snapshots:
       - supports-color
       - typescript
 
+  eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(jest@29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3)))(supports-color@8.1.1)(typescript@5.9.3):
+    dependencies:
+      '@typescript-eslint/utils': 5.10.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
+      eslint: 8.57.1(supports-color@8.1.1)
+    optionalDependencies:
+      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
+      jest: 29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3))
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
   eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@6.0.0(@typescript-eslint/parser@6.0.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(jest@29.7.0(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.3.96)(@types/node@26.2.0)(typescript@5.9.3)))(supports-color@8.1.1)(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/utils': 5.10.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
@@ -36678,6 +36840,19 @@ snapshots:
       xml-name-validator: 5.0.0
     optionalDependencies:
       '@typescript-eslint/parser': 5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.1.6)
+
+  eslint-plugin-vue@10.10.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@8.57.1(supports-color@8.1.1))(vue-eslint-parser@9.4.3(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)):
+    dependencies:
+      '@eslint-community/eslint-utils': 4.10.1(eslint@8.57.1(supports-color@8.1.1))
+      eslint: 8.57.1(supports-color@8.1.1)
+      natural-compare: 1.4.0
+      nth-check: 2.1.1
+      postcss-selector-parser: 7.1.5
+      semver: 7.8.5
+      vue-eslint-parser: 9.4.3(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)
+      xml-name-validator: 5.0.0
+    optionalDependencies:
+      '@typescript-eslint/parser': 5.62.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
 
   eslint-plugin-vue@9.15.1(eslint@8.44.0(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
@@ -38942,6 +39117,8 @@ snapshots:
       replace-ext: 1.0.1
 
   immediate@3.0.6: {}
+
+  immer@11.1.17: {}
 
   immutable@5.1.9: {}
 
@@ -42039,6 +42216,22 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  metro-config@0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2):
+    dependencies:
+      connect: 3.6.6(supports-color@8.1.1)
+      cosmiconfig: 5.0.5
+      jest-validate: 29.6.3
+      metro: 0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      metro-cache: 0.80.3
+      metro-core: 0.80.3
+      metro-runtime: 0.80.3
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    optional: true
+
   metro-core@0.72.1:
     dependencies:
       lodash.throttle: 4.1.1
@@ -42438,6 +42631,26 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  metro-transform-worker@0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2):
+    dependencies:
+      '@babel/core': 7.29.7(supports-color@8.1.1)
+      '@babel/generator': 7.29.8
+      '@babel/parser': 7.29.8
+      '@babel/types': 7.29.8
+      metro: 0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      metro-babel-transformer: 0.80.3(supports-color@8.1.1)
+      metro-cache: 0.80.3
+      metro-cache-key: 0.80.3
+      metro-source-map: 0.80.3(supports-color@8.1.1)
+      metro-transform-plugins: 0.80.3(supports-color@8.1.1)
+      nullthrows: 1.1.1
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    optional: true
+
   metro@0.72.1(bufferutil@4.1.0)(encoding@0.1.13)(supports-color@8.1.1)(utf-8-validate@5.0.2):
     dependencies:
       '@babel/code-frame': 7.29.7
@@ -42599,6 +42812,59 @@ snapshots:
       - encoding
       - supports-color
       - utf-8-validate
+
+  metro@0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2):
+    dependencies:
+      '@babel/code-frame': 7.29.7
+      '@babel/core': 7.29.7(supports-color@8.1.1)
+      '@babel/generator': 7.29.8
+      '@babel/parser': 7.29.8
+      '@babel/template': 7.29.7
+      '@babel/traverse': 7.29.8(supports-color@8.1.1)
+      '@babel/types': 7.29.8
+      accepts: 1.3.8
+      chalk: 4.0.0
+      ci-info: 2.0.0
+      connect: 3.6.6(supports-color@8.1.1)
+      debug: 2.6.9(supports-color@8.1.1)
+      denodeify: 1.2.1
+      error-stack-parser: 2.1.4
+      graceful-fs: 4.2.11
+      hermes-parser: 0.18.2
+      image-size: 1.2.1
+      invariant: 2.2.4
+      jest-worker: 29.6.3
+      jsc-safe-url: 0.2.4
+      lodash.throttle: 4.1.1
+      metro-babel-transformer: 0.80.3(supports-color@8.1.1)
+      metro-cache: 0.80.3
+      metro-cache-key: 0.80.3
+      metro-config: 0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      metro-core: 0.80.3
+      metro-file-map: 0.80.3(supports-color@8.1.1)
+      metro-minify-terser: 0.80.3
+      metro-resolver: 0.80.3
+      metro-runtime: 0.80.3
+      metro-source-map: 0.80.3(supports-color@8.1.1)
+      metro-symbolicate: 0.80.3(supports-color@8.1.1)
+      metro-transform-plugins: 0.80.3(supports-color@8.1.1)
+      metro-transform-worker: 0.80.3(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      mime-types: 2.1.27
+      node-fetch: 2.7.0(encoding@0.1.13)
+      nullthrows: 1.1.1
+      rimraf: 3.0.2
+      serialize-error: 2.1.0
+      source-map: 0.5.6
+      strip-ansi: 6.0.0
+      throat: 5.0.0
+      ws: 7.5.13(bufferutil@4.1.0)(utf-8-validate@5.0.2)
+      yargs: 17.7.3
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    optional: true
 
   microargs@1.1.2: {}
 
@@ -45319,6 +45585,56 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2):
+    dependencies:
+      '@jest/create-cache-key-function': 29.6.3
+      '@react-native-community/cli': 12.3.7(bufferutil@4.1.0)(encoding@0.1.13)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      '@react-native-community/cli-platform-android': 12.3.7(encoding@0.1.13)
+      '@react-native-community/cli-platform-ios': 12.3.7(encoding@0.1.13)
+      '@react-native/assets-registry': 0.73.1
+      '@react-native/codegen': 0.73.3(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(supports-color@8.1.1)
+      '@react-native/community-cli-plugin': 0.73.18(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      '@react-native/gradle-plugin': 0.73.5
+      '@react-native/js-polyfills': 0.73.1
+      '@react-native/normalize-colors': 0.73.2
+      '@react-native/virtualized-lists': 0.73.4(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))
+      abort-controller: 3.0.0
+      anser: 1.4.9
+      ansi-regex: 5.0.0
+      base64-js: 1.5.1
+      chalk: 4.0.0
+      deprecated-react-native-prop-types: 5.0.0
+      event-target-shim: 5.0.1
+      flow-enums-runtime: 0.0.6
+      invariant: 2.2.4
+      jest-environment-node: 29.6.3
+      jsc-android: 250231.0.0
+      memoize-one: 5.2.1
+      metro-runtime: 0.80.3
+      metro-source-map: 0.80.3(supports-color@8.1.1)
+      mkdirp: 0.5.6
+      nullthrows: 1.1.1
+      pretty-format: 26.5.2
+      promise: 8.3.0
+      react: 18.3.1
+      react-devtools-core: 4.28.5(bufferutil@4.1.0)(utf-8-validate@5.0.2)
+      react-refresh: 0.14.2
+      react-shallow-renderer: 16.15.0(react@18.3.1)
+      regenerator-runtime: 0.13.11
+      scheduler: 0.24.0-canary-efb381bbf-20230505
+      stacktrace-parser: 0.1.11
+      whatwg-fetch: 3.6.20
+      ws: 6.2.6(bufferutil@4.1.0)(utf-8-validate@5.0.2)
+      yargs: 17.7.3
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@babel/preset-env'
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    optional: true
+
   react-reconciler@0.29.0(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
@@ -45335,6 +45651,22 @@ snapshots:
       react: 18.3.1
       react-is: 16.8.6
       redux: 4.2.1
+
+  react-redux@8.1.3(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)(redux@5.0.1):
+    dependencies:
+      '@babel/runtime': 7.29.7
+      '@types/hoist-non-react-statics': 3.3.7(@types/react@18.3.31)
+      '@types/use-sync-external-store': 0.0.3
+      hoist-non-react-statics: 3.3.2
+      react: 18.3.1
+      react-is: 18.0.0
+      use-sync-external-store: 1.0.0(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.31
+      react-dom: 18.3.1(react@18.3.1)
+      react-native: 0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2)
+      redux: 5.0.1
+    optional: true
 
   react-redux@8.1.3(@types/react@19.2.18)(react-dom@18.3.1(react@18.3.1))(react-native@0.73.11(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(bufferutil@4.1.0)(encoding@0.1.13)(react@18.3.1)(supports-color@8.1.1)(utf-8-validate@5.0.2))(react@18.3.1)(redux@4.2.1):
     dependencies:
@@ -45537,9 +45869,15 @@ snapshots:
     dependencies:
       redux: 4.2.1
 
+  redux-thunk@3.1.0(redux@5.0.1):
+    dependencies:
+      redux: 5.0.1
+
   redux@4.2.1:
     dependencies:
       '@babel/runtime': 7.29.7
+
+  redux@5.0.1: {}
 
   reflect.getprototypeof@1.0.10:
     dependencies:
@@ -45692,6 +46030,8 @@ snapshots:
       resolve: 1.7.1
 
   requires-port@1.0.0: {}
+
+  reselect@5.2.0: {}
 
   resize-detector@0.3.0: {}
 
@@ -47022,14 +47362,27 @@ snapshots:
     dependencies:
       stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.1.6)
 
+  stylelint-config-prettier@9.0.5(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3)):
+    dependencies:
+      stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.9.3)
+
   stylelint-config-recommended@12.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.1.6)):
     dependencies:
       stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.1.6)
+
+  stylelint-config-recommended@12.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3)):
+    dependencies:
+      stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.9.3)
 
   stylelint-config-standard@33.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.1.6)):
     dependencies:
       stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.1.6)
       stylelint-config-recommended: 12.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.1.6))
+
+  stylelint-config-standard@33.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3)):
+    dependencies:
+      stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.9.3)
+      stylelint-config-recommended: 12.0.0(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3))
 
   stylelint-config-taro-rn@3.6.8: {}
 
@@ -47043,6 +47396,12 @@ snapshots:
       postcss: 8.5.26
       postcss-sorting: 8.0.2(postcss@8.5.26)
       stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.1.6)
+
+  stylelint-order@6.0.4(stylelint@16.26.1(supports-color@8.1.1)(typescript@5.9.3)):
+    dependencies:
+      postcss: 8.5.26
+      postcss-sorting: 8.0.2(postcss@8.5.26)
+      stylelint: 16.26.1(supports-color@8.1.1)(typescript@5.9.3)
 
   stylelint-taro-rn@3.6.8:
     dependencies:
@@ -48032,7 +48391,6 @@ snapshots:
       yn: 3.1.1
     optionalDependencies:
       '@swc/core': 1.3.96
-    optional: true
 
   tsconfig-paths@3.15.0:
     dependencies:
@@ -49196,6 +49554,14 @@ snapshots:
       '@vue/devtools-api': 6.5.0
       vue: 3.5.41(typescript@5.1.6)
 
+  vue-i18n@11.4.8(vue@3.5.41(typescript@5.9.3)):
+    dependencies:
+      '@intlify/core-base': 11.4.8
+      '@intlify/devtools-types': 11.4.8
+      '@intlify/shared': 11.4.8
+      '@vue/devtools-api': 6.5.0
+      vue: 3.5.41(typescript@5.9.3)
+
   vue-i18n@8.28.2(vue@3.3.4):
     dependencies:
       vue: 3.3.4
@@ -49211,6 +49577,10 @@ snapshots:
   vue-json-pretty@2.6.0(vue@3.5.41(typescript@5.1.6)):
     dependencies:
       vue: 3.5.41(typescript@5.1.6)
+
+  vue-json-pretty@2.6.0(vue@3.5.41(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.41(typescript@5.9.3)
 
   vue-loader@15.11.1(@vue/compiler-sfc@3.5.41)(babel-core@7.0.0-bridge.0(@babel/core@7.22.5(supports-color@8.1.1)))(css-loader@6.11.0(webpack@5.109.2(@swc/core@1.3.96)(clean-css@5.3.3)(cssnano@5.0.0(postcss@8.5.26))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.26)(uglify-js@3.19.3)(webpack-cli@5.1.4)))(ejs@3.1.10)(handlebars@4.7.9)(lodash@4.18.1)(prettier@3.9.6)(vue-template-compiler@2.7.14)(webpack@5.109.2(@swc/core@1.3.96)(clean-css@5.3.3)(cssnano@5.0.0(postcss@8.5.26))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.26)(uglify-js@3.19.3)(webpack-cli@5.1.4)):
     dependencies:
@@ -49348,11 +49718,22 @@ snapshots:
       is-plain-object: 3.0.1
       vue: 3.5.41(typescript@5.1.6)
 
+  vue-types@3.0.0(vue@3.5.41(typescript@5.9.3)):
+    dependencies:
+      is-plain-object: 3.0.1
+      vue: 3.5.41(typescript@5.9.3)
+
   vue-types@5.1.3(vue@3.5.41(typescript@5.1.6)):
     dependencies:
       is-plain-object: 5.0.0
     optionalDependencies:
       vue: 3.5.41(typescript@5.1.6)
+
+  vue-types@5.1.3(vue@3.5.41(typescript@5.9.3)):
+    dependencies:
+      is-plain-object: 5.0.0
+    optionalDependencies:
+      vue: 3.5.41(typescript@5.9.3)
 
   vue@2.5.11: {}
 

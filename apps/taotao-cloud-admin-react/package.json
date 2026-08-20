@@ -8,6 +8,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@taotaocloud/core": "workspace:*",
+    "@taotaocloud/shared": "workspace:*",
+    "@taotaocloud/apis": "workspace:*",
     "@apollo/client": "4.2.12",
     "@apollo/react-hooks": "4.0.0",
     "@iconify/iconify": "3.1.1",
