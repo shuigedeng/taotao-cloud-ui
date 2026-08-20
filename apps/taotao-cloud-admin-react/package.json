@@ -1,5 +1,5 @@
 {
-  "name": "@taotaocloud/taotao-cloud-react-manager",
+  "name": "@taotaocloud/taotao-cloud-admin-react",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

@@ -11,3 +11,32 @@ packages:
   - 'apps/*'
   # 排除目录
   - '!**/test/*'
+minimumReleaseAgeExclude:
+  - '@types/vscode@1.134.0'
+  - sass@1.103.0
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  '@tarojs/binding': true
+  '@tarojs/cli': true
+  esbuild: true
+  bufferutil: true
+  utf-8-validate: true
+  core-js: false
+  core-js-pure: false
+  cssnano: false
+  cwebp-bin: false
+  es5-ext: false
+  ghooks: false
+  gifsicle: false
+  jpegtran-bin: false
+  mozjpeg: false
+  optipng-bin: false
+  pngquant-bin: false
+  react-native-unimodules: false
+  svelte-preprocess: false
+  taro-hooks: false
+  tsparticles-engine: false
+  vue-demi: false
+  vue-echarts: false
+  yorkie: false

@@ -6,9 +6,12 @@
     "preinstall": "npx only-allow pnpm",
     "commit": "git add . && git status && git-cz",
     "push": "pnpm run commit && git push --set-upstream origin 3.0.0",
-    "dev": "pnpm run --filter=@taotaocloud/ui dev",
+    "dev:taotao-cloud-admin-react": "pnpm run --filter=@taotaocloud/taotao-cloud-admin-react dev",
+    "dev:taotao-cloud-admin-vue3": "pnpm run --filter=@taotaocloud/taotao-cloud-admin-vue3 dev",
+    "dev:taotao-cloud-datav-vue3": "pnpm run --filter=@taotaocloud/taotao-cloud-datav-vue3 dev",
+    "dev:taotao-cloud-front-vue3": "pnpm run --filter=@taotaocloud/taotao-cloud-front-vue3 dev",
     "prod": "pnpm run --filter=@taotaocloud/ui prod",
-    "shared:build": "pnpm -r --filter=@taotao-cloud/* run build",
+    "shared:build": "pnpm -r --filter=@taotaocloud/* run build",
     "publish": "npm login && npm publish --access public"
   }
 }

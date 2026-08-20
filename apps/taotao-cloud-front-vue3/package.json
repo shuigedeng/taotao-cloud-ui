@@ -1,5 +1,5 @@
 {
-  "name": "@taotao-cloud/taotao-cloud-vue3-front",
+  "name": "@taotaocloud/taotao-cloud-front-vue3",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@taotao-cloud/taotao-cloud-vue3-front": "file:"
+    "@taotaocloud/taotao-cloud-vue3-front": "file:"
   },
   "browserslist": [
     "> 1%",
