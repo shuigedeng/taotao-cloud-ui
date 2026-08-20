@@ -52,7 +52,6 @@
     "ghooks": "2.0.4",
     "ignore": "5.3.2",
     "lint-staged": "13.3.0",
-    "release-base-cli": "1.0.3",
     "rollup": "3.30.0",
     "rollup-plugin-dts": "5.3.1",
     "tslib": "2.8.1",

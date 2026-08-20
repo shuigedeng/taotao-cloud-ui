@@ -108,9 +108,7 @@
   "devDependencies": {
     "@babel/core": "7.29.7",
     "@tarojs/cli": "3.6.8",
-    "@tarojs/mini-runner": "3.6.8",
     "@tarojs/rn-runner": "3.6.8",
-    "@tarojs/webpack-runner": "3.6.8",
     "@types/react": "19.2.18",
     "@types/webpack-env": "1.18.8",
     "@typescript-eslint/eslint-plugin": "5.62.0",
