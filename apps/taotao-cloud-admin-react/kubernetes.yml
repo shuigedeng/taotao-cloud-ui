@@ -15,7 +15,7 @@ spec:
       containers:
         - image: taotao-cloud/taotao-cloud-backend:${CICD_EXECUTION_SEQUENCE}
           name: taotao-cloud-backend
-            imagePullPolicy: IfNotPresent
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           env:

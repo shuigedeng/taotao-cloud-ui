@@ -1,6 +1,6 @@
 {
-  "name": "auto-import-webpack-plugin",
-  "version": "0.1.10",
+  "name": "@taotaocloud/taotao-cloud-vue3-plugin",
+  "version": "2026.10",
   "description": "自动生成按需引入组件库",
   "main": "plugin.js",
   "typings": "typings.d.ts",
@@ -43,10 +43,10 @@
     }
   },
   "dependencies": {
-    "auto-import-webpack-plugin": "file:",
+    "@taotaocloud/taotao-cloud-vue3-plugin": "file:",
     "eslint": "8.57.1",
     "prettier": "2.8.8",
-    "webpack": ">=5.110.1"
+    "webpack": "5.110.1"
   },
   "peerDependencies": {
     "webpack": ">=5"

@@ -1,4 +1,4 @@
-FROM node:14-alpine AS build
+FROM node:26-alpine AS build
 
 #RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
@@ -16,7 +16,7 @@ RUN apk add --no-cache \
             make \
             python3
 
-RUN npm install && npm run build
+RUN pnpm install && pnpm run build
 
 ARG TAOTAO_CLOUD_HOST_ADDRESS
 ARG TAOTAO_CLOUD_HOST_PREFIX

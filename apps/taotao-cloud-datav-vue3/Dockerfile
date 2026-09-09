@@ -1,10 +1,10 @@
-FROM node:14-alpine AS build
+FROM node:26-alpine AS build
 
 WORKDIR /app
 
 COPY . /app
 
-RUN npm install && npm run build
+RUN pnpm install && pnpm run build
 
 FROM nginx:stable-alpine
 

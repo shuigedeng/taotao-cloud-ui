@@ -59,27 +59,27 @@ jobs:
           key: ${{ runner.os }}-node_modules
           restore-keys: ${{ runner.os }}-node_modules
 
-      - name: get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: get pnpm cache directory path
+        id: pnpm-cache-dir-path
+        run: echo "::set-output name=dir::$(pnpm cache dir)"
 
-      - name: cache yarn
+      - name: cache pnpm
         uses: actions/cache@v4
         env:
-          cache-name: yarn-cache
+          cache-name: pnpm-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-pnpm-
 
       - name: install dependencies
         run: |
-          yarn
+          pnpm
 
       - name: build taro react native bundle
         run: |
-          yarn build:rn --platform android
+          pnpm build:rn --platform android
 
       - name: upload taro react native bundle
         uses: actions/upload-artifact@v2

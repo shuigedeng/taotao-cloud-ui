@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:experimental
 # 使用了 Docker 特性 Buildx 请开启相关特性
 
-FROM node:16-alpine AS builder
+FROM node:26-alpine AS builder
 
 ARG PLATFORM=$PLATFORM
 

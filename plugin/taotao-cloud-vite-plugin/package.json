@@ -1,6 +1,6 @@
 {
-  "name": "@vitejs/plugin-markdown",
-  "version": "0.0.1",
+  "name": "@taotaocloud/taotao-cloud-vite-plugin",
+  "version": "2026.10",
   "description": "convert markdown tag to html",
   "main": "dist/index.js",
   "scripts": {
@@ -17,8 +17,8 @@
     "esbuild": "0.18.20"
   },
   "dependencies": {
+    "@taotaocloud/taotao-cloud-vite-plugin": "file:",
     "@types/qs": "6.15.1",
-    "@vitejs/plugin-markdown": "file:",
     "markdown-it": "13.0.2",
     "qs": "6.15.3"
   },

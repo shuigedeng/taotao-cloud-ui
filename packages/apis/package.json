@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/apis",
-  "version": "1.0.0",
+  "version": "2026.10",
   "description": "",
   "keywords": [],
   "author": "",
@@ -26,7 +26,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@taotaocloud/core": "workspace:1.0.0"
+    "@taotaocloud/core": "workspace:*"
   },
   "engines": {
     "node": ">=26"

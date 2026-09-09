@@ -1,8 +1,8 @@
 {
   "name": "@taotaocloud/taotao-cloud-mall-taro",
-  "version": "1.0.0",
+  "version": "2026.10",
   "private": true,
-  "description": "taotao-cloud-rn",
+  "description": "taotao-cloud-mall-taro",
   "templateInfo": {
     "name": "react-native",
     "typescript": true,

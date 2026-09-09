@@ -1,7 +1,7 @@
 {
   "name": "@taotaocloud/taotao-cloud-tauri",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2026.10",
   "private": true,
   "scripts": {
     "dev": "vite",

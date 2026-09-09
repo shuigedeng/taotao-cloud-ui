@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-datav-vue3",
-  "version": "0.0.0",
+  "version": "2026.10",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

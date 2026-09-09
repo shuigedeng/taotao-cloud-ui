@@ -1,8 +1,8 @@
 {
-  "name": "taotao-cloud-vscode-plugin",
+  "name": "@taotaocloud/taotao-cloud-vscode-plugin",
   "displayName": "taotao-cloud-vscode-plugin",
   "description": "taotao-cloud-vscode-plugin",
-  "version": "0.0.1",
+  "version": "2026.10",
   "engines": {
     "vscode": "1.134.0",
     "node": ">=26"
@@ -31,6 +31,9 @@
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
+  "dependencies": {
+    "@taotaocloud/taotao-cloud-vscode-plugin": "file:"
+  },
   "devDependencies": {
     "@types/glob": "8.1.0",
     "@types/mocha": "10.0.10",
@@ -46,8 +49,5 @@
     "typescript": "5.9.3",
     "webpack": "5.109.2",
     "webpack-cli": "5.1.4"
-  },
-  "dependencies": {
-    "taotao-cloud-vscode-plugin": "file:"
   }
 }

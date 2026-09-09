@@ -23,10 +23,10 @@ jobs:
         uses: actions/checkout@v4
 
       # https://github.com/marketplace/actions/setup-node-js-environment
-      - name: Use Node.js 20
+      - name: Use Node.js 26
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 26
 
       # https://github.com/marketplace/actions/cache
       - name: Cache Node_modules Folder
@@ -36,25 +36,25 @@ jobs:
           key: ${{ runner.os }}-node_modules
           restore-keys: ${{ runner.os }}-node_modules
 
-      - name: Get Yarn Cache Directory Path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Get pnpm Cache Directory Path
+        id: pnpm-cache-dir-path
+        run: echo "::set-output name=dir::$(pnpm cache dir)"
 
       # https://github.com/marketplace/actions/cache
-      - name: Cache Yarn
+      - name: Cache pnpm
         uses: actions/cache@v4
         env:
-          cache-name: yarn-cache
+          cache-name: pnpm-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-pnpm-
 
-      - name: Yarn Install And Build
+      - name: pnpm Install And Build
         run: |
-          yarn
-          yarn build
+          pnpm
+          pnpm build
 
       # https://github.com/marketplace/actions/ssh-deploy
       - name: Deploy To Server
