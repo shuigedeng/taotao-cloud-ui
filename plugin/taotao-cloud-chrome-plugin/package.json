@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-chrome-plugin",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "description": "A chrome extension boilerplate built with React 18, Webpack 5, and Webpack Dev Server 4",
   "license": "MIT",
   "repository": {

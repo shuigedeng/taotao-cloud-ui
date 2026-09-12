@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "license": "MIT",
   "scripts": {
     "start": "nodemon",

@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-vite-plugin",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "description": "convert markdown tag to html",
   "main": "dist/index.js",
   "scripts": {

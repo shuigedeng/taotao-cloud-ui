@@ -2,7 +2,7 @@
   "name": "@taotaocloud/taotao-cloud-vscode-plugin",
   "displayName": "taotao-cloud-vscode-plugin",
   "description": "taotao-cloud-vscode-plugin",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "engines": {
     "vscode": "1.134.0",
     "node": ">=26"

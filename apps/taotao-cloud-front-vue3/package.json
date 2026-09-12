@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-front-vue3",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",

@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-workflow-app",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "description": "",
   "main": "main.js",
   "scripts": {

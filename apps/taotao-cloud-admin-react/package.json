@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-admin-react",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "scripts": {
     "dev": "vite",
     "build": "REPORT=true vite build",
@@ -122,9 +122,6 @@
     "vite-plugin-pwa": "0.16.7",
     "vite-plugin-style-import": "2.0.0",
     "vite-plugin-theme": "0.8.6"
-  },
-  "resolutions": {
-    "bin-wrapper": "npm:bin-wrapper-china"
   },
   "repository": {
     "type": "git",

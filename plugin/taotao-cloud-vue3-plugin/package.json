@@ -1,6 +1,6 @@
 {
   "name": "@taotaocloud/taotao-cloud-vue3-plugin",
-  "version": "2026.10",
+  "version": "2026.10.0",
   "description": "自动生成按需引入组件库",
   "main": "plugin.js",
   "typings": "typings.d.ts",

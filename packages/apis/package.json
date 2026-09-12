@@ -1,6 +1,7 @@
 {
   "name": "@taotaocloud/apis",
-  "version": "2026.10",
+  "version": "2026.10.0",
+  "private": true,
   "description": "",
   "keywords": [],
   "author": "",

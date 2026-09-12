@@ -1,7 +1,7 @@
 {
   "name": "taotao-cloud-ui",
   "private": true,
-  "version": "2026.10",
+  "version": "2026.10.0",
   "packageManager": "pnpm@11.24.0",
   "type": "module",
   "description": "App monorepo - 小程序/H5 + 跨端App + 共享业务层",
