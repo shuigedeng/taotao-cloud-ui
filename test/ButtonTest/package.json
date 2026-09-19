@@ -26,8 +26,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@taotaocloud/core": "workspace:*",
     "@mdi/js": "7.4.47",
+    "@taotaocloud/core": "workspace:*",
     "particles.vue3": "2.12.0",
     "quasar": "2.25.1",
     "tsparticles": "2.12.0",
