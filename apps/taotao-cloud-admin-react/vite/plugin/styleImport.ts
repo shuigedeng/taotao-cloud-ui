@@ -1,7 +1,7 @@
-import styleImport from 'vite-plugin-style-import'
+import { createStyleImportPlugin } from 'vite-plugin-style-import'
 
 export function configStyleImportPlugin() {
-  return styleImport({
+  return createStyleImportPlugin({
     libs: [
       {
         libraryName: 'antd',

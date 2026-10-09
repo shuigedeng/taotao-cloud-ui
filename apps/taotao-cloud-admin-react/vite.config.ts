@@ -1,4 +1,4 @@
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import react from '@vitejs/plugin-react'
 import { ConfigEnv, loadEnv, UserConfig } from 'vite'
 import { resolve } from 'path'
 import { createProxy } from './vite/proxy'
@@ -35,12 +35,11 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     base: VITE_PUBLIC_PATH,
     root,
-    alias: [
-      {
-        find: /^\/@\//,
-        replacement: pathResolve('src') + '/'
-      }
-    ],
+    resolve: {
+      alias: {
+        '@': pathResolve('src'),
+      },
+    },
     server: {
       port: VITE_PORT,
       // proxy: createProxy(VITE_PROXY),
@@ -92,7 +91,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       }
     },
     plugins: [
-      reactRefresh(),
+      react(),
       ...(VITE_LEGACY && isBuild ? [legacy()] : []),
       ...createVitePlugins(viteEnv, isBuild)
     ],

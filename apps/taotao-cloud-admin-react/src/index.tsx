@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '/@/components/app'
-import '/@/styles/tailwind.less'
-import 'antd/dist/antd.less'
+// import '/@/styles/tailwind.less'
+// import 'antd/dist/antd.less'
 
 import { setupProdMockServer } from '../mock/_createProductionServer';
 
