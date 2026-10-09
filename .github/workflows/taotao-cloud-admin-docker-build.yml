@@ -13,9 +13,9 @@ on:
 
   workflow_dispatch:
 
-#defaults:
-#  run:
-#    working-directory: taotao-cloud-admin-vue3
+    #defaults:
+    #  run:
+    #    working-directory: taotao-cloud-admin-vue3
 
 env:
   TAOTAO_CLOUD_OSSRH_USERNAME: ${{ secrets.TAOTAO_CLOUD_OSSRH_USERNAME }}
@@ -36,7 +36,7 @@ jobs:
     steps:
       #https://github.com/marketplace/actions/checkout
       - name: Checkout Project
-        uses: actions/checkout@v7.0.0
+        uses: actions/checkout@v7.0.1
 
       #https://github.com/marketplace/actions/publish-docker
       - name: Publish Docker Image
@@ -69,7 +69,6 @@ jobs:
                   "content": "taotao github action [taotao-cloud-sys] publish docker image success"
               }
             }
-
 
       - name: build failure
         if: ${{ failure() }}
