@@ -1,0 +1,121 @@
+name: assemble admin
+
+on:
+  push:
+    paths:
+      - 'apps/taotao-cloud-admin-react/**'
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+#defaults:
+#  run:
+#    working-directory: taotao-cloud-admin-vue3
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    #if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-manager') }}
+    steps:
+      - name: checkout project
+        uses: actions/checkout@v4
+
+      # https://github.com/marketplace/actions/setup-node-js-environment
+      - name: Use Node.js 26
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 26
+
+      - name: Use pnpm 12
+        uses: pnpm/actions-setup@v6.1.0
+        with:
+          version: 12
+
+      - name: cache node_modules folder
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules
+          restore-keys: ${{ runner.os }}-node_modules
+
+      - name: get pnpm cache directory path
+        id: pnpm-cache-dir-path
+        run: echo "::set-output name=dir::$(pnpm cache dir)"
+
+      - name: cache pnpm
+        uses: actions/cache@v4
+        env:
+          cache-name: pnpm-cache
+        with:
+          path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: pnpm install
+        run: |
+          pnpm install --frozen-lockfile
+
+      - name: pnpm build
+        run: |
+          pnpm build:taotao-cloud-admin-react
+
+      #https://github.com/marketplace/actions/publish-docker
+      - name: Publish Docker Image
+        uses: elgohr/Publish-Docker-Github-Action@v5
+        env:
+          DINGDING_TOKEN_ID_ARG: ${{ secrets.DING_TOKEN }}
+          DINGDING_SECRET_ARG: ${{ secrets.DING_SECRET }}
+        with:
+          name: registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-admin
+          username: ${{ secrets.TAOTAO_CLOUD_REGISTRY_USERNAME }}
+          password: ${{ secrets.TAOTAO_CLOUD_REGISTRY_PASSWORD }}
+          registry: registry.cn-hangzhou.aliyuncs.com
+          buildoptions: "--compress --force-rm"
+          buildargs: DINGDING_SECRET_ARG,DINGDING_TOKEN_ID_ARG
+          tags: "${{env.TAOTAO_CLOUD_VERSION}}"
+          workdir: ${{ github.workspace }}/apps/taotao-cloud-admin-react/docker
+
+      #- name: deploy to server
+      #  uses: easingthemes/ssh-deploy@6.0.1
+      #  env:
+      #    SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+      #    ARGS: "-rltgoDzvO --delete"
+      #    SOURCE: "taotao-cloud-admin-vue3/dist/"
+      #    REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      #    REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      #    TARGET: ${{ secrets.REMOTE_MANAGER_TARGET }}
+
+      #https://github.com/marketplace/actions/dingding-notify-action
+      - name: build success
+        if: ${{ success() }}
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TOKEN }}
+          secret: ${{ secrets.DING_SECRET }}
+          # body 内容 https://blog.csdn.net/lxw1844912514/article/details/125747327
+          body: |
+            {
+              "msgtype": "text",
+              "text": {
+                  "content": "taotao github action [taotao-cloud-sys] publish docker image success"
+              }
+            }
+
+
+      - name: build failure
+        if: ${{ failure() }}
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TOKEN }}
+          secret: ${{ secrets.DING_SECRET }}
+          # body 内容 https://blog.csdn.net/lxw1844912514/article/details/125747327
+          body: |
+            {
+              "msgtype": "text",
+              "text": {
+                  "content": "taotao github action [taotao-cloud-sys] publish docker image failure"
+              }
+            }

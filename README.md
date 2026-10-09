@@ -202,7 +202,7 @@ Maven:
   源码地址: [taotao-cloud-front](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-front-vue3)
 * 大屏展示地址: [https://datav.taotaocloud.top](https://datav.taotaocloud.top)
   源码地址: [taotao-cloud-datav](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-datav-vue3)
-* 平台管理地址(进度15%): [https://manager.taotaocloud.top](https://manager.taotaocloud.top) (
+* 平台管理地址(进度15%): [https://admin.taotaocloud.top](https://admin.taotaocloud.top) (
   admin/123456)
   源码地址: [taotao-cloud-manager](https://github.com/shuigedeng/taotao-cloud-ui/tree/main/taotao-cloud-admin-vue3)
 * 商户管理地址(进度5%): [https://merchant.taotaocloud.top](https://merchant.taotaocloud.top) (

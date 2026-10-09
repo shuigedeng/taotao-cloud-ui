@@ -15,11 +15,11 @@ acme.sh --install-cert -d datav.taotaocloud.top \
 --reloadcmd     "openresty -p /opt/openresty -c conf/nginx.conf -s reload"
 
 ## manager
-acme.sh --issue -d manager.taotaocloud.top -w /opt/openresty/business/taotao-cloud-manager
+acme.sh --issue -d admin.taotaocloud.top -w /opt/openresty/business/taotao-cloud-manager
 
-acme.sh --install-cert -d manager.taotaocloud.top \
---key-file /opt/openresty/cert/scs1644913661842_manager.taotaocloud.top_server.key \
---fullchain-file /opt/openresty/cert/scs1644913661842_manager.taotaocloud.top_server.crt \
+acme.sh --install-cert -d admin.taotaocloud.top \
+--key-file /opt/openresty/cert/scs1644913661842_admin.taotaocloud.top_server.key \
+--fullchain-file /opt/openresty/cert/scs1644913661842_admin.taotaocloud.top_server.crt \
 --reloadcmd     "openresty -p /opt/openresty -c conf/nginx.conf -s reload"
 
 ## open
