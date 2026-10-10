@@ -1,8 +1,8 @@
 {
-  "name": "@taotaocloud/taotao-cloud-mall-react",
+  "name": "@taotaocloud/taotao-cloud-mobile-react",
   "version": "2026.11.0",
   "private": true,
-  "description": "taotao-cloud-mall-react",
+  "description": "taotao-cloud-mobile-react",
   "templateInfo": {
     "name": "taro-ui",
     "typescript": true,

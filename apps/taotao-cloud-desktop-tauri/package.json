@@ -1,5 +1,5 @@
 {
-  "name": "@taotaocloud/taotao-cloud-tauri",
+  "name": "@taotaocloud/taotao-cloud-desktop-tauri",
   "type": "module",
   "version": "2026.11.0",
   "private": true,

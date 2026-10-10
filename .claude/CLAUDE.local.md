@@ -12,8 +12,8 @@
 
 ## 常用项目别名
 - `manager` → `projects/taotao-cloud-admin-vue3`
-- `front` → `projects/taotao-cloud-front-vue3`
-- `datav` → `projects/taotao-cloud-datav-vue3`
+- `front` → `projects/taotao-cloud-web-vue3`
+- `datav` → `projects/taotao-cloud-screen-vue3`
 
 ## 本地构建优化
 - `pnpm install --frozen-lockfile` 避免 lock 变更

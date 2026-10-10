@@ -21,15 +21,15 @@ taotao-cloud-ui/
 │   └── bpmn-designer/                 # BPMN 流程设计器
 ├── projects/                          # 独立应用项目
 │   ├── taotao-cloud-admin-vue3/     # 平台管理后台（Ant Design Vue）
-│   ├── taotao-cloud-front-vue3/       # 商城前端（Quasar）
-│   ├── taotao-cloud-datav-vue3/       # 数据大屏
+│   ├── taotao-cloud-web-vue3/       # 商城前端（Quasar）
+│   ├── taotao-cloud-screen-vue3/       # 数据大屏
 │   ├── taotao-cloud-vue3-merchant/    # 商户管理端
 │   ├── taotao-cloud-vue3-open/        # 开放平台
 │   ├── taotao-cloud-taro-mall/        # 移动端商城（Taro + React Native）
 │   ├── taotao-cloud-react-mall/       # React 版商城
 │   ├── taotao-cloud-react-manager/    # React 版管理后台
 │   ├── taotao-cloud-svelte/           # Svelte 项目
-│   ├── taotao-cloud-tauri/            # Tauri 桌面应用
+│   ├── taotao-cloud-desktop-tauri/            # Tauri 桌面应用
 │   ├── taotao-cloud-workflow-web/     # 工作流 Web 端
 │   └── taotao-cloud-workflow-app/     # 工作流 App 端
 ├── plugin/                            # 构建/工具插件

@@ -1,5 +1,5 @@
 {
-  "name": "@taotaocloud/taotao-cloud-datav-vue3",
+  "name": "@taotaocloud/taotao-cloud-screen-vue3",
   "version": "2026.11.0",
   "scripts": {
     "dev": "vite",

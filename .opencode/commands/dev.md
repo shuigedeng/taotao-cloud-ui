@@ -31,8 +31,8 @@ pnpm run --filter=@taotaocloud/taotao-cloud-admin-vue3 dev
 | 项目 | 默认端口 | 备注 |
 |------|---------|------|
 | taotao-cloud-admin-vue3 | 5173 | 管理后台 |
-| taotao-cloud-front-vue3 | 5174 | 商城前端 |
-| taotao-cloud-datav-vue3 | 5175 | 数据大屏 |
+| taotao-cloud-web-vue3 | 5174 | 商城前端 |
+| taotao-cloud-screen-vue3 | 5175 | 数据大屏 |
 | taotao-cloud-vue3-merchant | 5176 | 商户管理 |
 
 ## 输出格式

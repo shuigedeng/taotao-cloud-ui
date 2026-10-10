@@ -13,14 +13,14 @@ Vue3 / Quasar / Vite / TypeScript 多框架前端 Monorepo。pnpm workspace 管�
 │   └── bpmn-*/             # BPMN 流程相关
 ├── projects/               # 独立应用
 │   ├── taotao-cloud-admin-vue3/   # 管理后台（Ant Design Vue）
-│   ├── taotao-cloud-front-vue3/     # 商城前端（Quasar）
-│   ├── taotao-cloud-datav-vue3/     # 数据大屏
+│   ├── taotao-cloud-web-vue3/     # 商城前端（Quasar）
+│   ├── taotao-cloud-screen-vue3/     # 数据大屏
 │   ├── taotao-cloud-vue3-merchant/  # 商户管理
 │   ├── taotao-cloud-vue3-open/      # 开放平台
 │   ├── taotao-cloud-taro-mall/      # 移动端（Taro + RN）
 │   ├── taotao-cloud-react-*/        # React 项目
 │   ├── taotao-cloud-svelte/         # Svelte 项目
-│   ├── taotao-cloud-tauri/          # Tauri 桌面应用
+│   ├── taotao-cloud-desktop-tauri/          # Tauri 桌面应用
 │   └── taotao-cloud-workflow-*/     # 工作流项目
 └── plugin/                 # 构建插件
     ├── taotao-cloud-vite-plugin/
