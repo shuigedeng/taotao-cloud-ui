@@ -13,9 +13,9 @@ on:
 
   workflow_dispatch:
 
-    #defaults:
-    #  run:
-    #    working-directory: taotao-cloud-admin-vue3
+#defaults:
+#  run:
+#    working-directory: taotao-cloud-admin-vue3
 
 env:
   TAOTAO_CLOUD_OSSRH_USERNAME: ${{ secrets.TAOTAO_CLOUD_OSSRH_USERNAME }}
